@@ -5,6 +5,7 @@ import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 import './Navigation.css';
+import logo from '../../img/Airbnb_Logo.png'
 
 function Navigation(){
   const sessionUser = useSelector(state => state.session.user);
@@ -24,12 +25,10 @@ function Navigation(){
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Airbnb photo here</NavLink>
+    <>
+        <NavLink exact to="/"><img src={logo} alt="airbnb" className="logo-image"/></NavLink>
         {sessionLinks}
-      </li>
-    </ul>
+    </>
   );
 }
 
