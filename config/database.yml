@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: reactproject_production
-  username: reactproject
-  password: <%= ENV["REACTPROJECT_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
