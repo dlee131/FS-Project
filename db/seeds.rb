@@ -16,11 +16,14 @@ ApplicationRecord.transaction do
   
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
+    # USING THIS FOR DEMO LOGIN! 
     User.create!(
       username: 'Demo-lition', 
       email: 'demo@user.io', 
       password: 'password'
     )
+
+
   
     # More users
     10.times do 
