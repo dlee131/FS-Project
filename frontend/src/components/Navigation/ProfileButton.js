@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
+import './Navigation.css';
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ function ProfileButton({ user }) {
     if (!showMenu) return;
 
     const closeMenu = () => {
-      setShowMenu(false);
+      setShowMenu(true);
     };
 
     document.addEventListener('click', closeMenu);
@@ -30,7 +31,7 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
+      <button onClick={openMenu} className="open-menu">
         <i className="fa-solid fa-user-circle" />
       </button>
       {showMenu && (

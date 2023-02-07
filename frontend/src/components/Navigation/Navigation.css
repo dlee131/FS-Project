@@ -1,6 +1,31 @@
+
+
+.header {
+    padding-left: 40px;
+    padding-right: 40px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #dfd7d7;
+  }
+
+
 .logo-image {
     width: 110px;
-    height: 35px;
-    margin-left: 3rem;
-    margin-top: 5rem;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* .open-menu {
+    margin-left:7rem;
+
+} */
+
+
+.logo-text {
+    color: rgb(252, 69, 69);
+    font-weight: 700;
+    font-size: x-large;
 }
