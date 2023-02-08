@@ -7,12 +7,16 @@ function LoginFormModal() {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>Log In</button>
-      {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
-          <LoginForm />
-        </Modal>
-      )}
+        <a href="#" onClick={() => setShowModal(true)} style={{ textDecoration: "none" }}>
+          <div className="log-in">
+          Log In
+          </div>
+        </a>
+        {showModal && (
+          <Modal onClose={() => setShowModal(false)}>
+            <LoginForm />
+          </Modal>
+        )}
     </>
   );
 }

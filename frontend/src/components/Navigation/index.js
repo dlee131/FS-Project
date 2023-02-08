@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import ProfileButton from './ProfileButton';
-import LoginFormModal from '../LoginFormModal';
-import SignupFormModal from '../SignupFormModal';
+// import ProfileButton from './ProfileButton';
+// import LoginFormModal from '../LoginFormModal';
+// import SignupFormModal from '../SignupFormModal';
 import './Navigation.css';
 import logo from '../../img/bnb_logo.jpeg'
 import DropDownMenu from './DropdownMenu';

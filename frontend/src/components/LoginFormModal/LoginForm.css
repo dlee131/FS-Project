@@ -1,4 +1,7 @@
-.log-in-button {
+.login-button {
+    display: flex;
     margin-left: 10rem;
     margin-top: 10rem;
 }
+
+

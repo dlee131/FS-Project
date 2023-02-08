@@ -25,20 +25,21 @@ let options;
 if (user) {
   options = 
     <div className='dropdown-image'>
-        <div><NavLink to="/" onClick={logout}>Log Out</NavLink></div>
+        <div><NavLink to="/" onClick={logout} style={{ textDecoration: "none" }}>Log Out</NavLink></div>
     </div>
 } else if (!user) {
       options = 
     <div className='dropdown-image'>
         <div><LoginFormModal/></div>
         <div><SignupFormModal/></div>
-        <div><button onClick={demoLogin}>Demo Login</button></div>
+        <div><a href="#" onClick={demoLogin} style={{ textDecoration: "none" }}>Demo Login</a></div>
     </div>
 }
 
 let photo;
 if (user) {
-  photo = <img src={LoggedOutUser} className='user-pic' alt="re" />
+  photo = <img src={LoggedOutUser} className='user-pic' alt="re" /> 
+//   LoggedInUser picture to change icon here
 } else if (!user) {
   photo = <img src={LoggedOutUser} className='user-pic' alt="re" />
 }
