@@ -31,6 +31,11 @@
     border-radius: 10px;
     background-image: radial-gradient(circle at center center, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%);
     text-align: center;
+    font-size: 16px;
+}
+
+#login-text {
+    margin-top: 10px; 
 }
 
 #welcome-back {

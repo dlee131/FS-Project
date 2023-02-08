@@ -7,6 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;
 }
 
 #modal-background {
@@ -15,12 +16,23 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: rgba(19, 18, 18, 0.7);
+  background-color: rgba(39, 39, 39, 0.7);
+  transform: translateY(0%);
+}
+
+@keyframes transition {
+  from {
+      transform: translateY(100%);
+  }
+  to {
+      transform: translateY(0%);
+  }
 }
 
 #modal-content {
   position: absolute;
   background-color:white;
   border-radius: 10px;
+  transition-timing-function: ease-out;
+  animation: transition 0.5s;
 }
-

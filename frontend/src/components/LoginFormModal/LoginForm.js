@@ -43,25 +43,29 @@ function LoginFormPage() {
         </div>
       <div className="labels">
       <label id="username">
-        Username/Email
         <input
           type="text"
           value={credential}
           onChange={(e) => setCredential(e.target.value)}
+          placeholder="Username/Email"
           required
         />
       </label>
       <label id="password">
-        Password
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
           required
         />
       </label>
         <div className='login-div'>
-          <button type="submit" className="login-button" style={{ textDecoration: "none" }}>Log In</button>
+          <button type="submit" className="login-button" style={{ textDecoration: "none" }}>
+            <div id="login-text">
+            Log In
+            </div>
+            </button>
         </div>
       </div>
   </form>
