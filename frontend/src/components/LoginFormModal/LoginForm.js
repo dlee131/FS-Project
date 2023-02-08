@@ -36,7 +36,13 @@ function LoginFormPage() {
       <ul>
         {errors.map(error => <li key={error}>{error}</li>)}
       </ul>
-      <label>
+    <div id="welcome-back">
+      Welcome Back to MeloBnB!
+    </div>
+      <div id="border-line">
+        </div>
+      <div className="labels">
+      <label id="username">
         Username/Email
         <input
           type="text"
@@ -45,7 +51,7 @@ function LoginFormPage() {
           required
         />
       </label>
-      <label>
+      <label id="password">
         Password
         <input
           type="password"
@@ -54,8 +60,11 @@ function LoginFormPage() {
           required
         />
       </label>
-      <button type="submit" className="login-button">Log In</button>
-    </form>
+        <div className='login-div'>
+          <button type="submit" className="login-button" style={{ textDecoration: "none" }}>Log In</button>
+        </div>
+      </div>
+  </form>
   );
 }
 

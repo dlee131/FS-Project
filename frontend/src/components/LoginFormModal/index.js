@@ -8,7 +8,7 @@ function LoginFormModal() {
   return (
     <>
         <a href="#" onClick={() => setShowModal(true)} style={{ textDecoration: "none" }}>
-          <div className="log-in">
+          <div className="menu-button">
           Log In
           </div>
         </a>

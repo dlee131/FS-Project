@@ -1,7 +1,51 @@
-.login-button {
+
+.menu-button {
+    color: black;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    
+}
+
+#username {
     display: flex;
-    margin-left: 10rem;
-    margin-top: 10rem;
+    justify-content: center;
+    margin-top: 90px;
+    margin-bottom: 40px;
+}
+
+.labels {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-div {
+    margin-right: 10rem;
+    
+}
+
+.login-div button {
+    width: 500px;
+    height: 50px;
+    justify-content: center;
+    /* background-color: #FF5A5F; */
+    color: white;
+    border-radius: 10px;
+    background-image: radial-gradient(circle at center center, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%);
+    text-align: center;
+}
+
+#welcome-back {
+    text-align: center;
+    font-weight: 550;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+#border-line {
+    width: 100%;
+    border: 0;
+    margin-top: 40px;
+    border-bottom: 1px solid rgb(221, 211, 211);
 }
 
 

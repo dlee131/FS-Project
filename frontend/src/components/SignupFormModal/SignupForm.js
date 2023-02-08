@@ -41,6 +41,10 @@ function SignupFormPage() {
       <ul>
         {errors.map(error => <li key={error}>{error}</li>)}
       </ul>
+      <div className="labels">
+        <div className="welcome">
+        Welcome to MeloBnB
+        </div>
       <label>
         Email
         <input
@@ -78,6 +82,7 @@ function SignupFormPage() {
         />
       </label>
       <button type="submit" className="login-button">Sign Up</button>
+      </div>
     </form>
   );
 }

@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
@@ -21,6 +21,24 @@ const demoLogin = (e) => {
     return dispatch(sessionActions.login({ credential:"Demo-lition", password:"password" }))
 }
 
+// useEffect(() => {
+//   if (!isOpen) return;
+
+// const openMenu = () => {
+//   if (isOpen) return;
+//   setIsOpen(true);
+// };
+
+//   const closeMenu = () => {
+//     setIsOpen(true);
+//   };
+
+//   document.addEventListener('click', closeMenu);
+
+//   return () => document.removeEventListener("click", closeMenu);
+// }, [isOpen]);
+
+
 let options;
 if (user) {
   options = 
@@ -32,7 +50,7 @@ if (user) {
     <div className='dropdown-image'>
         <div><LoginFormModal/></div>
         <div><SignupFormModal/></div>
-        <div><a href="#" onClick={demoLogin} style={{ textDecoration: "none" }}>Demo Login</a></div>
+        <div><a href="#" onClick={demoLogin} style={{ textDecoration: "none" }} className="menu-buttons">Demo Login</a></div>
     </div>
 }
 

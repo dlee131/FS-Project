@@ -7,7 +7,7 @@ function SignupFormModal() {
 
   return (
     <>
-      <a href="#" onClick={() => setShowModal(true)} style={{ textDecoration: "none" }}>Sign Up</a>
+      <a href="#" onClick={() => setShowModal(true)} style={{ textDecoration: "none" }} className="menu-buttons">Sign Up</a>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <SignupForm />
