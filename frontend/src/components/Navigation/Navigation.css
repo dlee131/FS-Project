@@ -1,5 +1,5 @@
 .header {
-    padding-left: 40px;
+    padding-left: 70px;
     padding-right: 40px;
     height: 80px;
     display: flex;
@@ -32,3 +32,37 @@
     font-size: x-large;
 }
 
+.user-pic {
+    width: 30px;
+    height: 20px; 
+}
+
+.menu-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 1px;
+}
+
+.clickable-button {
+    width: 80px;
+    height: 40px;
+    border: 1px solid #cec8c8;
+    border-radius: 100px;
+    padding: 10px;
+}
+
+/* .dropdown {
+    display: flex;
+    justify-content: flex;
+    flex-direction: column;
+} */
+
+.dropdown-image {
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px 0.5px rgb(255, 255, 255);
+    border-radius: 10px;
+    min-width: 30px;
+    min-height: 30px;
+}

@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom";
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 import * as sessionActions from '../../store/session';
+import LoggedOutUser from '../../img/loggedoutuser.png'
+
 
 const DropDownMenu = ({user}) => {
 const dispatch = useDispatch();
@@ -22,31 +24,41 @@ const demoLogin = (e) => {
 let options;
 if (user) {
   options = 
-    <ul className='dropdown-image'>
-        <li><NavLink to="/" onClick={logout}>Log Out</NavLink></li>
-    </ul>
-} else {
+    <div className='dropdown-image'>
+        <div><NavLink to="/" onClick={logout}>Log Out</NavLink></div>
+    </div>
+} else if (!user) {
       options = 
-    <ul className='dropdown-image'>
-        <li><LoginFormModal/></li>
-        <li><SignupFormModal/></li>
-        <li><button onClick={demoLogin}>Demo Login</button></li>
-    </ul>
+    <div className='dropdown-image'>
+        <div><LoginFormModal/></div>
+        <div><SignupFormModal/></div>
+        <div><button onClick={demoLogin}>Demo Login</button></div>
+    </div>
+}
+
+let photo;
+if (user) {
+  photo = <img src={LoggedOutUser} className='user-pic' alt="re" />
+} else if (!user) {
+  photo = <img src={LoggedOutUser} className='user-pic' alt="re" />
 }
 
 return (
   <div className="dropdown">
     <button
-      className="btn btn-secondary dropdown-toggle"
+      className="clickable-button"
       type="button"
-      onClick={() => setIsOpen(!isOpen)}
-    >
+      onClick={() => setIsOpen(!isOpen)}>
+    <div className="menu-icons">
+        <i className="fa-solid fa-bars" />
+        {photo}
+    </div>
     </button>
 
     {isOpen && (
-      <div className="dropdown-menu">
-        <a className="dropdown-item" href="#">{options}</a>
-      </div>
+    <div className="dropdown-menu">
+        <a className="dropdown-item">{options}</a>
+    </div>
     )}
   </div>
 );
