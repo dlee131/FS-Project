@@ -10,9 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_04_210748) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_09_145807) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "listings", force: :cascade do |t|
+    t.bigint "host_id", null: false
+    t.string "title", null: false
+    t.text "description", null: false
+    t.string "city", null: false
+    t.string "state", null: false
+    t.string "country", null: false
+    t.integer "zip_code", null: false
+    t.integer "nightly_price", null: false
+    t.integer "num_beds", null: false
+    t.integer "num_bedrooms", null: false
+    t.integer "num_bathrooms", null: false
+    t.boolean "pets_allowed", default: false, null: false
+    t.float "latitude", null: false
+    t.float "longitude", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city"], name: "index_listings_on_city", unique: true
+    t.index ["country"], name: "index_listings_on_country", unique: true
+    t.index ["host_id"], name: "index_listings_on_host_id"
+    t.index ["state"], name: "index_listings_on_state", unique: true
+    t.index ["zip_code"], name: "index_listings_on_zip_code", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
@@ -26,4 +50,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_04_210748) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "listings", "users", column: "host_id"
 end
