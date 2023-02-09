@@ -21,12 +21,8 @@
 }
 
 @keyframes transition {
-  from {
-      transform: translateY(100%);
-  }
-  to {
-      transform: translateY(0%);
-  }
+  from {transform: translateY(110%)}
+  to {transform: translateY(0%)}
 }
 
 #modal-content {
