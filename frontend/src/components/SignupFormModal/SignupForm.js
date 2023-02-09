@@ -46,7 +46,7 @@ function SignupFormPage() {
         Welcome to MeloBnB
       </div>
       <div id="border-line"></div>
-      <div className="labels">
+      <div className="input-containers">
       <label id="email">
         <input
           type="text"

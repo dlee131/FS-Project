@@ -5,9 +5,17 @@
     
 }
 
-.labels {
-    font-family: Arial, Helvetica, sans-serif;
-}
+.input-container {
+    width: fit-content;
+    
+  }
+
+  input {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+  }
 
 .login-div {
     margin-right: 10rem;
@@ -22,6 +30,7 @@
     background-image: radial-gradient(circle at center center, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%);
     text-align: center;
     font-size: 16px;
+    margin-bottom: 40px;
 }
 
 #username {
