@@ -8,23 +8,16 @@
     border-bottom: 1px solid #dfd7d7;
   }
 
-
 .logo-icon {
     width: 10px;
     display: flex;
     align-items: center;
 }
 
-/* .open-menu {
-    margin-left:7rem;
-
-} */
-
 .menu-buttons {
     color: black;
     font-size: 14px;
     font-family: Arial, sans-serif;
-
 }
 
 .logo-image {
@@ -62,13 +55,8 @@
 .clickable-button:hover {
     box-shadow: 0px 8px 8px 0px rgba(51, 49, 49, 0.47);
   }
-/* .dropdown {
-    display: flex;
-    justify-content: flex;
-    flex-direction: column;
-} */
 
-.dropdown-image {
+.dropdown-borderbox {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -77,9 +65,15 @@
     position: absolute;
     border: 1px solid rgb(243, 238, 238);
     border-radius: 10px;
-    height: 150px;
+    height: 120px;
     width: 200px;
     right: 2%;
     margin-top: 10px;
     margin-right: 25px;
+}
+
+#logout-text {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
 }

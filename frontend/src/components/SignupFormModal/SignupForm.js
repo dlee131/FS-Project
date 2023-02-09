@@ -41,47 +41,53 @@ function SignupFormPage() {
       <ul>
         {errors.map(error => <li key={error}>{error}</li>)}
       </ul>
-      <div className="labels">
-        <div className="welcome">
+
+      <div className="welcome">
         Welcome to MeloBnB
-        </div>
-      <label>
-        Email
+      </div>
+      <div id="border-line"></div>
+      <div className="labels">
+      <label id="email">
         <input
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
           required
         />
       </label>
-      <label>
-        Username
+      <label id="username">
         <input
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          placeholder="Username"
           required
         />
       </label>
-      <label>
-        Password
+      <label id="password">
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
           required
         />
       </label>
-      <label>
-        Confirm Password
+      <label id="confirmpass">
         <input
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
+          placeholder="Confirm Password"
           required
         />
       </label>
-      <button type="submit" className="login-button">Sign Up</button>
+        <div className="signup-div">
+          <button type="submit" className="login-button">
+            <div id="signup-text">Sign Up</div>
+          </button>
+        </div>
       </div>
     </form>
   );

@@ -39,8 +39,7 @@ function LoginFormPage() {
     <div id="welcome-back">
       Welcome Back to MeloBnB!
     </div>
-      <div id="border-line">
-        </div>
+      <div id="border-line"></div>
       <div className="labels">
       <label id="username">
         <input
