@@ -31,11 +31,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_145807) do
     t.float "longitude", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["city"], name: "index_listings_on_city", unique: true
-    t.index ["country"], name: "index_listings_on_country", unique: true
+    t.index ["city"], name: "index_listings_on_city"
+    t.index ["country"], name: "index_listings_on_country"
     t.index ["host_id"], name: "index_listings_on_host_id"
-    t.index ["state"], name: "index_listings_on_state", unique: true
-    t.index ["zip_code"], name: "index_listings_on_zip_code", unique: true
+    t.index ["state"], name: "index_listings_on_state"
+    t.index ["zip_code"], name: "index_listings_on_zip_code"
   end
 
   create_table "users", force: :cascade do |t|

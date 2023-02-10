@@ -59,7 +59,7 @@ ApplicationRecord.transaction do
       country: "United States",
       zip_code: 93454,
       latitude: 34.934276,
-      longitudeitude: -120.413169,
+      longitude: -120.413169,
       nightly_price: 520,
       num_bedrooms: 4,
       num_beds: 5,
@@ -112,8 +112,8 @@ ApplicationRecord.transaction do
       latitude: 33.516275, 
       longitude: -86.845339,
       nightly_price: 870,
-      num_bedrooms: 5,
-      num_beds: 10,
+      num_bedrooms: 4,
+      num_beds: 6,
       num_bathrooms: 5,
       pets_allowed: false
     )
@@ -197,7 +197,7 @@ ApplicationRecord.transaction do
       zip_code: 10021,
       latitude: 40.774596,
       longitude: -73.965134,
-      nightly_price: 70,
+      nightly_price: 270,
       num_bedrooms: 2,
       num_beds: 2,
       num_bathrooms: 1,
@@ -214,9 +214,9 @@ ApplicationRecord.transaction do
       zip_code: 11249,
       latitude: 40.709430, 
       longitude: -73.965459,
-      nightly_price: 70,
+      nightly_price: 570,
       num_bedrooms: 6,
-      num_beds: 8,
+      num_beds: 6,
       num_bathrooms: 4,
       pets_allowed: false
     )

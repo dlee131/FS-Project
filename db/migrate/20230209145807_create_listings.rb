@@ -17,9 +17,9 @@ class CreateListings < ActiveRecord::Migration[7.0]
       t.float :longitude, null: false
       t.timestamps
     end
-    add_index :listings, :city, unique: true
-    add_index :listings, :state, unique: true
-    add_index :listings, :country, unique: true
-    add_index :listings, :zip_code, unique: true
+    add_index :listings, :city
+    add_index :listings, :state
+    add_index :listings, :country
+    add_index :listings, :zip_code
   end
 end

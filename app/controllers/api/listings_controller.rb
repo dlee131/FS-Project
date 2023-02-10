@@ -11,4 +11,16 @@ class Api::ListingsController < ApplicationController
     render :show
   end
 
+  def create
+
+  end
+
+  def destroy
+
+  end
+
+  def update
+    
+  end
+
 end
