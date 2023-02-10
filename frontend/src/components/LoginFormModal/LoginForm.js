@@ -36,10 +36,11 @@ function LoginFormPage() {
       <ul>
         {errors.map(error => <li key={error}>{error}</li>)}
       </ul>
-    <div id="welcome-back">
-      Welcome Back to MeloBnB!
+    <div id="login-signup">
+      Log in or sign up
     </div>
       <div id="border-line"></div>
+      <h1 id="welcome-text">Welcome to Breezebnb</h1>
       <div className="input-container">
       <label id="username">
         <input

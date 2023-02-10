@@ -42,21 +42,20 @@ function SignupFormPage() {
         {errors.map(error => <li key={error}>{error}</li>)}
       </ul>
 
-      <div className="welcome">
-        Welcome to MeloBnB
+      <div id="login-signup">
+        Log in or sign up
       </div>
       <div id="border-line"></div>
+      <h1 id="welcome-text">Welcome to Breezebnb</h1>
       <div className="input-containers">
-      <label id="email">
-        <input
-          type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
-          required
-        />
-      </label>
-      <label id="username">
+          <input
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+            required
+          />
+
         <input
           type="text"
           value={username}
@@ -64,8 +63,6 @@ function SignupFormPage() {
           placeholder="Username"
           required
         />
-      </label>
-      <label id="password">
         <input
           type="password"
           value={password}
@@ -73,8 +70,6 @@ function SignupFormPage() {
           placeholder="Password"
           required
         />
-      </label>
-      <label id="confirmpass">
         <input
           type="password"
           value={confirmPassword}
@@ -82,7 +77,6 @@ function SignupFormPage() {
           placeholder="Confirm Password"
           required
         />
-      </label>
         <div className="signup-div">
           <button type="submit" className="login-button">
             <div id="signup-text">Sign Up</div>

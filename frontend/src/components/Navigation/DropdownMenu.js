@@ -37,7 +37,7 @@ if (user) {
     <div className='dropdown-borderbox'>
         <div><LoginFormModal/></div>
         <div><SignupFormModal/></div>
-        <div><a href="#" onClick={demoLogin} style={{ textDecoration: "none" }} className="menu-buttons">Demo Login</a></div>
+        <div><a href="#" onClick={demoLogin} style={{ textDecoration: "none" }}><div className="menu-buttons">Demo Login</div></a></div>
     </div>
 }
 

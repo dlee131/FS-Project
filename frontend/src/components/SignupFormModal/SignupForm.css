@@ -1,10 +1,19 @@
+.menu-buttons {
+    color: black;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+
+.menu-buttons:hover {
+    background-color: rgb(245, 245, 245);
+}
+
 .login-button {
     display: flex;
     margin-left: 10rem;
-    margin-top: 10rem;
+
 
 }
-
 
 .welcome {
     text-align: center;
@@ -15,20 +24,37 @@
 }
 
 .signup-div {
-    margin-right: 11rem;
+    margin-right: 15rem;
 }
 
 .signup-div button {
-    width: 450px;
+    width: 400px;
     height: 50px;
     justify-content: center;
     color: white;
-    border-radius: 13px;
+    border-radius: 10px;
     background-image: radial-gradient(circle at center center, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%);
+    margin-left: 50px;
     font-size: 16px;
-    margin-bottom: 30px;
-    border-color: white
 }
+
+.input-containers {
+    width: fit-content;
+    width: 1000px;
+    padding: 20px;
+  }
+
+  input {
+    width: 50%;
+    height: fit-content;
+    padding: 30px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 2px solid rgb(226, 224, 224);
+    border-radius: 10px;
+    display: flex;
+  }
+
 
 #border-line {
     width: 100%;
@@ -38,16 +64,5 @@
 }
 
 #signup-text {
-    margin-top: 10px;
+    margin-top: 11px; 
 }
-
-#email {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-#username {
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-

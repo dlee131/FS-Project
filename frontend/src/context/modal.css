@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   margin: auto;
+
 }
 
 #modal-background {
@@ -26,9 +27,12 @@
 }
 
 #modal-content {
+  width: 540px;
+  height: 630px;
   position: absolute;
   background-color:white;
   border-radius: 20px;
   transition-timing-function: ease-out;
   animation: transition 0.5s;
+  margin: auto;
 }

@@ -16,9 +16,12 @@
 
 .menu-buttons {
     color: black;
-    font-size: 14px;
     font-family: Arial, sans-serif;
     padding: 10px;
+}
+
+.menu-buttons:hover {
+    background-color: rgb(245, 245, 245);
 }
 
 /* .menu-buttons:hover {
@@ -86,5 +89,5 @@
 }
 
 #logout-text:hover{
-    background-color: rgb(242, 238, 238);
+    background-color: rgb(245, 245, 245);
 }
