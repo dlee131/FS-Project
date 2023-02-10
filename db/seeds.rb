@@ -46,7 +46,7 @@ ApplicationRecord.transaction do
       nightly_price: 120,
       num_bedrooms: 1,
       num_beds: 1,
-      num_baths: 1,
+      num_bathrooms: 1,
       pets_allowed: true
     )
 
@@ -63,7 +63,7 @@ ApplicationRecord.transaction do
       nightly_price: 520,
       num_bedrooms: 4,
       num_beds: 5,
-      num_baths: 2,
+      num_bathrooms: 2,
       pets_allowed: false
     )
 
@@ -80,7 +80,7 @@ ApplicationRecord.transaction do
       nightly_price: 380,
       num_bedrooms: 2,
       num_beds: 3,
-      num_baths: 2,
+      num_bathrooms: 2,
       pets_allowed: true,
     )
 
@@ -97,7 +97,7 @@ ApplicationRecord.transaction do
       nightly_price: 140,
       num_bedrooms: 1,
       num_beds: 1,
-      num_baths: 1,
+      num_bathrooms: 1,
       pets_allowed: false
     )
 
@@ -114,13 +114,13 @@ ApplicationRecord.transaction do
       nightly_price: 870,
       num_bedrooms: 5,
       num_beds: 10,
-      num_baths: 5,
+      num_bathrooms: 5,
       pets_allowed: false
     )
 
     listing_6 = Listing.create!(
       host_id: 8,
-      title: "",
+      title: "The Sunnyside",
       description: "Sunny room in East Village – close to everything",
       city: "New York",
       state: "New York",
@@ -131,7 +131,7 @@ ApplicationRecord.transaction do
       nightly_price: 370,
       num_bedrooms: 2,
       num_beds: 2,
-      num_baths: 2,
+      num_bathrooms: 2,
       pets_allowed: true
     )
 
@@ -148,7 +148,7 @@ ApplicationRecord.transaction do
       nightly_price: 70,
       num_bedrooms: 1,
       num_beds: 1,
-      num_baths: 1,
+      num_bathrooms: 1,
       pets_allowed: true
     )
 
@@ -156,8 +156,8 @@ ApplicationRecord.transaction do
       host_id: 7,
       title: "The Northern Colonial",
       description: "Private Bedroom in Denver Close to Everything",
-      city: "",
-      state: "Denver",
+      city: "Denver",
+      state: "Colorado",
       country: "United States",
       zip_code: 80205,
       latitude: 39.751086, 
@@ -165,7 +165,7 @@ ApplicationRecord.transaction do
       nightly_price: 70,
       num_bedrooms: 2,
       num_beds: 2,
-      num_baths: 1,
+      num_bathrooms: 1,
       pets_allowed: false
     )
 
@@ -183,7 +183,7 @@ ApplicationRecord.transaction do
       nightly_price: 890,
       num_bedrooms: 3,
       num_beds: 6,
-      num_baths: 3,
+      num_bathrooms: 3,
       pets_allowed: false
     )
 
@@ -200,7 +200,7 @@ ApplicationRecord.transaction do
       nightly_price: 70,
       num_bedrooms: 2,
       num_beds: 2,
-      num_baths: 1,
+      num_bathrooms: 1,
       pets_allowed: false
     )
 
@@ -217,11 +217,9 @@ ApplicationRecord.transaction do
       nightly_price: 70,
       num_bedrooms: 6,
       num_beds: 8,
-      num_baths: 4,
+      num_bathrooms: 4,
       pets_allowed: false
     )
 
-
-  
     puts "Done!"
   end

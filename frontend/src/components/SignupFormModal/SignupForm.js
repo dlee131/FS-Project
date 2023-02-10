@@ -46,10 +46,10 @@ function SignupFormPage() {
         Log in or sign up
       </div>
       <div id="border-line"></div>
-      <h1 id="welcome-text">Welcome to Breezebnb</h1>
+      <h1 id="welcome-text">Welcome to Melobnb</h1>
       <div className="input-containers">
           <input
-            type="text"
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
@@ -57,7 +57,7 @@ function SignupFormPage() {
           />
 
         <input
-          type="text"
+          type="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Username"

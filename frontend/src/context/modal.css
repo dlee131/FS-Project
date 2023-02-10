@@ -33,6 +33,6 @@
   background-color:white;
   border-radius: 20px;
   transition-timing-function: ease-out;
-  animation: transition 0.5s;
+  animation: transition 0.4s;
   margin: auto;
 }

@@ -20,6 +20,10 @@
     border-radius: 10px;
   }
 
+  input:focus {
+    outline: groove;
+  }
+
 .login-div button {
     width: 400px;
     height: 50px;

@@ -55,6 +55,10 @@
     display: flex;
   }
 
+  input:focus {
+    border: none;
+  }
+
 
 #border-line {
     width: 100%;
@@ -66,3 +70,4 @@
 #signup-text {
     margin-top: 11px; 
 }
+

@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
 
-    validates :host_id, :title, :description, :price, :city, :state, :country, :zip_code :latitude, :longitude, :pets_allowed, presence: true
+    validates :host_id, :title, :description, :price, :city, :state, :country, :zip_code, :latitude, :longitude, :pets_allowed, presence: true
     validates :nightly_price, inclusion: { in: 10...3000, message: "must be between $10 and $3000" } 
     validates :num_beds, :num_bathrooms, :num_bedrooms, numericality: {in: 0..5}
 
