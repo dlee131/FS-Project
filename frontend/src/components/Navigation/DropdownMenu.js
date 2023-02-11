@@ -11,6 +11,25 @@ const DropDownMenu = ({user}) => {
 const dispatch = useDispatch();
 const [isOpen, setIsOpen] = useState(false);
 
+// const openMenu = () => {
+//   if (isOpen) return;
+//   setIsOpen(true);
+// };
+
+// useEffect(() => {
+//   if (!isOpen) return;
+
+//   const closeMenu = () => {
+//     setIsOpen(false);
+//   };
+
+//   document.addEventListener('click', closeMenu);
+
+//   return () => document.removeEventListener("click", closeMenu);
+// }, []);
+
+
+
 const logout = (e) => {
   e.preventDefault();
   dispatch(sessionActions.logout());
@@ -37,7 +56,7 @@ if (user) {
     <div className='dropdown-borderbox'>
         <div><LoginFormModal/></div>
         <div><SignupFormModal/></div>
-        <div><a href="#" onClick={demoLogin} style={{ textDecoration: "none" }}><div className="menu-buttons">Demo Login</div></a></div>
+       <a href='#demo' onClick={demoLogin} style={{ textDecoration: "none" }}><div className="menu-buttons">Demo Login</div></a>
     </div>
 }
 
@@ -63,7 +82,7 @@ return (
 
     {isOpen && (
     <div className="dropdown-menu">
-        <a className="dropdown-item">{options}</a>
+        <a href='#options' className="dropdown-item">{options}</a>
     </div>
     )}
   </div>

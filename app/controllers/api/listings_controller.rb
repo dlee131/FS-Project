@@ -1,6 +1,5 @@
 class Api::ListingsController < ApplicationController 
 
-
   def index
     @listings = Listing.all
     render :index
@@ -20,7 +19,7 @@ class Api::ListingsController < ApplicationController
   end
 
   def update
-    
+
   end
 
 end

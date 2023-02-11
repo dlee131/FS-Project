@@ -5,7 +5,13 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
 ApplicationRecord.transaction do 
+
+  require "open-uri"
+
+  
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
     User.destroy_all
@@ -14,7 +20,8 @@ ApplicationRecord.transaction do
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
-  
+    ApplicationRecord.connection.reset_pk_sequence!('listings')
+    
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
     # USING THIS FOR DEMO LOGIN! 
@@ -49,6 +56,9 @@ ApplicationRecord.transaction do
       num_bathrooms: 1,
       pets_allowed: true
     )
+# DONT WRAP SEED CODE IN APPLICATIONRECORD.TRANSACTION 
+
+
 
     listing_2 = Listing.create!(
       host_id: 1,
