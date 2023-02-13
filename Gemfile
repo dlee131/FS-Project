@@ -38,7 +38,7 @@ gem "bootsnap", require: false
 
 
 gem "faker"
-# gem "aws-sdk-s3"
+gem "aws-sdk-s3"
 
 
 group :development, :test do

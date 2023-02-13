@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
@@ -21,11 +21,12 @@ const [isOpen, setIsOpen] = useState(false);
 
 //   const closeMenu = () => {
 //     setIsOpen(false);
-//   };
-
+//   };  
+//   // console.log(isOpen)
 //   document.addEventListener('click', closeMenu);
-
+//   // console.log(isOpen)
 //   return () => document.removeEventListener("click", closeMenu);
+//   // console.log(isOpen)
 // }, []);
 
 
@@ -39,6 +40,7 @@ const demoLogin = (e) => {
     e.preventDefault();
     return dispatch(sessionActions.login({ credential:"Demo-lition", password:"password" }))
 }
+
 let options;
 if (user) {
   options = 
@@ -51,6 +53,7 @@ if (user) {
         </NavLink></div>
       </div>
     </div>
+
 } else if (!user) {
       options = 
     <div className='dropdown-borderbox'>

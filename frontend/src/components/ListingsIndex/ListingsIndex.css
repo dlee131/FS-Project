@@ -1,0 +1,40 @@
+.listings-index {
+    margin-top: 90px;
+    padding : 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+    grid-gap: 0px;
+}
+
+.listings {
+    margin: -10px;
+}
+
+.listing-city {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-top: 5px;
+
+}
+
+.listing-state {
+
+}
+
+.listing-price {
+    font-size: 16px;
+    font-weight: 500px;
+    padding-left: 10px;
+
+}
+
+.listing-pics {
+    width: 330px;
+    height: 280px;
+    box-sizing: border-box;
+    webkit-box-sizing: border-box;
+    border-radius: 10px;
+}

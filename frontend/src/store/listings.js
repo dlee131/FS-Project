@@ -3,23 +3,26 @@ import csrfFetch from "./csrf";
 const RECEIVE_LISTINGS = 'listings/receiveListings' 
 const RECEIVE_LISTING = 'listings/receiveListing'
 
-const receiveListings = listings => {
+export const receiveListings = listings => {
     return { 
         type: RECEIVE_LISTINGS,
         listings
     };
 };
 
-const receiveListing = listing => {
+export const receiveListing = listing => {
     return {
         type: RECEIVE_LISTING,
         listing
     };
 };
 
-export const fetchListings = (filters) => async dispatch => {
-    const filter = new URLSearchParams(filters);
-    const response = await csrfFetch(`/api/listings?${filter}`)
+export const getListings = (state) => state.listings ? Object.values(state.listings) : [];
+export const getListing = (listingId) => (state) => state.listings ? state.listings[listingId] : null
+
+
+export const fetchListings = () => async dispatch => {
+    const response = await csrfFetch(`/api/listings`)
     if (response.ok) {
         const data = await response.json();
         dispatch(receiveListings(data))

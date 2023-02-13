@@ -10,16 +10,22 @@ class Api::ListingsController < ApplicationController
     render :show
   end
 
-  def create
+  # def create
 
+  # end
+
+  # def destroy
+
+  # end
+
+  # def update
+
+  # end
+
+  private
+  def set_listing
+    @listing = Listing.find(params[:id])
+  rescue
+    render json: ['Listing not found'], status: :not_found
   end
-
-  def destroy
-
-  end
-
-  def update
-
-  end
-
 end
