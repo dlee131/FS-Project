@@ -12,7 +12,7 @@ function App() {
         <Route exact path="/">
           <ListingIndex />
         </Route>
-        <Route exact path="/listings/:listingId">
+        <Route path="/listings/:listingId">
           <ListingPage />
         </Route>
         </Switch>

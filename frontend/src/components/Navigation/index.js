@@ -27,7 +27,6 @@ function Navigation(){
 
   
   return (
-    <>
     <div className='header'>
         <NavLink exact to="/" className="nav-link" style={{ textDecoration: "none" }}>
         <div className="logo-image">
@@ -37,7 +36,6 @@ function Navigation(){
         </NavLink>
         <div>{<DropDownMenu user={sessionUser}/>}</div>
     </div>
-    </>
   );
 }
 

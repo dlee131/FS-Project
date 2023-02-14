@@ -20,6 +20,11 @@ foreign_key: :host_id,
 class_name: :Listing,
 dependent: :destroy
 
+has_many :reservations,
+class_name: :Reservation,
+dependent: :destroy
+
+
 def self.find_by_credentials(credential, password) 
     match = URI::MailTo::EMAIL_REGEXP
    if match.match?(credential)

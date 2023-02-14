@@ -3,8 +3,7 @@
     flex-direction: column;
     margin-left: 180px;
     margin-top: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
   }
 
 
@@ -22,19 +21,26 @@
     border-bottom: 1px solid black;
     width: 215px; */
     margin-left: 10px; 
-    
+    line-height: 1.2;
+}
+
+.listing-location i {
+    display: inline-block;
+    font-size: 13px;
+    vertical-align: middle;
+    height: 15px;
 }
 
 .residence-type {
-    font-size: 25px;
-    font-weight: 100;
+    font-size: 22px;
+    font-weight: 400;
     margin-top: 50px;
     margin-left: 10px;
 }
 
 .listing-bed {
     font-size: 16px;
-    font-weight: 100;
+    font-weight: 400;
     margin-top: 0px;
     margin-left: 10px;
 }
@@ -46,12 +52,14 @@
 }
 
 .description {
-    width: 600px;
+    width: 650px;
     word-wrap: break-word;
     margin-top: 40px;
-    font-size: 17px;
-    font-weight: 100;
+    font-size: 15px;
+    font-weight: 300;
     margin-left: 10px;
+    margin-bottom: 40px;
+    line-height: 1.5;
 }
 
 .listing-images {
@@ -59,6 +67,7 @@
     padding-bottom: 20px;
     margin-left: 10px;
     max-height: 400px;
+    margin-right: 190px;
 }
 
 .col-2 {
@@ -76,29 +85,55 @@
     grid-template-rows: 200px 200px;
     gap: 5px;
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 20px; 
 }
 
 .listing-images-grid img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 50% 50%;
     /* grid-column: 2 / span 1;
     grid-row: 2 / span 1;
     height: 200px;
     object-fit: cover;
     /* border-radius: 10px; */
-  
-
 }
-
 
 .image-container {
-    margin-right: 10px;
+    margin-right: 2px;
 }
 
-/* .image-container img {
+.requirements {
+    margin-left: 10px;
+    font-weight: 400;
+    font-size: 16px;
+}
 
-  } */
+.air-logo {
+    color:red;
+}
 
+.aircover-logo {
+    margin-top: 30px;
+    margin-left: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+}
+
+.aircover-text {
+    width: 650px;
+    word-wrap: break-word;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 300;
+    margin-left: 10px;
+    margin-bottom: 50px;
+    line-height: 1.5;
+}
+
+.amenities-header {
+    font-weight: 500;
+    font-size: 22px;
+    margin-left: 10px;
+}
