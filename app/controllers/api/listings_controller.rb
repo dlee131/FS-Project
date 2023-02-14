@@ -26,6 +26,6 @@ class Api::ListingsController < ApplicationController
   def set_listing
     @listing = Listing.find(params[:id])
   rescue
-    render json: ['Listing not found'], status: :not_found
+    render json: ['Unable to find listing'], status: :not_found
   end
 end

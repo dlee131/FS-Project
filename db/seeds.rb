@@ -17,12 +17,14 @@ ApplicationRecord.transaction do
     # Unnecessary if using `rails db:seed:replant`
     User.destroy_all
     Listing.destroy_all
+    Reservation.destroy_all
+
 
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
     ApplicationRecord.connection.reset_pk_sequence!('listings')
-
+    ApplicationRecord.connection.reset_pk_sequence!('reservations')
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
     # USING THIS FOR DEMO LOGIN! 
@@ -172,7 +174,7 @@ ApplicationRecord.transaction do
 
 
     listing_4 = Listing.create!(
-      host_id: 7,
+      host_id: 3,
       title: "Willy's Stay",
       description: "Welcome to Willy's Stay! Our cozy house in Flushing is the perfect place for solo travelers looking for a comfortable and peaceful retreat. With one spacious bedroom and a modern bathroom, our house is the ideal choice for guests who value privacy and comfort. Our house is fully equipped with all the modern amenities you need to feel at home. You can enjoy high-speed Wi-Fi, cable TV, and a comfortable bed that will ensure you have a restful night's sleep.",
       city: "Flushing",

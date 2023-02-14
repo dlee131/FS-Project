@@ -28,7 +28,7 @@
     display: inline-block;
     font-size: 13px;
     vertical-align: middle;
-    height: 15px;
+    height: 17px;
 }
 
 .residence-type {
@@ -70,12 +70,12 @@
     margin-right: 190px;
 }
 
-.col-2 {
+.col2 {
     grid-column: span 2;
     margin-right: 30px;
 }
 
-.row-2 {
+.row2 {
     grid-row: span 2;
 }
 
@@ -83,9 +83,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 200px 200px;
-    gap: 5px;
+    gap: 3px;
     overflow: hidden;
-    border-radius: 20px; 
+    border-radius: 13px;
+    margin-right: 10px; 
 }
 
 .listing-images-grid img {
@@ -103,11 +104,44 @@
     margin-right: 2px;
 }
 
+.requirements-margin {
+    line-height: 0.1;
+}
+
+
 .requirements {
+    display: inline-block;
     margin-left: 10px;
     font-weight: 400;
     font-size: 16px;
+    line-height: 1.2;
+    height: 65px;
+    
 }
+
+.requirement {
+    margin-bottom: 40px;
+    margin-left: 45px;
+    vertical-align: middle;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(113, 113, 113);
+    word-wrap: break-word;
+    width: 500px;
+}
+
+
+.requirements i {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 5px;
+    height: 22px;
+    margin-right: 7px;
+}
+
 
 .air-logo {
     color:red;
@@ -136,4 +170,12 @@
     font-weight: 500;
     font-size: 22px;
     margin-left: 10px;
+    margin-bottom: 300px;
+}
+
+.map-header {
+    font-weight: 500;
+    font-size: 22px;
+    margin-left: 12px;
+    margin-bottom: 300px;
 }
