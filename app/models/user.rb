@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  email           :string           not null
+#  username        :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 class User < ApplicationRecord
 
 before_validation :ensure_session_token
@@ -24,6 +36,9 @@ has_many :reservations,
 class_name: :Reservation,
 dependent: :destroy
 
+has_many :hosted_reservations,
+through: :reservations,
+source: :listings
 
 def self.find_by_credentials(credential, password) 
     match = URI::MailTo::EMAIL_REGEXP

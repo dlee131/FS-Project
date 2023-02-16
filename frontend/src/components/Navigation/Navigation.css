@@ -9,7 +9,7 @@
     padding-left: 70px;
     padding-right: 40px;
     height: 80px;
-    /* z-index: 1000; */
+
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #dfd7d7;
@@ -26,7 +26,7 @@
     color: black;
     font-family: Arial, sans-serif;
     padding: 10px;
-    
+    z-index: 100;
 }
 
 .menu-buttons:hover {
@@ -78,6 +78,7 @@
 } */
 
 .dropdown-borderbox {
+    z-index: 15;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -90,16 +91,18 @@
     width: 200px;
     right: 2%;
     margin-top: 10px;
-    margin-right: 25px;
+    margin-right: 12px;
     background-color: white;
+
 }
 
 #logout-text {
     color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 13px;
     padding: 10px;
     font-weight: 500;
+    z-index: 10;
 }
 
 #logout-text:hover{

@@ -1,7 +1,8 @@
 .menu-buttons {
     color: black;
-    font-family: Arial, sans-serif;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
     padding: 10px;
+    font-size: 13px;
 }
 
 .menu-buttons:hover {
@@ -11,8 +12,6 @@
 .login-button {
     display: flex;
     margin-left: 10rem;
-
-
 }
 
 .welcome {

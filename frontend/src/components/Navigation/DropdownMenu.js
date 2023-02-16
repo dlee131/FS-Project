@@ -50,6 +50,9 @@ if (user) {
           <div id="logout-text">
           Log Out
           </div>
+          <div>
+            
+          </div>
         </NavLink></div>
       </div>
     </div>
@@ -93,55 +96,3 @@ return (
 }
 
   export default DropDownMenu
-
-
-
-// const dispatch = useDispatch()
-// const [showMenu, setShowMenu] = useState(false);
-
-// const logout = (e) => {
-//   e.preventDefault();
-//   dispatch(sessionActions.logout());
-// };
-
-// const demoLogin = (e) => {
-//     e.preventDefault();
-//     return dispatch(sessionActions.login({ credential:"Demo-lition", password:"password" }))
-// }
-
-// const openMenu = () => {
-//   if (showMenu) return;
-//   setShowMenu(true);
-// };
-
-// useEffect(() => {
-//   if (!showMenu) return;
-
-//   const closeMenu = () => {
-//     setShowMenu(true);
-//   };
-
-//   document.addEventListener('click', closeMenu);
-
-//   return () => document.removeEventListener("click", closeMenu);
-// }, [showMenu]);
-
-// let options;
-// if (user) {
-//   options = 
-//         <li><NavLink to="/" onClick={logout}>Log Out</NavLink></li>
-//     </ul>
-// } else {
-//   options = 
-
-//         <li><LoginFormModal /></li>
-//         <li><SignupFormModal /></li>
-//     </ul>
-// }
-
-// return (
-//   <>
-
-//   {options}
-//   </>
-// )

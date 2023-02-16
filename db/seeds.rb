@@ -118,7 +118,7 @@ ApplicationRecord.transaction do
 
 
     listing_2 = Listing.create!(
-      host_id: 1,
+      host_id: 6,
       title: "The Aurora",
       description: "Experience the beauty of Alaska from the comfort of 'The Aurora'. This spacious house is nestled in the heart of Alaska and offers breathtaking views of the Denali National Park. With four bedrooms and two bathrooms, there's plenty of room for your family or friends to enjoy a comfortable stay. The Aurora is conveniently located near local restaurants and shops, making it the perfect home base for your Alaskan adventure. Book your stay today!",
       city: "Santa Maria",
@@ -127,7 +127,7 @@ ApplicationRecord.transaction do
       zip_code: 93454,
       latitude: 34.934276,
       longitude: -120.413169,
-      nightly_price: 820,
+      nightly_price: 2900,
       num_bedrooms: 4,
       num_beds: 5,
       num_bathrooms: 2,

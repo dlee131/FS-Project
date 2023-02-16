@@ -5,15 +5,20 @@ class Api::ReservationsController < ApplicationController
 
   def index
     @reservations = current_user.reservations
-      render: index
+      render :index
+  end
+
+  def show
+    @reservations = current_user.reservations
   end
 
   def create
+    
     @reservation = Reservation.new(reservation_params)
     if @reservation.save
       render :show
     else
-      render :json @reservation.errors.full_messages, status: 422
+      render json: @reservation.errors.full_messages, status: 422
     end
   end
 
@@ -32,7 +37,7 @@ class Api::ReservationsController < ApplicationController
     if @reservation
       @reservation.destroy
     else
-      render json: @reservation.errors.full_messages, status: 422
+      render json: { message: "Listing cannot be found."}, status: 404
     end
   end
 

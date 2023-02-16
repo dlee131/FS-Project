@@ -8,6 +8,8 @@ import './Navigation.css';
 import logo from '../../img/bnb_logo.jpeg'
 import DropDownMenu from './DropdownMenu';
 
+
+
 function Navigation(){
   const sessionUser = useSelector(state => state.session.user);
   // const [showDropdown, setshowDropdown] = useState(true)
@@ -27,7 +29,6 @@ function Navigation(){
 
   
   return (
-
     <div className='header'>
         <NavLink exact to="/" className="nav-link" style={{ textDecoration: "none" }}>
         <div className="logo-image">
@@ -36,7 +37,7 @@ function Navigation(){
         </div>
         </NavLink>
         <div>{<DropDownMenu user={sessionUser}/>}</div>
-    </div>
+    </div>    
   );
 }
 

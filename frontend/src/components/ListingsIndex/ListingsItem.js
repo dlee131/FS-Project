@@ -14,6 +14,7 @@ function ListingItem({ listing, handleClick }) {
               {listing.city}, {listing.state}<i className="fa fa-star "></i>{listing.ratings}
             </p>
           </div>
+          <div className="listing-beds">{listing.numBeds > 1 ? `${listing.numBeds} beds` : `${listing.numBeds} bed`}</div>
           <div>
             <p className="listing-price">
               <a className="numeric">${listing.nightlyPrice}</a> night

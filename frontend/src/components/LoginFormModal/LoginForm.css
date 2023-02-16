@@ -1,8 +1,9 @@
 .menu-button {
     color: black;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
+    font-weight: 600;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
     padding: 10px;
+    font-size: 13px;
 }
 
 .menu-button:hover {

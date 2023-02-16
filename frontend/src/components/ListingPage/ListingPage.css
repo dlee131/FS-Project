@@ -31,11 +31,28 @@
     height: 17px;
 }
 
+.info-container {
+
+    margin: 48px 0 48px 0;
+    display: flex;
+}
+
+.listing-info {
+    flex-direction: column;
+    width: 100%;
+    line-height: 1.25;
+  }
+
 .residence-type {
     font-size: 22px;
     font-weight: 400;
     margin-top: 50px;
     margin-left: 10px;
+}
+
+.reservation-listing-form {
+    margin-right: 200px;
+    margin-top: 10px;
 }
 
 .listing-bed {
