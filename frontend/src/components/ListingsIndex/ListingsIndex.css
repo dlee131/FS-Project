@@ -8,6 +8,7 @@
     z-index: 1; */
     grid-gap: 10px;
     margin-right: 40px;
+    margin-bottom: 60px;
 }
 
 .listings {
@@ -43,6 +44,12 @@
 
 }
 
+.listing-index-title {
+    margin-left: 10px;
+    font-size: 15px;
+    color: grey;
+}
+
 .listing-pics {
     width: 330px;
     height: 330px;
@@ -52,6 +59,17 @@
 }
 
 .numeric {
-    font-weight: bold;
+    font-weight: 550;
+    font-size: 15px;
 }
 
+.border-line {
+    border-bottom: 1px solid rgb(223, 221, 240);
+    /* width: 650px;
+    margin-left: 10px; */
+}
+
+.footer {
+    /* margin-top: 100px; */
+    
+}

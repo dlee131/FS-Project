@@ -13,7 +13,7 @@ function ReservationForm () {
     const dispatch = useDispatch();
     const [startDate, setStartDate] = useState('')
     const [endDate, setEndDate] = useState('');
-    const [numGuests, setNumGuests] = useState()
+    const [numGuests, setNumGuests] = useState(1)
     // const [adults, setAdults] = useState(1)
     // const [children, setChildren] = useState(0)
     const [toggledDropDown, setToggledDropDown] = useState(false);
@@ -39,9 +39,18 @@ function ReservationForm () {
         e.preventDefault()
         setErrors([])
 
-        const reservation = { listingId, userId, startDate, endDate, numGuests }
-
+        const reservation = {reservation: { 
+            listingId,
+            userId,
+            startDate,
+            endDate,
+            numGuests: numGuests
+        }
+        }
+    
+        // debugger
         return dispatch(createReservation(reservation))
+        
             .catch(async (res) => {
                 let data;
                 try {
@@ -59,10 +68,12 @@ function ReservationForm () {
     return (
 
         <form className='reservation-form' onSubmit={handleSubmit}>
-            <div className="res-header">
+            <div className='reservation-form-wrapper'>
+             <div className="res-header">
                 <div className="price">${listing.nightlyPrice} night</div>
                 <span><i className="fa fa-star "></i>{listing.ratings}</span>
             </div>
+            <div className="form-inputs-wrapper">
             <div className="form-input">
                 <div className="date-title">
                     <h3 className="check-in-date">CHECK-IN</h3>
@@ -73,8 +84,10 @@ function ReservationForm () {
                         onChange={(e) => setStartDate(e.target.value)}
                         min={moment().add(1, 'day').format("YYYY-MM-DD")} required/>
                 </div>
-                    <div className="date-title">
-                        <h4 className="checkout-date">CHECKOUT</h4>
+                <div className="date-title">
+                    <div className="check-out-date">
+                        <h4 className="check-in-date">CHECKOUT</h4>
+                    </div>
                         <input type="date" 
                         value={endDate} 
                         onChange={(e) => {
@@ -85,9 +98,11 @@ function ReservationForm () {
             <div className="guests-container" onClick={dropdown}>
                     <div>
                         <h3 className="guests">Guests</h3>
-                        <p>{listing.numBeds === 1 ? '1 guest' : `${listing.numBeds} guests`}</p>
+                        <p>{numGuests} guests</p>
                     </div>
-                    {!toggledDropDown ? <i className="fa-sharp fa-solid fa-chevron-down"></i> : <i className="fa-solid fa-chevron-up"></i>}
+                    {/* {!toggledDropDown ? <i className="fa-sharp fa-solid fa-chevron-down"></i> : <i className="fa-solid fa-chevron-up"></i>} */}
+             </div>
+            </div>
             </div>
             <button className="reserve-button"><div>Reserve</div></button>
         </form>

@@ -44,6 +44,7 @@ function LoginFormPage() {
       <div className="input-container">
       <label id="username">
         <input
+          className="placeholder-input"
           type="username"
           value={credential}
           onChange={(e) => setCredential(e.target.value)}
@@ -53,6 +54,7 @@ function LoginFormPage() {
       </label>
       <label id="password">
         <input
+          className="placeholder-input"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}

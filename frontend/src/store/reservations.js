@@ -31,8 +31,8 @@ export const getReservations = (state) => {
     return state.reservations ? Object.values(state.reservations) : []
 }
 
-export const fetchReservations = (listingId) => async dispatch => {
-    const res = await csrfFetch(`/api/listings/${listingId}/reservations`)
+export const fetchReservations = () => async dispatch => {
+    const res = await csrfFetch(`/api/reservations`)
     if (res.ok) {
         let data = await res.json()
         dispatch(receiveReservations(data))
@@ -48,6 +48,7 @@ export const fetchReservation = (reservationId) => async dispatch => {
 }
 
 export const createReservation = (reservationObj) => async dispatch => {
+        // debugger
     const res = await csrfFetch(`/api/reservations`, {
         method: 'POST',
         headers: {
@@ -55,7 +56,7 @@ export const createReservation = (reservationObj) => async dispatch => {
         },
         body: JSON.stringify(reservationObj)
     }) 
-    debugger
+    // debugger
     if (res.ok) {
         const reservation = await res.json();
         dispatch(receiveReservations(reservation))

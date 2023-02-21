@@ -36,6 +36,20 @@
     font-size: 16px;
     margin: 50px;
     border-color: rgb(227, 28, 95);
+    border: none;
+    /* height: 30px;
+    color: white;
+    background-image: radial-gradient(circle at center center, rgb(227, 46, 88) 27.5%, rgb(227, 28, 95) 40%);
+    text-align: center;
+    border-radius: 10px;
+    width: 300px;
+    opacity: 0.9;
+    padding: 10%;
+    border: none; */
+}
+
+.login-div button:hover {
+    background-color: rgb(227, 46, 88);
 }
 
 #login-text {
@@ -61,6 +75,6 @@
 #border-line {
     width: 100%;
     border: 0;
-    margin-top: 40px;
+    margin-top: 43px;
     border-bottom: 1px solid rgb(221, 211, 211);
 }

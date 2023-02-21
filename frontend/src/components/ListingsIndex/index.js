@@ -40,6 +40,8 @@ function ListingsIndexPage() {
           </div>
         ))}
       </div>
+      <div className="border-line"></div>
+      <div className="footer"></div>
       </div>
     );
 };

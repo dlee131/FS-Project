@@ -20,6 +20,7 @@
     /* display: inline-block;
     border-bottom: 1px solid black;
     width: 215px; */
+    margin-top: 10px;
     margin-left: 10px; 
     line-height: 1.2;
 }
@@ -85,6 +86,7 @@
     margin-left: 10px;
     max-height: 400px;
     margin-right: 190px;
+    margin-top: 5px;
 }
 
 .col2 {
@@ -143,8 +145,8 @@
     font-size: 14px;
     font-weight: 400;
     color: rgb(113, 113, 113);
-    word-wrap: break-word;
-    width: 500px;
+    /* word-wrap: break-word;  */
+    /* width: 500px; */
 }
 
 
@@ -187,12 +189,99 @@
     font-weight: 500;
     font-size: 22px;
     margin-left: 10px;
-    margin-bottom: 300px;
+    margin-bottom: 20px;
 }
 
 .map-header {
     font-weight: 500;
     font-size: 22px;
     margin-left: 12px;
-    margin-bottom: 300px;
+    margin-bottom: 50px;
+}
+
+#map-placeholder {
+    margin-bottom: 100px;
+}
+
+.amenities-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    /* flex-direction: column; */
+    /* justify-content: space-around; */
+
+    padding-top: 30px;
+}
+
+#amenities-icons {
+    display: inline-block
+}
+#amenities-icon {
+    /* display: flex;
+    align-items: center;
+    flex-wrap: wrap; */
+    display: inline-block
+}
+
+
+#amenities-icon img{
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    height: 100px;
+    width: 100px;
+    width: 10%;
+    height: 10%;
+    float: right; */
+    display: flex;
+    /* text-align: center; */
+    height: 60px;
+    width: 60px;
+   
+    margin-bottom: 40px;
+    vertical-align: middle;
+}
+
+#amenities-icon {
+    display: flex;
+    /* margin-left: 10px;  */
+    align-items: middle;
+    /* display: inline-block; */
+  vertical-align: middle;
+    /* text-align: center; */
+
+}
+
+.amenities-text {
+    margin-top: 25px;
+}
+
+.amenities-wifi {
+    margin-top: 20px;
+}
+
+.fa-sharp.fa-solid.fa-arrow-up-from-bracket {
+    margin-left: 550px;
+    margin-right: 7px;
+}
+
+.fa-sharp.fa-regular.fa-heart  {
+    margin-left: 7px;
+    margin-right: 5px;
+}
+
+.superhost {
+    font-weight: 100;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.share {
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.save {
+    text-decoration: underline;
+    font-size: 14px;
 }

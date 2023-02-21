@@ -14,6 +14,7 @@
     justify-content: space-between;
     border-bottom: 1px solid #dfd7d7;
     background: white;
+    z-index: 10;
   }
 
 .logo-icon {
@@ -52,6 +53,7 @@
 .user-pic {
     width: 25px;
     height: 22px; 
+    border-radius: 10px;
 }
 
 .menu-icons {
@@ -108,3 +110,39 @@
 #logout-text:hover{
     background-color: rgb(245, 245, 245);
 }
+
+.searchbar {
+    height: 5px;
+    width: 400px;
+    border-radius: 30px;
+    font-size: 15px;
+    padding: 20px 25px;
+    margin-left: 450px;
+}
+
+.linkedin-git {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    justify-content: end;
+    
+}
+
+.github {
+    margin-left: 300px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.linkedin {
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+}
+
+

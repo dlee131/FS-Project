@@ -49,6 +49,7 @@ function SignupFormPage() {
       <h1 id="welcome-text">Welcome to Melobnb</h1>
       <div className="input-containers">
           <input
+            className="placeholder-input"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -57,6 +58,7 @@ function SignupFormPage() {
           />
 
         <input
+          className="placeholder-input"
           type="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
@@ -64,6 +66,7 @@ function SignupFormPage() {
           required
         />
         <input
+          className="placeholder-input"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -71,6 +74,7 @@ function SignupFormPage() {
           required
         />
         <input
+          className="placeholder-input"
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
