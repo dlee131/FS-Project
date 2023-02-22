@@ -62,6 +62,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_212917) do
     t.float "ratings"
     t.string "residence_type"
     t.index ["city"], name: "index_listings_on_city"
+    t.index ["country"], name: "index_listings_on_country"
     t.index ["host_id"], name: "index_listings_on_host_id"
     t.index ["state"], name: "index_listings_on_state"
     t.index ["zip_code"], name: "index_listings_on_zip_code"
