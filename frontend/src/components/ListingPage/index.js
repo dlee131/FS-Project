@@ -37,7 +37,7 @@ export const ListingPage = () => {
                     <div className="listing-location">
                         <i className="fas fa-star"></i> {listing.ratings} • <i class="fa-sharp fa-solid fa-medal"></i><span className="superhost">Superhost</span> • {listing.city}, {listing.state}, {listing.country} 
                         <i className="fa-sharp fa-solid fa-arrow-up-from-bracket"></i><span className="share">Share</span> 
-                        <i class="fa-sharp fa-regular fa-heart"></i><span className="save">Save</span>
+                        <i className="fa-sharp fa-regular fa-heart"></i><span className="save">Save</span>
                     </div>
                     
                     
@@ -60,7 +60,7 @@ export const ListingPage = () => {
                     <div className="requirements-margin">
                         <div className="requirements"><i className="fa-solid fa-door-open"></i> Self check-in</div>
                         <div className="requirement">Check yourself in with a smartlock.</div>
-                        <div className="requirements"><i class="fa-sharp fa-solid fa-medal"></i>{listing.userName} is a Superhost.</div>
+                        <div className="requirements"><i className="fa-sharp fa-solid fa-medal"></i>{listing.userName} is a Superhost.</div>
                         <div className="requirement">Superhosts are highly rated hosts who are committed to providing great stays for guests.</div>
                     </div>
                     <div className="borderline"></div>

@@ -31,13 +31,13 @@ window.addEventListener('keyup', (e) => {
   });
 });
     return (
-      <div class="input-group">
-        <div class="form-outline">
-          <input id="search-focus" type="search" class="form-control" />
-          <label class="form-label" for="form1">Search</label>
+      <div className="input-group">
+        <div className="form-outline">
+          <input id="search-focus" type="search" className="form-control" />
+          <label className="form-label" for="form1">Search</label>
         </div>
-        <button type="button" class="searchbutton">
-            <i class="fas fa-search"></i>
+        <button type="button" className="searchbutton">
+            <i className="fas fa-search"></i>
         </button>
       </div>
     )

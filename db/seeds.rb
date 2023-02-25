@@ -15,8 +15,8 @@ ApplicationRecord.transaction do
   
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
-    Reservation.destroy_all  
     Listing.destroy_all  
+    Reservation.destroy_all  
     User.destroy_all  
 
 
