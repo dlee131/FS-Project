@@ -9,7 +9,7 @@
 
 
 
-# ApplicationRecord.transaction do 
+ApplicationRecord.transaction do 
 
   require "open-uri"
   
@@ -25,7 +25,6 @@
     ApplicationRecord.connection.reset_pk_sequence!('reservations')
     ApplicationRecord.connection.reset_pk_sequence!('listings')
     ApplicationRecord.connection.reset_pk_sequence!('users')
-    
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
     # USING THIS FOR DEMO LOGIN! 
@@ -424,4 +423,4 @@
 
 
     puts "Done!"
-  # end
+  end
