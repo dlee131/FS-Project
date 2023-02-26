@@ -9,7 +9,7 @@
 
 
 
-ApplicationRecord.transaction do 
+# ApplicationRecord.transaction do 
 
   require "open-uri"
   
@@ -423,4 +423,4 @@ ApplicationRecord.transaction do
 
 
     puts "Done!"
-  end
+  # end
