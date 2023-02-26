@@ -15,16 +15,17 @@
   
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
-    Listing.destroy_all  
     Reservation.destroy_all  
-    User.destroy_all  
+    Listing.destroy_all  
+    User.destroy_all 
 
 
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
-    ApplicationRecord.connection.reset_pk_sequence!('users')
-    ApplicationRecord.connection.reset_pk_sequence!('listings')
     ApplicationRecord.connection.reset_pk_sequence!('reservations')
+    ApplicationRecord.connection.reset_pk_sequence!('listings')
+    ApplicationRecord.connection.reset_pk_sequence!('users')
+    
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
     # USING THIS FOR DEMO LOGIN! 
