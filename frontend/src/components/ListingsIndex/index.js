@@ -19,16 +19,9 @@ function ListingsIndexPage() {
     //     window.scrollTo(0,0)
     // }
     const handleClick = (listingId) => {
-      // console.log('handleClick called with listingId:', listingId);
       history.push(`/listings/${listingId}`);
       window.scrollTo(0, 0);
     };
-
-
-      
-
-        // to scroll up to the top-left corner when redirecting to an indiv listing
-    // const listingItem = listings.map(listing => <ListingsItem key={listing.id} listing={listing}/>)
      
     return (
 

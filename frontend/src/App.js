@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import ListingIndex from "./components/ListingsIndex";
 import ListingPage from "./components/ListingPage";
-// import ReservationIndex from "./components/Reservation";
+import ReservationIndex from "./components/Reservation";
 
 function App() {
   return (
@@ -16,9 +16,9 @@ function App() {
         <Route path="/listings/:listingId">
           <ListingPage />
         </Route>
-        {/* <Route path="/reservations">
+        <Route path="/reservations">
           <ReservationIndex/>
-        </Route> */}
+        </Route>
         </Switch>
     </>
   );

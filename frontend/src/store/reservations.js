@@ -28,8 +28,10 @@ export const removeReservation = (reservationId) => {
 }
 
 export const getReservations = (state) => {
+    debugger
     return state.reservations ? Object.values(state.reservations) : []
 }
+
 
 export const fetchReservations = () => async dispatch => {
     const res = await csrfFetch(`/api/reservations`)

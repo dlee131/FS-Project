@@ -1,23 +1,38 @@
-import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import * as tripActions from '../../store/trip'
-import { Modal } from '../../context/Modal';
-import LoginForm from '../LoginFormModal/LoginForm';
-import * as reviewsActions from "../../store/review";
-import moment from 'moment'
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import moment from "moment";
+import { getReservations, fetchReservations } from "../../store/reservations";
 
 function ReservationIndex() {
-    const sessionUser = useSelector(state => state.session.user);
-    const reservations = Object.values(useSelector(state => state.reservations));
-    const listings = useSelector(state => state.listings);
-    const dispatch = useDispatch();
-    const currentDate = moment();
+  const sessionUser = useSelector((state) => state.session.user);
+  const reservations = useSelector(getReservations);
+  debugger;
+  const dispatch = useDispatch();
+  const currentDate = moment();
+  console.log(sessionUser);
+  console.log(reservations);
+  // Filter reservations by user ID
+  const userReservations = reservations.filter(
+    (reservation) => reservation.userId === sessionUser.id
+  );
 
+  useEffect(() => {
+    dispatch(fetchReservations());
+  }, [dispatch]);
 
-    return (
-        <div> hi </div>
-    )
-
+  return (
+    <div>
+      {userReservations.map((reservation) => (
+        <div key={reservation.id}>
+          <p>
+            Start date: {moment(reservation.startDate).format("MM/DD/YYYY")}
+          </p>
+          <p>End date: {moment(reservation.endDate).format("MM/DD/YYYY")}</p>
+          <p>Number of Guests: {reservation.numGuests}</p>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default ReservationIndex;
