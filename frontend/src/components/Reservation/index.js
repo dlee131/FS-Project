@@ -8,7 +8,7 @@ function ReservationIndex() {
   const reservations = useSelector(getReservations);
   debugger;
   const dispatch = useDispatch();
-  const currentDate = moment();
+//   const currentDate = moment();
   console.log(sessionUser);
   console.log(reservations);
   // Filter reservations by user ID

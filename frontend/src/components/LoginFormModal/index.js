@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import { Modal } from '../../context/modal';
 import LoginForm from './LoginForm';
 
-function LoginFormModal() {
+function LoginFormModal({onClose}) {
   const [showModal, setShowModal] = useState(false);
+
+  const closeModal = () => {
+    setShowModal(false);
+    onClose();
+  };
 
   return (
     <>
@@ -13,7 +18,7 @@ function LoginFormModal() {
           </div>
         </a>
         {showModal && (
-          <Modal onClose={() => setShowModal(false)}>
+          <Modal onClose={closeModal}>
             <LoginForm />
           </Modal>
         )}

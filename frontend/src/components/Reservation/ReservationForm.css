@@ -1,16 +1,4 @@
 .reservation-form {
-    /* border: 1px solid rgb(221, 221, 221);
-    box-shadow: rgba(104, 104, 104, 0.12) 3px 10px 10px;
-    height: 300px;
-    width: 300px;
-    padding: 30px;
-    padding-bottom: 200px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    border-radius: 13px;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 120px; */
     border-radius: 10px;
     border: 1px solid rgb(221, 221, 221);
     box-shadow: rgba(0, 0, 0, 0.12) 1px 5px 13px;
@@ -66,22 +54,7 @@
     opacity: 0.9;
     padding: 6%;
     border: none;
-}
-
-.guests {
-
-}
-
-.date-title {
-
-
-    /* display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding: 7px 12px;
-  width: 100%; */
-    /* border-right: 1px solid lightgray;
-  margin-right: 20px; */
+    font-size: 16px;
 }
 
 .form-input-wrapper {

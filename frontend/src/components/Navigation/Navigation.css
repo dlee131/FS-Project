@@ -122,14 +122,17 @@
 
 .linkedin-git {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     margin: 10px;
+    margin-left: 300px;
     /* justify-content: end; */
     
 }
 
 .github {
-    margin-left: 300px;
+    display: flex;
+    justify-content: flex-end;
     height: 40px;
     width: 40px;
     display: flex;

@@ -14,13 +14,25 @@ const DropDownMenu = ({ user }) => {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    setIsOpen(false);
   };
-
+  
   const demoLogin = (e) => {
     e.preventDefault();
-    return dispatch(
+    dispatch(
       sessionActions.login({ credential: "Demo-lition", password: "password" })
     );
+    setIsOpen(false);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    handleClose();
+    dispatch(sessionActions.login());
   };
 
   let options;
@@ -29,8 +41,10 @@ const DropDownMenu = ({ user }) => {
       <div className="dropdown-borderbox">
         <div id="logout-button">
           <div>
+            <NavLink to="/reservations" style={{ textDecoration: "none" }}>
+            <div id="logout-text">Reservations</div>
+            </NavLink>
             <NavLink to="/" onClick={logout} style={{ textDecoration: "none" }}>
-              <div id="logout-text">Trips</div>
               <div id="logout-text">Account</div>
               <div id="logout-text">Log Out</div>
               <div></div>
@@ -43,10 +57,10 @@ const DropDownMenu = ({ user }) => {
     options = (
       <div className="dropdown-borderbox">
         <div>
-          <LoginFormModal />
+          <LoginFormModal onClose={handleClose} onClick={handleLogin}/>
         </div>
         <div>
-          <SignupFormModal />
+          <SignupFormModal onClose={handleClose}/>
         </div>
         <a href="#demo" onClick={demoLogin} style={{ textDecoration: "none" }}>
           <div className="menu-buttons">Demo Login</div>
@@ -64,7 +78,7 @@ const DropDownMenu = ({ user }) => {
   }
 
   return (
-    <div className="dropdown">
+    <div className="dropdown" >
       <button
         className="clickable-button"
         type="button"

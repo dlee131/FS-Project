@@ -112,12 +112,11 @@ function ReservationForm() {
               <h3 className="guests">Guests</h3>
               <p>{numGuests} guests</p>
             </div>
-            {/* {!toggledDropDown ? <i className="fa-sharp fa-solid fa-chevron-down"></i> : <i className="fa-solid fa-chevron-up"></i>} */}
           </div>
         </div>
       </div>
       <button className="reserve-button">
-        <div>Reserve</div>
+        <div>Check availability</div>
       </button>
     </form>
   );
