@@ -1,9 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
-import { getReservations, fetchReservations } from "../../store/reservations";
-import { getListings } from "../../store/listings";
-import { fetchListings } from "../../store/listings";
+import { getReservations, fetchReservations, updateReservation, deleteReservation} from "../../store/reservations";
+import { getListings, fetchListings } from "../../store/listings";
 import { useParams } from "react-router-dom";
 
 function ReservationIndex() {
@@ -24,6 +23,12 @@ function ReservationIndex() {
     dispatch(fetchListings(listingId));
   }, [listingId, dispatch]);
 
+  const handleDeleteReservation = (reservationId) => {
+    dispatch(deleteReservation(reservationId));
+    debugger
+  };
+
+
   return (
     <div>
       {userReservations.map((reservation) => (
@@ -31,6 +36,7 @@ function ReservationIndex() {
           <p>Start date: {moment(reservation.startDate).format("MM/DD/YYYY")}</p>
           <p>End date: {moment(reservation.endDate).format("MM/DD/YYYY")}</p>
           <p>Number of Guests: {reservation.numGuests}</p>
+          <button onClick={() => handleDeleteReservation(reservation.id)}>Delete</button>
         </div>
       ))}
     </div>

@@ -28,7 +28,7 @@ export const removeReservation = (reservationId) => {
 }
 
 export const getReservations = (state) => {
-    debugger
+    // debugger
     return state.reservations ? Object.values(state.reservations) : []
 }
 
@@ -80,31 +80,14 @@ export const updateReservation = (reservationObj) => async dispatch => {
 }
 
 export const deleteReservation = (reservationId) => async dispatch => {
-    const res = await fetch(`/api/reservations/${reservationId}`, {
+    const res = await csrfFetch(`/api/reservations/${reservationId}`, {
         method: 'DELETE'
     })
+    debugger
     if (res.ok)
     dispatch(removeReservation(reservationId))
+    debugger
 }
-
-// export const updateReport = (reportObj) => async dispatch => {
-//     const response = await fetch(`/api/reports/${reportObj.id}`, {
-//         method: 'PATCH',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(reportObj)
-//     })
-//     const report = await response.json();
-//     dispatch(receiveReport(report))
-// }
-
-// export const deleteReport = (reportId) => async dispatch => {
-//     const response = await fetch(`/api/reports/${reportId}`, {
-//         method: 'DELETE'
-//     })
-//     dispatch(removeReport(reportId))
-// }
 
 function reservationsReducer (state = {}, action) {
     const newState = { ...state }
@@ -114,7 +97,7 @@ function reservationsReducer (state = {}, action) {
     case RECEIVE_ALL_RESERVATIONS:
         return { ...action.reservations}
     case REMOVE_RESERVATION:
-        delete newState[action.reservation.id]
+        delete newState[action.reservationId]
         return newState
     default:
         return state

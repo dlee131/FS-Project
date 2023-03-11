@@ -15,12 +15,14 @@
 
 
  input {
-    /* cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    /* margin-right: 10px; */
+    cursor: pointer;
     outline: none;
     border: none;
     font-weight: 200;
-    width: 70%;
-   */
+    width: 80%;
  }
 
 
@@ -45,7 +47,7 @@
 }
 
 .reserve-button {
-    height: 50px;
+    height: 60px;
     color: white;
     background-image: radial-gradient(circle at center center, rgb(227, 46, 88) 27.5%, rgb(227, 28, 95) 40%);
     text-align: center;
@@ -55,6 +57,7 @@
     padding: 6%;
     border: none;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .form-input-wrapper {

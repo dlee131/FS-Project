@@ -15,7 +15,7 @@ export const receiveListing = listing => {
         type: RECEIVE_LISTING,
         listing
     };
-};
+};  
 
 export const getListings = (state) => state.listings ? Object.values(state.listings) : [];
 export const getListing = (listingId) => (state) => state.listings ? state.listings[listingId] : null
