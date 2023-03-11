@@ -22,7 +22,7 @@
     outline: none;
     border: none;
     font-weight: 200;
-    width: 80%;
+    width: 50%;
  }
 
 
@@ -103,10 +103,8 @@
     
 }
 
-/* .check-out-date {
+.reservations-index {
+    display: flex;
+    justify-content: space-between;
 
 }
-
-.guests-container {
-
-} */

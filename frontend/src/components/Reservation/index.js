@@ -20,27 +20,30 @@ function ReservationIndex() {
 
   useEffect(() => {
     dispatch(fetchReservations());
-    dispatch(fetchListings(listingId));
+    // dispatch(fetchListings(listingId));
   }, [listingId, dispatch]);
 
   const handleDeleteReservation = (reservationId) => {
     dispatch(deleteReservation(reservationId));
-    debugger
+    // debugger
   };
 
-
+  if (userReservations.length === 0) {
+    return <div> You have no reservations!</div>;
+  }
+  
   return (
     <div>
       {userReservations.map((reservation) => (
-        <div key={reservation.id}>
-          <p>Start date: {moment(reservation.startDate).format("MM/DD/YYYY")}</p>
-          <p>End date: {moment(reservation.endDate).format("MM/DD/YYYY")}</p>
-          <p>Number of Guests: {reservation.numGuests}</p>
-          <button onClick={() => handleDeleteReservation(reservation.id)}>Delete</button>
+        <div key={reservation.id} className="reservations-index">
+          <div>Start date: {moment(reservation.startDate).format("MM/DD/YYYY")}</div>
+          <div>End date: {moment(reservation.endDate).format("MM/DD/YYYY")}</div>
+          <div>Number of Guests: {reservation.numGuests}</div>
+          <button onClick={() => handleDeleteReservation(reservation.id)}>Cancel Reservation</button>
         </div>
       ))}
     </div>
-  );
+);
 }
 
 export default ReservationIndex;
