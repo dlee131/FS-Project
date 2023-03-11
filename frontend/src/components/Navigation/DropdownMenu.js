@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory, useLocation } from "react-router-dom";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 import * as sessionActions from "../../store/session";
@@ -10,10 +10,17 @@ import LoggedInUser from "../../img/loggedinuser.jpeg";
 const DropDownMenu = ({ user }) => {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const history = useHistory();
 
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    
+    if (location.pathname === "/reservations") {
+      // If the user is on the reservation index page, redirect to the listings index page
+      history.push("/");
+    }
     setIsOpen(false);
   };
   
@@ -41,7 +48,7 @@ const DropDownMenu = ({ user }) => {
       <div className="dropdown-borderbox">
         <div id="logout-button">
           <div>
-            <NavLink to="/reservations" style={{ textDecoration: "none" }}>
+            <NavLink to="/reservations" style={{ textDecoration: "none" }} onClick={() => setIsOpen(false)}>
             <div id="logout-text">Reservations</div>
             </NavLink>
             <NavLink to="/" onClick={logout} style={{ textDecoration: "none" }}>
@@ -57,10 +64,10 @@ const DropDownMenu = ({ user }) => {
     options = (
       <div className="dropdown-borderbox">
         <div>
-          <LoginFormModal onClose={handleClose} onClick={handleLogin}/>
+          <LoginFormModal onClose={handleClose} onClick={() => setIsOpen(false)}/>
         </div>
         <div>
-          <SignupFormModal onClose={handleClose}/>
+          <SignupFormModal onClose={handleClose} onClick={() => setIsOpen(false)}/>
         </div>
         <a href="#demo" onClick={demoLogin} style={{ textDecoration: "none" }}>
           <div className="menu-buttons">Demo Login</div>

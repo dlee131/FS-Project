@@ -15,6 +15,7 @@ function ReservationForm() {
   const [numGuests, setNumGuests] = useState(1);
   // const [adults, setAdults] = useState(1)
   // const [children, setChildren] = useState(0)
+  const history = useHistory();
   const [toggledDropDown, setToggledDropDown] = useState(false);
   const [errors, setErrors] = useState();
   // const history = useHistory();
@@ -37,30 +38,32 @@ function ReservationForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
-
+  
     const reservation = {
       reservation: {
         listingId,
         userId,
         startDate,
         endDate,
-        numGuests: numGuests,
+        numGuests
       },
     };
-
-    // debugger
-    return dispatch(createReservation(reservation)).catch(async (res) => {
-      let data;
-      try {
-        data = await res.clone().json();
-      } catch {
-        data = await res.text();
-      }
-      // debugger
-      if (data?.errors) setErrors(data.errors);
-      else if (data) setErrors([data]);
-      else setErrors([res.statusText]);
-    });
+  
+    return dispatch(createReservation(reservation))
+      .then(() => {
+        history.push("/reservations");
+      })
+      .catch(async (res) => {
+        let data;
+        try {
+          data = await res.clone().json();
+        } catch {
+          data = await res.text();
+        }
+        if (data?.errors) setErrors(data.errors);
+        else if (data) setErrors([data]);
+        else setErrors([res.statusText]);
+      });
   };
 
   return (
