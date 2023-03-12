@@ -32,10 +32,10 @@ function ReservationIndex() {
     <div>
       <div className="trips-header">Trips</div>
       {userReservations.length === 0 && (
-        <div>
+        <div className="no-trips">
           <div>No trips booked...yet!</div>
           <div>Time to dust off your bags and start planning your next adventure</div>
-          <NavLink exact to="/" className="" style={{ textDecoration: "none" }}>Start searching</NavLink>
+          <NavLink exact to="/" className="index-navlink" style={{ textDecoration: "none" }}>Start searching</NavLink>
         </div>
       )}
       {userReservations.map((reservation) => (
