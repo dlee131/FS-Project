@@ -132,3 +132,9 @@ border: 1px solid #d3d3d3;
     height: 200px;
     width: 500px;   
 }
+
+.trips-header {
+    display: flex;
+    font-size: 30px;
+    margin: 30px 0 0 30px;
+}
