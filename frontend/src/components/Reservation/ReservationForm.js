@@ -91,9 +91,7 @@ function ReservationForm() {
               />
             </div>
             <div className="date-title">
-              <div className="check-out-date">
-                <h4 className="check-in-date">CHECKOUT</h4>
-              </div>
+                <h3 className="check-in-date">CHECKOUT</h3>
               <input
                 id="reservation-input"
                 type="date"
@@ -111,11 +109,11 @@ function ReservationForm() {
                 }
               />
             </div>
-          </div>
-          <div className="guests-container" onClick={dropdown}>
+            <div className="guests-container" onClick={dropdown}>
             <div>
-              <h3 className="guests">Guests</h3>
-              <p>{numGuests} guests</p>
+              <h4 className="guests">GUESTS</h4>
+              <div>{numGuests} guests</div>
+            </div>
             </div>
           </div>
         </div>

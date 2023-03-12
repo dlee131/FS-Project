@@ -28,12 +28,10 @@ function ReservationIndex() {
     // debugger
   };
 
-  if (userReservations.length === 0) {
-    return <div> You have no reservations!</div>;
-  }
-  
   return (
     <div>
+      <div className="trips-header">Trips</div>
+      {userReservations.length === 0 && <div>You have no reservations!</div>}
       {userReservations.map((reservation) => (
         <div key={reservation.id} className="reservations-index">
           <div>Start date: {moment(reservation.startDate).format("MM/DD/YYYY")}</div>
@@ -43,7 +41,7 @@ function ReservationIndex() {
         </div>
       ))}
     </div>
-);
+  );
 }
 
 export default ReservationIndex;
