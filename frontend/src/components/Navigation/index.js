@@ -32,16 +32,13 @@ function Navigation() {
         exact
         to="/"
         className="nav-link"
-        style={{ textDecoration: "none" }}
-      >
+        style={{ textDecoration: "none" }}>
         <div className="logo-image">
           <img src={logo} alt="airbnb" className="logo-image" />
-          <p className="logo-text">melobnb</p>
+          <div className="logo-text">melobnb</div>
         </div>
       </NavLink>
-      <div>
         <input className="searchbar" placeholder="Start your search"></input>
-      </div>
       <div className="linkedin-git">
         <a href="https://github.com/dlee131" target="_blank" title="github">
           {" "}

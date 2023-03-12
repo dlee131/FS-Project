@@ -10,9 +10,11 @@ function ListingItem({ listing, handleClick }) {
         <ul onClick={handleClick}>
         <img alt="" className="listing-pics" src={listing.photo[0]}></img>
           <div>
-            <p className="listing-city">
-              {listing.city}, {listing.state}<i className="fa fa-star "></i>{listing.ratings}
-            </p>
+            <div className="listing-city">
+              {listing.city}, {listing.state}
+              <div className="fa fa-star" id="star-icon">{listing.ratings}</div>
+            </div>
+            
           <div className="listing-index-title">
             {listing.title.length < 30 ? listing.title : `${listing.title.slice(0, 30)}...`}
           </div>

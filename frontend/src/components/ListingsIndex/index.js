@@ -14,10 +14,7 @@ function ListingsIndexPage() {
         dispatch(fetchListings())
       },[dispatch])
 
-    // const handleClick = (listingId) => {
-    //     history.push(`/listings/${listingId}`)
-    //     window.scrollTo(0,0)
-    // }
+      
     const handleClick = (listingId) => {
       history.push(`/listings/${listingId}`);
       window.scrollTo(0, 0);
