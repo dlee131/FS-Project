@@ -81,6 +81,7 @@ function ReservationForm() {
             <div className="date-title">
               <h3 className="check-in-date">CHECK-IN</h3>
               <input
+                id="reservation-input"
                 type="date"
                 name="startDate"
                 value={startDate}
@@ -94,6 +95,7 @@ function ReservationForm() {
                 <h4 className="check-in-date">CHECKOUT</h4>
               </div>
               <input
+                id="reservation-input"
                 type="date"
                 value={endDate}
                 onChange={(e) => {

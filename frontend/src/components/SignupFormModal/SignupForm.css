@@ -24,20 +24,10 @@
 
 .signup-div {
     margin-right: 30rem;
-    padding-top: 10px;
+    padding-top: 30px;
 }
 
 .signup-div button {
-
-    /* width: 400px;
-    height: 50px;
-    justify-content: center;
-    color: white;
-    border-radius: 10px;
-    background-image: radial-gradient(circle at center center, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%);
-    margin-left: 50px;
-    font-size: 16px;
-    border-color: rgb(227, 28, 95); */
     width: 400px;
     height: 50px;
     justify-content: center;
@@ -46,24 +36,17 @@
     background-image: radial-gradient(circle at center center, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%);
     margin-left: 63px;
     font-size: 16px;
-    /* margin: 50px; */
     border-color: rgb(227, 28, 95);
     border: none;
-    margin-bottom: 40px;
-
-
 }
 
 .input-containers {
-    width: fit-content;
-    width: 1000px;
-    /* padding: 20px; */
-    padding-inline-start: 10px;
+    padding-right: 25px;
   }
 
   input {
     margin: 10px;
-    width: 50%;
+    width: 100%;
     height: 50%;
     padding: 30px;
     box-sizing: border-box;
@@ -88,7 +71,7 @@
 }
 
 #signup-text {
-    margin-top: 11px; 
+    margin-top: 15px; 
 }
 
 .placeholder-input {
