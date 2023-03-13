@@ -117,47 +117,86 @@ border: 1px solid #d3d3d3;
     padding-right: 5px;
 }
 
-
 .reservations-index {
     display: flex;
-    justify-content: space-between;
+    /* flex-wrap: wrap; */
     border-radius: 10px;
     border: 1px solid rgb(221, 221, 221);
     box-shadow: rgba(0, 0, 0, 0.12) 1px 5px 13px;
     padding: 30px;
     padding-bottom: 10px;
-    margin-top: 30px;
-    margin-bottom: 10px;
+    margin: 30px 0 0 70px;
     top: 120px; 
     height: 200px;
-    width: 500px;   
+    width: 1000px;   
 }
 
 .trips-header {
     display: flex;
-    font-size: 30px;
-    margin: 30px 0 0 60px;
+    font-size: 32px;
+    margin: 30px 0 0 70px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
 }
 
 .no-trips {
-    margin-left: 60px;
+    margin-left: 70px;
+    margin-top: 50px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.no-trips-text {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.no-trips-text2 {
+    margin-top: 5px;
+    font-weight: 200;
 }
 .index-navlink {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 15px 35px;
+    margin-top: 20px;
     font-size: 16px;
     font-weight: bold;
     text-decoration: black;
-    color:black;
+    color:white;
     background-color: white;
-    border-radius: 5px;
-    border: 1px solid #000000;
-    border-color: black;
+    border-radius: 8px;
+    border: none;
+    background-image: radial-gradient(circle at center center, rgb(240, 30, 77) 27.5%, rgb(240, 28, 95) 20%);
+    border-color: rgb(227, 28, 95);
     cursor: pointer;
     text-align: center;
     font-weight: 400;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     transition: background-color 0.2s ease-in-out;
+    font-size: 16px;
+}
+
+.index-navlink:hover {  
+    background-image: radial-gradient(circle at center center, rgb(230, 30, 77) 27.5%, rgb(230, 28, 95) 80%);
+}
+
+.cancel-res {
+    display: inline-block;
+    padding: 15px 35px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: black;
+    color:white;
+    background-color: black;
+    border-radius: 8px;
+    border: none;
+    background-color: radial-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    border-color: rgb(227, 28, 95);
+    cursor: pointer;
+    text-align: center;
+    font-weight: 400;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: background-color 0.2s ease-in-out;
+    font-size: 16px;
 }
