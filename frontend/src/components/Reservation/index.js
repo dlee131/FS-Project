@@ -40,10 +40,14 @@ function ReservationIndex() {
       )}
       {userReservations.map((reservation) => (
         <div key={reservation.id} className="reservations-index">
+        <div>
+        <div className="reservation-city"   >{reservation.city}, {reservation.state}</div>
+        <div>{reservation.residenceType} hosted by {reservation.userName}</div>
           <div>
             {moment(reservation.startDate).format("MM/DD/YYYY")} - {moment(reservation.endDate).format("MM/DD/YYYY")}
           </div>
           <div>Number of Guests: {reservation.numGuests}</div>
+          </div>
           <div className="reservation-photos"><img src={reservation.photo[0]} alt="" className="reservation-photo"/></div>
           <button onClick={() => handleDeleteReservation(reservation.id)} className="cancel-res">
             Cancel Reservation
