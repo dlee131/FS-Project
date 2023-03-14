@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
-import { getReservations, fetchReservations, updateReservation, deleteReservation } from "../../store/reservations";
+import {
+  getReservations,
+  fetchReservations,
+  updateReservation,
+  deleteReservation,
+} from "../../store/reservations";
 import { getListings, fetchListings } from "../../store/listings";
 import { useParams, NavLink, useHistory } from "react-router-dom";
 
@@ -29,6 +34,9 @@ function ReservationIndex() {
     // debugger
   };
 
+  const handleUpdateReservation = (reservationId) => {
+    dispatch(updateReservation(reservationId));
+  };
   const handleClick = (listingId) => {
     history.push(`/listings/${listingId}`);
     window.scrollTo(0, 0);
@@ -55,7 +63,15 @@ function ReservationIndex() {
       )}
       {userReservations.map((reservation) => (
         <div key={reservation.id} className="reservations-index">
-          <div>
+          <div className="reservation-photos">
+            <img
+              src={reservation.photo[0]}
+              alt=""
+              className="reservation-photo"
+              onClick={() => handleClick(reservation.listingId)}
+            />
+          </div>
+          <div className="reservation-description">
             <div className="reservation-city">
               {reservation.city}, {reservation.state}
             </div>
@@ -67,21 +83,21 @@ function ReservationIndex() {
               {moment(reservation.endDate).format("MM/DD/YYYY")}
             </div>
             <div>Number of Guests: {reservation.numGuests}</div>
-          </div>
-          <div className="reservation-photos">
-            <img
-              src={reservation.photo[0]}
-              alt=""
-              className="reservation-photo"
-              onClick={() => handleClick(reservation.listingId)}
-            />
-          </div>
+            <div className="reservation-buttons">
           <button
             onClick={() => handleDeleteReservation(reservation.id)}
-            className="cancel-res"
+            className="cancel-update"
           >
             Cancel Reservation
           </button>
+          <button
+            onClick={() => handleUpdateReservation(reservation.id)}
+            className="cancel-update"
+          >
+            Update Reservation
+          </button>
+          </div>
+          </div>
         </div>
       ))}
     </div>

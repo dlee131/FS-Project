@@ -19,7 +19,7 @@
     border: none;
     font-weight: 200;
     font-size: 12px;
-    height: 1px;
+
  }
 
  .rows {
@@ -33,14 +33,14 @@
     font-size: 14px;
 }
 
-
 .reserve-button {
     height: 60px;
     color: white;
     background-image: radial-gradient(circle at center center, rgb(227, 46, 88) 27.5%, rgb(227, 28, 95) 40%);
     text-align: center;
     border-radius: 10px;
-    margin-top: 10px;
+    margin-top: 70px;
+    margin-left: 40px;
     width: 300px;
     opacity: 0.9;
     padding: 6%;
@@ -52,7 +52,6 @@
 .form-input {
     border: 1px solid #d3d3d3;
     border-radius: 20px;
-    height: 100px;
     /* display: flex; */
     /* flex-wrap: wrap; */
     /* padding-bottom: 20px; */
@@ -96,7 +95,7 @@
     padding-bottom: 10px;
     margin: 30px 0 0 70px;
     top: 120px; 
-    height: 200px;
+    height: 300px;
     width: 1000px;   
 }
 
@@ -149,19 +148,15 @@
     background-image: radial-gradient(circle at center center, rgb(230, 30, 77) 27.5%, rgb(230, 28, 95) 80%);
 }
 
-.cancel-res {
+.cancel-update {
     display: inline-block;
-    padding: 15px 35px;
-    /* margin-top: 20px; */
+    padding: 10px 35px;
     font-size: 16px;
     font-weight: bold;
-    text-decoration: black;
     color:white;
-    background-color: black;
     border-radius: 8px;
     border: none;
-    background-color: radial-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-    border-color: rgb(227, 28, 95);
+    background-image: radial-gradient(ellipse at center, rgb(85, 82, 82) 27.5%, rgb(51, 48, 49) 80%);
     cursor: pointer;
     text-align: center;
     font-weight: 400;
@@ -173,14 +168,24 @@
 .reservation-photos {
     display:flex;
     justify-content: flex-end;
-}
-.reservation-photo {
-    display:flex;
-    justify-content: flex-end;
-    height: 210px;
-    width: 300px;
+
 }
 
-.reservation-city {
-    
+.reservation-photo:hover {
+    cursor: pointer;
+}
+.reservation-photo {
+    height: 310px;
+    width: 400px;
+}
+
+.reservation-description {
+}
+
+.reservation-buttons {
+
+}
+
+.cancel-update {
+
 }
