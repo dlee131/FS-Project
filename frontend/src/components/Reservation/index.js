@@ -44,6 +44,7 @@ function ReservationIndex() {
             {moment(reservation.startDate).format("MM/DD/YYYY")} - {moment(reservation.endDate).format("MM/DD/YYYY")}
           </div>
           <div>Number of Guests: {reservation.numGuests}</div>
+          <div className="reservation-photos"><img src={reservation.photo[0]} alt="" className="reservation-photo"/></div>
           <button onClick={() => handleDeleteReservation(reservation.id)} className="cancel-res">
             Cancel Reservation
           </button>

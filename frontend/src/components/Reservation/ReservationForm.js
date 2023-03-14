@@ -39,6 +39,9 @@ function ReservationForm() {
     e.preventDefault();
     setErrors([]);
   
+    
+
+
     const reservation = {
       reservation: {
         listingId,
@@ -76,24 +79,23 @@ function ReservationForm() {
             {listing.ratings}
           </span>
         </div>
-        <div className="form-inputs-wrapper">
           <div className="form-input">
             <div className="date-title">
-              <h3 className="check-in-date">CHECK-IN</h3>
+                <h3 className="check-in-date">CHECK-IN</h3>
+                <h3 className="check-out-date">CHECKOUT</h3> 
+            </div>
+            <div className="rows">
               <input
-                id="reservation-input"
+                id="reservation-inputs"
                 type="date"
                 name="startDate"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
                 min={moment().add(1, "day").format("YYYY-MM-DD")}
                 required
-              />
-            </div>
-            <div className="date-title">
-                <h3 className="check-in-date">CHECKOUT</h3>
+              /> 
               <input
-                id="reservation-input"
+                id="reservation-inputs"
                 type="date"
                 value={endDate}
                 onChange={(e) => {
@@ -109,14 +111,13 @@ function ReservationForm() {
                 }
               />
             </div>
-            <div className="guests-container" onClick={dropdown}>
+            </div>
+        <div className="guests-container" onClick={dropdown}>
             <div>
               <h4 className="guests">GUESTS</h4>
-              <div>{numGuests} guests</div>
+              <div>{numGuests}</div>
             </div>
             </div>
-          </div>
-        </div>
       </div>
       <button className="reserve-button">
         <div>Check availability</div>
