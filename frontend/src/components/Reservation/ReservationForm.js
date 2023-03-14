@@ -13,8 +13,6 @@ function ReservationForm() {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [numGuests, setNumGuests] = useState(1);
-  // const [adults, setAdults] = useState(1)
-  // const [children, setChildren] = useState(0)
   const history = useHistory();
   const [toggledDropDown, setToggledDropDown] = useState(false);
   const [errors, setErrors] = useState();

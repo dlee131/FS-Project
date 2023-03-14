@@ -175,7 +175,6 @@
     justify-content: flex-end;
 }
 .reservation-photo {
-    /* margin-left: 300px; */
     display:flex;
     justify-content: flex-end;
     height: 210px;
@@ -183,5 +182,5 @@
 }
 
 .reservation-city {
-
+    
 }
