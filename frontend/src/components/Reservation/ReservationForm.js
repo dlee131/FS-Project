@@ -25,6 +25,24 @@ function ReservationForm() {
 
   const userId = user?.id || null;
 
+//   const [reservation, setReservation] = useState({
+//     startDate,
+//     endDate,
+//     numGuests,
+//     listingId,
+//     userId
+//   });
+
+  const reservation = {
+    reservation: {
+      listingId,
+      userId,
+      startDate,
+      endDate,
+      numGuests
+    },
+  };
+
   const dropdown = () => {
     if (toggledDropDown) {
       return setToggledDropDown(false);
@@ -33,22 +51,26 @@ function ReservationForm() {
     }
   };
 
+//   const handleAddSubtractGuest = (operation) => {
+//     return (e) => {
+//       e.preventDefault();
+//       e.stopPropagation();
+//       if (operation.toLowerCase() === 'add') {
+//         if (reservation.numGuests < numGuest) {
+//           setReservationInfo({...reservationInfo, numGuests: reservationInfo.numGuests + 1})
+//         }
+//       } else {
+//         if (reservationInfo.numGuests > 1) {
+//           setReservationInfo({...reservationInfo, numGuests: reservationInfo.numGuests - 1})
+//         }
+//       }
+//     }
+//   }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
-  
-    
 
-
-    const reservation = {
-      reservation: {
-        listingId,
-        userId,
-        startDate,
-        endDate,
-        numGuests
-      },
-    };
   
     return dispatch(createReservation(reservation))
       .then(() => {
@@ -69,7 +91,6 @@ function ReservationForm() {
 
   return (
     <form className="reservation-form" onSubmit={handleSubmit}>
-      <div className="reservation-form-wrapper">
         <div className="res-header">
           <div className="price">${listing.nightlyPrice} night</div>
           <span>
@@ -77,12 +98,11 @@ function ReservationForm() {
             {listing.ratings}
           </span>
         </div>
+        <div className="reservation-form-wrapper">
           <div className="form-input">
             <div className="date-title">
-                <h3 className="check-in-date">CHECK-IN</h3>
-                <h3 className="check-out-date">CHECKOUT</h3> 
+            <label className="check-in-date">CHECK-IN</label>
             </div>
-            <div className="rows">
               <input
                 id="reservation-inputs"
                 type="date"
@@ -91,7 +111,10 @@ function ReservationForm() {
                 onChange={(e) => setStartDate(e.target.value)}
                 min={moment().add(1, "day").format("YYYY-MM-DD")}
                 required
-              /> 
+              />
+              <div className="date-title">
+              <label className="check-out-date">CHECKOUT</label>
+              </div> 
               <input
                 id="reservation-inputs"
                 type="date"
@@ -108,10 +131,9 @@ function ReservationForm() {
                     : moment().add(1, "days").format("YYYY-MM-DD")
                 }
               />
+
             </div>
-            </div>
-        <div className="guests-container" onClick={dropdown}>
-            <div>
+        <div className="guests-container" onClick={dropdown}><div>
               <h4 className="guests">GUESTS</h4>
               <div>{numGuests}</div>
             </div>

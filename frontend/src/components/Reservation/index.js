@@ -33,6 +33,7 @@ function ReservationIndex() {
     dispatch(deleteReservation(reservationId));
     // debugger
   };
+  
 
   const handleUpdateReservation = (reservationId) => {
     dispatch(updateReservation(reservationId));
@@ -61,6 +62,7 @@ function ReservationIndex() {
           </NavLink>
         </div>
       )}
+
       {userReservations.map((reservation) => (
         <div key={reservation.id} className="reservations-index">
           <div className="reservation-photos">
@@ -73,7 +75,7 @@ function ReservationIndex() {
           </div>
           <div className="reservation-description">
             <div className="reservation-city">
-              {reservation.city}, {reservation.state}
+              {reservation.state}
             </div>
             <div>
               {reservation.residenceType} hosted by {reservation.userName}
@@ -83,20 +85,15 @@ function ReservationIndex() {
               {moment(reservation.endDate).format("MM/DD/YYYY")}
             </div>
             <div>Number of Guests: {reservation.numGuests}</div>
+            </div>
             <div className="reservation-buttons">
           <button
             onClick={() => handleDeleteReservation(reservation.id)}
-            className="cancel-update"
+            className="cancel-button"
           >
             Cancel Reservation
           </button>
-          <button
-            onClick={() => handleUpdateReservation(reservation.id)}
-            className="cancel-update"
-          >
-            Update Reservation
-          </button>
-          </div>
+
           </div>
         </div>
       ))}
