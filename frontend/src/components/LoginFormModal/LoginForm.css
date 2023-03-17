@@ -10,12 +10,16 @@
     background-color: rgb(245, 245, 245);
 }
 
-.input-container {
 
+.input-container {
     padding-right: 15px;
     border: none;
     outline: none;
-    
+    position: absolute;
+    margin-top: 10px;
+        /* height: fit-content;
+    border: 2px solid white;
+    border-radius: 20px; */
     /* padding: 10px; */
   }
 
@@ -26,11 +30,12 @@
     border: 2px solid rgb(243, 243, 243);
     border-radius: 10px;
     /* width: 50%; */
+    
   }
   
   input:focus {
     
-    outline: 2px solid #cccccc;
+    outline: 2px solid #e2e2e2;
   }
 
 .login-div button {
@@ -56,8 +61,12 @@
     border: none; */
 }
 
-.login-div button:hover {
+/* .login-div button:hover {
     background-color: rgb(227, 46, 88);
+} */
+
+.login-button:hover {
+    background-color: rgb(82, 50, 58);
 }
 
 #login-text {

@@ -70,6 +70,7 @@ function LoginFormPage() {
             </button>
         </div>
       </div>
+      
   </form>
   );
 }

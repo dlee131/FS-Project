@@ -35,7 +35,7 @@ export const ListingPage = () => {
                         {listing.title}
                     </div>
                     <div className="listing-location">
-                        <i className="fas fa-star"></i> {listing.ratings} • <i className    ="fa-sharp fa-solid fa-medal"></i><span className="superhost">Superhost</span> • {listing.city}, {listing.state}, {listing.country} 
+                        <i className="fas fa-star"></i> {listing.ratings} • <i className="fa-sharp fa-solid fa-medal"></i><span className="superhost">Superhost</span> • {listing.city}, {listing.state}, {listing.country} 
                         <i className="fa-sharp fa-solid fa-arrow-up-from-bracket"></i><span className="share">Share</span> 
                         <i className="fa-sharp fa-regular fa-heart"></i><span className="save">Save</span>
                     </div>

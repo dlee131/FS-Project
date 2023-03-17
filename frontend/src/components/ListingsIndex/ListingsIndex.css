@@ -1,19 +1,23 @@
 .listings-index {
-    position: static;
+    position: absolute;
     padding : 10px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    grid-template-columns: repeat(4, 2fr);
+    /* left: -10px; */
     grid-template-rows: repeat(1, 1fr);
     /* position: sticky;
     z-index: 1; */
     /* grid-gap: 10px; */
-    margin-right: 40px;
-    margin-bottom: 60px;
+    /* right: 10px; */
+    /* padding-right: 30px; */
 }
 
 .listings {
     margin: -10px;
     /* margin-right: -10px; */
+    /* margin-left: 10px; */
 }
 
 .listing-city {
@@ -68,6 +72,7 @@
 
 .border-line {
     border-bottom: 1px solid rgb(223, 221, 240);
+    z-index: 10;
     /* width: 650px;
     margin-left: 10px; */
 }

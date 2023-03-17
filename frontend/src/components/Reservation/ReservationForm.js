@@ -6,7 +6,6 @@ import moment from "moment";
 import { useHistory } from "react-router-dom";
 import { createReservation } from "../../store/reservations";
 import "./ReservationForm.css";
-// import { DateRangePicker} from 'react-datepicker'
 
 function ReservationForm() {
   const dispatch = useDispatch();
@@ -131,17 +130,19 @@ function ReservationForm() {
                     : moment().add(1, "days").format("YYYY-MM-DD")
                 }
               />
-
+        <div className="border-line"></div>
             </div>
         <div className="guests-container" onClick={dropdown}><div>
               <h4 className="guests">GUESTS</h4>
-              <div>{numGuests}</div>
+              <div className="num-guests">{numGuests} guest</div>
             </div>
             </div>
       </div>
       <button className="reserve-button">
-        <div>Check availability</div>
+        <div className="availability">Reserve</div>
       </button>
+      <p className="underline">${listing.nightlyPrice} x {startDate & endDate ? endDate.diff(startDate, 'days'): '1'} nights</p>
+      {startDate & endDate ? <p>${listing.nightlyPrice * endDate.diff(startDate, 'days')}</p> : <p>${listing.nightlyPrice}</p>}
     </form>
   );
 }
