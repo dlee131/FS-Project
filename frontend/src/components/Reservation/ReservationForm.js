@@ -69,7 +69,7 @@ function ReservationForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
-
+    
   
     return dispatch(createReservation(reservation))
       .then(() => {
@@ -87,7 +87,15 @@ function ReservationForm() {
         else setErrors([res.statusText]);
       });
   };
-
+  const calculateTotalCost = () => {
+    if (startDate && endDate) {
+      const nights = moment(endDate).diff(moment(startDate), "days");
+      return nights * listing.nightlyPrice;
+    } else {
+      return listing.nightlyPrice;
+    }
+  };
+  
   return (
     <form className="reservation-form" onSubmit={handleSubmit}>
         <div className="res-header">
@@ -133,7 +141,7 @@ function ReservationForm() {
         <div className="border-line"></div>
             </div>
         <div className="guests-container" onClick={dropdown}><div>
-              <h4 className="guests">GUESTS</h4>
+              <div className="guests">GUESTS</div>
               <div className="num-guests">{numGuests} guest</div>
             </div>
             </div>
@@ -141,8 +149,15 @@ function ReservationForm() {
       <button className="reserve-button">
         <div className="availability">Reserve</div>
       </button>
-      <p className="underline">${listing.nightlyPrice} x {startDate & endDate ? endDate.diff(startDate, 'days'): '1'} nights</p>
-      {startDate & endDate ? <p>${listing.nightlyPrice * endDate.diff(startDate, 'days')}</p> : <p>${listing.nightlyPrice}</p>}
+      <div className="total-cost">
+        ${listing.nightlyPrice} x {" "}
+        {startDate && endDate
+          ? moment(endDate).diff(moment(startDate), "days")
+          : "1"}{" "}
+        nights
+      </div>
+      <div className="calculateTotalCost">${calculateTotalCost()}</div>
+      <div className="cleaning-fee"> Cleaning fee</div>
     </form>
   );
 }

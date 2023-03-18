@@ -36,7 +36,7 @@
     /* display: flex; */
     cursor: pointer;
     border: none;
-    right: 20px;
+    right: 32px;
     /* left: 10px; */
     background-color: transparent;
     /* height: 30px; */
@@ -70,6 +70,25 @@
     margin-top: 20px;
  }
 
+ .total-cost {
+    /* position: fixed; */
+    display: flex;
+    margin-top: 40px;
+    /* border-bottom: 1px solid black; */
+    text-decoration: underline;
+    /* text-decoration-color: lightgray; */
+    /* width: 122px; */
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.calculateTotalCost {
+    position: absolute;
+    top: 317px;
+    right: 30px;
+    font-size: 16px;
+    font-weight: 300;
+}
  .rows {
     display: flex;
     height: 10%;
@@ -141,20 +160,22 @@
 }
 
 .check-in-date {
-    z-index: 5;
+    /* z-index: 5; */
     margin-top: 10px;
     /* margin-right: 10px; */
     font-size: 10px;
     font-weight: bold;
+    position: relative;
+    right: 10px;
 }
 
 .check-out-date {
-    z-index: 5;
+    /* z-index: 5; */
     margin-top: 10px;
     font-size: 10px;
     font-weight: bold;
     position: absolute;
-    left: 170px;
+    left: 160px;
 }
 
 .guests {
@@ -163,8 +184,10 @@
     display: flex;
     /* position: absolute; */
     /* margin-left: 14px; */
-    font-size: 12px;
-    padding-left: 18px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-top: 10px;
+    padding-left: 8px;
     padding-right: 5px;
     margin-bottom: 10px;
     /* top: 10px; */
@@ -274,16 +297,16 @@
 
 .num-guests {
     /* position: absolute; */
-    margin-left: 20px;
-    height: 30px;
+    margin-left: 8px;
+    height: 25px;
     font-size: 12px;
     /* margin-top: 10px; */
 }
 
 .guests-container {
-    margin-top: 10px;
+    /* margin-top: 10px; */
      border-top: 1px solid rgb(173, 173, 173);
-    width: fit-content;
+    width: 298px;
     /* position: absolute; */
 }
 .reservation-photos {
