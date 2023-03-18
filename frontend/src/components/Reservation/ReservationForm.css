@@ -89,6 +89,26 @@
     font-size: 16px;
     font-weight: 300;
 }
+
+.cleaning-fee {
+    /* position: fixed; */
+    display: flex;
+    margin-top: 40px;
+    /* border-bottom: 1px solid black; */
+    text-decoration: underline;
+    /* text-decoration-color: lightgray; */
+    /* width: 122px; */
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.calculateCleaningFee {
+    position: absolute;
+    top: 374px;
+    right: 30px;
+    font-size: 16px;
+    font-weight: 300;
+}
  .rows {
     display: flex;
     height: 10%;

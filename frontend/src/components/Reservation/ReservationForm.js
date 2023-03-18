@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import moment from "moment";
 import { useHistory } from "react-router-dom";
 import { createReservation } from "../../store/reservations";
+// import LoginFormModal from "../LoginFormModal";
 import "./ReservationForm.css";
 
 function ReservationForm() {
@@ -14,6 +15,7 @@ function ReservationForm() {
   const [numGuests, setNumGuests] = useState(1);
   const history = useHistory();
   const [toggledDropDown, setToggledDropDown] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
   const [errors, setErrors] = useState();
   // const history = useHistory();
   // const { numGuest, nightlyPrice } = listing;
@@ -69,7 +71,9 @@ function ReservationForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
-    
+    // if (!user) {
+    //   LoginFormModal(showModal);
+    // }
   
     return dispatch(createReservation(reservation))
       .then(() => {
@@ -87,10 +91,14 @@ function ReservationForm() {
         else setErrors([res.statusText]);
       });
   };
+
+  
   const calculateTotalCost = () => {
     if (startDate && endDate) {
       const nights = moment(endDate).diff(moment(startDate), "days");
-      return nights * listing.nightlyPrice;
+      const subtotal = nights * listing.nightlyPrice;
+      const cleaningFee = subtotal * 0.01; // calculate the cleaning fee
+      return subtotal + cleaningFee;
     } else {
       return listing.nightlyPrice;
     }
@@ -157,7 +165,8 @@ function ReservationForm() {
         nights
       </div>
       <div className="calculateTotalCost">${calculateTotalCost()}</div>
-      <div className="cleaning-fee"> Cleaning fee</div>
+      <div className="cleaning-fee">Cleaning fee</div>
+      <div className="calculateCleaningFee">${(calculateTotalCost() * 0.01).toFixed()}</div>
     </form>
   );
 }
