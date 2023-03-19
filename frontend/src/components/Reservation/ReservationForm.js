@@ -13,8 +13,10 @@ function ReservationForm() {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [numGuests, setNumGuests] = useState(1);
+  const [numAdults, setNumAdults] = useState(1);
+  const [numChildren, setNumChildren] = useState(0);
   const history = useHistory();
-  const [toggledDropDown, setToggledDropDown] = useState(false);
+  const [DropDown, setDropDown] = useState(false);
   // const [showModal, setShowModal] = useState(false);
   const [errors, setErrors] = useState();
   // const history = useHistory();
@@ -41,15 +43,16 @@ function ReservationForm() {
       startDate,
       endDate,
       numGuests
-    },
+    }
   };
 
-  const dropdown = () => {
-    if (toggledDropDown) {
-      return setToggledDropDown(false);
-    } else {
-      return setToggledDropDown(true);
-    }
+  useEffect(() => {
+    setNumGuests(numGuests)
+}, [numGuests])
+
+  const dropdown = (e) => {
+    e.preventDefault();
+    setDropDown(!DropDown);
   };
 
 //   const handleAddSubtractGuest = (operation) => {
@@ -155,11 +158,17 @@ function ReservationForm() {
               />
         <div className="border-line"></div>
             </div>
-        <div className="guests-container" onClick={dropdown}><div>
+        <div className="guests-container" onClick={dropdown}>
               <div className="guests">GUESTS</div>
               <div className="num-guests">{numGuests} guest</div>
-            </div>
-            </div>
+              <div className="chevron">
+              {!DropDown ? <i className="fa-sharp fa-solid fa-chevron-down"></i> : <i className="fa-solid fa-chevron-up"></i>}
+              </div>
+        {DropDown && (
+                <div className="dropdown-reservation" style={{ zIndex: 1 }}>
+                  Adults
+        </div>)}
+        </div>
       </div>
       <button className="reserve-button">
         <div className="availability">Reserve</div>
