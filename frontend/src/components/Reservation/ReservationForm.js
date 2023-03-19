@@ -138,7 +138,7 @@ function ReservationForm() {
               <label className="check-out-date">CHECKOUT</label>
               </div> 
               <input
-                id="reservation-inputs"
+                id="reservation-input"
                 type="date"
                 value={endDate}
                 onChange={(e) => {

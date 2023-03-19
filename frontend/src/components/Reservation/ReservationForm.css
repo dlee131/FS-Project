@@ -11,59 +11,58 @@
     width: 300px;
     top: 120px; 
     height: 460px;
-    /* z-index: 9; */
-    /* width: 300px;    */
 }
 
 .reservation-form-wrapper {
     border: 1px solid rgb(169, 169, 169);
     border-radius: 12px;
     margin: 5px 0 15px 0;
-    /* position: absolute; */
     display: flex;
     flex-flow: column wrap;
-    /* width: 50%; */
-    /* width: 100%; */
-    /* z-index: 9; */
-    /* height: 300px; */
 }
 
  #reservation-inputs {
     position: relative;
-    /* bottom: 10px; */
+    bottom: 10px;
+    padding: 30px 20px;
     z-index: 1;
-    width: 150px;
-    /* display: flex; */
+    width: 144px;
     cursor: pointer;
     border: none;
-    right: 32px;
-    /* left: 10px; */
+    right: 15px;
     background-color: transparent;
-    /* height: 30px; */
-    /* width: 200px; */
-    /* width: 100px; */
-    /* padding: 10px; */
-    /* box-sizing: border-box; */
-    /* border: none; */
-    /* top: 40px; */
-    /* padding: 30px; Add any additional padding as needed */
+    /* top: 30px; */
     font-size: 12px;
-    /* margin-bottom: 30px; */
-    /* position: static; */
-    /* height: 100%; */
-    /* position: absolute; */
-    /* outline: none; */
-    /* border: none; */
-    /* border-right: 1px solid black; */
-    /* height: 100px; */
-    /* font-weight: 200; */
-    /* height: 100px; */
-    /* border: 1px solid rgb(221, 221, 221); */
+    /* gap:0px; */
  }
 
  #reservation-inputs:focus {
     outline: none;
     border: none;
+ }
+ #reservation-input {
+    position: relative;
+    padding: 30px 10px;
+    /* top: 10px; */
+    /* display: flex; */
+    bottom: 10px;
+    /* top: 20px; */
+    z-index: 1;
+    width: 134px;
+    cursor: pointer;
+    border: none;
+    /* border: 1px solid rgb(169, 169, 169); */
+    /* right: 34px; */
+    right: 32px;
+    /* left: 10px; */
+    background-color: transparent;
+    font-size: 12px;
+    border-left: 1px solid rgb(169, 169, 169);
+    border-radius: 0;
+ }
+
+ #reservation-input:focus {
+    outline: none;
  }
 
  .price-calc {
@@ -96,7 +95,7 @@
 
 .calculateCleaningFee {
     position: absolute;
-    top: 335px;
+    top: 333px;
     right: 32px;
     font-size: 16px;
     font-weight: 300;
@@ -112,15 +111,20 @@
 
 .calculateAirbnbServiceFee {
     position: absolute;
-    top: 375px;
+    top: 373px;
     right: 32px;
     font-size: 16px;
     font-weight: 300;
 }
 
+.borderline2{ 
+    margin-top: 30px;
+    border-bottom: 1px solid rgb(223, 221, 240);
+}
+
 .total-before-tax {
     display: flex;
-    margin-top: 20px;
+    margin-top: 25px;
     /* text-decoration: underline; */
     font-size: 16px;
     font-weight: 500;
@@ -128,21 +132,12 @@
 
 .calculateTotal {
     position: absolute;
-    top: 455px;
+    top: 448px;
     right: 32px;
     font-size: 16px;
     font-weight: 500;
 }
 
-.borderline2{ 
-    margin-top: 40px;
-    border-bottom: 1px solid rgb(223, 221, 240);
-}
-
-.totalbeforetax {
-    margin-top: 20px;
-    font-weight: 500;
-}
  .rows {
     display: flex;
     height: 10%;
@@ -181,20 +176,11 @@
     cursor: pointer;
 }
 
-/* .availability {
-    position: absolute;
-    bottom: 100px;
-} */
-
 .form-input {
     display: flex;
-    /* position: relative; */
     height: 60px;
     z-index: 5;
-    /* padding-bottom: 10px; */
-    /* display: flex; */
-    /* flex-wrap: wrap; */
-    /* padding-bottom: 20px; */
+    /* margin-left: 10px; */
 }   
 
 
@@ -209,18 +195,15 @@
     justify-content: space-between;
     position: absolute;
     left: 50px;
-    /* margin-right: 30px; */
     height: 30px;
 }
 
 .check-in-date {
-    /* z-index: 5; */
     margin-top: 10px;
-    /* margin-right: 10px; */
     font-size: 10px;
     font-weight: bold;
     position: relative;
-    right: 10px;
+    right: 3px;
 }
 
 .check-out-date {
@@ -229,23 +212,9 @@
     font-size: 10px;
     font-weight: bold;
     position: absolute;
-    left: 160px;
-}
-
-.guests {
-    /* border-top: 1px solid rgb(173, 173, 173); */
-    width: 275px;
-    display: flex;
-    /* position: absolute; */
-    /* margin-left: 14px; */
-    font-size: 10px;
-    font-weight: 700;
-    margin-top: 10px;
-    padding-left: 8px;
-    padding-right: 5px;
-    margin-bottom: 10px;
-    /* top: 10px; */
-    height: 10px;
+    left: 134px;
+    /* height: 30px; */
+    /* margin-top: 10px; */
 }
 
 
@@ -349,19 +318,30 @@
     left: 500px;
 }
 
+.guests {
+    width: 275px;
+    display: flex;
+    font-size: 10px;
+    font-weight: 700;
+    margin-top: 10px;
+    padding-left: 8px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+    height: 10px;
+}
+
 .num-guests {
-    /* position: absolute; */
     margin-left: 8px;
     height: 25px;
-    font-size: 12px;
-    /* margin-top: 10px; */
+    font-size: 14px;
+    font-weight: 300;
 }
 
 .guests-container {
-    /* margin-top: 10px; */
      border-top: 1px solid rgb(173, 173, 173);
     width: 298px;
-    /* position: absolute; */
+    position: relative;
+    bottom: 0px;
 }
 .reservation-photos {
     /* display:flex;
