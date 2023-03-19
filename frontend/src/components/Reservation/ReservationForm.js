@@ -93,17 +93,24 @@ function ReservationForm() {
   };
 
   
-  const calculateTotalCost = () => {
+  const calculateEachCost = () => {
     if (startDate && endDate) {
       const nights = moment(endDate).diff(moment(startDate), "days");
       const subtotal = nights * listing.nightlyPrice;
-      const cleaningFee = subtotal * 0.01; // calculate the cleaning fee
+      const cleaningFee = subtotal * 0.05; // calculate the cleaning fee
       return subtotal + cleaningFee;
     } else {
       return listing.nightlyPrice;
     }
   };
   
+  const calculateTotalBeforeTax = () => {
+    const subtotal = calculateEachCost();
+    const cleaningFee = subtotal * 0.05;
+    const airbnbServiceFee = subtotal * 0.1;
+    return subtotal + cleaningFee + airbnbServiceFee;
+  }
+
   return (
     <form className="reservation-form" onSubmit={handleSubmit}>
         <div className="res-header">
@@ -164,9 +171,14 @@ function ReservationForm() {
           : "1"}{" "}
         nights
       </div>
-      <div className="calculateTotalCost">${calculateTotalCost()}</div>
+      <div className="calculateNightlyCost">${calculateEachCost().toFixed()}</div>
       <div className="cleaning-fee">Cleaning fee</div>
-      <div className="calculateCleaningFee">${(calculateTotalCost() * 0.01).toFixed()}</div>
+      <div className="calculateCleaningFee">${(calculateEachCost() * 0.05).toFixed()}</div>
+      <div className="airbnb-service-fee">Airbnb service fee</div>
+      <div className="calculateAirbnbServiceFee">${(calculateEachCost() * 0.1).toFixed()}</div>
+      <div className="borderline2"></div>
+      <div className="total-before-tax"> Total before taxes </div>
+      <div className="calculateTotal">${calculateTotalBeforeTax().toFixed()}</div>
     </form>
   );
 }

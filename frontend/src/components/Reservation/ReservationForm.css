@@ -10,7 +10,7 @@
     position: sticky;
     width: 300px;
     top: 120px; 
-    height: 500px;
+    height: 460px;
     /* z-index: 9; */
     /* width: 300px;    */
 }
@@ -18,7 +18,7 @@
 .reservation-form-wrapper {
     border: 1px solid rgb(169, 169, 169);
     border-radius: 12px;
-    margin: 25px 0 15px 0;
+    margin: 5px 0 15px 0;
     /* position: absolute; */
     display: flex;
     flex-flow: column wrap;
@@ -71,43 +71,77 @@
  }
 
  .total-cost {
-    /* position: fixed; */
     display: flex;
     margin-top: 40px;
-    /* border-bottom: 1px solid black; */
     text-decoration: underline;
-    /* text-decoration-color: lightgray; */
-    /* width: 122px; */
     font-size: 16px;
     font-weight: 300;
 }
 
-.calculateTotalCost {
+.calculateNightlyCost {
     position: absolute;
-    top: 317px;
-    right: 30px;
+    top: 295px;
+    right: 32px;
     font-size: 16px;
     font-weight: 300;
 }
 
 .cleaning-fee {
-    /* position: fixed; */
     display: flex;
-    margin-top: 40px;
-    /* border-bottom: 1px solid black; */
+    margin-top: 20px;
     text-decoration: underline;
-    /* text-decoration-color: lightgray; */
-    /* width: 122px; */
     font-size: 16px;
     font-weight: 300;
 }
 
 .calculateCleaningFee {
     position: absolute;
-    top: 374px;
-    right: 30px;
+    top: 335px;
+    right: 32px;
     font-size: 16px;
     font-weight: 300;
+}
+
+.airbnb-service-fee {
+    display: flex;
+    margin-top: 20px;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.calculateAirbnbServiceFee {
+    position: absolute;
+    top: 375px;
+    right: 32px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.total-before-tax {
+    display: flex;
+    margin-top: 20px;
+    /* text-decoration: underline; */
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.calculateTotal {
+    position: absolute;
+    top: 455px;
+    right: 32px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.borderline2{ 
+    margin-top: 40px;
+    border-bottom: 1px solid rgb(223, 221, 240);
+}
+
+.totalbeforetax {
+    margin-top: 20px;
+    font-weight: 500;
 }
  .rows {
     display: flex;
