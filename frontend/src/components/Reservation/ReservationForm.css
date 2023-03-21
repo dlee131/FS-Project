@@ -156,9 +156,18 @@
 
 .res-header {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    /* margin: 10px; */
+
     flex-flow: row wrap;
     font-size: 14px;
+}
+
+.res-rating {
+    display: flex;
+    position: absolute;
+    right: 30px;
+    top: 35px;
 }
 
 .reserve-button {
@@ -170,6 +179,7 @@
     /* margin-top: 70px; */
     width: 300px;
     opacity: 0.9;
+    margin-left: 1px;
     padding: 5%;
     border: none;
     font-size: 16px;
@@ -184,16 +194,21 @@
     display: flex;
     height: 60px;
     z-index: 5;
-    /* margin-left: 10px; */
 }   
 
-
-.price {
-    padding-bottom: 20px;
-    font-size: 16px;
+.price {   
+    padding-bottom: 16px;
+    font-size: 20px;
     font-weight: 600;
 }
 
+.price-night {
+    margin-top: 3px;
+    margin-left: 6px;
+    display: flex;
+    font-size: 16px;
+    font-weight: 300;
+}
 .date-title {
     display: flex;
     justify-content: space-between;
@@ -221,6 +236,109 @@
     /* margin-top: 10px; */
 }
 
+.dropdown-reservation {
+    position: absolute;
+    /* margin-top: 200px; */
+    /* border: 2px solid rgb(169, 169, 169); */
+    border: 1px solid rgb(221, 221, 221);
+    margin-top: 3px;
+    border-radius: 10px;
+    background-color: white;
+    border: none;
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    align-items: column;
+    width: 300px;
+    height: 200px;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.12) 1px 5px 13px;
+}
+
+.guest-button {
+        display:flex;
+        justify-content: space-around;
+        /* position: absolute; */
+        right: 10px;
+        /* flex-direction: column; */
+    }
+
+.guests-labels {
+    margin-top: 20px;
+}
+.guests-labels div{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.adult-button {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100px;
+    bottom: 140px;
+    left: 185px;
+    align-items: center;
+}
+
+.adult-buttons {
+    /* border: 1px solid #727272; */
+    border: 1px solid;    
+    border-color: rgb(176, 176, 176);
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+}
+
+.children-button {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100px;
+    bottom: 100px;
+    left: 185px;
+    align-items: center;
+}
+
+.children-buttons {
+    /* border: 1px solid rgb(221, 221, 221); */
+    border: 1px solid;    
+    border-color: rgb(176, 176, 176);
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    /* font-size: 30px; */
+    /* text-align: center; */
+}
+
+.children-buttons:disabled {
+    color:#dfdfdf;
+    border: 1px solid #dddddd;
+    cursor: not-allowed !important;
+}
+
+.children-buttons:hover {
+    border-color: black;
+}
+
+.adult-buttons:disabled {
+    color:#dfdfdf;
+    border: 1px solid #dddddd;
+    cursor: not-allowed !important;
+}
+
+.guest-label {
+    font-weight: 500;
+}
+
+.ages {
+    /* padding:10px; */
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
 
 .reservations-index {
     display: flex;  
@@ -351,16 +469,6 @@
     position: absolute;
     right: 20px;
     top: 20px;
-}
-
-.dropdown-reservation {
-    position: absolute;
-    
-}
-
-.reservation-photos {
-    /* display:flex;
-    justify-content: flex-end; */
 }
 
 .reservation-photo:hover {

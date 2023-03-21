@@ -89,12 +89,12 @@ export const ListingPage = () => {
                         <div className="amenities-text">Dedicated workspace</div>
                     </div>
                 </div>
-                    <div className="borderline"></div>
                 </div>
                 <div className="reservation-listing-form">
                 <ReservationForm />
                 </div>
             </div>
+            <div className="borderline3"></div>
             <h5 className="map-header">Where you'll be - (MAP coming soon)</h5>
             <div id="map-placeholder"><img src='https://melobnb-seeds.s3.amazonaws.com/map.jpeg' alt="design-icon" /></div>
             </div>
