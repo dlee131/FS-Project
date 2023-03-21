@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import moment from "moment";
 import { useHistory } from "react-router-dom";
 import { createReservation } from "../../store/reservations";
-// import LoginFormModal from "../LoginFormModal";
+import LoginFormModal from "../LoginFormModal";
 import "./ReservationForm.css";
 
 function ReservationForm() {
@@ -17,12 +17,11 @@ function ReservationForm() {
   const [numChildren, setNumChildren] = useState(0);
   const history = useHistory();
   const [dropDown, setDropDown] = useState(false);
-  // const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [errors, setErrors] = useState();
   const { listingId } = useParams();
   const listing = useSelector((state) => state.listings[listingId]);
   const user = useSelector((state) => state.session.user);
-
   const userId = user?.id || null;
 
   const reservation = {
@@ -67,17 +66,15 @@ function ReservationForm() {
     return subtotal + cleaningFee + airbnbServiceFee;
   };
 
-  // const handlePlusButton = async (e) => {
-  //   e.preventDefault();
-  //   e.stopPropagation();
-  //   setNumAdults(numAdults + 1)
-  // };
 
-  // const handleMinusButton = async (e) => {
-  //   e.preventDefault();
-  //   e.stopPropagation();
-  //   setNumAdults(numAdults - 1)
-  // };
+  const handleOnBlur = (e) => {
+    if (!e.relatedTarget?.matches('.adult-buttons, .children-buttons')) {
+      setDropDown(false);
+    }
+    else {
+      setDropDown(true)
+    }
+  };
 
   const handleNumAdultsChange = (e, operation) => {
     e.preventDefault();
@@ -99,52 +96,40 @@ function ReservationForm() {
     }
   };
 
-//   const handleNumChange = (e, operation, type) => {
-//   e.preventDefault();
-//   e.stopPropagation();
-//   if (type === 'adults') {
-//     if (operation === 'increment') {
-//       setNumAdults(numAdults + 1);
-//     } else if (operation === 'decrement') {
-//       setNumAdults(numAdults - 1);
-//     }
-//   } else if (type === 'children') {
-//     if (operation === 'increment') {
-//       setNumChildren(numChildren + 1);
-//     } else if (operation === 'decrement') {
-//       setNumChildren(numChildren - 1);
-//     }
-//   }
-// };
-  // const handleCloseContainer = (e) => {
-  //   if (e.target === null || (e.target.className != "guests-container")) {
-  //     setDropDown(!dropDown);
-  //   }
-  // };
+//   return (
+//     <div>
+//       <h1>Welcome!</h1>
+//       <LoginFormModal onClose={handleLoginFormClose} />
+//     </div>
+//   );
+// }
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setErrors([]);
+  if (!userId) {
+    // Show the login form modal
+    return (
+      <LoginFormModal onClose={() => setShowModal(false)} />
+    );
+  }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setErrors([]);
-    // if (!user) {
-    //   LoginFormModal(showModal);
-    // }
-
-    return dispatch(createReservation(reservation))
-      .then(() => {
-        history.push("/reservations");
-      })
-      .catch(async (res) => {
-        let data;
-        try {
-          data = await res.clone().json();
-        } catch {
-          data = await res.text();
-        }
-        if (data?.errors) setErrors(data.errors);
-        else if (data) setErrors([data]);
-        else setErrors([res.statusText]);
-      });
-  };
+  // Dispatch the createReservation action and handle errors
+  return dispatch(createReservation(reservation))
+    .then(() => {
+      history.push("/reservations");
+    })
+    .catch(async (res) => {
+      let data;
+      try {
+        data = await res.clone().json();
+      } catch {
+        data = await res.text();
+      }
+      if (data?.errors) setErrors(data.errors);
+      else if (data) setErrors([data]);
+      else setErrors([res.statusText]);
+    });
+};
 
 
   return (
@@ -193,7 +178,7 @@ function ReservationForm() {
           <div className="border-line"></div>
         </div>
         {/* onClick={() => setIsOpen(!isOpen)} */}
-        <div className="guests-container" onClick={dropdown}>
+        <div className="guests-container" onClick={dropdown} onBlur={handleOnBlur} tabindex="1">
           <div className="guests">GUESTS</div>
           <div className="num-guests">{numGuests} guest</div>
           <div className="chevron">
@@ -217,7 +202,7 @@ function ReservationForm() {
               <button className="adult-buttons"disabled={numGuests === 4} onClick={(e) => handleNumAdultsChange(e, 'increment')}>+</button>
               </div>
               <div className="children-button">
-              <button className="children-buttons" disabled={numChildren < 1} onClick={(e) => handleNumChildrenChange(e, 'decrement')}>-</button>
+              <button className="children-buttons" disabled={numChildren === 0} onClick={(e) => handleNumChildrenChange(e, 'decrement')}>-</button>
                 <div>{numChildren}</div>
                 <button className="children-buttons" disabled={numGuests === 4} onClick={(e) => handleNumChildrenChange(e, 'increment')}>+</button>
               </div>

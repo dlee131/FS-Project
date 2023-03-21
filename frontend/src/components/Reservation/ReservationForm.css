@@ -285,10 +285,22 @@
     /* border: 1px solid #727272; */
     border: 1px solid;    
     border-color: rgb(176, 176, 176);
+    background-color: white;
     border-radius: 100%;
     width: 35px;
     height: 35px;
-    background-color: white;
+}
+
+
+.adult-buttons:hover {
+    border-color: black;
+}
+
+.adult-buttons:disabled {
+    /* color:#dfdfdf; */
+    border: 1px solid #dddddd;
+    cursor: not-allowed;
+    /* pointer-events: none; */
 }
 
 .children-button {
@@ -299,34 +311,35 @@
     bottom: 100px;
     left: 185px;
     align-items: center;
+    /* pointer-events: none;     */
 }
 
 .children-buttons {
     /* border: 1px solid rgb(221, 221, 221); */
+    /* border: 1px solid;     */
+    /* border-color: rgb(176, 176, 176); */
+    /* border: 1px solid;     */
     border: 1px solid;    
     border-color: rgb(176, 176, 176);
+    background-color: white;
     border-radius: 100%;
     width: 35px;
     height: 35px;
-    background-color: white;
-    /* font-size: 30px; */
-    /* text-align: center; */
-}
-
-.children-buttons:disabled {
-    color:#dfdfdf;
-    border: 1px solid #dddddd;
-    cursor: not-allowed !important;
+    /* pointer-events: none; */
 }
 
 .children-buttons:hover {
     border-color: black;
+    /* color: none; */
+    /* pointer-events: none; */
 }
 
-.adult-buttons:disabled {
-    color:#dfdfdf;
+.children-buttons:disabled {
+    /* color:#dfdfdf; */
     border: 1px solid #dddddd;
-    cursor: not-allowed !important;
+    cursor: not-allowed;
+    /* pointer-events: none; */
+    
 }
 
 .guest-label {
