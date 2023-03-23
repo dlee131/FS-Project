@@ -43,7 +43,6 @@ function ReservationForm() {
     setDropDown(!dropDown);
   };
   
-
   const calculateCleaningFee = (subtotal) => {
     return subtotal * 0.01;
   };
@@ -86,7 +85,7 @@ function ReservationForm() {
     }
   };
 
-  const handleNumChildrenChange = (e, operation) => {
+ const handleNumChildrenChange = (e, operation) => {
     e.preventDefault();
     e.stopPropagation();
     if (operation === 'increment') {

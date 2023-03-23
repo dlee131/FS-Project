@@ -449,7 +449,7 @@
 .reservation-guests {
     position: absolute;
     /* display: flex; */
-    top: 80px;
+    top: 120px;
     left: 500px;
 }
 
@@ -476,6 +476,10 @@
     width: 298px;
     position: relative;
     bottom: 0px;
+}
+
+.guests-container:hover {
+    cursor: pointer;
 }
 
 .chevron {
@@ -514,7 +518,7 @@
 }
 
 .cancel-button {
-    padding: 10px 35px;
+    /* padding: 10px 35px;
     color:white;
     border-bottom-right-radius: 20px;
     border: none;
@@ -526,8 +530,9 @@
     transition: background-color 0.2s ease-in-out;
     font-size: 14px;
     position: absolute;
+    top: 130px;
     left: 10px;
     width: 651px;
     height: 60px;
-    transition: all 0.5s ease;
+    transition: all 0.5s ease; */
 }

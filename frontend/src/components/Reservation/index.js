@@ -1,44 +1,91 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
-import {
-  getReservations,
-  fetchReservations,
-  updateReservation,
-  deleteReservation,
-} from "../../store/reservations";
+import { getReservations, fetchReservations, updateReservation, deleteReservation } from "../../store/reservations";
 import { getListings, fetchListings } from "../../store/listings";
 import { useParams, NavLink, useHistory } from "react-router-dom";
 
 function ReservationIndex() {
   const sessionUser = useSelector((state) => state.session.user);
   const reservations = useSelector(getReservations);
-  const listings = useSelector(getListings);
   const { listingId } = useParams();
   const listing = useSelector((state) => state.listings[listingId]);
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [numAdults, setNumAdults] = useState(1);
+  const [numChildren, setNumChildren] = useState(0);
+  const [numGuests, setNumGuests] = useState();
+  const [errors, setErrors] = useState();
+  const [dropDown, setDropDown] = useState(false);
+  const [selectedReservationId, setSelectedReservationId] = useState(null);
   const dispatch = useDispatch();
   const history = useHistory();
-
+  const user = useSelector((state) => state.session.user);
+  const userId = user?.id || null;
   // Filter reservations by user ID
   const userReservations = reservations.filter(
     (reservation) => reservation.userId === sessionUser.id
   );
 
+  const reservation = {
+    reservation: {
+      listingId,
+      userId,
+      startDate,
+      endDate,
+      numGuests
+    },
+  };
+
   useEffect(() => {
     dispatch(fetchReservations());
-    // dispatch(fetchListings(listingId));
-  }, [listingId, dispatch]);
+    setNumGuests(numAdults + numChildren);
+  }, [listingId, numAdults, numChildren, dispatch]);
 
   const handleDeleteReservation = (reservationId) => {
     dispatch(deleteReservation(reservationId));
     // debugger
   };
-  
 
-  const handleUpdateReservation = (reservationId) => {
-    dispatch(updateReservation(reservationId));
+  const dropdown = (reservationId) => {
+    if (selectedReservationId === reservationId) {
+      setSelectedReservationId(null);
+    } else {
+      setSelectedReservationId(reservationId);
+    }
   };
-  const handleClick = (listingId) => {
+
+  const handleUpdateReservation = (e) => {
+    e.preventDefault();
+    setErrors([]);
+    const reservationToUpdate = userReservations.find(
+      (reservation) => reservation.id === selectedReservationId
+    );
+    if (reservationToUpdate) {
+      const updatedReservation = {
+        reservation: {
+          ...reservationToUpdate,
+          startDate: reservation.startDate,
+          endDate: reservation.endDate,
+          numGuests: reservation.numGuests
+        },
+      };
+      dispatch(updateReservation(updatedReservation)).catch(async (res) => {
+        let data;
+        try {
+          data = await res.clone().json();
+        } catch {
+          data = await res.text();
+        }
+        if (data?.errors) setErrors(data.errors);
+        else if (data) setErrors([data]);
+        else setErrors([res.statusText]);
+      });
+    }
+  };
+
+  const handleClick = (listingId, reservationId) => {
+    setSelectedReservationId(reservationId);
     history.push(`/listings/${listingId}`);
     window.scrollTo(0, 0);
   };
@@ -70,30 +117,95 @@ function ReservationIndex() {
               src={reservation.photo[0]}
               alt=""
               className="reservation-photo"
-              onClick={() => handleClick(reservation.listingId)}
+              onClick={() => handleClick(reservation.listingId, reservation.id)}
             />
           </div>
           <div className="reservation-description">
-            <div className="reservation-city">
-              {reservation.state}
-            </div>
+            <div className="reservation-city">{reservation.state}</div>
             <div className="reservation-residence">
-             Entire {reservation.residenceType} hosted by {reservation.userName}
+              Entire {reservation.residenceType} hosted by{" "}
+              {reservation.userName}
             </div>
             <div className="reservation-dates">
               {moment(reservation.startDate).format("MM/DD/YYYY")} -{" "}
               {moment(reservation.endDate).format("MM/DD/YYYY")}
             </div>
-            <div className="reservation-guests">Number of Guests: {reservation.numGuests}</div>
+            <div className="reservation-guests">
+              Number of Guests: {reservation.numGuests}
             </div>
-            <div className="reservation-buttons">
-          <button
-            onClick={() => handleDeleteReservation(reservation.id)}
-            className="cancel-button"
-          >
-            Cancel Reservation
-          </button>
-
+          </div>
+          <div className="reservation-buttons">
+            <button
+              onClick={() => handleDeleteReservation(reservation.id)}
+              className="cancel-button"
+            >
+              Cancel Reservation
+            </button>
+            <button onClick={() => dropdown(reservation.id)}>
+              Edit reservation
+            </button>
+            {selectedReservationId === reservation.id && (
+              <form onSubmit={handleUpdateReservation}>
+                <button
+                  type="button"
+                  value={numAdults}
+                  disabled={numAdults === 1}
+                  onClick={() => setNumAdults(numAdults - 1)}
+                >
+                  -
+                </button>
+                <div>{numAdults}</div>
+                <button
+                  type="button"
+                  value={numAdults}
+                  disabled={numGuests === 4}
+                  onClick={() => setNumAdults(numAdults + 1)}
+                >
+                  +
+                </button>
+                <button
+                  type="button"
+                  value={numChildren}
+                  disabled={numChildren === 0}
+                  onClick={() => setNumChildren(numChildren - 1)}
+                >
+                  -
+                </button>
+                <div>{numChildren}</div>
+                <button
+                  type="button"
+                  value={reservation.numChildren}
+                  disabled={numGuests === 4}
+                  onClick={() => setNumChildren(numChildren + 1)}
+                >
+                  +
+                </button>
+                <input
+                  id="reservation-inputs"
+                  type="date"
+                  name="startDate"
+                  value={reservation.startDate}
+                  onChange={(e) => setStartDate(e.target.value)}
+                  min={moment().add(1, "day").format("YYYY-MM-DD")}
+                  required
+                />
+                <input id="reservation-input"
+                  type="date"
+                  value={reservation.endDate}
+                  onChange={(e) => {
+                    setEndDate(e.target.value);
+                  }}
+                  required
+                  min={
+                    startDate
+                      ? moment(startDate, "YYYY-MM-DD")
+                          .add(1, "days")
+                          .format("YYYY-MM-DD")
+                      : moment().add(1, "days").format("YYYY-MM-DD")
+                  }
+                />
+              </form>
+            )}
           </div>
         </div>
       ))}
