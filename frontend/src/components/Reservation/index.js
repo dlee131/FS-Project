@@ -5,42 +5,40 @@ import { getReservations, fetchReservations, updateReservation, deleteReservatio
 import { getListings, fetchListings } from "../../store/listings";
 import { useParams, NavLink, useHistory } from "react-router-dom";
 
-function ReservationIndex() {
+function ReservationIndex({reservation}) {
   const sessionUser = useSelector((state) => state.session.user);
   const reservations = useSelector(getReservations);
   const { listingId } = useParams();
   const listing = useSelector((state) => state.listings[listingId]);
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
+  const [startDate, setStartDate] = useState();
+  const [endDate, setEndDate] = useState();
   const [numAdults, setNumAdults] = useState(1);
   const [numChildren, setNumChildren] = useState(0);
   const [numGuests, setNumGuests] = useState();
   const [errors, setErrors] = useState();
-  const [dropDown, setDropDown] = useState(false);
-  const [selectedReservationId, setSelectedReservationId] = useState(null);
+  const [selectedReservationId, setSelectedReservationId] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
   const user = useSelector((state) => state.session.user);
   const userId = user?.id || null;
+  
   // Filter reservations by user ID
   const userReservations = reservations.filter(
     (reservation) => reservation.userId === sessionUser.id
   );
 
-  const reservation = {
-    reservation: {
-      listingId,
-      userId,
-      startDate,
-      endDate,
-      numGuests
-    },
-  };
+  if (reservation && !startDate && !endDate) {
+    setStartDate(reservation.startDate)
+    setEndDate(reservation.endDate)
+  }
 
   useEffect(() => {
     dispatch(fetchReservations());
+  }, [listingId]);
+
+  useEffect(() => {
     setNumGuests(numAdults + numChildren);
-  }, [listingId, numAdults, numChildren, dispatch]);
+  }, [numAdults, numChildren])
 
   const handleDeleteReservation = (reservationId) => {
     dispatch(deleteReservation(reservationId));
@@ -63,12 +61,12 @@ function ReservationIndex() {
     );
     if (reservationToUpdate) {
       const updatedReservation = {
-        reservation: {
-          ...reservationToUpdate,
-          startDate: reservation.startDate,
-          endDate: reservation.endDate,
-          numGuests: reservation.numGuests
-        },
+        listing_id: reservationToUpdate.listingId,
+        id: reservationToUpdate.id,
+        user_id: userId,
+        start_date: reservationToUpdate.startDate,
+        end_date: reservationToUpdate.endDate,
+        num_guests: numGuests
       };
       dispatch(updateReservation(updatedReservation)).catch(async (res) => {
         let data;
@@ -83,6 +81,8 @@ function ReservationIndex() {
       });
     }
   };
+
+  
 
   const handleClick = (listingId, reservationId) => {
     setSelectedReservationId(reservationId);
@@ -146,6 +146,8 @@ function ReservationIndex() {
             </button>
             {selectedReservationId === reservation.id && (
               <form onSubmit={handleUpdateReservation}>
+                <div>Adults</div>
+                <div>Age 13+</div>
                 <button
                   type="button"
                   value={numAdults}
@@ -180,30 +182,9 @@ function ReservationIndex() {
                 >
                   +
                 </button>
-                <input
-                  id="reservation-inputs"
-                  type="date"
-                  name="startDate"
-                  value={reservation.startDate}
-                  onChange={(e) => setStartDate(e.target.value)}
-                  min={moment().add(1, "day").format("YYYY-MM-DD")}
-                  required
-                />
-                <input id="reservation-input"
-                  type="date"
-                  value={reservation.endDate}
-                  onChange={(e) => {
-                    setEndDate(e.target.value);
-                  }}
-                  required
-                  min={
-                    startDate
-                      ? moment(startDate, "YYYY-MM-DD")
-                          .add(1, "days")
-                          .format("YYYY-MM-DD")
-                      : moment().add(1, "days").format("YYYY-MM-DD")
-                  }
-                />
+                <button>
+                  Confirm
+                </button>
               </form>
             )}
           </div>

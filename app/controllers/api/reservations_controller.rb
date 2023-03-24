@@ -9,8 +9,13 @@ class Api::ReservationsController < ApplicationController
   end
 
   def show
-    @reservations = current_user.reservations
-  end
+    @reservation = Reservation.find_by(id: params[:id])
+    if @reservation.user_id == current_user.id
+        render :show
+    else
+        render json: {errors: ['Must be logged in as creator of reservation']}, status: :unprocessable_entity
+    end
+end
 
   def create
     
@@ -24,8 +29,7 @@ class Api::ReservationsController < ApplicationController
   end
 
   def update
-    @reservation = Reservation.find(params[:id])
-
+    @reservation = Reservation.find_by(id: params[:id])
     if @reservation.update(reservation_params)
       render :show
     else

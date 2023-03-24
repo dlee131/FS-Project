@@ -66,6 +66,7 @@ export const createReservation = (reservationObj) => async dispatch => {
 }
 
 export const updateReservation = (reservationObj) => async dispatch => {
+    debugger
     const res = await csrfFetch(`/api/reservations/${reservationObj.id}`, {
         method: 'PATCH',
         headers: {
@@ -73,10 +74,13 @@ export const updateReservation = (reservationObj) => async dispatch => {
         },
         body: JSON.stringify(reservationObj)
     })
+    debugger
     if (res.ok) {
         const reservation = await res.json();
         dispatch(receiveReservation(reservation))
     }
+    debugger
+    return res
 }
 
 export const deleteReservation = (reservationId) => async dispatch => {
