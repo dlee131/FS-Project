@@ -46,6 +46,8 @@ end
     end
   end
 
+  private 
+  
   def reservation_params
     params.require(:reservation).permit(:user_id, :listing_id, :num_guests, :start_date, :end_date)
   end
