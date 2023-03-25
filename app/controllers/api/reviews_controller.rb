@@ -32,7 +32,12 @@ class Api::ReviewsController < ApplicationController
     end
 
     def destroy
-        
+        @review = Review.find_by(id: params[:id])
+        if @review
+            @review.destroy
+        else
+            render json: { message: "review cannot be found."}, status: 404
+        end
     end
 
     private

@@ -38,7 +38,7 @@ end
   end
 
   def destroy
-    @reservation = Reservation.find(params[:id])
+    @reservation = Reservation.find_by(id: params[:id])
     if @reservation
       @reservation.destroy
     else
