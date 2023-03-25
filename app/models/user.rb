@@ -40,6 +40,11 @@ has_many :hosted_reservations,
 through: :reservations,
 source: :listings
 
+has_many :reviews,
+foreign_key: :user_id,
+class_name: :Review
+dependent: :destroy
+
 def self.find_by_credentials(credential, password) 
     match = URI::MailTo::EMAIL_REGEXP
    if match.match?(credential)
