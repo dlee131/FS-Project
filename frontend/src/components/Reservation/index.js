@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
-import { getReservations, fetchReservations, updateReservation, deleteReservation } from "../../store/reservations";
+import {
+  getReservations,
+  fetchReservations,
+  updateReservation,
+  deleteReservation,
+} from "../../store/reservations";
 import { getListings, fetchListings } from "../../store/listings";
 import { useParams, NavLink, useHistory } from "react-router-dom";
 
-function ReservationIndex({reservation}) {
+function ReservationIndex({ reservation }) {
   const sessionUser = useSelector((state) => state.session.user);
   const reservations = useSelector(getReservations);
   const { listingId } = useParams();
@@ -21,15 +26,15 @@ function ReservationIndex({reservation}) {
   const history = useHistory();
   const user = useSelector((state) => state.session.user);
   const userId = user?.id || null;
-  
+
   // Filter reservations by user ID
   const userReservations = reservations.filter(
     (reservation) => reservation.userId === sessionUser.id
   );
 
   if (reservation && !startDate && !endDate) {
-    setStartDate(reservation.startDate)
-    setEndDate(reservation.endDate)
+    setStartDate(reservation.startDate);
+    setEndDate(reservation.endDate);
   }
 
   useEffect(() => {
@@ -38,7 +43,7 @@ function ReservationIndex({reservation}) {
 
   useEffect(() => {
     setNumGuests(numAdults + numChildren);
-  }, [numAdults, numChildren])
+  }, [numAdults, numChildren]);
 
   const handleDeleteReservation = (reservationId) => {
     dispatch(deleteReservation(reservationId));
@@ -64,9 +69,9 @@ function ReservationIndex({reservation}) {
         listing_id: reservationToUpdate.listingId,
         id: reservationToUpdate.id,
         user_id: userId,
-        start_date: reservationToUpdate.startDate,
-        end_date: reservationToUpdate.endDate,
-        num_guests: numGuests
+        start_date: startDate,
+        end_date: endDate,
+        num_guests: numGuests,
       };
       dispatch(updateReservation(updatedReservation)).catch(async (res) => {
         let data;
@@ -81,8 +86,6 @@ function ReservationIndex({reservation}) {
       });
     }
   };
-
-  
 
   const handleClick = (listingId, reservationId) => {
     setSelectedReservationId(reservationId);
@@ -165,6 +168,8 @@ function ReservationIndex({reservation}) {
                 >
                   +
                 </button>
+                <div>Children</div>
+                <div>2-12</div>
                 <button
                   type="button"
                   value={numChildren}
@@ -182,9 +187,30 @@ function ReservationIndex({reservation}) {
                 >
                   +
                 </button>
-                <button>
-                  Confirm
-                </button>
+                <input
+                  id="reservation-inputs"
+                  type="date"
+                  name="startDate"
+                  value={startDate}
+                  onChange={(e) => setStartDate(e.target.value)}
+                  min={moment().add(1, "day").format("YYYY-MM-DD")}
+                />
+                <input
+                  id="reservation-input"
+                  type="date"
+                  value={endDate}
+                  onChange={(e) => {
+                    setEndDate(e.target.value);
+                  }}
+                  min={
+                    startDate
+                      ? moment(startDate, "YYYY-MM-DD")
+                          .add(1, "days")
+                          .format("YYYY-MM-DD")
+                      : moment().add(1, "days").format("YYYY-MM-DD")
+                  }
+                />
+                <button>Confirm</button>
               </form>
             )}
           </div>
