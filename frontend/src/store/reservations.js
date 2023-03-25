@@ -19,7 +19,6 @@ export const receiveReservations = (reservations) => {
     }   
 }
 
-
 export const removeReservation = (reservationId) => {
     return {
         type: REMOVE_RESERVATION,

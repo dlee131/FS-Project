@@ -1,13 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
-import {
-  getReservations,
-  fetchReservations,
-  updateReservation,
-  deleteReservation,
-} from "../../store/reservations";
-import { getListings, fetchListings } from "../../store/listings";
+import { getReservations, fetchReservations, updateReservation, deleteReservation} from "../../store/reservations";
 import { useParams, NavLink, useHistory } from "react-router-dom";
 
 function ReservationIndex({ reservation }) {

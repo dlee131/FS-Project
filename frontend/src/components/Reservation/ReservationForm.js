@@ -1,9 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import moment from "moment";
-import { useHistory } from "react-router-dom";
 import { createReservation } from "../../store/reservations";
 import LoginFormModal from "../LoginFormModal";
 import "./ReservationForm.css";

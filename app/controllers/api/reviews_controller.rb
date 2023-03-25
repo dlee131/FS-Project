@@ -3,14 +3,19 @@ class Api::ReviewsController < ApplicationController
     before_action :require_logged_in, only: [:create, :destroy, :update]
 
     def index
-        @listing = Listing.find(params[:listing_id])
-        @reviews = @listing.reviews
+        @listing = Listing.find_by(id: params[:listing_id])
+        if @listing
+          @reviews = @listing.reviews
+        else
+          # Where no listing is found!
+          @reviews = []
+        end
         render :index
-    end
+      end
 
     def show
         @review = Review.find_by(id: params[:id])
-        render: show
+        render :show
     end
 
     def create
