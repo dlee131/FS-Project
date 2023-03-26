@@ -25,9 +25,9 @@ export const removeReview = (reviewId) => {
   };
 };
 
-export const getReviews = (state) => {
-  return state.reviews ? Object.values(state.reviews) : [];
-};
+export const getReviews = (state) => state.reviews ? Object.values(state.reviews) : [];
+export const getReview = (reviewId) => (state) => state.reviews ? state.reviews[reviewId] : null
+
 
 export const fetchReviews = () => async (dispatch) => {
   const res = await csrfFetch(`api/reviews`);
