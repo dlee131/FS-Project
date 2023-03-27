@@ -1,16 +1,120 @@
 import { useEffect, useState } from "react";
-
+import { useDispatch, useSelector } from "react-redux";
+import { createReview } from "../../store/reviews";
+import { useHistory, useParams } from "react-router-dom";
 
 function ReviewForm() {
-    const [cleanliness, setCleanliness] = useState(1);
-    const [accuracy, setAccuracy] = useState(1);
-    const [communication, setCommunication] = useState(1);
-    const [location, setLocation] = useState(1);
-    const [checkIn, setCheckIn] = useState(1);
-    const [value, setValue] = useState(1);
-    const [comment, setComment] = useState("")
+  const [cleanliness, setCleanliness] = useState(0);
+  const [accuracy, setAccuracy] = useState(0);
+  const [communication, setCommunication] = useState(0);
+  const [location, setLocation] = useState(0);
+  const [checkIn, setCheckIn] = useState(0);
+  const [value, setValue] = useState(0);
+  const [comment, setComment] = useState("");
+  const [errors, setErrors] = useState([]);
+  const { listingId } = useParams();
+  const userId = useSelector((state) => state.session.user);
+  const dispatch = useDispatch();
+  const history = useHistory();
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setErrors([]);
+    const intListingId = Number(listingId);
+    const reviewParams = {
+      listing_id: intListingId,
+      user_id: userId,
+      cleanliness,
+      accuracy,
+      communication,
+      location,
+      checkIn,
+      value,
+      comment,
+    };
 
+    dispatch(createReview(reviewParams))
+      .then(() => {
+        history.push(`/listings/${listingId}`);
+      })
+      .catch((err) => {
+        if (err.response && err.response.data && err.response.data.errors) {
+          setErrors(err.response.data.errors);
+        } else {
+          setErrors(["Try again."]);
+        }
+      });
+  };
+
+  function Slider({ label, value, min, max, step, onChange }) {
+    const handleOnChange = (event) => {
+      const newValue = event.target.value;
+      onChange(newValue);
+    };
+
+    return (
+      <div>
+        <label>
+          {label}: {value}
+        </label>
+        <input
+          type="range"
+          min={min}
+          max={max}
+          step={step}
+          value={value}
+          onChange={handleOnChange}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <div>Describe your stay and experience at this place!</div>
+      <form>
+        <Slider
+          label="Cleanliness"
+          value={cleanliness}
+          min={0}
+          max={5}
+          onChange={(newValue) => setCleanliness(newValue)}
+        />
+        <Slider
+          label="Accuracy"
+          value={accuracy}
+          min={0}
+          max={5}
+          step={1}
+          onChange={(newValue) => setAccuracy(newValue)}
+        />
+        <Slider
+          label="communication"
+          value={communication}
+          min={0}
+          max={5}
+          step={1}
+          onChange={(newValue) => setCommunication(newValue)}
+        />
+        <Slider
+          label="location"
+          value={location}
+          min={0}
+          max={5}
+          step={1}
+          onChange={(newValue) => setLocation(newValue)}
+        />
+        <Slider
+          label="checkin"
+          value={checkIn}
+          min={0}
+          max={5}
+          step={1}
+          onChange={(newValue) => setCheckIn(newValue)}
+        />
+      </form>
+    </div>
+  );
 }
 
-export default ReviewForm
+export default ReviewForm;

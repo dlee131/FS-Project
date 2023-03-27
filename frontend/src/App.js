@@ -4,6 +4,7 @@ import Navigation from "./components/Navigation";
 import ListingIndex from "./components/ListingsIndex";
 import ListingPage from "./components/ListingPage";
 import ReservationIndex from "./components/Reservation";
+import ReviewForm from "./components/Review/ReviewForm";
 
 function App() {
   return (
@@ -11,10 +12,13 @@ function App() {
       <Navigation />
         <Switch>
         <Route exact path="/">
-          <ListingIndex />
+          <ListingIndex/>
+        </Route>
+        <Route exact path="/listings/:listingId/reviews/new">
+          <ReviewForm/>
         </Route>
         <Route path="/listings/:listingId">
-          <ListingPage />
+          <ListingPage/>
         </Route>
         <Route path="/reservations">
           <ReservationIndex/>

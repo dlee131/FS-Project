@@ -175,7 +175,7 @@ const handleSubmit = async (e) => {
           <div className="border-line"></div>
         </div>
         {/* onClick={() => setIsOpen(!isOpen)} */}
-        <div className="guests-container" onClick={dropdown} onBlur={handleOnBlur} tabindex="1">
+        <div className="guests-container" onClick={dropdown} onBlur={handleOnBlur} tabIndex="1">
           <div className="guests">GUESTS</div>
           <div className="num-guests">{numGuests} guest</div>
           <div className="chevron">
