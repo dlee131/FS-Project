@@ -13,14 +13,14 @@ function ReviewForm() {
   const [comment, setComment] = useState("");
   const [errors, setErrors] = useState([]);
   const { listingId } = useParams();
-  const userId = useSelector((state) => state.session.user);
+  const userId = useSelector((state) => state.session.user.id);
   const dispatch = useDispatch();
   const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
-    const intListingId = Number(listingId);
+    const intListingId = listingId;
     const reviewParams = {
       listing_id: intListingId,
       user_id: userId,
@@ -28,7 +28,7 @@ function ReviewForm() {
       accuracy,
       communication,
       location,
-      checkIn,
+      check_in: checkIn,
       value,
       comment,
     };
@@ -46,7 +46,7 @@ function ReviewForm() {
       });
   };
 
-  function Slider({ label, value, min, max, step, onChange }) {
+  function Slider({ label, value, min, max, onChange }) {
     const handleOnChange = (event) => {
       const newValue = event.target.value;
       onChange(newValue);
@@ -61,7 +61,6 @@ function ReviewForm() {
           type="range"
           min={min}
           max={max}
-          step={step}
           value={value}
           onChange={handleOnChange}
         />
@@ -70,50 +69,60 @@ function ReviewForm() {
   }
 
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <div>Describe your stay and experience at this place!</div>
-      <form>
-        <Slider
-          label="Cleanliness"
-          value={cleanliness}
-          min={0}
-          max={5}
-          onChange={(newValue) => setCleanliness(newValue)}
+
+      <Slider
+        label="Cleanliness"
+        value={cleanliness}
+        min={0}
+        max={5}
+        onChange={(newValue) => setCleanliness(newValue)}
+      />
+      <Slider
+        label="Accuracy"
+        value={accuracy}
+        min={0}
+        max={5}
+        onChange={(newValue) => setAccuracy(newValue)}
+      />
+      <Slider
+        label="Communication"
+        value={communication}
+        min={0}
+        max={5}
+        onChange={(newValue) => setCommunication(newValue)}
+      />
+      <Slider
+        label="Location"
+        value={location}
+        min={0}
+        max={5}
+        onChange={(newValue) => setLocation(newValue)}
+      />
+      <Slider
+        label="Check-in"
+        value={checkIn}
+        min={0}
+        max={5}
+        onChange={(newValue) => setCheckIn(newValue)}
+      />
+      <Slider
+        label="Value"
+        value={value}
+        min={0}
+        max={5}
+        onChange={(newValue) => setValue(newValue)}
+      />
+      <label>
+        Comment:
+        <textarea
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
         />
-        <Slider
-          label="Accuracy"
-          value={accuracy}
-          min={0}
-          max={5}
-          step={1}
-          onChange={(newValue) => setAccuracy(newValue)}
-        />
-        <Slider
-          label="communication"
-          value={communication}
-          min={0}
-          max={5}
-          step={1}
-          onChange={(newValue) => setCommunication(newValue)}
-        />
-        <Slider
-          label="location"
-          value={location}
-          min={0}
-          max={5}
-          step={1}
-          onChange={(newValue) => setLocation(newValue)}
-        />
-        <Slider
-          label="checkin"
-          value={checkIn}
-          min={0}
-          max={5}
-          step={1}
-          onChange={(newValue) => setCheckIn(newValue)}
-        />
-      </form>
-    </div>
+      </label>
+      <button>Submit</button>
+    </form>
   );
 }
 

@@ -19,9 +19,13 @@ class Api::ReviewsController < ApplicationController
     end
 
     def create
+    
         @review = Review.new(review_params)
+        # debugger
         if @review.save 
+            # debugger
             render :show 
+
         else
             render json: @review.errors.full_messages, status: 422
         end

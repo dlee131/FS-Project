@@ -93,13 +93,6 @@ function ReservationForm() {
     }
   };
 
-//   return (
-//     <div>
-//       <h1>Welcome!</h1>
-//       <LoginFormModal onClose={handleLoginFormClose} />
-//     </div>
-//   );
-// }
 const handleSubmit = async (e) => {
   e.preventDefault();
   setErrors([]);
