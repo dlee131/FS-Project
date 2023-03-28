@@ -22,7 +22,6 @@ export const ListingPage = () => {
         dispatch(fetchListings(listingId))
       },[listingId, dispatch])
 
-    //   if (!listings) return null;
     if (!listing) {
         return <div>Loading...</div>;
     }
@@ -98,6 +97,7 @@ export const ListingPage = () => {
             <h5 className="map-header">Where you'll be - (MAP coming soon)</h5>
             <div id="map-placeholder"><img src='https://melobnb-seeds.s3.amazonaws.com/map.jpeg' alt="design-icon" /></div>
             </div>
+            
     )
 
 }
