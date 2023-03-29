@@ -4,6 +4,7 @@ import { fetchListings, getListings } from "../../store/listings"
 import { useParams } from 'react-router-dom'
 import './ListingPage.css'
 import ReservationForm from "../Reservation/ReservationForm";
+import ReviewsIndex from "../Review";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { library } from '@fortawesome/fontawesome-svg-core';
 // import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -94,6 +95,7 @@ export const ListingPage = () => {
                 </div>
             </div>
             <div className="borderline3"></div>
+            <div><ReviewsIndex/></div>
             <h5 className="map-header">Where you'll be - (MAP coming soon)</h5>
             <div id="map-placeholder"><img src='https://melobnb-seeds.s3.amazonaws.com/map.jpeg' alt="design-icon" /></div>
             </div>

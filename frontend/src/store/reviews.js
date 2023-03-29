@@ -28,16 +28,15 @@ export const removeReview = (reviewId) => {
 export const getReviews = (state) => state.reviews ? Object.values(state.reviews) : [];
 export const getReview = (reviewId) => (state) => state.reviews ? state.reviews[reviewId] : null
 
+export const fetchReviews = (listingId) => async dispatch => {
+    const res = await csrfFetch(`/api/listings/${listingId}/reviews`);
+    if (res.ok) {
+      let data = await res.json();
+      dispatch(receiveReviews(data));
+    }
+  };
 
-export const fetchReviews = () => async (dispatch) => {
-  const res = await csrfFetch(`api/reviews`);
-  if (res.ok) {
-    let data = await res.json();
-    dispatch(receiveReviews(data));
-  }
-};
-
-export const fetchReview = (reviewId) => async (dispatch) => {
+export const fetchReview = (reviewId) => async dispatch => {
   const res = await csrfFetch(`api/reviews/${reviewId}`);
   if (res.ok) {
     let data = await res.json();
@@ -45,7 +44,7 @@ export const fetchReview = (reviewId) => async (dispatch) => {
   }
 };
 
-export const createReview = (reviewObj) => async (dispatch) => {
+export const createReview = (reviewObj) => async dispatch => {
   const res = await csrfFetch(`/api/reviews`, {
     method: "POST",
     headers: {
@@ -100,5 +99,22 @@ function reviewsReducer (state = {}, action) {
         return state
     }
 }
+// function reviewsReducer (state = {}, action) {
+//     switch (action.type) {
+//       case RECEIVE_REVIEW:
+//         return {
+//           ...state,
+//           [action.review.id]: action.review
+//         };
+//       case RECEIVE_ALL_REVIEWS:
+//         return { ...action.reviews };
+//       case REMOVE_REVIEW:
+//         const newState = { ...state };
+//         delete newState[action.reviewId];
+//         return newState;
+//       default:
+//         return state;
+//     }
+//   }
 
 export default reviewsReducer;

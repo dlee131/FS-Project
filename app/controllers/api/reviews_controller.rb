@@ -2,15 +2,17 @@ class Api::ReviewsController < ApplicationController
 
     before_action :require_logged_in, only: [:create, :destroy, :update]
 
+    #   def index
+    #     @reviews = Review.all
+    #     if params[:listing_id]
+    #       @reviews = @reviews.where(listing_id: params[:listing_id])
+    #     elsif params[:user_id]
+    #       @reviews = @reviews.where(user_id: params[:user_id]).order(start_date: :desc)
+    #     end
+    #     render :index
+    #   end
     def index
-        @listing = Listing.find_by(id: params[:listing_id])
-        if @listing
-          @reviews = @listing.reviews
-        else
-          # Where no listing is found!
-          @reviews = []
-        end
-        render :index
+        @reviews = Review.where(listing_id: params[:listing_id])
       end
 
     def show
