@@ -5,25 +5,27 @@ import ListingIndex from "./components/ListingsIndex";
 import ListingPage from "./components/ListingPage";
 import ReservationIndex from "./components/Reservation";
 import ReviewForm from "./components/Review/ReviewForm";
+import ReviewsIndex from "./components/Review";
 
 function App() {
   return (
     <>
       <Navigation />
-        <Switch>
+      <Switch>
+      <Route path={'/listings/:listingId/reviews/:reviewId/edit'}/>
         <Route exact path="/">
-          <ListingIndex/>
+          <ListingIndex />
         </Route>
         <Route exact path="/listings/:listingId/reviews/new">
-          <ReviewForm/>
+          <ReviewForm />
         </Route>
         <Route path="/listings/:listingId">
-          <ListingPage/>
+          <ListingPage />
         </Route>
         <Route path="/reservations">
-          <ReservationIndex/>
+          <ReservationIndex />
         </Route>
-        </Switch>
+      </Switch>
     </>
   );
 }
