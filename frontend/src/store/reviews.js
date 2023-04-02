@@ -78,10 +78,11 @@ export const updateReview = (reviewObj) => async dispatch => {
 }
 
 export const deleteReview = (reviewId) => async dispatch => {
+    debugger
     const res = await csrfFetch(`/api/reviews/${reviewId}`, {
         method: 'DELETE'
     })
-
+    debugger
     if (res.ok)
     dispatch(removeReview(reviewId))
 }
