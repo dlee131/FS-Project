@@ -11,9 +11,7 @@ function ReviewsIndex() {
   const [location, setLocation] = useState(0);
   const [checkIn, setCheckIn] = useState(0);
   const [value, setValue] = useState(0);
-  const [errors, setErrors] = useState([]);
   const reviews = useSelector(getReviews);
-  const [selectedReviewId, setSelectedReviewId] = useState(false);
   const dispatch = useDispatch();
   const { listingId } = useParams();
   const totalReviews = reviews.length;
@@ -43,6 +41,38 @@ function ReviewsIndex() {
     return `${month} ${year}`;
   };
 
+  function calculateAverageRating(reviews) {
+    let totalSum = 0;
+
+    reviews.forEach((review) => {
+      const { cleanliness, communication, checkIn, accuracy, location, value } =
+        review;
+
+      const avgRating =
+        (cleanliness + communication + checkIn + accuracy + location + value) /
+        6;
+      totalSum += avgRating;
+    });
+    const overallAvgRating = (totalSum / reviews.length).toFixed(2);
+    return overallAvgRating;
+  }
+
+  const valueFormating = (value) => {
+    let string = value.toString();
+
+    if (string.length === 1) return string.concat(".0");
+    return string;
+  };
+
+  const reviewCategories = [
+    { title: "Cleanliness", value: cleanliness },
+    { title: "Accuracy", value: accuracy },
+    { title: "Communication", value: communication },
+    { title: "Location", value: location },
+    { title: "Check-in", value: checkIn },
+    { title: "Value", value: value },
+  ];
+
   const reviewList = reviews.map((review) => (
     <div key={review.id}>
       <p>{review.reviewerName}</p>
@@ -61,12 +91,24 @@ function ReviewsIndex() {
     <div>
       <div className="total-reviews">
         <i className="fas fa-star"></i>
-        {totalReviews} {totalReviews === 1 ? "review" : "reviews"}
+        {calculateAverageRating(reviews)} · {totalReviews}{" "}
+        {totalReviews === 1 ? "review" : "reviews"}
       </div>
       <div>
         <NavLink exact to={`/listings/${listingId}/reviews/new`}>
           Write a review!
         </NavLink>
+        <div className="reviews-figure">
+          {reviewCategories.map((category) => (
+            <div className="category" key={category.title}>
+              <p>{category.title}</p>
+              <div className="progress-div">
+                <progress value={category.value} max="5"></progress>
+                <p>{valueFormating(category.value)}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
       {reviewList}
     </div>
