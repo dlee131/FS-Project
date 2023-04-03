@@ -28,40 +28,30 @@ function ReviewUpdate() {
     const userReviews = reviews.filter((review) => review.userId === userId);
 
 
-    const handleUpdateReview = (reviewId) => {
-        debugger
-        const reviewToUpdate = userReviews.find((review) => review.id === reviewId);
-        debugger
-        if (reviewToUpdate) {
-          const newReview = {
-            id: reviewToUpdate.id,
-            listing_id: reviewToUpdate.listingId,
-            user_id: reviewToUpdate.userId,
-            comment,
-            cleanliness,
-            accuracy,
-            location,
-            value,
-            communication,
-            check_in: checkIn,
-          };
-    
-          dispatch(updateReview(newReview))
-            .catch(async (res) => {
-              let data;
-              try {
-                data = await res.clone().json();
-              } catch {
-                data = await res.text();
-              }
-              if (data?.errors) setErrors(data.errors);
-              else if (data) setErrors([data]);
-              else setErrors([res.statusText]);
-            })
-            .then(() => {
-              history.push(`/listings/${listingId}`);
-            });
-        }
+    const handleUpdateReview = (e) => {
+        e.preventDefault();
+      
+        const newReview = {
+          id: review.id,
+          listing_id: review.listingId,
+          user_id: userId,
+          comment,
+          cleanliness,
+          accuracy,
+          location,
+          value,
+          communication,
+          check_in: checkIn,
+        };
+      
+        dispatch(updateReview(newReview))
+          .then(() => {
+            history.push(`/listings/${listingId}`);
+          })
+          .catch((err) => {
+            console.error(err);
+            setErrors(["Failed to update review. Please try again."]);
+          });
       };
   
     function Slider({ label, value, min, max, onChange }) {
