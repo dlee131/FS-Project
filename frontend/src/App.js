@@ -5,14 +5,16 @@ import ListingIndex from "./components/ListingsIndex";
 import ListingPage from "./components/ListingPage";
 import ReservationIndex from "./components/Reservation";
 import ReviewForm from "./components/Review/ReviewForm";
-import ReviewsIndex from "./components/Review";
+import ReviewUpdate from "./components/Review/ReviewUpdate";
 
 function App() {
   return (
     <>
       <Navigation />
       <Switch>
-      <Route path={'/listings/:listingId/reviews/:reviewId/edit'}/>
+      <Route path={'/listings/:listingId/reviews/:reviewId/edit'}>
+        <ReviewUpdate/>
+        </Route>
         <Route exact path="/">
           <ListingIndex />
         </Route>

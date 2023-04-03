@@ -61,7 +61,7 @@ export const createReview = (reviewObj) => async dispatch => {
 };
 
 export const updateReview = (reviewObj) => async dispatch => {
-    
+    debugger
     const res = await csrfFetch(`/api/reviews/${reviewObj.id}`, {
         method: 'PATCH',
         headers: {
@@ -69,7 +69,7 @@ export const updateReview = (reviewObj) => async dispatch => {
         },
         body: JSON.stringify(reviewObj)
     })
-
+    debugger
     if (res.ok) {
         const review = await res.json();
         dispatch(receiveReview(review))
