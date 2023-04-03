@@ -7,13 +7,16 @@ import { updateReview } from "../../store/reviews";
 
 
 function ReviewUpdate() {
-    const [cleanliness, setCleanliness] = useState(0);
-    const [accuracy, setAccuracy] = useState(0);
-    const [communication, setCommunication] = useState(0);
-    const [location, setLocation] = useState(0);
-    const [checkIn, setCheckIn] = useState(0);
-    const [value, setValue] = useState(0);
-    const [comment, setComment] = useState("");
+    const { reviewId } = useParams();
+    const review = useSelector((state) => state.reviews[reviewId]);
+
+    const [cleanliness, setCleanliness] = useState(review?.cleanliness || 0);
+    const [accuracy, setAccuracy] = useState(review?.accuracy);
+    const [communication, setCommunication] = useState(review?.communication);
+    const [location, setLocation] = useState(review?.location);
+    const [checkIn, setCheckIn] = useState(review?.checkIn);
+    const [value, setValue] = useState(review?.value);
+    const [comment, setComment] = useState(review?.comment);
     const [errors, setErrors] = useState([]);
     const { listingId } = useParams();
     const userId = useSelector((state) => state.session.user.id);
@@ -22,8 +25,7 @@ function ReviewUpdate() {
     const reviews = useSelector(getReviews);
     // const totalReviews = reviews.length;
     // const user = useSelector((state) => state.session.user);
-    const { reviewId } = useParams();
-    const review = useSelector((state) => state.reviews[reviewId]);
+
 
     const userReviews = reviews.filter((review) => review.userId === userId);
 
@@ -32,8 +34,8 @@ function ReviewUpdate() {
         e.preventDefault();
       
         const newReview = {
-          id: review.id,
-          listing_id: review.listingId,
+          id: reviewId,
+          listing_id: review?.listingId,
           user_id: userId,
           comment,
           cleanliness,
