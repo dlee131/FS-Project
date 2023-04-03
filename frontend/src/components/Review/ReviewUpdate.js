@@ -35,7 +35,7 @@ function ReviewUpdate() {
       
         const newReview = {
           id: reviewId,
-          listing_id: review?.listingId,
+          listing_id: review.listingId,
           user_id: userId,
           comment,
           cleanliness,

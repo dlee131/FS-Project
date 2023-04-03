@@ -5,7 +5,12 @@ import { useParams, NavLink, useHistory } from "react-router-dom";
 import { deleteReview, updateReview } from "../../store/reviews";
 
 function ReviewsIndex() {
-
+  const [cleanliness, setCleanliness] = useState(0);
+  const [accuracy, setAccuracy] = useState(0);
+  const [communication, setCommunication] = useState(0);
+  const [location, setLocation] = useState(0);
+  const [checkIn, setCheckIn] = useState(0);
+  const [value, setValue] = useState(0);
   const [errors, setErrors] = useState([]);
   const reviews = useSelector(getReviews);
   const [selectedReviewId, setSelectedReviewId] = useState(false);
@@ -25,7 +30,7 @@ function ReviewsIndex() {
   const handleDeleteReview = (reviewId) => {
     dispatch(deleteReview(reviewId));
   };
-  
+
   const handleEditReview = (reviewId) => {
     history.push(`/listings/${listingId}/reviews/${reviewId}/edit`);
   };
@@ -52,21 +57,20 @@ function ReviewsIndex() {
     </div>
   ));
 
-
   return (
-        <div>
-          <div className="total-reviews">
-            <i className="fas fa-star"></i>
-            {totalReviews} {totalReviews === 1 ? "review" : "reviews"}
-          </div>
-          <div>
-            <NavLink exact to={`/listings/${listingId}/reviews/new`}>
-              Write a review!
-            </NavLink>
-          </div>
-          {reviewList}
-        </div>
-)
+    <div>
+      <div className="total-reviews">
+        <i className="fas fa-star"></i>
+        {totalReviews} {totalReviews === 1 ? "review" : "reviews"}
+      </div>
+      <div>
+        <NavLink exact to={`/listings/${listingId}/reviews/new`}>
+          Write a review!
+        </NavLink>
+      </div>
+      {reviewList}
+    </div>
+  );
 }
 
 export default ReviewsIndex;
