@@ -64,6 +64,8 @@ function ReviewForm() {
           max={max}
           value={value}
           onChange={handleOnChange}
+          style={{ background: 'red' }}
+          className="slider"
         />
       </div>
     );
@@ -79,6 +81,7 @@ function ReviewForm() {
         min={0}
         max={5}
         onChange={(newValue) => setCleanliness(newValue)}
+        className="cleanliness-slider"
       />
       <Slider
         label="Accuracy"
@@ -123,7 +126,7 @@ function ReviewForm() {
           onChange={(e) => setComment(e.target.value)}
         />
       </label>
-      <button className="review-submit">Submit</button>
+      <button className="review-button">Submit Review</button>
     </form>
   );
 }

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams, NavLink, useHistory } from "react-router-dom";
 import { deleteReview, updateReview } from "../../store/reviews";
 
+
 function ReviewsIndex() {
   const [cleanliness, setCleanliness] = useState(0);
   const [accuracy, setAccuracy] = useState(0);

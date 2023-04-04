@@ -5,7 +5,6 @@ import { useHistory, useParams } from "react-router-dom";
 import { getReviews } from "../../store/reviews";
 import { updateReview } from "../../store/reviews";
 
-
 function ReviewUpdate() {
     const { reviewId } = useParams();
     const review = useSelector((state) => state.reviews[reviewId]);
@@ -80,8 +79,8 @@ function ReviewUpdate() {
   
     return (
       <form onSubmit={handleUpdateReview}>
-        <div>Describe your stay and experience at this place!</div>
-  
+        <div className="review-header">Describe your stay and experience at this place!</div>
+        <div className="sliders">
         <Slider
           label="Cleanliness"
           value={cleanliness}
@@ -124,14 +123,16 @@ function ReviewUpdate() {
           max={5}
           onChange={(newValue) => setValue(newValue)}
         />
-        <label>
-          Comment:
+        </div>
+        <label className="review-comment">
+          Describe your experience
           <textarea
+            className="comment-area"
             value={comment}
             onChange={(e) => setComment(e.target.value)}
           />
         </label>
-        <button>Submit</button>
+        <button className="review-button">Submit</button>
       </form>
     );
   }
