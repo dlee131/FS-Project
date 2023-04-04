@@ -53,6 +53,7 @@ function ReservationIndex({ reservation }) {
   };
 
   const handleUpdateReservation = (e) => {
+    debugger
     e.preventDefault();
     setErrors([]);
     const reservationToUpdate = userReservations.find(
@@ -79,6 +80,7 @@ function ReservationIndex({ reservation }) {
         else setErrors([res.statusText]);
       });
     }
+    debugger
   };
 
   const handleClick = (listingId, reservationId) => {

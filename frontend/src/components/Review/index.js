@@ -3,7 +3,7 @@ import { getReviews, fetchReviews } from "../../store/reviews";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, NavLink, useHistory } from "react-router-dom";
 import { deleteReview, updateReview } from "../../store/reviews";
-
+import "./Review.css";
 
 function ReviewsIndex() {
   const [cleanliness, setCleanliness] = useState(0);
@@ -82,9 +82,9 @@ function ReviewsIndex() {
 
   function calculateAverageRating(reviews) {
     if (reviews.length === 0) {
-        return "NA";
-      }
-    
+      return "NA";
+    }
+
     let totalSum = 0;
 
     reviews.forEach((review) => {
@@ -115,7 +115,7 @@ function ReviewsIndex() {
       <p>{formatDate(review.reviewer)}</p>
       <p>{review.comment}</p>
       {review.userId === userId && (
-        <div>
+        <div className="review-buttons">
           <button onClick={() => handleDeleteReview(review.id)}>Delete</button>
           <button onClick={() => handleEditReview(review.id)}>Edit</button>
         </div>
@@ -124,23 +124,29 @@ function ReviewsIndex() {
   ));
 
   return (
-    <div>
+    <div className="review-index">
       <div className="total-reviews">
-        <i className="fas fa-star"></i>
+        <i className="fas fa-star star-1"></i>
         {calculateAverageRating(reviews)} · {totalReviews}{" "}
         {totalReviews === 1 ? "review" : "reviews"}
       </div>
       <div>
-        <NavLink exact to={`/listings/${listingId}/reviews/new`}>
-          Write a review!
-        </NavLink>
+        <div className="nav-link-write-review">
+          <NavLink
+            exact
+            to={`/listings/${listingId}/reviews/new`}
+            style={{ textDecoration: "none" }}
+          >
+            <div className="navlink-review">Write a review!</div>
+          </NavLink>
+        </div>
         <div className="reviews-figure">
           {reviewCategories.map((category) => (
             <div className="category" key={category.title}>
               <p>{category.title}</p>
               <div className="progress-div">
-                <progress value={category.value} max="5"></progress>
-                <p>{(category.value)}</p>
+                <progress value={category.value} max="5" className="progress-bar"></progress>
+                <p>{category.value}</p>
               </div>
             </div>
           ))}

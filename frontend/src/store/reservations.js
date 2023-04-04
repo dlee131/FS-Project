@@ -75,6 +75,7 @@ export const updateReservation = (reservationObj) => async dispatch => {
         const reservation = await res.json();
         dispatch(receiveReservation(reservation))
     }
+    debugger
 }
 
 export const deleteReservation = (reservationId) => async dispatch => {

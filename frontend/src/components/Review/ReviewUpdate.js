@@ -132,7 +132,7 @@ function ReviewUpdate() {
             onChange={(e) => setComment(e.target.value)}
           />
         </label>
-        <button className="review-button">Submit</button>
+        <button className="review-button">Edit Review</button>
       </form>
     );
   }

@@ -47,71 +47,76 @@ function ReviewForm() {
       });
   };
 
-  function Slider({ label, value, min, max, onChange }) {
+  function StarRatings({ label, value, min, max, onChange }) {
     const handleOnChange = (event) => {
       const newValue = event.target.value;
       onChange(newValue);
     };
-
+  
+    const stars = [];
+    for (let i = 1; i <= max; i++) {
+      stars.push(
+        <i
+          key={i}
+          className={`fas fa-star${i <= value ? " active" : ""}`}
+          onClick={() => onChange(i)}
+        ></i>
+      );
+    }
+  
     return (
-      <div>
+      <div className="star-ratings">
         <label>
           {label}: {value}
         </label>
-        <input
-          type="range"
-          min={min}
-          max={max}
-          value={value}
-          onChange={handleOnChange}
-          style={{ background: 'red' }}
-          className="slider"
-        />
+        <div className="star-rating">{stars}</div>
       </div>
     );
   }
-
+  
   return (
     <form className="review-form" onSubmit={handleSubmit}>
-      <div className="review-header">Describe your stay and experience at this place!</div>
-      <div className="sliders">
-      <Slider
-        label="Cleanliness"
-        value={cleanliness}
-        min={0}
-        max={5}
-        onChange={(newValue) => setCleanliness(newValue)}
-        className="cleanliness-slider"
-      />
-      <Slider
+      <div className="review-header">
+        Describe your stay and experience at this place!
+      </div>
+      <div className="ratings">
+        <StarRatings
+          label="Cleanliness"
+          value={cleanliness}
+          min={0}
+          max={5}
+          onChange={(newValue) => setCleanliness(newValue)}
+          className="cleanliness-slider"
+        />
+      <StarRatings
         label="Accuracy"
         value={accuracy}
         min={0}
         max={5}
         onChange={(newValue) => setAccuracy(newValue)}
       />
-      <Slider
+      <StarRatings
         label="Communication"
         value={communication}
         min={0}
         max={5}
         onChange={(newValue) => setCommunication(newValue)}
       />
-      <Slider
+      <StarRatings
         label="Location"
         value={location}
         min={0}
         max={5}
         onChange={(newValue) => setLocation(newValue)}
       />
-      <Slider
+      <StarRatings
         label="Check-in"
         value={checkIn}
         min={0}
         max={5}
         onChange={(newValue) => setCheckIn(newValue)}
       />
-      <Slider
+      <StarRatings
         label="Value"
         value={value}
         min={0}
@@ -124,6 +129,7 @@ function ReviewForm() {
         <textarea className="comment-area"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
+          placeholder="Write a review"
         />
       </label>
       <button className="review-button">Submit Review</button>
