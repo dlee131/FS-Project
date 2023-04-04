@@ -25,6 +25,44 @@ function ReviewsIndex() {
     dispatch(fetchReviews(listingId));
   }, [listingId, dispatch]);
 
+  useEffect(() => {
+    averageReviews();
+  }, [reviews]);
+
+  const averageReviews = () => {
+    if (reviews.length > 0) {
+      let sumCleanliness = 0,
+        sumAccuracy = 0,
+        sumCommunication = 0,
+        sumLocation = 0,
+        sumCheckIn = 0,
+        sumValue = 0;
+
+      reviews.forEach((review) => {
+        sumCleanliness += review.cleanliness;
+        sumAccuracy += review.accuracy;
+        sumCommunication += review.communication;
+        sumLocation += review.location;
+        sumCheckIn += review.checkIn;
+        sumValue += review.value;
+      });
+
+      setCleanliness((sumCleanliness / reviews.length).toFixed(1));
+      setAccuracy((sumAccuracy / reviews.length).toFixed(1));
+      setCommunication((sumCommunication / reviews.length).toFixed(1));
+      setLocation((sumLocation / reviews.length).toFixed(1));
+      setCheckIn((sumCheckIn / reviews.length).toFixed(1));
+      setValue((sumValue / reviews.length).toFixed(1));
+    } else {
+      setCleanliness("NA");
+      setAccuracy("NA");
+      setCommunication("NA");
+      setLocation("NA");
+      setCheckIn("NA");
+      setValue("NA");
+    }
+  };
+
   const handleDeleteReview = (reviewId) => {
     dispatch(deleteReview(reviewId));
   };
@@ -42,6 +80,10 @@ function ReviewsIndex() {
   };
 
   function calculateAverageRating(reviews) {
+    if (reviews.length === 0) {
+        return "NA";
+      }
+    
     let totalSum = 0;
 
     reviews.forEach((review) => {
@@ -56,13 +98,6 @@ function ReviewsIndex() {
     const overallAvgRating = (totalSum / reviews.length).toFixed(2);
     return overallAvgRating;
   }
-
-  const valueFormating = (value) => {
-    let string = value.toString();
-
-    if (string.length === 1) return string.concat(".0");
-    return string;
-  };
 
   const reviewCategories = [
     { title: "Cleanliness", value: cleanliness },
@@ -104,7 +139,7 @@ function ReviewsIndex() {
               <p>{category.title}</p>
               <div className="progress-div">
                 <progress value={category.value} max="5"></progress>
-                <p>{valueFormating(category.value)}</p>
+                <p>{(category.value)}</p>
               </div>
             </div>
           ))}

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createReview } from "../../store/reviews";
 import { useHistory, useParams } from "react-router-dom";
+import "./ReviewForm.css"
 
 function ReviewForm() {
   const [cleanliness, setCleanliness] = useState(0);
@@ -69,9 +70,9 @@ function ReviewForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>Describe your stay and experience at this place!</div>
-
+    <form className="review-form" onSubmit={handleSubmit}>
+      <div className="review-header">Describe your stay and experience at this place!</div>
+      <div className="sliders">
       <Slider
         label="Cleanliness"
         value={cleanliness}
@@ -114,14 +115,15 @@ function ReviewForm() {
         max={5}
         onChange={(newValue) => setValue(newValue)}
       />
-      <label>
-        Comment:
-        <textarea
+      </div>
+      <label className="review-comment">
+        Describe your experience
+        <textarea className="comment-area"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         />
       </label>
-      <button>Submit</button>
+      <button className="review-submit">Submit</button>
     </form>
   );
 }
