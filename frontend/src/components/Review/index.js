@@ -111,13 +111,13 @@ function ReviewsIndex() {
 
   const reviewList = reviews.map((review) => (
     <div key={review.id}>
-      <p>{review.reviewerName}</p>
-      <p>{formatDate(review.reviewer)}</p>
+      <p className="reviewer-name">{review.reviewerName}</p>
+      <p className="review-date">{formatDate(review.reviewer)}</p>
       <p>{review.comment}</p>
       {review.userId === userId && (
         <div className="review-buttons">
-          <button onClick={() => handleDeleteReview(review.id)}>Delete</button>
-          <button onClick={() => handleEditReview(review.id)}>Edit</button>
+          <button onClick={() => handleDeleteReview(review.id)} className="review-delete">Delete</button>
+          <button onClick={() => handleEditReview(review.id)} className="review-edit">Edit</button>
         </div>
       )}
     </div>

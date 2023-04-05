@@ -75,3 +75,15 @@ progress::-webkit-progress-value {
     font-size: 12px;
     margin-left: 20px;
 }
+
+.reviewer-name {
+    font-size: 14px;
+    font-weight: 600;
+    
+}
+
+.review-date {
+    font-size: 13px;
+    /* font-weight: 200; */
+    color: grey;
+}
