@@ -10,10 +10,94 @@
     margin-left: 540px;
     margin-top: 50px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 14px;
     font-weight: 600;
 }
 
+.star-ratings {
+    margin-top: 35px;
+    font-size: 20px;
+}
+
+.star-rating {
+    margin-top: 10px;
+    color: rgb(235, 235, 235);
+}
+
+/* .star-ratings-slider .star-rating i:hover,
+.star-ratings .star-rating {
+  color:rgb(109, 187, 255);
+}
+
+.star-ratings .star-rating i:not(:hover) {
+  color:rgb(226, 242, 255);
+} */
+
+  
+  /* .fas.fa-star:hover,
+  .fas.fa-star.active,
+  .fas.fa-star:hover + .fas.fa-star,
+  .fas.fa-star.active + .fas.fa-star {
+    color: gold;
+  }
+   */
+     /* .star-ratings i {
+    color: #ccc;
+  } */
+  
+  /* .star-ratings i.active,
+  .star-ratings i:hover,
+  .star-ratings i.active ~ i,
+  .star-ratings i:hover ~ i {
+    color: #ffd700;
+  }  */
+
+  .star-ratings i {
+    color: aliceblue;
+  }
+  
+  .star-ratings .fas:hover {
+    color: rgb(124, 194, 254);
+  }
+  
+  .star-ratings .fas.active {
+    color: rgb(124, 194, 254);
+  }
+  
+  .star-ratings .highlight {
+    color: rgb(124, 194, 254);
+  } 
+   
+  /* .star-ratings .fas:nth-child(-n + ${value}).active {
+    color: rgb(124, 194, 254);
+  }
+  
+  .star-ratings .fas:nth-child(n + ${value + 1}) {
+    color: aliceblue;
+  } */
+  
+
+/* .star-ratings .fas {
+    color: aliceblue;
+  }
+/*   
+  .star-ratings .fas.active {
+    color: aliceblue;
+  }
+  
+  .star-ratings .fas:hover,
+  .star-ratings .fas.hover,
+  .star-ratings .fas.clicked {
+    color: rgb(124, 194, 254);
+  }
+  
+  .star-ratings .fas:hover ~ .fas,
+  .star-ratings .fas.hover ~ .fas,
+  .star-ratings .fas.active ~ .fas,
+  .star-ratings .fas.clicked ~ .fas {
+    color: rgb(124, 194, 254);
+  } */
+
+  
 /* .sliders input {
     display: flex;
     justify-content: space-evenly;

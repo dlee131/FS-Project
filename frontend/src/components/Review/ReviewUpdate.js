@@ -55,86 +55,110 @@ function ReviewUpdate() {
           });
       };
   
-    function Slider({ label, value, min, max, onChange }) {
-      const handleOnChange = (event) => {
-        const newValue = event.target.value;
-        onChange(newValue);
-      };
-  
+      function StarRatings({ label, value, min, max, onChange }) {
+        const [hoveredStarIndex, setHoveredStarIndex] = useState(null);
+      
+        const handleOnChange = (newValue) => {
+          onChange(newValue);
+        };
+      
+        const handleOnStarEnter = (starIndex) => {
+          setHoveredStarIndex(starIndex);
+        };
+      
+        const handleOnStarLeave = () => {
+          setHoveredStarIndex(null);
+        };
+      
+        const stars = [];
+        for (let i = 1; i <= max; i++) {
+          const isActive = i <= value;
+          const isHovered = i <= hoveredStarIndex;
+          const starClassName = `fas fa-star${isActive ? " active highlight" : ""}${isHovered ? " hover highlight" : ""}`;
+        
+          stars.push(
+            <i
+              key={i}
+              className={starClassName}
+              onClick={() => handleOnChange(i)}
+              onMouseEnter={() => handleOnStarEnter(i)}
+              onMouseLeave={() => handleOnStarLeave()}
+            ></i>
+          );
+        }
+      
+        return (
+          <div className="star-ratings">
+            <label>
+              {label}: {value}
+            </label>
+            <div className="star-rating">{stars}</div>
+          </div>
+        );
+      }
+      
+      
       return (
-        <div>
-          <label>
-            {label}: {value}
-          </label>
-          <input
-            type="range"
-            min={min}
-            max={max}
-            value={value}
-            onChange={handleOnChange}
+        <form className="review-form" onSubmit={handleUpdateReview}>
+          <div className="review-header">
+            Describe your stay and experience at this place!
+          </div>
+          <div className="ratings">
+            <StarRatings
+              label="Cleanliness"
+              value={cleanliness}
+              min={0}
+              max={5}
+              onChange={(newValue) => setCleanliness(newValue)}
+              className="cleanliness-slider"
+            />
+          <StarRatings
+            label="Accuracy"
+            value={accuracy}
+            min={0}
+            max={5}
+            onChange={(newValue) => setAccuracy(newValue)}
           />
-        </div>
+          <StarRatings
+            label="Communication"
+            value={communication}
+            min={0}
+            max={5}
+            onChange={(newValue) => setCommunication(newValue)}
+          />
+          <StarRatings
+            label="Location"
+            value={location}
+            min={0}
+            max={5}
+            onChange={(newValue) => setLocation(newValue)}
+          />
+          <StarRatings
+            label="Check-in"
+            value={checkIn}
+            min={0}
+            max={5}
+            onChange={(newValue) => setCheckIn(newValue)}
+          />
+          <StarRatings
+            label="Value"
+            value={value}
+            min={0}
+            max={5}
+            onChange={(newValue) => setValue(newValue)}
+          />
+          </div>
+          <label className="review-comment">
+            Describe your experience
+            <textarea className="comment-area"
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+              placeholder="Write a review"
+            />
+          </label>
+          <button className="review-button">Edit Review</button>
+        </form>
       );
     }
-  
-    return (
-      <form onSubmit={handleUpdateReview}>
-        <div className="review-header">Describe your stay and experience at this place!</div>
-        <div className="sliders">
-        <Slider
-          label="Cleanliness"
-          value={cleanliness}
-          min={0}
-          max={5}
-          onChange={(newValue) => setCleanliness(newValue)}
-        />
-        <Slider
-          label="Accuracy"
-          value={accuracy}
-          min={0}
-          max={5}
-          onChange={(newValue) => setAccuracy(newValue)}
-        />
-        <Slider
-          label="Communication"
-          value={communication}
-          min={0}
-          max={5}
-          onChange={(newValue) => setCommunication(newValue)}
-        />
-        <Slider
-          label="Location"
-          value={location}
-          min={0}
-          max={5}
-          onChange={(newValue) => setLocation(newValue)}
-        />
-        <Slider
-          label="Check-in"
-          value={checkIn}
-          min={0}
-          max={5}
-          onChange={(newValue) => setCheckIn(newValue)}
-        />
-        <Slider
-          label="Value"
-          value={value}
-          min={0}
-          max={5}
-          onChange={(newValue) => setValue(newValue)}
-        />
-        </div>
-        <label className="review-comment">
-          Describe your experience
-          <textarea
-            className="comment-area"
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-          />
-        </label>
-        <button className="review-button">Edit Review</button>
-      </form>
-    );
-  }
 
 export default ReviewUpdate;

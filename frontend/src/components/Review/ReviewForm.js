@@ -48,18 +48,33 @@ function ReviewForm() {
   };
 
   function StarRatings({ label, value, min, max, onChange }) {
-    const handleOnChange = (event) => {
-      const newValue = event.target.value;
+    const [hoveredStarIndex, setHoveredStarIndex] = useState(null);
+  
+    const handleOnChange = (newValue) => {
       onChange(newValue);
+    };
+  
+    const handleOnStarEnter = (starIndex) => {
+      setHoveredStarIndex(starIndex);
+    };
+  
+    const handleOnStarLeave = () => {
+      setHoveredStarIndex(null);
     };
   
     const stars = [];
     for (let i = 1; i <= max; i++) {
+      const isActive = i <= value;
+      const isHovered = i <= hoveredStarIndex;
+      const starClassName = `fas fa-star${isActive ? " active highlight" : ""}${isHovered ? " hover highlight" : ""}`;
+    
       stars.push(
         <i
           key={i}
-          className={`fas fa-star${i <= value ? " active" : ""}`}
-          onClick={() => onChange(i)}
+          className={starClassName}
+          onClick={() => handleOnChange(i)}
+          onMouseEnter={() => handleOnStarEnter(i)}
+          onMouseLeave={() => handleOnStarLeave()}
         ></i>
       );
     }
@@ -73,6 +88,7 @@ function ReviewForm() {
       </div>
     );
   }
+  
   
   return (
     <form className="review-form" onSubmit={handleSubmit}>
