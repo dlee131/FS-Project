@@ -43,18 +43,12 @@
  #reservation-input {
     position: relative;
     padding: 30px 10px;
-    /* top: 10px; */
-    /* display: flex; */
     bottom: 10px;
-    /* top: 20px; */
     z-index: 1;
     width: 134px;
     cursor: pointer;
     border: none;
-    /* border: 1px solid rgb(169, 169, 169); */
-    /* right: 34px; */
     right: 32px;
-    /* left: 10px; */
     background-color: transparent;
     font-size: 12px;
     border-left: 1px solid rgb(169, 169, 169);
@@ -141,24 +135,10 @@
  .rows {
     display: flex;
     height: 10%;
-    /* margin-top: 10px; */
-    /* height: 200px; */
-    /* border-bottom: 1px solid rgb(221, 221, 221); */
-
-    /* justify-content: center; */
-    /* align-items: center; */
-    
-    /* background-image: linear-gradient( to middle,black 1px, transparent 1px); */
-    /* background-position: right center; */
-    /* background-repeat: no-repeat; */
-    /* background-size: 100% 100%; */
   } 
 
 .res-header {
     display: flex;
-    /* justify-content: space-between; */
-    /* margin: 10px; */
-
     flex-flow: row wrap;
     font-size: 14px;
 }

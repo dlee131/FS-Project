@@ -140,13 +140,13 @@ function ReviewsIndex() {
             <div className="navlink-review">Write a review!</div>
           </NavLink>
         </div>
-        <div className="reviews-figure">
+        <div className="reviews-grid">
           {reviewCategories.map((category) => (
             <div className="category" key={category.title}>
               <p>{category.title}</p>
-              <div className="progress-div">
-                <progress value={category.value} max="5" className="progress-bar"></progress>
-                <p>{category.value}</p>
+              <div className="progress-bar">
+                <progress value={category.value} max="5"></progress>
+                <p className="progress-value">{category.value}</p>
               </div>
             </div>
           ))}

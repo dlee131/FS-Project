@@ -2,10 +2,7 @@
     /* position: absolute; */
     padding : 10px;
     display: grid;
-    /* justify-content: space-between; */
-    /* align-items: center; */
     grid-template-columns: repeat(4, 2fr);
-    /* left: -10px; */
     grid-template-rows: repeat(1, 1fr);
     /* position: sticky;
     z-index: 1; */

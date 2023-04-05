@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createReview } from "../../store/reviews";
 import { useHistory, useParams } from "react-router-dom";
-import "./ReviewForm.css"
+import "./ReviewForm.css";
 
 function ReviewForm() {
   const [cleanliness, setCleanliness] = useState(0);
@@ -49,25 +49,27 @@ function ReviewForm() {
 
   function StarRatings({ label, value, min, max, onChange }) {
     const [hoveredStarIndex, setHoveredStarIndex] = useState(null);
-  
+
     const handleOnChange = (newValue) => {
       onChange(newValue);
     };
-  
+
     const handleOnStarEnter = (starIndex) => {
       setHoveredStarIndex(starIndex);
     };
-  
+
     const handleOnStarLeave = () => {
       setHoveredStarIndex(null);
     };
-  
+
     const stars = [];
     for (let i = 1; i <= max; i++) {
       const isActive = i <= value;
       const isHovered = i <= hoveredStarIndex;
-      const starClassName = `fas fa-star${isActive ? " active highlight" : ""}${isHovered ? " hover highlight" : ""}`;
-    
+      const starClassName = `fas fa-star${isActive ? " active highlight" : ""}${
+        isHovered ? " hover highlight" : ""
+      }`;
+
       stars.push(
         <i
           key={i}
@@ -78,7 +80,7 @@ function ReviewForm() {
         ></i>
       );
     }
-  
+
     return (
       <div className="star-ratings">
         <label>
@@ -88,13 +90,13 @@ function ReviewForm() {
       </div>
     );
   }
-  
-  
+
   return (
     <form className="review-form" onSubmit={handleSubmit}>
       <div className="review-header">
         Describe your stay and experience at this place!
       </div>
+      <div className="border-line2"></div>
       <div className="ratings">
         <StarRatings
           label="Cleanliness"
@@ -104,45 +106,48 @@ function ReviewForm() {
           onChange={(newValue) => setCleanliness(newValue)}
           className="cleanliness-slider"
         />
-      <StarRatings
-        label="Accuracy"
-        value={accuracy}
-        min={0}
-        max={5}
-        onChange={(newValue) => setAccuracy(newValue)}
-      />
-      <StarRatings
-        label="Communication"
-        value={communication}
-        min={0}
-        max={5}
-        onChange={(newValue) => setCommunication(newValue)}
-      />
-      <StarRatings
-        label="Location"
-        value={location}
-        min={0}
-        max={5}
-        onChange={(newValue) => setLocation(newValue)}
-      />
-      <StarRatings
-        label="Check-in"
-        value={checkIn}
-        min={0}
-        max={5}
-        onChange={(newValue) => setCheckIn(newValue)}
-      />
-      <StarRatings
-        label="Value"
-        value={value}
-        min={0}
-        max={5}
-        onChange={(newValue) => setValue(newValue)}
-      />
+        <StarRatings
+          label="Accuracy"
+          value={accuracy}
+          min={0}
+          max={5}
+          onChange={(newValue) => setAccuracy(newValue)}
+        />
+        <StarRatings
+          label="Communication"
+          value={communication}
+          min={0}
+          max={5}
+          onChange={(newValue) => setCommunication(newValue)}
+        />
+        <StarRatings
+          label="Location"
+          value={location}
+          min={0}
+          max={5}
+          onChange={(newValue) => setLocation(newValue)}
+        />
+        <StarRatings
+          label="Check-in"
+          value={checkIn}
+          min={0}
+          max={5}
+          onChange={(newValue) => setCheckIn(newValue)}
+        />
+        <StarRatings
+          label="Value"
+          value={value}
+          min={0}
+          max={5}
+          onChange={(newValue) => setValue(newValue)}
+        />
       </div>
       <label className="review-comment">
+        <div className="review-comment-text">
         Describe your experience
-        <textarea className="comment-area"
+        </div>
+        <textarea
+          className="comment-area"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
           placeholder="Write a review"
