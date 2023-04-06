@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
 import { getReservations, fetchReservations, updateReservation, deleteReservation} from "../../store/reservations";
 import { useParams, NavLink, useHistory } from "react-router-dom";
+import "./Reservation.css"
 
 function ReservationIndex({ reservation }) {
   const sessionUser = useSelector((state) => state.session.user);

@@ -76,14 +76,55 @@ progress::-webkit-progress-value {
     margin-left: 20px;
 }
 
+.review-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+
+.review-comment-text {
+   max-width: 400px;
+   overflow-wrap: break-word;
+   font-size: 16px;
+   font-weight: 300;
+   line-height: 1.5;    
+}
+
+
 .reviewer-name {
     font-size: 14px;
     font-weight: 600;
-    
 }
 
 .review-date {
     font-size: 13px;
     /* font-weight: 200; */
     color: grey;
+}
+
+.review-edit {
+    border: none;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    width: 0px;
+}
+
+.review-delete {
+    border: none;
+    background-color: transparent;
+    margin-left: 320px;
+    width: 0px;
+    transition: all 0.4s ease;
+}
+
+.review-edit:hover,
+.review-delete:hover {
+  font-size: 1.0em; 
+}
+
+
+.borderline4 {
+    border-bottom: 1px solid rgb(223, 221, 240);
+    width: 1090px;
+    margin-top: 50px;
 }

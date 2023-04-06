@@ -21,44 +21,6 @@
     flex-flow: column wrap;
 }
 
- #reservation-inputs {
-    position: relative;
-    bottom: 10px;
-    padding: 30px 20px;
-    z-index: 1;
-    width: 144px;
-    cursor: pointer;
-    border: none;
-    right: 15px;
-    background-color: transparent;
-    /* top: 30px; */
-    font-size: 12px;
-    /* gap:0px; */
- }
-
- #reservation-inputs:focus {
-    outline: none;
-    border: none;
- }
- #reservation-input {
-    position: relative;
-    padding: 30px 10px;
-    bottom: 10px;
-    z-index: 1;
-    width: 134px;
-    cursor: pointer;
-    border: none;
-    right: 32px;
-    background-color: transparent;
-    font-size: 12px;
-    border-left: 1px solid rgb(169, 169, 169);
-    border-radius: 0;
- }
-
- #reservation-input:focus {
-    outline: none;
- }
-
  .price-calc {
     margin-top: 20px;
  }
@@ -333,104 +295,14 @@
     margin-bottom: 30px;
 }
 
-.reservations-index {
-    display: flex;  
-    /* flex-direction:row; */
-    /* position: relative; */
-    border-radius: 20px;
-    border: 1px solid rgb(221, 221, 221);
-    box-shadow: rgba(0, 0, 0, 0.12) 1px 5px 13px;
-    padding-bottom: 10px;
-    margin: 30px 0 0 70px;
-    top: 120px; 
-    height: 300px;
-    width: 1100px;   
-    filter: brightness(70%);
-    transition: all 0.5s ease;
-}
-
 .reservations-index:hover {
     filter: brightness(100%);
     box-shadow: #d3d3d3;
 }
 
-.trips-header {
-    display: flex;
-    font-size: 32px;
-    margin: 30px 0 0 70px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 500;
-}
-
-.no-trips {
-    margin-left: 70px;
-    margin-top: 50px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.no-trips-text {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 400;
-    font-size: 24px;
-}
-
-.no-trips-text2 {
-    margin-top: 5px;
-    font-weight: 200;
-}
-.index-navlink {
-    display: inline-block;
-    padding: 15px 35px;
-    margin-top: 20px;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: black;
-    color:white;
-    background-color: white;
-    border-radius: 8px;
-    border: none;
-    background-image: radial-gradient(circle at center center, rgb(240, 30, 77) 27.5%, rgb(240, 28, 95) 20%);
-    border-color: rgb(227, 28, 95);
-    cursor: pointer;
-    text-align: center;
-    font-weight: 400;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    transition: background-color 0.5s ease-in-out;
-    font-size: 16px;
-}
 
 .index-navlink:hover {  
     background-image: radial-gradient(circle at center center, rgb(230, 30, 77) 27.5%, rgb(230, 28, 95) 80%);
-}
-
-.reservation-city {
-    position: absolute;
-    top: 20px;
-    left: 700px;
-    /* padding-left: 10px; */
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.reservation-residence {
-    display: flex;
-    position: fixed;
-    top: 80px;
-    right: 10px;
-}
-
-.reservation-dates {
-    position: absolute;
-    /* display: flex; */
-    top: 150px;
-    left: 700px;
-}
-
-.reservation-guests {
-    position: absolute;
-    /* display: flex; */
-    top: 120px;
-    left: 500px;
 }
 
 .guests {
@@ -466,53 +338,4 @@
     position: absolute;
     right: 20px;
     top: 20px;
-}
-
-.reservation-photo:hover {
-    cursor: pointer;
-    filter: brightness(110%);
-    transition: all 0.5s ease;
-}
-.reservation-photo {
-    height: 310px;
-    width: 450px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    filter: brightness(100%);
-}
-
-.reservation-description {
-    display: flex;
-    /* position: absolute; */
-    /* left: 600px; */
-}
-
-.reservation-buttons {
-    display: flex;
-    margin-left: 90px;
-    position: relative;
-    align-items: center;
-    top: 255px;
-    right: 100px;
-    height: 50px;
-}
-
-.cancel-button {
-    /* padding: 10px 35px;
-    color:white;
-    border-bottom-right-radius: 20px;
-    border: none;
-    background-image: radial-gradient(ellipse at center, rgb(55, 55, 55) 10%, rgb(0, 0, 0) 90%);
-    cursor: pointer;
-    text-align: center;
-    font-weight: 400;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    transition: background-color 0.2s ease-in-out;
-    font-size: 14px;
-    position: absolute;
-    top: 130px;
-    left: 10px;
-    width: 651px;
-    height: 60px;
-    transition: all 0.5s ease; */
 }

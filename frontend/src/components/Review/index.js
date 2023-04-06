@@ -110,16 +110,28 @@ function ReviewsIndex() {
   ];
 
   const reviewList = reviews.map((review) => (
-    <div key={review.id}>
-      <p className="reviewer-name">{review.reviewerName}</p>
-      <p className="review-date">{formatDate(review.reviewer)}</p>
-      <p>{review.comment}</p>
-      {review.userId === userId && (
-        <div className="review-buttons">
-          <button onClick={() => handleDeleteReview(review.id)} className="review-delete">Delete</button>
-          <button onClick={() => handleEditReview(review.id)} className="review-edit">Edit</button>
-        </div>
-      )}
+    <div className="comment-index">
+      <div key={review.id} className="comment-grid">
+        <p className="reviewer-name">{review.reviewerName}</p>
+        <p className="review-date">{formatDate(review.reviewer)}</p>
+        <p className="review-comment-text">{review.comment}</p>
+        {review.userId === userId && (
+          <div className="review-buttons">
+            <button
+              onClick={() => handleEditReview(review.id)}
+              className="review-edit"
+            >
+              Edit
+            </button>
+            <button
+              onClick={() => handleDeleteReview(review.id)}
+              className="review-delete"
+            >
+              Delete
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   ));
 
@@ -152,7 +164,8 @@ function ReviewsIndex() {
           ))}
         </div>
       </div>
-      {reviewList}
+      <div className="review-grid-container">{reviewList}</div>
+      <div className="borderline4"></div>
     </div>
   );
 }
