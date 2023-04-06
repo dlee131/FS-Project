@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
-import { getReservations, fetchReservations, updateReservation, deleteReservation} from "../../store/reservations";
+import {
+  getReservations,
+  fetchReservations,
+  updateReservation,
+  deleteReservation,
+} from "../../store/reservations";
 import { useParams, NavLink, useHistory } from "react-router-dom";
-import "./Reservation.css"
+import "./Reservation.css";
 
 function ReservationIndex({ reservation }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -54,7 +59,7 @@ function ReservationIndex({ reservation }) {
   };
 
   const handleUpdateReservation = (e) => {
-    debugger
+    debugger;
     e.preventDefault();
     setErrors([]);
     const reservationToUpdate = userReservations.find(
@@ -81,7 +86,7 @@ function ReservationIndex({ reservation }) {
         else setErrors([res.statusText]);
       });
     }
-    debugger
+    debugger;
   };
 
   const handleClick = (listingId, reservationId) => {
@@ -136,13 +141,16 @@ function ReservationIndex({ reservation }) {
           </div>
           <div className="reservation-buttons">
             <button
+              onClick={() => dropdown(reservation.id)}
+              className="edit-res-button"
+            >
+              Edit Reservation
+            </button>
+            <button
               onClick={() => handleDeleteReservation(reservation.id)}
-              className="cancel-button"
+              className="cancel-res-button"
             >
               Cancel Reservation
-            </button>
-            <button onClick={() => dropdown(reservation.id)}>
-              Edit reservation
             </button>
             {selectedReservationId === reservation.id && (
               <form onSubmit={handleUpdateReservation}>

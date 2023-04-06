@@ -70,6 +70,7 @@ function ReviewsIndex() {
 
   const handleEditReview = (reviewId) => {
     history.push(`/listings/${listingId}/reviews/${reviewId}/edit`);
+    window.scrollTo(0, 0);
   };
 
   const formatDate = (stringTime) => {
@@ -149,7 +150,7 @@ function ReviewsIndex() {
             to={`/listings/${listingId}/reviews/new`}
             style={{ textDecoration: "none" }}
           >
-            <div className="navlink-review">Write a review!</div>
+            <div className="navlink-review" onClick={() => window.scrollTo(0, 0)}>Write a review!</div>
           </NavLink>
         </div>
         <div className="reviews-grid">
