@@ -113,12 +113,12 @@
     position: relative;
     align-items: center;
     top: 255px;
-
     height: 50px;
 }
 
 .cancel-res-button {
-    
+    margin-right: 100px;
+    border-radius: 5px;
 }
 
 #reservation-inputs {
