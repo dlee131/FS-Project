@@ -140,18 +140,22 @@ function ReservationIndex({ reservation }) {
             </div>
           </div>
           <div className="reservation-buttons">
+            <div>
             <button
               onClick={() => dropdown(reservation.id)}
               className="edit-res-button"
             >
               Edit Reservation
             </button>
+            </div>
+            <div>
             <button
               onClick={() => handleDeleteReservation(reservation.id)}
               className="cancel-res-button"
             >
               Cancel Reservation
             </button>
+            </div>
             {selectedReservationId === reservation.id && (
               <form onSubmit={handleUpdateReservation}>
                 <div>Adults</div>

@@ -85,7 +85,7 @@
     position: absolute;
     top: 30px;
     left: 50px;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
 }
 
@@ -97,8 +97,8 @@
 
 .reservation-dates {
     position: absolute;
-    top: 150px;
-    left: 150px;
+    top: 120px;
+    left: 50px;
 }
 
 .reservation-guests {
@@ -113,28 +113,12 @@
     position: relative;
     align-items: center;
     top: 255px;
-        
+
     height: 50px;
 }
 
 .cancel-res-button {
-    /* padding: 10px 35px;
-    color:white;
-    border-bottom-right-radius: 20px;
-    border: none;
-    background-image: radial-gradient(ellipse at center, rgb(55, 55, 55) 10%, rgb(0, 0, 0) 90%);
-    cursor: pointer;
-    text-align: center;
-    font-weight: 400;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    transition: background-color 0.2s ease-in-out;
-    font-size: 14px;
-    position: absolute;
-    top: 130px;
-    left: 10px;
-    width: 651px;
-    height: 60px;
-    transition: all 0.5s ease; */
+    
 }
 
 #reservation-inputs {
