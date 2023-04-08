@@ -44,18 +44,18 @@ function ListingMap({
     }
   }, [map, mapEventHandlers]);
 
-  // Update map markers whenever `benches` changes
+
   useEffect(() => {
-    if (map) {
+    if (map && listings) {
       // Add markers for new benches
-      benches.forEach((bench) => {
-        if (markers.current[bench.id]) return;
+      listings.forEach((listing) => {
+        if (markers.current[listing.id]) return;
   
         const marker = new window.google.maps.Marker({ 
           map, 
-          position: new window.google.maps.LatLng(bench.lat, bench.lng), 
+          position: new window.google.maps.LatLng(listing.latitude, listing.longitude), 
           label: { 
-            text: `$${bench.price.toString()}`, 
+            text: `$${listing.nightlyPrice}`, 
             fontWeight: 'bold',
             color: 'black'
           }, 
@@ -81,36 +81,36 @@ function ListingMap({
         });
 
         Object.entries(markerEventHandlers).forEach(([event, handler]) => {
-          marker.addListener(event, () => handler(bench));
+          marker.addListener(event, () => handler(listing));
         });
-        markers.current[bench.id] = marker;
+        markers.current[listing.id] = marker;
       })
   
       // Remove markers for old benches
-      Object.entries(markers.current).forEach(([benchId, marker]) => {
-        if (benches.some(bench => bench.id.toString() === benchId)) return;
+      Object.entries(markers.current).forEach(([listingId, marker]) => {
+        if (listings.some(listing => listing.id.toString() === listingId)) return;
         
         marker.setMap(null);
-        delete markers.current[benchId];
+        delete markers.current[listingId];
       })
     }
-  }, [benches, history, map, markerEventHandlers]);
+  }, [listings, history, map, markerEventHandlers]);
 
   // Change the style for bench marker on hover
-  useEffect(() => {
-    Object.entries(markers.current).forEach(([benchId, marker]) => {
-      const label = marker.getLabel();
-      const icon = marker.getIcon();
+//   useEffect(() => {
+//     Object.entries(markers.current).forEach(([benchId, marker]) => {
+//       const label = marker.getLabel();
+//       const icon = marker.getIcon();
 
-      if (parseInt(benchId) === highlightedBench) {
-        marker.setLabel({ ...label, color: 'white' });
-        marker.setIcon({ ...icon, fillColor: 'black' });
-      } else {
-        marker.setLabel({ ...label, color: 'black' });
-        marker.setIcon({ ...icon, fillColor: 'white' });
-      }
-    });
-  }, [markers, highlightedBench]);
+//       if (parseInt(benchId) === highlightedBench) {
+//         marker.setLabel({ ...label, color: 'white' });
+//         marker.setIcon({ ...icon, fillColor: 'black' });
+//       } else {
+//         marker.setLabel({ ...label, color: 'black' });
+//         marker.setIcon({ ...icon, fillColor: 'white' });
+//       }
+//     });
+//   }, [markers, highlightedBench]);
 
   return (
     <div ref={mapRef} className="map">

@@ -147,6 +147,15 @@ export const ListingPage = () => {
       <div>
         <ReviewsIndex />
       </div>
+      <div className="listing-page-map">
+        <ListingMapWrapper
+          listings={[listing]}
+          mapOptions={{
+            center: { lat: listing.latitude, lng: listing.longitude},
+            zoom: 16,
+          }}
+        ></ListingMapWrapper>
+      </div>
     </div>
   );
 };
