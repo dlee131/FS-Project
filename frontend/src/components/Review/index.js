@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getReviews, fetchReviews } from "../../store/reviews";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, NavLink, useHistory } from "react-router-dom";
-import { deleteReview, updateReview } from "../../store/reviews";
+import { deleteReview } from "../../store/reviews";
 import "./Review.css";
 
 function ReviewsIndex() {
@@ -19,7 +19,6 @@ function ReviewsIndex() {
   const user = useSelector((state) => state.session.user);
   const userId = user?.id || null;
   const { reviewId } = useParams();
-  const review = useSelector((state) => state.reviews[reviewId]);
   const history = useHistory();
 
   useEffect(() => {
