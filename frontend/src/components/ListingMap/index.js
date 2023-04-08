@@ -96,22 +96,6 @@ function ListingMap({
     }
   }, [listings, history, map, markerEventHandlers]);
 
-  // Change the style for bench marker on hover
-//   useEffect(() => {
-//     Object.entries(markers.current).forEach(([benchId, marker]) => {
-//       const label = marker.getLabel();
-//       const icon = marker.getIcon();
-
-//       if (parseInt(benchId) === highlightedBench) {
-//         marker.setLabel({ ...label, color: 'white' });
-//         marker.setIcon({ ...icon, fillColor: 'black' });
-//       } else {
-//         marker.setLabel({ ...label, color: 'black' });
-//         marker.setIcon({ ...icon, fillColor: 'white' });
-//       }
-//     });
-//   }, [markers, highlightedBench]);
-
   return (
     <div ref={mapRef} className="map">
       Map

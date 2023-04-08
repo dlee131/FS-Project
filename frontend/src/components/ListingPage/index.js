@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import "./ListingPage.css";
 import ReservationForm from "../Reservation/ReservationForm";
 import ReviewsIndex from "../Review";
-import ListingMapWrapper from "../ListingMap.js";
+import ListingMapWrapper from "../ListingMap";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { library } from '@fortawesome/fontawesome-svg-core';
 // import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -148,13 +148,7 @@ export const ListingPage = () => {
         <ReviewsIndex />
       </div>
       <div className="listing-page-map">
-        <ListingMapWrapper
-          listings={[listing]}
-          mapOptions={{
-            center: { lat: listing.latitude, lng: listing.longitude},
-            zoom: 16,
-          }}
-        ></ListingMapWrapper>
+        <ListingMapWrapper />
       </div>
     </div>
   );

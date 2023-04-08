@@ -19,6 +19,7 @@ function ReviewsIndex() {
   const user = useSelector((state) => state.session.user);
   const userId = user?.id || null;
   const { reviewId } = useParams();
+  const review = useSelector((state) => state.reviews[reviewId]);
   const history = useHistory();
 
   useEffect(() => {
@@ -110,8 +111,8 @@ function ReviewsIndex() {
   ];
 
   const reviewList = reviews.map((review) => (
-    <div className="comment-index">
-      <div key={review.id} className="comment-grid">
+    <div key={review.id} className="comment-grid">
+      <div className="comment-index">
         <p className="reviewer-name">{review.reviewerName}</p>
         <p className="review-date">{formatDate(review.reviewer)}</p>
         <p className="review-comment-text">{review.comment}</p>
@@ -149,7 +150,12 @@ function ReviewsIndex() {
             to={`/listings/${listingId}/reviews/new`}
             style={{ textDecoration: "none" }}
           >
-            <div className="navlink-review" onClick={() => window.scrollTo(0, 0)}>Write a review!</div>
+            <div
+              className="navlink-review"
+              onClick={() => window.scrollTo(0, 0)}
+            >
+              Write a review!
+            </div>
           </NavLink>
         </div>
         <div className="reviews-grid">
