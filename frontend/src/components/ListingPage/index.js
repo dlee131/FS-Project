@@ -6,12 +6,6 @@ import "./ListingPage.css";
 import ReservationForm from "../Reservation/ReservationForm";
 import ReviewsIndex from "../Review";
 import ListingMapWrapper from "../ListingMap";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { faStar } from '@fortawesome/free-solid-svg-icons';
-// import  ListingsItem  from './ListingsItem';
-// import { useHistory } from "react-router-dom"
-// library.add(faStar);
 
 export const ListingPage = () => {
   const dispatch = useDispatch();
@@ -148,7 +142,13 @@ export const ListingPage = () => {
         <ReviewsIndex />
       </div>
       <div className="listing-page-map">
-        <ListingMapWrapper />
+        <ListingMapWrapper
+          listings={[listing]}
+          mapOptions={{
+            center: { lat: listing.latitude, lng: listing.longitude },
+            zoom: 16,
+          }}
+        ></ListingMapWrapper>
       </div>
     </div>
   );

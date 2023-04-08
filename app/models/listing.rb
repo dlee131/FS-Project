@@ -45,4 +45,9 @@ class Listing < ApplicationRecord
     has_many_attached :photos,
     dependent: :destroy
 
+
+    def self.in_bounds(bounds)
+        lower_lat, lower_long, upper_lat, upper_long = bounds
+        where(lat: lower_lat..upper_lat, long: lower_long..upper_long)
+    end
 end
