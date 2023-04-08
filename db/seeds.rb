@@ -87,6 +87,7 @@ ApplicationRecord.transaction do
     # end
 
     puts "Creating listings..."
+    
     listing_1 =  Listing.create!(
       host_id: 4,
       title: "The Denali - Cozy Anchorage Home with Stunning Mountain Views",
