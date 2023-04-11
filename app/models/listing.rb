@@ -45,6 +45,15 @@ class Listing < ApplicationRecord
     has_many_attached :photos,
     dependent: :destroy
 
+    def avg_rating
+
+        return "NA" if reviews.length == 0
+        
+            rating = [:cleanliness, :accuracy, :communication, :check_in, :value, :location]
+            avg = rating.reduce(0) { |sum, rate| sum + reviews.average(rate) } / rating.length
+            return avg.round(2)
+      end
+
 
     def self.in_bounds(bounds)
         lower_lat, lower_long, upper_lat, upper_long = bounds
