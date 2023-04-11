@@ -5,6 +5,8 @@ import { useParams, NavLink, useHistory } from "react-router-dom";
 import { deleteReview } from "../../store/reviews";
 import "./Review.css";
 
+
+
 function ReviewsIndex() {
   const [cleanliness, setCleanliness] = useState(0);
   const [accuracy, setAccuracy] = useState(0);
@@ -29,6 +31,7 @@ function ReviewsIndex() {
   useEffect(() => {
     averageReviews();
   }, [reviews]);
+  
 
   const averageReviews = () => {
     if (reviews.length > 0) {
@@ -80,26 +83,6 @@ function ReviewsIndex() {
 
     return `${month} ${year}`;
   };
-
-  function calculateAverageRating(reviews) {
-    if (reviews.length === 0) {
-      return "NA";
-    }
-
-    let totalSum = 0;
-
-    reviews.forEach((review) => {
-      const { cleanliness, communication, checkIn, accuracy, location, value } =
-        review;
-
-      const avgRating =
-        (cleanliness + communication + checkIn + accuracy + location + value) /
-        6;
-      totalSum += avgRating;
-    });
-    const overallAvgRating = (totalSum / reviews.length).toFixed(2);
-    return overallAvgRating;
-  }
 
   const reviewCategories = [
     { title: "Cleanliness", value: cleanliness },
@@ -174,6 +157,26 @@ function ReviewsIndex() {
       <div className="borderline4"></div>
     </div>
   );
+}
+
+export function calculateAverageRating(reviews) {
+  if (reviews.length === 0) {
+    return "NA";
+  }
+
+  let totalSum = 0;
+
+  reviews.forEach((review) => {
+    const { cleanliness, communication, checkIn, accuracy, location, value } =
+      review;
+
+    const avgRating =
+      (cleanliness + communication + checkIn + accuracy + location + value) /
+      6;
+    totalSum += avgRating;
+  });
+  const overallAvgRating = (totalSum / reviews.length).toFixed(2);
+  return overallAvgRating;
 }
 
 export default ReviewsIndex;

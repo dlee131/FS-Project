@@ -1,46 +1,48 @@
-import './searchbar.css'
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { fetchListings } from "../../store/listings";
+import "./searchbar.css";
 
+function SearchBar() {
+  const dispatch = useDispatch();
+  const [searchQuery, setSearchQuery] = useState("");
+  const [loading, setLoading] = useState(false);
 
-function SearchBar () {
+  const handleSearch = () => {
+    setLoading(true);
+    dispatch(fetchListings({ city: searchQuery })).finally(() => {
+      setLoading(false);
+    });
+  };
 
-const searchFocus = document.getElementById('search-focus');
-const keys = [
-  { keyCode: 'AltLeft', isTriggered: false },
-  { keyCode: 'ControlLeft', isTriggered: false },
-];
-
-window.addEventListener('keydown', (e) => {
-  keys.forEach((obj) => {
-    if (obj.keyCode === e.code) {
-      obj.isTriggered = true;
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
     }
-  });
+  };
 
-  const shortcutTriggered = keys.filter((obj) => obj.isTriggered).length === keys.length;
-
-  if (shortcutTriggered) {
-    searchFocus.focus();
-  }
-});
-
-window.addEventListener('keyup', (e) => {
-  keys.forEach((obj) => {
-    if (obj.keyCode === e.code) {
-      obj.isTriggered = false;
-    }
-  });
-});
-    return (
-      <div className="input-group">
-        <div className="form-outline">
-          <input id="search-focus" type="search" className="form-control" />
-          <label className="form-label" for="form1">Search</label>
-        </div>
-        <button type="button" className="searchbutton">
-            <i className="fas fa-search"></i>
-        </button>
+  return (
+    <div className="input-group">
+      <div className="form-outline">
+        <input
+          id="search-focus"
+          type="search"
+          className="form-control"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder="Search Your Destination"
+        />
       </div>
-    )
+      <button type="button" className="searchbutton" onClick={handleSearch}>
+        {loading ? (
+          <i className="fas fa-spinner fa-spin"></i>
+        ) : (
+          <i className="fas fa-search"></i>
+        )}
+      </button>
+    </div>
+  );
 }
 
 export default SearchBar;

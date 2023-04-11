@@ -4,6 +4,8 @@ import { useParams, useHistory } from "react-router-dom";
 import moment from "moment";
 import { createReservation } from "../../store/reservations";
 import LoginFormModal from "../LoginFormModal";
+import { getReviews } from "../../store/reviews";
+import { calculateAverageRating } from "../Review";
 import "./ReservationForm.css";
 
 function ReservationForm() {
@@ -21,6 +23,7 @@ function ReservationForm() {
   const listing = useSelector((state) => state.listings[listingId]);
   const user = useSelector((state) => state.session.user);
   const userId = user?.id || null;
+  const reviews = useSelector(getReviews);
 
   const reservation = {
     reservation: {
@@ -129,7 +132,7 @@ const handleSubmit = async (e) => {
         <div className="price-night">night</div>
         <span className="res-rating">
           <i className="fa fa-star"></i>
-          {listing.ratings}
+          {calculateAverageRating(reviews)}
         </span>
       </div>
       <div className="reservation-form-wrapper">

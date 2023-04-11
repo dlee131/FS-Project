@@ -1,7 +1,14 @@
 import './ListingsIndex.css'
+import { getReviews } from "../../store/reviews";
+import { calculateAverageRating } from "../Review";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+
 
 function ListingItem({ listing, handleClick }) {
 
+  const reviews = useSelector(getReviews);
+  const { reviewId } = useParams();
 
     return (
       
@@ -12,7 +19,7 @@ function ListingItem({ listing, handleClick }) {
           <div>
             <div className="listing-city">
               {listing.city}, {listing.state}
-              <div className="fa fa-star" id="star-icon">{listing.ratings}</div>
+              <div className="fa fa-star" id="star-icon">{calculateAverageRating(reviews)}</div>
             </div>
             
           <div className="listing-index-title">

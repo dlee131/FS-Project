@@ -7,6 +7,7 @@ import * as sessionActions from "../../store/session";
 import LoggedOutUser from "../../img/loggedoutuser.png";
 import LoggedInUser from "../../img/loggedinuser.jpeg";
 
+
 const DropDownMenu = ({ user }) => {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);

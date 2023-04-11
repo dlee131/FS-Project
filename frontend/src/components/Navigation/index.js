@@ -38,7 +38,7 @@ function Navigation() {
           <div className="logo-text">melobnb</div>
         </div>
       </NavLink>
-        <input className="searchbar" placeholder="Start your search"></input>
+        <SearchBar/>
       <div className="linkedin-git">
         <a href="https://github.com/dlee131" target="_blank" title="github">
           {" "}

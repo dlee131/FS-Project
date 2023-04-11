@@ -13,15 +13,14 @@ function ListingsIndexPage() {
     useEffect(() => {
         dispatch(fetchListings())
       },[dispatch])
-
       
     const handleClick = (listingId) => {
       history.push(`/listings/${listingId}`);
       window.scrollTo(0, 0);
     };
      
-    return (
 
+    return (
       <div><Filter/>
       <div className="listings-index">
         {listings.map(listing => (

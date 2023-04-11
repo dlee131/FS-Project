@@ -1,19 +1,23 @@
-/* .input-group {
-    display:flex;
+.input-group {
+    display:flex;  
+    margin-left: 400px;
 
+}
 
-} */
-
-/* .form-outline {
+.form-outline {
     padding: 5px;
-} */
-/* .searchbutton {
-    height: 70px;
+}
+.searchbutton {
+    border: none;
+    height: 20px;
     margin-top: 20px;
+}
 
-} */
-
-/* .form-control {
-     height: 5px;
-    width: 10px;
- }  */
+.form-control {
+    margin-left: 50px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 30px;
+    height: 30px;
+    font-size: 14px;
+ } 

@@ -5,13 +5,15 @@ import { useParams } from "react-router-dom";
 import "./ListingPage.css";
 import ReservationForm from "../Reservation/ReservationForm";
 import ReviewsIndex from "../Review";
-import ListingMapWrapper from "../ListingMap";
+import ListingMap from "../ListingMap";
+import { getReviews } from "../../store/reviews";
+import { calculateAverageRating } from "../Review";
 
 export const ListingPage = () => {
   const dispatch = useDispatch();
-  // const listings = useSelector(getListings)
   const { listingId } = useParams();
   const listing = useSelector((state) => state.listings[listingId]);
+  const reviews = useSelector(getReviews);
 
   useEffect(() => {
     dispatch(fetchListings(listingId));
@@ -27,7 +29,7 @@ export const ListingPage = () => {
         <div className="listing-indiv-header">
           <div className="listing-title">{listing.title}</div>
           <div className="listing-location">
-            <i className="fas fa-star"></i> {listing.ratings} •{" "}
+            <i className="fas fa-star"></i> {calculateAverageRating(reviews)}•{" "}
             <i className="fa-sharp fa-solid fa-medal"></i>
             <span className="superhost">Superhost</span> • {listing.city},{" "}
             {listing.state}, {listing.country}
@@ -142,14 +144,11 @@ export const ListingPage = () => {
         <ReviewsIndex />
       </div>
       <div className="listing-page-map">
-        <ListingMapWrapper
-          listings={[listing]}
-          mapOptions={{
-            center: { lat: listing.latitude, lng: listing.longitude },
-            zoom: 16,
-          }}
-        ></ListingMapWrapper>
-      </div>
+  <ListingMap
+    listings={[listing]}
+    mapOptions={{ center: { lat: listing.latitude, lng: listing.longitude } }}
+  />
+</div>
     </div>
   );
 };
