@@ -6,7 +6,6 @@ import { deleteReview } from "../../store/reviews";
 import "./Review.css";
 
 
-
 function ReviewsIndex() {
   const [cleanliness, setCleanliness] = useState(0);
   const [accuracy, setAccuracy] = useState(0);

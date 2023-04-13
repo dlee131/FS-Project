@@ -12,14 +12,14 @@ function ListingItem({ listing, handleClick }) {
 
 
   return (
-    <>
+
       <div className="listings">
         <ul onClick={handleClick}>
           <img alt="" className="listing-pics" src={listing.photo[0]}></img>
           <div>
             <div className="listing-city">
               {listing.city}, {listing.state}
-              <div className="fa fa-star" id="star-icon">{calculateAverageRating(reviews, listing.id)}</div>
+              <div className="fa fa-star" id="star-icon">{listing.avgRating}</div>
             </div>
             <div className="listing-index-title">
               {listing.title.length < 30 ? listing.title : `${listing.title.slice(0, 30)}...`}
@@ -33,7 +33,6 @@ function ListingItem({ listing, handleClick }) {
           </div>
         </ul>
       </div>
-    </>
   );
 }
 

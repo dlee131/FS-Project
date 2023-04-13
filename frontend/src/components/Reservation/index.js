@@ -27,7 +27,7 @@ function ReservationIndex({ reservation }) {
   const user = useSelector((state) => state.session.user);
   const userId = user?.id || null;
 
-  // Filter reservations by user ID
+
   const userReservations = reservations.filter(
     (reservation) => reservation.userId === sessionUser.id
   );
@@ -47,7 +47,6 @@ function ReservationIndex({ reservation }) {
 
   const handleDeleteReservation = (reservationId) => {
     dispatch(deleteReservation(reservationId));
-    // debugger
   };
 
   const dropdown = (reservationId) => {

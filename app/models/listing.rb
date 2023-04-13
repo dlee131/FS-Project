@@ -36,8 +36,8 @@ class Listing < ApplicationRecord
     class_name: :User,
     dependent: :destroy
 
-    # has_many :reviews,
-    # dependent: :destroy
+    has_many :reviews,
+    dependent: :destroy
 
     has_many :reservations,
     dependent: :destroy
@@ -46,12 +46,11 @@ class Listing < ApplicationRecord
     dependent: :destroy
 
     def avg_rating
-
         return "NA" if reviews.length == 0
-        
-            rating = [:cleanliness, :accuracy, :communication, :check_in, :value, :location]
-            avg = rating.reduce(0) { |sum, rate| sum + reviews.average(rate) } / rating.length
-            return avg.round(2)
+      
+        rating = [:cleanliness, :accuracy, :communication, :check_in, :value, :location]
+        avg = rating.reduce(0) { |sum, rate| sum + reviews.average(rate) } / rating.length
+        return avg.round(2)
       end
 
 

@@ -1,21 +1,25 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { fetchListings } from "../../store/listings";
+import { updateSearch } from "../../store/search";
 import "./searchbar.css";
 
 function SearchBar() {
   const dispatch = useDispatch();
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
+  const [listings, setListings] = useState([]);
+
 
   const handleSearch = () => {
     setLoading(true);
     dispatch(fetchListings({ city: searchQuery })).finally(() => {
       setLoading(false);
+      setListings(prevListings => prevListings.filter(listing => listing.city === searchQuery));
     });
   };
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e) => { 
     if (e.key === 'Enter') {
       handleSearch();
     }

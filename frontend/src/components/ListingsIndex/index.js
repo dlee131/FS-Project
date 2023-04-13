@@ -10,7 +10,6 @@ function ListingsIndexPage() {
     const listings = useSelector(getListings)
     const history = useHistory();
     
-
     useEffect(() => {
         dispatch(fetchListings())
       },[dispatch])
