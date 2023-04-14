@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import "./ListingPage.css";
 import ReservationForm from "../Reservation/ReservationForm";
 import ReviewsIndex from "../Review";
-import ListingMap from "../ListingMap";
+import ListingMapWrapper from "../ListingMap";
 import { getReviews } from "../../store/reviews";
 import { calculateAverageRating } from "../Review";
 
@@ -13,6 +13,7 @@ export const ListingPage = () => {
   const dispatch = useDispatch();
   const { listingId } = useParams();
   const listing = useSelector((state) => state.listings[listingId]);
+  const listings = useSelector(getListings)
   const reviews = useSelector(getReviews);
 
   useEffect(() => {
@@ -144,8 +145,8 @@ export const ListingPage = () => {
         <ReviewsIndex />
       </div>
       <div className="listing-page-map">
-  <ListingMap
-    listings={[listing]}
+  <ListingMapWrapper
+    listings={listing}
     mapOptions={{ center: { lat: listing.latitude, lng: listing.longitude } }}
   />
 </div>

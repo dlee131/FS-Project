@@ -1,14 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Wrapper } from "@googlemaps/react-wrapper";
 import { useHistory, useParams } from "react-router-dom";
+import { getListings } from "../../store/listings";
+import { useSelector } from "react-redux";
+
 import './ListingMap.css';
 
 function ListingMap({ 
-    listings, 
     mapOptions = {}, 
     mapEventHandlers = {}, 
     markerEventHandlers = {}
   }) {
+    const listings = useSelector(getListings)
     const [map, setMap] = useState(null);
     const mapRef = useRef(null);
     const markers = useRef({});
