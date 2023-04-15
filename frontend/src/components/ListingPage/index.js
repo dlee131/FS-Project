@@ -144,23 +144,19 @@ export const ListingPage = () => {
       <div>
         <ReviewsIndex />
       </div>
+      <div>
+        Where you'll be
+      </div>
+      <div className="map-info">
+        {listing.city},{listing.state}, {listing.country}
+      </div>
       <div className="listing-page-map">
         <ListingMapWrapper
-          listings={listing}
+          listing={listing}
           mapOptions={{
             center: { lat: listing.latitude, lng: listing.longitude },
+            zoom: 14,
           }}
-          markerEventHandlers={{
-            click: (listing) => {
-              console.log(`Marker clicked: ${listing.id}`);
-            },
-          }}
-          mapEventHandlers={{
-            bounds_changed: (map) => {
-              console.log(`Map bounds changed: ${map.getBounds()}`);
-            },
-          }}
-          className="map-container"
         />
       </div>
     </div>
