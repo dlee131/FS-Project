@@ -13,7 +13,7 @@ export const ListingPage = () => {
   const dispatch = useDispatch();
   const { listingId } = useParams();
   const listing = useSelector((state) => state.listings[listingId]);
-  const listings = useSelector(getListings)
+  const listings = useSelector(getListings);
   const reviews = useSelector(getReviews);
 
   useEffect(() => {
@@ -145,11 +145,24 @@ export const ListingPage = () => {
         <ReviewsIndex />
       </div>
       <div className="listing-page-map">
-  <ListingMapWrapper
-    listings={listing}
-    mapOptions={{ center: { lat: listing.latitude, lng: listing.longitude } }}
-  />
-</div>
+        <ListingMapWrapper
+          listings={listing}
+          mapOptions={{
+            center: { lat: listing.latitude, lng: listing.longitude },
+          }}
+          markerEventHandlers={{
+            click: (listing) => {
+              console.log(`Marker clicked: ${listing.id}`);
+            },
+          }}
+          mapEventHandlers={{
+            bounds_changed: (map) => {
+              console.log(`Map bounds changed: ${map.getBounds()}`);
+            },
+          }}
+          className="map-container"
+        />
+      </div>
     </div>
   );
 };

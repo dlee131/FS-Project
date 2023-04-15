@@ -294,3 +294,8 @@
     text-decoration: underline;
     font-size: 14px;
 }
+
+.map-container {
+    height: 400px;
+    width: 100%;
+  }
