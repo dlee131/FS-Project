@@ -7,11 +7,11 @@ import { useSelector } from "react-redux";
 import "./ListingMap.css";
 
 function ListingMap({
+  listings,
   mapOptions = {},
   mapEventHandlers = {},
   markerEventHandlers = {},
 }) {
-  const listings = useSelector(getListings);
   const [map, setMap] = useState(null);
   const mapRef = useRef(null);
   const markers = useRef({});
