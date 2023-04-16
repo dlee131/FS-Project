@@ -159,7 +159,7 @@ export const ListingPage = () => {
           }}
         />
       </div>
-      <div className="borderline4"></div>
+      <div className="borderline5"></div>
     </div>
   );
 };

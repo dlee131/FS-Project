@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Modal } from '../../context/modal';
-import LoginForm from './LoginForm';
+import React, { useState } from "react";
+import { Modal } from "../../context/modal";
+import LoginForm from "./LoginForm";
 
-function LoginFormModal({onClose}) {
+function LoginFormModal({ onClose }) {
   const [showModal, setShowModal] = useState(false);
 
   const closeModal = () => {
@@ -12,16 +12,18 @@ function LoginFormModal({onClose}) {
 
   return (
     <>
-        <a href="#login" onClick={() => setShowModal(true)} style={{ textDecoration: "none" }}>
-          <div className="menu-button">
-          Log In
-          </div>
-        </a>
-        {showModal && (
-          <Modal onClose={closeModal}>
-            <LoginForm />
-          </Modal>
-        )}
+      <a
+        href="#login"
+        onClick={() => setShowModal(true)}
+        style={{ textDecoration: "none" }}
+      >
+        <div className="menu-button">Log In</div>
+      </a>
+      {showModal && (
+        <Modal onClose={closeModal}>
+          <LoginForm />
+        </Modal>
+      )}
     </>
   );
 }

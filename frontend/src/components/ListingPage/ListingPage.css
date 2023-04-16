@@ -6,20 +6,14 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
   }
 
-
 .listing-title {
     box-sizing: border-box;
-    /* border: 1px solid black; */
     font-size: 30px;
     font-weight: 500;
     padding: 10px;
-
 }
 
 .listing-location {
-    /* display: inline-block;
-    border-bottom: 1px solid black;
-    width: 215px; */
     margin-top: 10px;
     margin-left: 10px; 
     line-height: 1.2;
@@ -33,7 +27,6 @@
 }
 
 .info-container {
-
     margin: 48px 0 48px 0;
     display: flex;
 }
@@ -97,7 +90,6 @@
 
 .col2 {
     grid-column: span 2;
-    /* margin-right: 5px; */
 }
 
 .row2 {
@@ -120,12 +112,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* gap: -100px; */
-    /* grid-column: 2 / span 1;
-    grid-row: 2 / span 1;
-    height: 200px;
-    object-fit: cover;
-    /* border-radius: 10px; */
 }
 
 .image-container {
@@ -136,7 +122,6 @@
     line-height: 0.1;
 }
 
-
 .requirements {
     display: inline-block;
     margin-left: 10px;
@@ -144,7 +129,6 @@
     font-size: 16px;
     line-height: 1.2;
     height: 65px;
-    
 }
 
 .requirement {
@@ -154,10 +138,7 @@
     font-size: 14px;
     font-weight: 400;
     color: rgb(113, 113, 113);
-    /* word-wrap: break-word;  */
-    /* width: 500px; */
 }
-
 
 .requirements i {
     display: inline-block;
@@ -169,7 +150,6 @@
     height: 22px;
     margin-right: 7px;
 }
-
 
 .air-logo {
     color:red;
@@ -215,50 +195,29 @@
 .amenities-container {
     display: grid;
     grid-template-columns: auto auto;
-    /* flex-direction: column; */
-    /* justify-content: space-around; */
-
     padding-top: 30px;
 }
 
 #amenities-icons {
     display: inline-block
 }
+
 #amenities-icon {
-    /* display: flex;
-    align-items: center;
-    flex-wrap: wrap; */
     display: inline-block
 }
 
-
-#amenities-icon img{
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    float: right;
-    height: 100px;
-    width: 100px;
-    width: 10%;
-    height: 10%;
-    float: right; */
+#amenities-icon img {
     display: flex;
-    /* text-align: center; */
     height: 60px;
     width: 60px;
-   
     margin-bottom: 40px;
     vertical-align: middle;
 }
 
 #amenities-icon {
     display: flex;
-    /* margin-left: 10px;  */
     align-items: middle;
-    /* display: inline-block; */
   vertical-align: middle;
-    /* text-align: center; */
-
 }
 
 .amenities-text {
@@ -274,7 +233,7 @@
     margin-right: 7px;
 }
 
-.fa-sharp.fa-regular.fa-heart  {
+.fa-sharp.fa-regular.fa-heart {
     margin-left: 7px;
     margin-right: 5px;
 }
@@ -293,4 +252,11 @@
 .save {
     text-decoration: underline;
     font-size: 14px;
+}
+
+.borderline5 {
+    border-bottom: 1px solid rgb(223, 221, 240);
+    width: 1090px;
+    margin-top: 50px;
+    margin-left: 10px;
 }
