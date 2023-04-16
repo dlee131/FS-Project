@@ -144,7 +144,7 @@ export const ListingPage = () => {
       <div>
         <ReviewsIndex />
       </div>
-      <div>
+      <div className="text-location">
         Where you'll be
       </div>
       <div className="map-info">
@@ -159,6 +159,7 @@ export const ListingPage = () => {
           }}
         />
       </div>
+      <div className="borderline4"></div>
     </div>
   );
 };

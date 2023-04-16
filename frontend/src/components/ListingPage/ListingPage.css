@@ -294,14 +294,3 @@
     text-decoration: underline;
     font-size: 14px;
 }
-
-.map {
-    margin-left: 10px;
-    margin-top: 20px;
-    height: 400px;
-    width: 1090px;
-  }
-
-.map-info {
-    margin-left: 10px;
-}
