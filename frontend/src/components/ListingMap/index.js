@@ -59,31 +59,6 @@ function ListingMap({
             if(listingId == null) {
                 marker = new window.google.maps.Marker({
                     map,
-                    position: new window.google.maps.LatLng(listing.lat, listing.long),
-                    label: {
-                        text: `$${listing.nightPrice}`,
-                        fontWeight: 'bold',
-                        color: 'black'
-                    },
-                    icon: {
-                        path: `
-                            M 1,0 
-                            L 2,0 
-                            A 1 1 0 0 1 3,1
-                            A 1 1 0 0 1 2,2
-                            L 1,2 
-                            A 1 1 0 0 1 0,1
-                            A 1 1 0 0 1 1,0
-                            z
-                            `,
-                        fillOpacity: 1,
-                        fillColor: 'white',
-                        strokeColor: 'black',
-                        strokeWeight: 1,
-                        scale: 15   ,
-                        labelOrigin: new window.google.maps.Point(1.5, 1),
-                        anchor: new window.google.maps.Point(1.5, 1)
-                    },
                 })
             } else {
                 marker = new window.google.maps.Marker({
