@@ -65,3 +65,16 @@
     z-index: 10;
 }
 
+.index-map-container button {
+    border-radius: 30px;
+    background-color: black;
+    border-color: black;
+    color: white;
+    width: 140px;
+}
+
+.toggle-button {
+    position: fixed;
+    bottom: 80px;
+    left: 690px;
+}

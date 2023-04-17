@@ -61,6 +61,7 @@ function ListingsIndexPage() {
           </div>
         )}
         <div className="index-map-container">
+        <div className="toggle-button">
               <button onClick={showMap}>
                 {!mapToggle ? (
                   <p>
@@ -72,6 +73,7 @@ function ListingsIndexPage() {
                   </p>
                 )}
               </button>
+              </div>
         </div>
       </div>
       <div className="border-line"></div>
