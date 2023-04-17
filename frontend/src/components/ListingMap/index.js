@@ -3,6 +3,7 @@ import { Wrapper } from "@googlemaps/react-wrapper";
 import { useHistory, useParams } from "react-router-dom";
 import { getListings } from "../../store/listings";
 import { useSelector } from "react-redux";
+import airbnbmap from "./airbnbmap.png";
 
 import "./ListingMap.css";
 
@@ -17,7 +18,9 @@ function ListingMap({
   const markers = useRef({});
   const history = useHistory();
   const listingId = useParams();
+
   // Create the map
+
   useEffect(() => {
     if (!map) {
       setMap(
@@ -49,40 +52,46 @@ function ListingMap({
 
   useEffect(() => {
     if (map) {
-      listings.forEach((listing) => {
-        if (markers.current[listing.id]) return;
+        listings.forEach((listing) => {
+            if (markers.current[listing.id]) return;
 
-        const marker = new window.google.maps.Marker({
-          map,
-          position: new window.google.maps.LatLng(
-            listing.latitude,
-            listing.longitude
-          ),
-          label: {
-            text: `$${listing.nightlyPrice}`,
-            fontWeight: "bold",
-            color: "black",
-          },
-          icon: {
-            path: `
-                M 1,0 
-                L 2,0 
-                A 1 1 0 0 1 3,1
-                A 1 1 0 0 1 2,2
-                L 1,2 
-                A 1 1 0 0 1 0,1
-                A 1 1 0 0 1 1,0
-                z
-              `,
-            fillOpacity: 1,
-            fillColor: "white",
-            strokeColor: "black",
-            strokeWeight: 1,
-            scale: 15,
-            labelOrigin: new window.google.maps.Point(1.5, 1),
-            anchor: new window.google.maps.Point(1.5, 1),
-          },
-        });
+            let marker
+            if(listingId == null) {
+                marker = new window.google.maps.Marker({
+                    map,
+                    position: new window.google.maps.LatLng(listing.lat, listing.long),
+                    label: {
+                        text: `$${listing.nightPrice}`,
+                        fontWeight: 'bold',
+                        color: 'black'
+                    },
+                    icon: {
+                        path: `
+                            M 1,0 
+                            L 2,0 
+                            A 1 1 0 0 1 3,1
+                            A 1 1 0 0 1 2,2
+                            L 1,2 
+                            A 1 1 0 0 1 0,1
+                            A 1 1 0 0 1 1,0
+                            z
+                            `,
+                        fillOpacity: 1,
+                        fillColor: 'white',
+                        strokeColor: 'black',
+                        strokeWeight: 1,
+                        scale: 15   ,
+                        labelOrigin: new window.google.maps.Point(1.5, 1),
+                        anchor: new window.google.maps.Point(1.5, 1)
+                    },
+                })
+            } else {
+                marker = new window.google.maps.Marker({
+                    map,
+                    position: new window.google.maps.LatLng(listing.latitude, listing.longitude),
+                    icon: airbnbmap
+                })
+            }
 
         Object.entries(markerEventHandlers).forEach(([event, handler]) => {
           marker.addListener(event, () => handler(listing));
