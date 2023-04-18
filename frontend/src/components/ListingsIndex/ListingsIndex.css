@@ -65,10 +65,6 @@
     z-index: 10;
 }
 
-.map-container {
-    position: absolute;
-    height: fit-content;
-}
 
 .index-map-container button {
     border-radius: 24px;
@@ -101,4 +97,8 @@
 
 .map-text i{
     margin-left: 10px;
+}
+
+.map-container {
+    
 }

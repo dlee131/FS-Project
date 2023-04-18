@@ -55,7 +55,6 @@ function ListingsIndexPage() {
                 center: { lat: 40.754787, lng: -73.820393 },
                 zoom: 8,
               }}
-              className="map-index"
             ></ListingMapWrapper>
           </div>
         )}
