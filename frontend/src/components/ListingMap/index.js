@@ -3,7 +3,7 @@ import { Wrapper } from "@googlemaps/react-wrapper";
 import { useHistory, useParams } from "react-router-dom";
 import { getListings } from "../../store/listings";
 import { useSelector } from "react-redux";
-import airbnbmap from "./airbnbmap.png";
+import melobnbmap from "./melobnbmap.png";
 
 import "./ListingMap.css";
 
@@ -64,7 +64,7 @@ function ListingMap({
                 marker = new window.google.maps.Marker({
                     map,
                     position: new window.google.maps.LatLng(listing.latitude, listing.longitude),
-                    icon: airbnbmap
+                    icon: melobnbmap
                 })
             }
 
@@ -92,9 +92,10 @@ function ListingMap({
 }
 
 function ListingMapWrapper(props) {
+
   return (
     <Wrapper apiKey={process.env.REACT_APP_MAPS_API_KEY}>
-      <ListingMap {...props} />
+      <ListingMap {...props}/>
     </Wrapper>
   );
 }

@@ -8,15 +8,12 @@ function SearchBar() {
   const dispatch = useDispatch();
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
-  const [listings, setListings] = useState([]);
 
-
-  const handleSearch = () => {
+  const handleSearch = async () => {
     setLoading(true);
-    dispatch(fetchListings({ city: searchQuery })).finally(() => {
-      setLoading(false);
-      setListings(prevListings => prevListings.filter(listing => listing.city === searchQuery));
-    });
+    dispatch(fetchListings(searchQuery))
+      .then(() => setLoading(false))
+      .catch((err) => console.error(err));
   };
 
   const handleKeyDown = (e) => { 

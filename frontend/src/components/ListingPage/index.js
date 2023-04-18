@@ -157,6 +157,7 @@ export const ListingPage = () => {
             center: { lat: listing.latitude, lng: listing.longitude },
             zoom: 14,
           }}
+          mapClassName="listing-map"
         />
       </div>
       <div className="borderline5"></div>
