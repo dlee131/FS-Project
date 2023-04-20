@@ -1,28 +1,30 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { fetchListings } from "../../store/listings";
+import { getListings } from "../../store/listings";
 import { updateSearch } from "../../store/search";
+import { useSelector } from "react-redux";
 import "./searchbar.css";
 
-function SearchBar() {
-  const dispatch = useDispatch();
+function SearchBar({ handleSearch }) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [SearchResults, setSearchResults] = useState("");
+  const listings = useSelector(getListings);
 
-  const handleSearch = async () => {
-    setLoading(true);
-    dispatch(fetchListings(searchQuery))
-      .then(() => setLoading(false))
-      .catch((err) => console.error(err));
-  };
+  function handleSearch(query) {
+    const filteredListings = listings.filter((listing) =>
+      listing.city.toLowerCase().includes(query.toLowerCase())
+    );
+    setSearchResults(filteredListings);
+  }
 
-  const handleKeyDown = (e) => { 
-    if (e.key === 'Enter') {
-      handleSearch();
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch(searchQuery);
     }
   };
 
   return (
+    
     <div className="input-group">
       <div className="form-outline">
         <input
@@ -35,12 +37,12 @@ function SearchBar() {
           placeholder="Search Your Destination"
         />
       </div>
-      <button type="button" className="searchbutton" onClick={handleSearch}>
-        {loading ? (
-          <i className="fas fa-spinner fa-spin"></i>
-        ) : (
-          <i className="fas fa-search"></i>
-        )}
+      <button
+        type="button"
+        className="searchbutton"
+        onClick={() => handleSearch(searchQuery)}
+      >
+        <i className="fas fa-search"></i>
       </button>
     </div>
   );

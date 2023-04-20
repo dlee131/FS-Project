@@ -11,20 +11,6 @@ import SearchBar from "../SearchBar/searchbar";
 
 function Navigation() {
   const sessionUser = useSelector((state) => state.session.user);
-  // const [showDropdown, setshowDropdown] = useState(true)
-  // let sessionLinks;
-  // if (sessionUser) {
-  //   sessionLinks = (
-  //     <ProfileButton user={sessionUser} />
-  //   );
-  // } else {
-  //   sessionLinks = (
-  //     <>
-  //       <LoginFormModal />
-  //       <SignupFormModal />
-  //     </>
-  //   );
-  // }
   
   return (
     <div className="header">
