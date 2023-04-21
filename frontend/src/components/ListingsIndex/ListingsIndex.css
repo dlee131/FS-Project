@@ -48,7 +48,7 @@
 
 .listing-pics {
     width: 320px;
-    height: 310px;
+    height: 300px;
     border-radius: 15px;
     padding: 5px;
     cursor: pointer;
@@ -98,3 +98,4 @@
 .map-text i{
     margin-left: 10px;
 }
+

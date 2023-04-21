@@ -5,18 +5,19 @@ import { updateSearch } from "../../store/search";
 import { useSelector } from "react-redux";
 import "./searchbar.css";
 
-function SearchBar({ handleSearch }) {
+function SearchBar() {
   const [searchQuery, setSearchQuery] = useState("");
   const [SearchResults, setSearchResults] = useState("");
   const listings = useSelector(getListings);
 
-  function handleSearch(query) {
-    const filteredListings = listings.filter((listing) =>
-      listing.city.toLowerCase().includes(query.toLowerCase())
+  function handleSearch() {
+    const filteredListings = listings.filter(
+      (listing) => listing.state.toLowerCase() === searchQuery.toLowerCase()
     );
     setSearchResults(filteredListings);
   }
-
+  console.log(setSearchResults)
+  
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       handleSearch(searchQuery);
@@ -24,7 +25,6 @@ function SearchBar({ handleSearch }) {
   };
 
   return (
-    
     <div className="input-group">
       <div className="form-outline">
         <input
@@ -37,11 +37,7 @@ function SearchBar({ handleSearch }) {
           placeholder="Search Your Destination"
         />
       </div>
-      <button
-        type="button"
-        className="searchbutton"
-        onClick={() => handleSearch(searchQuery)}
-      >
+      <button type="button" className="searchbutton" onClick={handleSearch}>
         <i className="fas fa-search"></i>
       </button>
     </div>
