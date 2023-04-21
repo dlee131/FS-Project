@@ -144,9 +144,7 @@ export const ListingPage = () => {
       <div>
         <ReviewsIndex />
       </div>
-      <div className="text-location">
-        Where you'll be
-      </div>
+      <div className="text-location">Where you'll be</div>
       <div className="map-info">
         {listing.city}, {listing.state}, {listing.country}
       </div>
@@ -157,7 +155,6 @@ export const ListingPage = () => {
             center: { lat: listing.latitude, lng: listing.longitude },
             zoom: 14,
           }}
-          mapClassName="listing-map"
         />
       </div>
       <div className="borderline5"></div>

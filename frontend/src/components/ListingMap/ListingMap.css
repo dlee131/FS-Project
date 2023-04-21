@@ -1,11 +1,22 @@
 .map {
-    margin-left: 10px;
-    margin-top: 20px;
     position: absolute;
-    height: 70%;
-    width: 72%;
+    height: 100%;
+    width: 100%;
 }
 
+.map-container {
+    position: relative;
+    right: 7px;
+    height: 690px;
+    width: 1511px;
+}
+
+.listing-page-map {
+    position: relative; 
+    left: 10px;
+    height: 400px;
+    width: 1100px;
+}
 .map-info {
     margin-top: 20px;
     margin-left: 10px;
