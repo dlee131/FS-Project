@@ -16,7 +16,6 @@ function SearchBar() {
     );
     setSearchResults(filteredListings);
   }
-  console.log(setSearchResults)
   
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {

@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: repeat(4, 2fr);
     grid-template-rows: repeat(1, 1fr);
+    row-gap: 20px;
 }
 
 .listings {
@@ -52,6 +53,7 @@
     border-radius: 15px;
     padding: 5px;
     cursor: pointer;
+
 }
 
 .numeric {

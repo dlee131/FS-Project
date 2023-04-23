@@ -7,8 +7,9 @@
 .map-container {
     position: relative;
     right: 7px;
-    height: 690px;
+    height: 700px;
     width: 1511px;
+    top: 10px;
 }
 
 .listing-page-map {
