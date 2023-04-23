@@ -36,7 +36,7 @@ function SearchBar() {
           placeholder="Search Your Destination"
         />
       </div>
-      <button type="button" className="searchbutton" onClick={handleSearch}>
+      <button type="button" className="search-button" onClick={handleSearch}>
         <i className="fas fa-search"></i>
       </button>
     </div>
