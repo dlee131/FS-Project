@@ -64,8 +64,7 @@ export const ListingPage = () => {
         <div className="listing-info">
           <h1 className="residence-type">{`${listing.residenceType} hosted by ${listing.userName}`}</h1>
           <h2 className="listing-bed">
-            {listing.numBedrooms} bedroom • {listing.numBeds} beds •{" "}
-            {listing.numBathrooms} baths
+            {listing.numBedrooms} bedroom • {listing.numBeds} beds • {listing.numBathrooms} baths
           </h2>
           <div className="borderline"></div>
           <div className="requirements-margin">

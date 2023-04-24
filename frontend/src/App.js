@@ -28,6 +28,9 @@ function App() {
         <Route path="/reservations">
           <ReservationIndex />
         </Route>
+        <Route path="/">
+
+        </Route>
       </Switch>
     </>
   );
