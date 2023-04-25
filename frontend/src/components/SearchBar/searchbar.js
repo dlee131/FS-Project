@@ -24,7 +24,7 @@ function SearchBar() {
   };
 
   return (
-    <div className="input-group">
+    <div className="input-group"> 
       <div className="form-outline">
         <input
           id="search-focus"
