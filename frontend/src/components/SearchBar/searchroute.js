@@ -1,17 +1,17 @@
 import ListingMapWrapper from "../ListingMap";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux"
 
 
-function SearchRoute () = {
+function SearchRoute () {
 
-
-
-
-
-
+    const [] = useState("")
+    const dispatch = useDispatch()
+    
 
     return 
         (
-
+        <div>
         <div> 
         <ListingMapWrapper
           listings={[listing]}
@@ -20,6 +20,8 @@ function SearchRoute () = {
             zoom: 14,
           }}
         />
+        </div>
+
         </div>
         )
 }

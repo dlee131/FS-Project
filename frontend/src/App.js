@@ -6,7 +6,7 @@ import ListingPage from "./components/ListingPage";
 import ReservationIndex from "./components/Reservation";
 import ReviewForm from "./components/Review/ReviewForm";
 import ReviewUpdate from "./components/Review/ReviewUpdate";
-
+import SearchRoute from "./components/SearchBar/searchroute";
 
 function App() {
   
@@ -18,19 +18,19 @@ function App() {
         <ReviewUpdate/>
         </Route>
         <Route exact path="/">
-          <ListingIndex />
+          <ListingIndex/>
         </Route>
         <Route exact path="/listings/:listingId/reviews/new">
-          <ReviewForm />
+          <ReviewForm/>
         </Route>
         <Route path="/listings/:listingId">
-          <ListingPage />
+          <ListingPage/>
         </Route>
         <Route path="/reservations">
-          <ReservationIndex />
+          <ReservationIndex/>
         </Route>
         <Route path="/search">
-
+          <SearchRoute/>
         </Route>
       </Switch>
     </>
