@@ -38,7 +38,6 @@
     font-size: 16px;
     font-weight: 600px;
     padding-left: 10px;
-
 }
 
 .listing-index-title {
@@ -65,6 +64,7 @@
 .border-line {
     border-bottom: 1px solid rgb(223, 221, 240);
     z-index: 10;
+    margin-top: 30px;
 }
 
 

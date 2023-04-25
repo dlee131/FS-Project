@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import "./Navigation.css";
 import logo from "../../img/bnb_logo.jpeg";
 import DropDownMenu from "./DropdownMenu";
-import SearchBar from "../SearchBar/Searchbar";
+import SearchBar from "../SearchBar/searchbar";
 
 function Navigation() {
   const sessionUser = useSelector((state) => state.session.user);

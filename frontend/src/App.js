@@ -7,6 +7,7 @@ import ReservationIndex from "./components/Reservation";
 import ReviewForm from "./components/Review/ReviewForm";
 import ReviewUpdate from "./components/Review/ReviewUpdate";
 
+
 function App() {
   
   return (
@@ -28,7 +29,7 @@ function App() {
         <Route path="/reservations">
           <ReservationIndex />
         </Route>
-        <Route path="/">
+        <Route path="/search">
 
         </Route>
       </Switch>
