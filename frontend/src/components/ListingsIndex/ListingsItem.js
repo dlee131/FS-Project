@@ -14,8 +14,8 @@ function ListingItem({ listing, handleClick }) {
   return (
 
       <div className="listings">
-        <ul onClick={handleClick}>
-          <img alt="" className="listing-pics" src={listing.photo[0]}></img>
+        <ul>
+          <img alt="" className="listing-pics" src={listing.photo[0]} onClick={handleClick}></img>
           <div>
             <div className="listing-city">
               {listing.city}, {listing.state}
