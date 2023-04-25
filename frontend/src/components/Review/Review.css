@@ -34,7 +34,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 40px 40px 40px 30px;
-
     column-gap: 100px;
     padding-right: 280px;
     margin-top: 10px;
@@ -125,6 +124,6 @@ progress::-webkit-progress-value {
 
 .borderline4 {
     border-bottom: 1px solid rgb(223, 221, 240);
-    width: 1090px;
+    width: 1100px;
     margin-top: 50px;
 }

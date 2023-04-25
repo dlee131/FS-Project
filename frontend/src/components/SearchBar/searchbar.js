@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { getListings } from "../../store/listings";
 import { updateSearch } from "../../store/search";
 import { useSelector } from "react-redux";
-import "./Searchbar.css";
+import "./searchbar.css";
 
 function SearchBar() {
   const [searchQuery, setSearchQuery] = useState("");

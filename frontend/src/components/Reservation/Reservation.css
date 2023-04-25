@@ -56,7 +56,7 @@
     top: 120px; 
     height: 300px;
     width: 1100px;   
-    filter: brightness(70%);
+    filter: brightness(90%);
     transition: all 0.5s ease;
 }
 
@@ -91,7 +91,7 @@
 
 .reservation-residence {
     position: absolute;
-    top: 60px;
+    top: 65px;
     left: 50px;
 }
 
@@ -103,7 +103,7 @@
 
 .reservation-guests {
     position: absolute;
-    top: 90px;
+    top: 92px;
     left: 50px;
 }
 
@@ -118,13 +118,14 @@
 
 .cancel-res-button {
     margin-right: 100px;
-    border-radius: 5px;
+    border-radius: 8px;
     border: none;
 }
 
 .edit-res-button {
     border: none;
     border-color: white;
+    border-radius: 8px;
 }
 
 #reservation-inputs {
