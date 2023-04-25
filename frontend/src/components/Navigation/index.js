@@ -45,6 +45,7 @@ function Navigation() {
         </a>
       </div>
       <div>{<DropDownMenu user={sessionUser} />}</div>
+      <div className="borderline-nav"></div>
     </div>
   );
 }
