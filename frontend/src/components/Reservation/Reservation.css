@@ -119,6 +119,12 @@
 .cancel-res-button {
     margin-right: 100px;
     border-radius: 5px;
+    border: none;
+}
+
+.edit-res-button {
+    border: none;
+    border-color: white;
 }
 
 #reservation-inputs {

@@ -65,7 +65,7 @@
 .border-line {
     border-bottom: 1px solid rgb(223, 221, 240);
     z-index: 10;
-    margin-top: 30px;
+    /* margin-top: 10px; */
 }
 
 
