@@ -3,9 +3,9 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(1, 1fr);
     row-gap: 20px;
-    /* align-items: center; */
     align-content:center;
     margin-left: 35px;
+    column-gap: 5px;
 }
 
 .listings {
@@ -84,7 +84,7 @@
 .toggle-button {
     position: fixed;
     bottom: 80px;   
-    left: 690px;
+    left: 710px;
 }
 
 .toggle-button button:hover {
