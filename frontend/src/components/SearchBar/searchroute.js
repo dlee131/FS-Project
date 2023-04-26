@@ -13,7 +13,7 @@ function SearchRoute () {
     const listing = useSelector((state) => state.listings[listingId]);
     const listings = useSelector(getListings);
     const { listingId } = useParams();
-
+    
 
     return 
         (

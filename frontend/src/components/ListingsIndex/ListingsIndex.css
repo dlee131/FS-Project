@@ -4,7 +4,8 @@
     grid-template-rows: repeat(1, 1fr);
     row-gap: 20px;
     /* align-items: center; */
-    align-content:center
+    align-content:center;
+    margin-left: 35px;
 }
 
 .listings {
@@ -49,7 +50,8 @@
 }
 
 .listing-pics {
-    width: 320px;
+    /* margin-left: 20px; */
+    width: 310px;
     height: 300px;
     border-radius: 15px;
     padding: 5px;
