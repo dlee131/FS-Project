@@ -18,7 +18,7 @@ function SearchRoute () {
     return 
         (
         <div>
-        <div> 
+        <div className="search-map"> 
         <ListingMapWrapper
           listings={[listing]}
           mapOptions={{
