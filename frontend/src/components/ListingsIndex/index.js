@@ -6,15 +6,15 @@ import { useHistory } from "react-router-dom";
 import { Filter } from "../Filters/filter";
 import ListingMapWrapper from "../ListingMap";
 
-function ListingsIndexPage() {
+function ListingsIndexPage({search}) {
   const dispatch = useDispatch();
   const listings = useSelector(getListings);
   const history = useHistory();
   const [mapToggle, setMapToggle] = useState(false);
 
   useEffect(() => {
-    dispatch(fetchListings());
-  }, [dispatch]);
+    dispatch(fetchListings(search));
+  }, [search]);
 
   const handleClick = (listingId) => {
     history.push(`/listings/${listingId}`);
@@ -74,7 +74,6 @@ function ListingsIndexPage() {
           </div>
         </div>
       </div>
-      <div className="border-line"></div>
       <div className="footer"></div>
     </div>
   );

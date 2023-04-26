@@ -21,11 +21,18 @@ export const getListings = (state) => state.listings ? Object.values(state.listi
 export const getListing = (listingId) => (state) => state.listings ? state.listings[listingId] : null
 
 
-export const fetchListings = () => async dispatch => {
+export const fetchListings = (search = '') => async dispatch => {
     const response = await csrfFetch(`/api/listings`)
     if (response.ok) {
-        const data = await response.json();
-        dispatch(receiveListings(data))
+        const listings = await response.json();
+        const filteredListings = Object.keys(listings).reduce((filtered, key) => {
+            if (listings[key].state.toLowerCase().includes(search.toLowerCase()) || listings[key].city.toLowerCase().includes(search.toLowerCase())) {
+                filtered[key] = listings[key]
+            }
+
+            return filtered
+        }, {})
+        dispatch(receiveListings(filteredListings))
     };
 };
 
@@ -41,8 +48,9 @@ function listingsReducer(state = {}, action) {
     const newState = { ...state }
     switch (action.type) {
         case RECEIVE_LISTINGS:
-            return { ...state, ...action.listings}
+            return { ...action.listings}
         case RECEIVE_LISTING:
+            debugger
             return newState[action.listing.id] = action.listing
         default:
             return state;

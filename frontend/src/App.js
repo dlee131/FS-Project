@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import ListingIndex from "./components/ListingsIndex";
@@ -6,19 +6,20 @@ import ListingPage from "./components/ListingPage";
 import ReservationIndex from "./components/Reservation";
 import ReviewForm from "./components/Review/ReviewForm";
 import ReviewUpdate from "./components/Review/ReviewUpdate";
-import SearchRoute from "./components/SearchBar/searchroute";
 
 function App() {
   
+  const [search, setSearch] = useState("")
+
   return (
     <>
-      <Navigation />
+      <Navigation search={search} setSearch={setSearch} />
       <Switch>
       <Route path={'/listings/:listingId/reviews/:reviewId/edit'}>
         <ReviewUpdate/>
         </Route>
         <Route exact path="/">
-          <ListingIndex/>
+          <ListingIndex search={search}/>
         </Route>
         <Route exact path="/listings/:listingId/reviews/new">
           <ReviewForm/>
@@ -28,9 +29,6 @@ function App() {
         </Route>
         <Route path="/reservations">
           <ReservationIndex/>
-        </Route>
-        <Route path="/search">
-          <SearchRoute/>
         </Route>
       </Switch>
     </>

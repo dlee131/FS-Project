@@ -9,7 +9,7 @@ import logo from "../../img/bnb_logo.jpeg";
 import DropDownMenu from "./DropdownMenu";
 import SearchBar from "../SearchBar/searchbar";
 
-function Navigation() {
+function Navigation({search, setSearch}) {
   const sessionUser = useSelector((state) => state.session.user);
   
   return (
@@ -24,7 +24,7 @@ function Navigation() {
           <div className="logo-text">melobnb</div>
         </div>
       </NavLink>
-        <SearchBar/>
+        <SearchBar search={search} setSearch={setSearch}/>
       <div className="linkedin-git">
         <a href="https://github.com/dlee131" target="_blank" title="github">
           {" "}
