@@ -1,11 +1,6 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { getListings } from "../../store/listings";
-import { useSelector } from "react-redux";
 import "./searchbar.css";
 
 function SearchBar({search, setSearch}) {
-  const listings = useSelector(getListings);
 
   // function handleSearch() {
   //   const filteredListings = listings.filter(
