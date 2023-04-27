@@ -36,6 +36,14 @@ export const fetchListings = (search = '') => async dispatch => {
     };
 };
 
+
+export const fetchListingsType = (filters) => async dispatch => {
+    const res = await csrfFetch(`/api/listings/filter/${filters}`)
+
+    let data = await res.json()
+    dispatch(receiveListings(data))
+}
+
 export const fetchListing = (listingId) => async dispatch => {
     const response = await csrfFetch(`/api/listings/${listingId}`)
     if (response.ok) {
