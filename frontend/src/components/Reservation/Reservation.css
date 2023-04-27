@@ -120,12 +120,14 @@
     margin-right: 100px;
     border-radius: 8px;
     border: none;
+    padding: 10px;
 }
 
 .edit-res-button {
     border: none;
     border-color: white;
     border-radius: 8px;
+    padding: 10px;
 }
 
 #reservation-inputs {
@@ -165,3 +167,4 @@
 #reservation-input:focus {
    outline: none;
 }
+

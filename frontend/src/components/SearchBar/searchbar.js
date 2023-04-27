@@ -2,13 +2,6 @@ import "./searchbar.css";
 
 function SearchBar({search, setSearch}) {
 
-  // function handleSearch() {
-  //   const filteredListings = listings.filter(
-  //     (listing) => listing.state.toLowerCase() === searchQuery.toLowerCase()
-  //   );
-  //   setSearch(filteredListings);
-  // }
-
   return (
     
     <div className="input-group"> 

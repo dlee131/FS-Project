@@ -156,8 +156,8 @@ function ReservationIndex({ reservation }) {
             <div></div>
             {selectedReservationId === reservation.id && (
               <form onSubmit={handleUpdateReservation}>
-                <div>Adults</div>
-                <div>Age 13+</div>
+                <div className="adults-text">Adults</div>
+                <div className="age-text">Age 13+</div>
                 <button
                   type="button"
                   value={numAdults}
