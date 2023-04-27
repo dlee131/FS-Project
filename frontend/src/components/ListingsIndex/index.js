@@ -31,8 +31,9 @@ function ListingsIndexPage({search}) {
   };
 
   if (listings.length === 0) {
-    return <div>No listings found</div>;
+    return <div className="no-listings">No listings found!</div>;
   }
+  
   return (
     <div>
       <Filter />
