@@ -153,7 +153,6 @@ function ReservationIndex({ reservation }) {
                 Edit Reservation
               </button>
             </div>
-            <div></div>
             {selectedReservationId === reservation.id && (
               <form onSubmit={handleUpdateReservation} className="res-edit-container">
                 <div className="adults-text">Adults</div>

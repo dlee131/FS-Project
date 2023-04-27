@@ -43,7 +43,7 @@ function ReservationForm() {
     e.preventDefault();
     setDropDown(!dropDown);
   };
-  
+
   const calculateCleaningFee = (subtotal) => {
     return subtotal * 0.01;
   };
@@ -66,64 +66,59 @@ function ReservationForm() {
     return subtotal + cleaningFee + airbnbServiceFee;
   };
 
-
   const handleOnBlur = (e) => {
-    if (!e.relatedTarget?.matches('.adult-buttons, .children-buttons')) {
+    if (!e.relatedTarget?.matches(".adult-buttons, .children-buttons")) {
       setDropDown(false);
-    }
-    else {
-      setDropDown(true)
+    } else {
+      setDropDown(true);
     }
   };
 
   const handleNumAdultsChange = (e, operation) => {
     e.preventDefault();
     e.stopPropagation();
-    if (operation === 'increment') {
+    if (operation === "increment") {
       setNumAdults(numAdults + 1);
-    } else if (operation === 'decrement') {
+    } else if (operation === "decrement") {
       setNumAdults(numAdults - 1);
     }
   };
 
- const handleNumChildrenChange = (e, operation) => {
+  const handleNumChildrenChange = (e, operation) => {
     e.preventDefault();
     e.stopPropagation();
-    if (operation === 'increment') {
+    if (operation === "increment") {
       setNumChildren(numChildren + 1);
-    } else if (operation === 'decrement') {
+    } else if (operation === "decrement") {
       setNumChildren(numChildren - 1);
     }
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  setErrors([]);
-  if (!userId) {
-    // Show the login form modal
-    return (
-      <LoginFormModal onClose={() => setShowModal(false)} />
-    );
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrors([]);
+    if (!userId) {
+      // Show the login form modal
+      return <LoginFormModal onClose={() => setShowModal(false)} />;
+    }
 
-  // Dispatch the createReservation action and handle errors
-  return dispatch(createReservation(reservation))
-    .then(() => {
-      history.push("/reservations");
-    })
-    .catch(async (res) => {
-      let data;
-      try {
-        data = await res.clone().json();
-      } catch {
-        data = await res.text();
-      }
-      if (data?.errors) setErrors(data.errors);
-      else if (data) setErrors([data]);
-      else setErrors([res.statusText]);
-    });
-};
-
+    // Dispatch the createReservation action and handle errors
+    return dispatch(createReservation(reservation))
+      .then(() => {
+        history.push("/reservations");
+      })
+      .catch(async (res) => {
+        let data;
+        try {
+          data = await res.clone().json();
+        } catch {
+          data = await res.text();
+        }
+        if (data?.errors) setErrors(data.errors);
+        else if (data) setErrors([data]);
+        else setErrors([res.statusText]);
+      });
+  };
 
   return (
     <form className="reservation-form" onSubmit={handleSubmit}>
@@ -171,7 +166,12 @@ const handleSubmit = async (e) => {
           <div className="border-line"></div>
         </div>
         {/* onClick={() => setIsOpen(!isOpen)} */}
-        <div className="guests-container" onClick={dropdown} onBlur={handleOnBlur} tabIndex="1">
+        <div
+          className="guests-container"
+          onClick={dropdown}
+          onBlur={handleOnBlur}
+          tabIndex="1"
+        >
           <div className="guests">GUESTS</div>
           <div className="num-guests">{numGuests} guest</div>
           <div className="chevron">
@@ -184,20 +184,44 @@ const handleSubmit = async (e) => {
           {dropDown && (
             <div className="dropdown-reservation">
               <div className="guests-labels">
-              <div className="guest-label">Adults</div>
-              <div className="ages">Age 13+</div>
-              <div className="guest-label">Children</div>
-              <div className="ages">Ages 2-12</div>
+                <div className="guest-label">Adults</div>
+                <div className="ages">Age 13+</div>
+                <div className="guest-label">Children</div>
+                <div className="ages">Ages 2-12</div>
               </div>
               <div className="adult-button">
-              <button className="adult-buttons" disabled={numAdults === 1} onClick={(e) => handleNumAdultsChange(e, 'decrement')}>-</button>
+                <button
+                  className="adult-buttons"
+                  disabled={numAdults === 1}
+                  onClick={(e) => handleNumAdultsChange(e, "decrement")}
+                >
+                  -
+                </button>
                 <div>{numAdults}</div>
-              <button className="adult-buttons"disabled={numGuests === 4} onClick={(e) => handleNumAdultsChange(e, 'increment')}>+</button>
+                <button
+                  className="adult-buttons"
+                  disabled={numGuests === 4}
+                  onClick={(e) => handleNumAdultsChange(e, "increment")}
+                >
+                  +
+                </button>
               </div>
               <div className="children-button">
-              <button className="children-buttons" disabled={numChildren === 0} onClick={(e) => handleNumChildrenChange(e, 'decrement')}>-</button>
+                <button
+                  className="children-buttons"
+                  disabled={numChildren === 0}
+                  onClick={(e) => handleNumChildrenChange(e, "decrement")}
+                >
+                  -
+                </button>
                 <div>{numChildren}</div>
-                <button className="children-buttons" disabled={numGuests === 4} onClick={(e) => handleNumChildrenChange(e, 'increment')}>+</button>
+                <button
+                  className="children-buttons"
+                  disabled={numGuests === 4}
+                  onClick={(e) => handleNumChildrenChange(e, "increment")}
+                >
+                  +
+                </button>
               </div>
             </div>
           )}
