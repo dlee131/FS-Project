@@ -27,9 +27,6 @@ function SearchBar({search, setSearch}) {
           placeholder="Search Your Destination"
         />
       </div>
-      <button type="button" className="search-button">
-        <i className="fas fa-search"></i>
-      </button>
     </div>
   );
 }
