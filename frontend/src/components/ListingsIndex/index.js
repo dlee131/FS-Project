@@ -12,6 +12,7 @@ function ListingsIndexPage({search}) {
   const history = useHistory();
   const [mapToggle, setMapToggle] = useState(false);
 
+  
   useEffect(() => {
     dispatch(fetchListings(search));
   }, [search]);
@@ -29,6 +30,9 @@ function ListingsIndexPage({search}) {
     }
   };
 
+  if (listings.length === 0) {
+    return <div>No listings found</div>;
+  }
   return (
     <div>
       <Filter />
