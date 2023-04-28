@@ -173,3 +173,11 @@
 .res-edit-container {
     
 }
+
+.adults-edit {
+    display: flex;
+}
+
+.children-edit {
+    display: flex;
+}

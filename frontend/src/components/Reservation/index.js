@@ -155,6 +155,7 @@ function ReservationIndex({ reservation }) {
             </div>
             {selectedReservationId === reservation.id && (
               <form onSubmit={handleUpdateReservation} className="res-edit-container">
+                <div className="adults-edit">
                 <div className="adults-text">Adults</div>
                 <div className="age-text">Age 13+</div>
                 <button
@@ -174,6 +175,8 @@ function ReservationIndex({ reservation }) {
                 >
                   +
                 </button>
+                </div>
+                <div className="children-edit">
                 <div>Children</div>
                 <div>2-12</div>
                 <button
@@ -193,29 +196,7 @@ function ReservationIndex({ reservation }) {
                 >
                   +
                 </button>
-                <input
-                  id="reservation-inputs"
-                  type="date"
-                  name="startDate"
-                  value={startDate}
-                  onChange={(e) => setStartDate(e.target.value)}
-                  min={moment().add(1, "day").format("YYYY-MM-DD")}
-                />
-                <input
-                  id="reservation-input"
-                  type="date"
-                  value={endDate}
-                  onChange={(e) => {
-                    setEndDate(e.target.value);
-                  }}
-                  min={
-                    startDate
-                      ? moment(startDate, "YYYY-MM-DD")
-                          .add(1, "days")
-                          .format("YYYY-MM-DD")
-                      : moment().add(1, "days").format("YYYY-MM-DD")
-                  }
-                />
+                </div>
                 <button>Confirm</button>
               </form>
             )}
