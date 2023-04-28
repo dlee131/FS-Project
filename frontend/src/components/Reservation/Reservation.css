@@ -127,6 +127,10 @@
     width: 200px;
 }
 
+.cancel-res-button:hover {
+    cursor: pointer;
+}
+
 .edit-res-button {
     position: fixed;
     left: 50px;
@@ -137,6 +141,20 @@
     padding: 10px;
     background-color: rgb(222, 222, 222);
     width: 200px;
+}
+
+.children-edit-buttons {
+    border: 1px solid;    
+    margin-left: 50px;
+    border-color: rgb(176, 176, 176);
+    background-color: white;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+}
+
+.edit-res-button:hover {
+    cursor: pointer;
 }
 
 #reservation-inputs {
@@ -180,13 +198,31 @@
 .res-edit-container {
     position: fixed;
     left: 300px;
-    top: 50px;
+    top: 0px;
     border: 1px solid rgb(221, 221, 221);
-    height: 200px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: transparent;
+    height: 288px;
+    width: 329px;
+    padding: 10px;
+    box-shadow: 0px 8px 8px 0px rgba(51, 49, 49, 0.47);
+}
+
+.ad-op-buttons {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    left: 400px;
+}
+
+
+.adults-text {
+    margin-top: 10px;
 }
 
 .adults-edit {
-    display: flex;
+    font-size: 20px;
 }
 
 .children-edit {

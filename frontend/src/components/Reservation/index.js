@@ -158,7 +158,9 @@ function ReservationIndex({ reservation }) {
                 <div className="adults-edit">
                 <div className="adults-text">Adults</div>
                 <div className="age-text">Age 13+</div>
+                <div className="ad-op-buttons">
                 <button
+                  className="adult-buttons"
                   type="button"
                   value={numAdults}
                   disabled={numAdults === 1}
@@ -168,6 +170,7 @@ function ReservationIndex({ reservation }) {
                 </button>
                 <div>{numAdults}</div>
                 <button
+                  className="adult-buttons"
                   type="button"
                   value={numAdults}
                   disabled={numGuests === 4}
@@ -176,10 +179,12 @@ function ReservationIndex({ reservation }) {
                   +
                 </button>
                 </div>
+                </div>
                 <div className="children-edit">
                 <div>Children</div>
                 <div>2-12</div>
                 <button
+                  className="children-edit-buttons"
                   type="button"
                   value={numChildren}
                   disabled={numChildren === 0}
@@ -189,6 +194,7 @@ function ReservationIndex({ reservation }) {
                 </button>
                 <div>{numChildren}</div>
                 <button
+                  className="children-buttons"
                   type="button"
                   value={reservation.numChildren}
                   disabled={numGuests === 4}
