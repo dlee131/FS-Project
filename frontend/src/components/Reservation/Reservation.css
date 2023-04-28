@@ -93,6 +93,7 @@
     position: absolute;
     top: 65px;
     left: 50px;
+    color: rgb(171, 171, 171);
 }
 
 .reservation-dates {
@@ -236,7 +237,7 @@
 .child-op-buttons {
     display: flex;
     position: fixed;
-    top: 120px;
+    top: 115px;
     left: 450px;
 }
 
@@ -258,5 +259,7 @@
     width: 200px;
     height: 50px;
     border-radius: 15px;
-    border-color: none;
+    border: none;
+    background-image: radial-gradient(circle at center center, rgb(230, 30, 77) 27.5%, rgb(230, 28, 95) 80%);
+    color: white;
 }
