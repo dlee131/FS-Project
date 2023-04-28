@@ -212,13 +212,13 @@
 .ad-op-buttons {
     display: flex;
     position: fixed;
-    top: 20px;
-    left: 400px;
+    top: 45px;
+    left: 500px;
 }
 
 
 .adults-text {
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 .adults-edit {
@@ -226,5 +226,37 @@
 }
 
 .children-edit {
+    font-size: 20px;
+}
+
+.child-text-edit {
+    margin-top: 20px;
+}
+
+.child-op-buttons {
     display: flex;
+    position: fixed;
+    top: 120px;
+    left: 450px;
+}
+
+.edit-child-num {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.edit-adult-num {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.confirm-edit-button {
+    margin-top: 100px;
+    margin-left: 70px;
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    border-color: none;
 }
