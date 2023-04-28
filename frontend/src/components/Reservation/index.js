@@ -141,16 +141,16 @@ function ReservationIndex({ reservation }) {
           <div className="reservation-buttons">
             <div>
               <button
-                onClick={() => handleDeleteReservation(reservation.id)}
-                className="cancel-res-button"
-              >
-                Cancel Reservation
-              </button>
-              <button
                 onClick={() => dropdown(reservation.id)}
                 className="edit-res-button"
               >
                 Edit Reservation
+              </button>
+              <button
+                onClick={() => handleDeleteReservation(reservation.id)}
+                className="cancel-res-button"
+              >
+                Cancel Reservation
               </button>
             </div>
             {selectedReservationId === reservation.id && (
