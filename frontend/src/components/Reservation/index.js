@@ -182,7 +182,7 @@ function ReservationIndex({ reservation }) {
                 </div>
                 <div className="children-edit">
                 <div className="child-text-edit">Children</div>
-                <div>2-12</div>
+                <div className="text-2-12">2-12</div>
                 <div className="child-op-buttons">
                 <button
                   className="children-edit-buttons"
