@@ -34,15 +34,12 @@
     color: white;
     border-radius: 10px;
     background-image: radial-gradient(circle at center center, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%);
-    margin-left: 50px;
     font-size: 16px;
-    margin: 50px;
+    /* margin: 0px; */
+    margin-left: 60px;
     border-color: rgb(227, 28, 95);
     border: none;
-}
-
-.login-button:hover {
-    background-color: rgb(82, 50, 58);
+    margin-top: 80px;
 }
 
 .demo-login {
@@ -52,19 +49,18 @@
     color: white;
     border-radius: 10px;
     background-color:rgb(59, 163, 255);
-    margin-left: 50px;
     font-size: 16px;
-    margin: 50px;
+    margin-left: 60px;
+    margin-top: 50px;
     border-color: rgb(227, 28, 95);
     border: none;
     text-align: center;
-    margin-top: 50px;
 }
 
 .demo-text {
     position: absolute;
     left: 220px;
-    top: 310px;
+    top: 340px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
 }
