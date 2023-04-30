@@ -16,20 +16,15 @@
     outline: none;
     position: absolute;
     margin-top: 10px;
-  }
-
-  input {
-    font-size: 16px;
-    border: 2px solid rgb(243, 243, 243);
-    border-radius: 10px;
+    /* border-radius: 10px; */
   }
   
   input:focus {
     outline: 2px solid #e2e2e2;
-  }
+}
 
 .login-div button {
-    width: 400px;
+    width: 420px;
     height: 50px;
     justify-content: center;
     color: white;
@@ -53,7 +48,7 @@
 #login-signup {
     text-align: center;
     font-weight: 550;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
     margin-top: 40px;
 }
@@ -61,9 +56,9 @@
 #welcome-text {
     margin-left: 20px;
     font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin-top: 30px;
-    font-weight: 200;
+    font-weight: 300;
 }
 
 #border-line {
