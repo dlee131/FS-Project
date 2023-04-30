@@ -22,6 +22,7 @@
     font-family: Arial, sans-serif;
     padding: 10px;
     z-index: 100;
+    font-size: 30px;
 }
 
 .menu-buttons:hover {
@@ -75,7 +76,7 @@
     position: absolute;
     border: 1px solid rgb(243, 238, 238);
     border-radius: 10px;
-    height: 80px;
+    height: 105px;
     width: 200px;
     right: 2%;
     margin-top: 10px;
@@ -95,6 +96,7 @@
 
 #logout-text:hover{
     background-color: rgb(245, 245, 245);
+    border-radius: 8px;
 }
 
 .searchbar {

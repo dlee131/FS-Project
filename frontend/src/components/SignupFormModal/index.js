@@ -13,7 +13,7 @@ function SignupFormModal({onClose}) {
   return (
     <>
       <a href="#signup" onClick={() => setShowModal(true)} style={{ textDecoration: "none" }}>
-        <div className="menu-buttons">Sign Up
+        <div><div className="menu-button">Sign Up</div>
         </div>
       </a>
       {showModal && (
