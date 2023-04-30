@@ -10,10 +10,9 @@ import LoggedInUser from "../../img/loggedinuser.jpeg";
 
 const DropDownMenu = ({ user }) => {
   const dispatch = useDispatch();
-  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const history = useHistory();
-
+  const [isOpen, setIsOpen] = useState(false);
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
