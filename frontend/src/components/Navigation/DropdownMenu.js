@@ -24,13 +24,6 @@ const DropDownMenu = ({ user }) => {
     setIsOpen(false);
   };
   
-  const demoLogin = (e) => {
-    e.preventDefault();
-    dispatch(
-      sessionActions.login({ credential: "Demo-lition", password: "password" })
-    );
-    setIsOpen(false);
-  };
 
   const handleClose = () => {
     setIsOpen(false);
@@ -69,9 +62,6 @@ const DropDownMenu = ({ user }) => {
         <div>
           <SignupFormModal onClose={handleClose} onClick={() => setIsOpen(false)}/>
         </div>
-        <a href="#demo" onClick={demoLogin} style={{ textDecoration: "none" }}>
-          <div className="menu-buttons">Demo Login</div>
-        </a>
       </div>
     );
   }
