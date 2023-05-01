@@ -27,6 +27,8 @@ format: { with: URI::MailTo::EMAIL_REGEXP }
 validates :session_token, presence: true, uniqueness: true
 validates :password, length: { in: 6..255 }, allow_nil: true
 
+
+
 has_many :listings,
 foreign_key: :host_id,
 class_name: :Listing,
