@@ -9,8 +9,8 @@ function SignupFormPage() {
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
-  const [firstname, setFirstName] = useState("");
-  const [lastname, setLastName] = useState("");
+  const [first_name, setFirstName] = useState("");
+  const [last_name, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -22,7 +22,7 @@ function SignupFormPage() {
     if (password === confirmPassword) {
       setErrors([]);
       return dispatch(
-        sessionActions.signup({ email, username, firstname, lastname, password })
+        sessionActions.signup({ email, username, first_name, last_name, password })
       ).catch(async (res) => {
         let data;
         try {
@@ -72,7 +72,7 @@ function SignupFormPage() {
         <input
           className="placeholder-input"
           type="firstname"
-          value={firstname}
+          value={first_name}
           onChange={(e) => setFirstName(e.target.value)}
           placeholder="First Name"
           required
@@ -80,7 +80,7 @@ function SignupFormPage() {
         <input
           className="placeholder-input"
           type="lastname"
-          value={lastname}
+          value={last_name}
           onChange={(e) => setLastName(e.target.value)}
           placeholder="Last Name"
           required
