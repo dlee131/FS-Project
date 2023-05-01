@@ -51,8 +51,10 @@ def self.find_by_credentials(credential, password)
     match = URI::MailTo::EMAIL_REGEXP
    if match.match?(credential)
     user = User.find_by(email: credential)
-   else
+   elsif
     user = User.find_by(username: credential)
+   else
+    user = User.find_by(first_name: credential)
    end
 
     if user&.authenticate(password)
