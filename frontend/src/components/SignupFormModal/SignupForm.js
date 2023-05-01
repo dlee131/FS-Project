@@ -66,7 +66,7 @@ function SignupFormPage() {
           type="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          placeholder="username"
+          placeholder="Username"
           required
         />
         <input
