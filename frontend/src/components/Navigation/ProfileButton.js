@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from 'react-redux';
-import * as sessionActions from '../../store/session';
-import './Navigation.css';
+import { useDispatch } from "react-redux";
+import * as sessionActions from "../../store/session";
+import "./Navigation.css";
 
 // USING AS A TEMPLATE!!!!!
-
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
-  
+
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
   };
-  
+
   useEffect(() => {
     if (!showMenu) return;
 
@@ -22,8 +21,8 @@ function ProfileButton({ user }) {
       setShowMenu(true);
     };
 
-    document.addEventListener('click', closeMenu);
-  
+    document.addEventListener("click", closeMenu);
+
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 

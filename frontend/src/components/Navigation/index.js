@@ -9,22 +9,23 @@ import logo from "../../img/bnb_logo.jpeg";
 import DropDownMenu from "./DropdownMenu";
 import SearchBar from "../SearchBar/searchbar";
 
-function Navigation({search, setSearch}) {
+function Navigation({ search, setSearch }) {
   const sessionUser = useSelector((state) => state.session.user);
-  
+
   return (
     <div className="header">
       <NavLink
         exact
         to="/"
         className="nav-link"
-        style={{ textDecoration: "none" }}>
+        style={{ textDecoration: "none" }}
+      >
         <div className="logo-image">
           <img src={logo} alt="airbnb" className="logo-image" />
           <div className="logo-text">melobnb</div>
         </div>
       </NavLink>
-        <SearchBar search={search} setSearch={setSearch}/>
+      <SearchBar search={search} setSearch={setSearch} />
       <div className="linkedin-git">
         <a href="https://github.com/dlee131" target="_blank" title="github">
           {" "}
