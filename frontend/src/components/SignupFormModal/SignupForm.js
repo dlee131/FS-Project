@@ -6,9 +6,11 @@ import "./SignupForm.css";
 
 function SignupFormPage() {
   const dispatch = useDispatch();
-  const sessionUser = useSelector(state => state.session.user);
+  const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -19,8 +21,9 @@ function SignupFormPage() {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
-      return dispatch(sessionActions.signup({ email, username, password }))
-        .catch(async (res) => {
+      return dispatch(
+        sessionActions.signup({ email, username, password })
+      ).catch(async (res) => {
         let data;
         try {
           // .clone() essentially allows you to read the response body twice
@@ -33,36 +36,45 @@ function SignupFormPage() {
         else setErrors([res.statusText]);
       });
     }
-    return setErrors(['Confirm Password field must be the same as the Password field']);
+    return setErrors([
+      "Confirm Password field must be the same as the Password field",
+    ]);
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <ul>
-        {errors.map(error => <li key={error}>{error}</li>)}
+        {errors.map((error) => (
+          <li key={error}>{error}</li>
+        ))}
       </ul>
 
-      <div id="login-signup">
-        Log in or sign up
-      </div>
+      <div id="login-signup">Log in or sign up</div>
       <div id="border-line"></div>
       <h1 id="welcome-text">Welcome to Melobnb</h1>
       <div className="input-containers">
-          <input
-            className="placeholder-input"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-            required
-          />
-
         <input
           className="placeholder-input"
-          type="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Username"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+          required
+        />
+        <input
+          className="placeholder-input"
+          type="firstname"
+          value={firstname}
+          onChange={(e) => setFirstName(e.target.value)}
+          placeholder="First Name"
+          required
+        />
+        <input
+          className="placeholder-input"
+          type="lastname"
+          value={lastname}
+          onChange={(e) => setLastName(e.target.value)}
+          placeholder="Last Name"
           required
         />
         <input

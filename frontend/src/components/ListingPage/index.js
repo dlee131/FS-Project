@@ -77,7 +77,7 @@ export const ListingPage = () => {
             </div>
             <div className="requirements">
               <i className="fa-sharp fa-solid fa-medal"></i>
-              {listing?.userName} is a Superhost.
+              {listing?.firstName} is a Superhost.
             </div>
             <div className="requirement">
               Superhosts are highly rated hosts who are committed to providing
