@@ -45,7 +45,6 @@ function ReviewForm() {
           setErrors(["Try again."]);
         }
       });
-
   };
 
   function StarRatings({ label, value, min, max, onChange }) {
@@ -144,9 +143,7 @@ function ReviewForm() {
         />
       </div>
       <label className="review-comment">
-        <div className="review-comment-text">
-        Describe your experience
-        </div>
+        <div className="review-comment-text">Describe your experience</div>
         <textarea
           className="comment-area"
           value={comment}
