@@ -26,7 +26,7 @@ length: { in: 3..255 },
 format: { with: URI::MailTo::EMAIL_REGEXP }
 validates :session_token, presence: true, uniqueness: true
 validates :password, length: { in: 6..255 }, allow_nil: true
-validates :first_name, :last_name, presence: true 
+# validates :first_name, :last_name, presence: true 
 
 
 has_many :listings,
