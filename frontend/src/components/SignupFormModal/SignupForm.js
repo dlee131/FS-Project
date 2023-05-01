@@ -22,7 +22,7 @@ function SignupFormPage() {
     if (password === confirmPassword) {
       setErrors([]);
       return dispatch(
-        sessionActions.signup({ email, firstname, lastname, password })
+        sessionActions.signup({ email, username, firstname, lastname, password })
       ).catch(async (res) => {
         let data;
         try {
@@ -59,7 +59,7 @@ function SignupFormPage() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
-          required
+          required autoComplete="username"
         />
         <input
           className="placeholder-input"
@@ -91,7 +91,7 @@ function SignupFormPage() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
-          required
+          required autoComplete="new-password"
         />
         <input
           className="placeholder-input"
@@ -99,7 +99,7 @@ function SignupFormPage() {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           placeholder="Confirm Password"
-          required
+          required autoComplete="new-password"
         />
         <div className="signup-div">
           <button type="submit" className="login-button">
