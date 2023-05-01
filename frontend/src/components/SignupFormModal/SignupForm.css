@@ -100,3 +100,15 @@
 .input-placeholder-container{
     display: block;
 }
+
+.signup-error {
+    /* position: absolute; */
+    top: 500px;
+    color: red;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+}
