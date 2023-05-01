@@ -47,10 +47,11 @@ const storeCSRFToken = response => {
   };
   
   export const signup = (user) => async (dispatch) => {
-    const { firstname, lastname, email, password } = user;
+    const { firstname, lastname, username, email, password } = user;
     const response = await csrfFetch("/api/users", {
       method: "POST",
       body: JSON.stringify({
+        username,
         firstname,
         lastname,
         email,
