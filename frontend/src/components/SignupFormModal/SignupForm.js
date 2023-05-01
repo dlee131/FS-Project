@@ -48,7 +48,6 @@ function SignupFormPage() {
           <li key={error}>{error}</li>
         ))}
       </ul>
-
       <div id="login-signup">Log in or sign up</div>
       <div id="border-line"></div>
       <h1 id="welcome-text">Welcome to Melobnb</h1>

@@ -61,11 +61,6 @@
     border-color: rgb(195, 195, 195);
   }
 
-  input:focus {
-    border: none;
-  }
-
-
 #border-line {
     width: 100%;
     border: 0;
@@ -75,9 +70,11 @@
 
 #signup-text {
     margin-top: 15px; 
+    /* display:block; */
 }
 
 .placeholder-input {
+    display:block;
     height: 10px;
     /* border:none; */
     margin-left: 10px;
@@ -98,4 +95,8 @@
 
 .sign-up-text:hover {
     background-color: rgb(245, 245, 245);
+}
+
+.input-placeholder-container{
+    display: block;
 }
