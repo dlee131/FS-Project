@@ -16,10 +16,10 @@ before_validation :ensure_session_token
 
 has_secure_password
 
-validates :username, 
-uniqueness: true, 
-length: { in: 3..30 }, 
-format: { without: URI::MailTo::EMAIL_REGEXP, message:  "can't be an email" }
+# validates :username, 
+# uniqueness: true, 
+# length: { in: 3..30 }, 
+# format: { without: URI::MailTo::EMAIL_REGEXP, message:  "can't be an email" }
 validates :email, 
 uniqueness: true, 
 length: { in: 3..255 }, 
@@ -51,10 +51,8 @@ def self.find_by_credentials(credential, password)
     match = URI::MailTo::EMAIL_REGEXP
    if match.match?(credential)
     user = User.find_by(email: credential)
-   elsif
-    user = User.find_by(username: credential)
    else
-    user = User.find_by(first_name: credential)
+    user = User.find_by(username: credential)
    end
 
     if user&.authenticate(password)
