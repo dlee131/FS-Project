@@ -29,49 +29,65 @@ ApplicationRecord.transaction do
     # Create one user with an easy to remember username, email, and password:
     # USING THIS FOR DEMO LOGIN! 
     user1 = User.create!(
-      username: 'Demo-lition', 
+      username: 'Demo-lition',
+      first_name: 'Demo',
+      last_name: 'lition',
       email: 'demo@user.io', 
       password: 'password'
     )  
 
     user2 = User.create!(
       username: 'Melo', 
+      first_name: 'Dan',
+      last_name: 'Lee',
       email: 'dlee@gmail.com', 
       password: 'dlee4real'
     )
 
     user3 = User.create!(
       username: 'Willy', 
+      first_name: 'Wilson',
+      last_name: 'Wu',
       email: 'willyswhilly@gmail.com', 
       password: 'passsss'
     ) 
 
     user4 = User.create!(
       username: 'Stivenkang4fo4', 
+      first_name: 'Stiven',
+      last_name: 'Kang',
       email: 'stiven@gmail.com', 
       password: 'password123'
     ) 
 
     user5 = User.create!(
       username: 'Himothydelaqueens', 
+      first_name: 'Timothy',
+      last_name: 'Chang',
       email: 'timothydelaqueens@gmail.com', 
       password: 'password212'
     ) 
 
     user6 = User.create!(
       username: 'Jookyunglee', 
+      first_name: 'Joy',
+      last_name: 'Lee',
       email: 'jookyung921@gmail.com', 
       password: 'password412'
     ) 
 
     user7 =User.create!(
       username: 'King-James', 
+      first_name: 'Lebron',
+      last_name: 'James',
       email: 'kingjames@gmail.com', 
       password: 'password415'
     ) 
 
     user8 = User.create!(
       username: 'Lina312', 
+      first_name: 'Lina',
+      last_name: 'Park',
       email: 'Lina312@gmail.com', 
       password: 'password516'
     ) 
