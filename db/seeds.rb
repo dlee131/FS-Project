@@ -508,19 +508,38 @@ ApplicationRecord.transaction do
     The kitchen is fully-equipped with everything you need to cook your own meals, and there is even a lovely dining area where you can enjoy your meals with friends or family.
     One of my favorite parts of the apartment was the living room, it is the perfect place to unwind after a long day of exploring the city. I would recommend this stay to a lot of my friends for sure.'
   )
-    puts "Done!"
   
   Review.create!(
-    user_id: 6,
-    listing_id: 10,
+    user_id: 8,
+    listing_id: 2,
     cleanliness: 5,
     accuracy: 5,
     communication: 5,
     location: 5,
     check_in: 4,
     value: 5,
-    comment: 'I had an incredible four day stretch of staying at this melobnb! I would say the location is pretty  is just a short drive away from local restaurants and shops, making it the perfect home base for exploring all that this incredible state has to offer. 
+    comment: 'I had an incredible four day stretch of staying at this Melobnb! I would say the location is pretty  is just a short drive away from local restaurants and shops, making it the perfect home base for exploring all that this incredible state has to offer. 
     After a day of adventure, there is literally nothing better than relaxing on the deck and taking in the stunning views. If anyone is trying to visit Alaska for whatever reason I would definitely recommend this place for sure.'
   )
+
+  Review.create!(
+    user_id: 8,
+    listing_id: 10,
+    cleanliness: 3,
+    accuracy: 2,
+    communication: 2,
+    location: 3,
+    check_in: 2,
+    value: 1,
+    comment: 'I was very disappointed with my stay at this Melobnb in Flushing. While the house may be cozy, it definitely did not meet my expectations. It was definitely not worth the nightly price. 
+    The location is not ideal for travelers looking to explore the city as it is far from any attractions or restaurants, and it was a hassle to get anywhere.
+    The house itself was also a letdown. While the bedroom was spacious, the rest of the house felt cramped and outdated. The bathroom was not as modern as advertised, and there were several issues with the plumbing that made it difficult to shower and use the sink. 
+    The amenities were pretty lackluster and the expected "high-speed" Wi-Fi was slow and spotty, and the cable TV had limited channels.
+    The hosts were also not as welcoming as I would have liked. They were difficult to reach and did not provide much information or assistance during my stay.'
+  )
+
+
+
+  puts "Done!"
 
   end
