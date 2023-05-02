@@ -20,7 +20,6 @@ export const ListingPage = () => {
 
   useEffect(() => {
     dispatch(fetchListings());
-    debugger;
   }, [listingId, dispatch]);
 
   if (!listing) {

@@ -9,6 +9,7 @@ import {
 } from "../../store/reservations";
 import { useParams, NavLink, useHistory } from "react-router-dom";
 import "./Reservation.css";
+import { fetchListings } from "../../store/listings";
 
 function ReservationIndex({ reservation }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -38,8 +39,9 @@ function ReservationIndex({ reservation }) {
 
   useEffect(() => {
     dispatch(fetchReservations());
-  }, [listingId]);
-
+    dispatch(fetchListings());
+  }, [listingId, dispatch]);
+  
   useEffect(() => {
     setNumGuests(numAdults + numChildren);
   }, [numAdults, numChildren]);
@@ -175,7 +177,7 @@ function ReservationIndex({ reservation }) {
                       className="adult-buttons"
                       type="button"
                       value={numAdults}
-                      disabled={numGuests === 4}
+                      disabled={numGuests === listing.numGuest}
                       onClick={() => setNumAdults(numAdults + 1)}
                     >
                       +
@@ -200,7 +202,7 @@ function ReservationIndex({ reservation }) {
                       className="children-buttons"
                       type="button"
                       value={reservation.numChildren}
-                      disabled={numGuests === 4}
+                      disabled={numGuests === listing.numGuest}
                       onClick={() => setNumChildren(numChildren + 1)}
                     >
                       +

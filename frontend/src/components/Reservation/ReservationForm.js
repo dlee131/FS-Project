@@ -123,7 +123,7 @@ function ReservationForm() {
   return (
     <form className="reservation-form" onSubmit={handleSubmit}>
       <div className="res-header">
-        <div className="price">${listing?.nightlyPrice}</div>
+        <div className="price">${listing.nightlyPrice}</div>
         <div className="price-night">night</div>
         <span className="res-rating">
           <i className="fa fa-star"></i>
