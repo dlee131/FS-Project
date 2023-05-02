@@ -524,7 +524,7 @@ ApplicationRecord.transaction do
 
   Review.create!(
     user_id: 8,
-    listing_id: 10,
+    listing_id: 4,
     cleanliness: 3,
     accuracy: 2,
     communication: 2,
@@ -537,8 +537,6 @@ ApplicationRecord.transaction do
     The amenities were pretty lackluster and the expected "high-speed" Wi-Fi was slow and spotty, and the cable TV had limited channels.
     The hosts were also not as welcoming as I would have liked. They were difficult to reach and did not provide much information or assistance during my stay.'
   )
-
-
 
   puts "Done!"
 
