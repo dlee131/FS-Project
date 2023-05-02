@@ -6,9 +6,7 @@
     left: 0;
     right: 0;
     background-color: white;
-    /* z-index: 1; */
 }
-
 
 .filter-container {
     display: flex;
@@ -29,7 +27,6 @@
     text-align: center;
     
 }
-
 
 #filter-icons img{
     height: 25px;

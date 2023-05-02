@@ -3,8 +3,6 @@
     margin-left: 400px;
 }
 
-
-
 .form-outline {
     padding: 5px;
 }
@@ -20,6 +18,4 @@
     display: flex;
     padding: 20px;
     box-shadow: rgba(0, 0, 0, 0.12) 1px 5px 13px;
-
-    /* border: rgb(133, 133, 133); */
 } 

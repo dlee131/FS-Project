@@ -27,7 +27,6 @@ function ReservationIndex({ reservation }) {
   const user = useSelector((state) => state.session.user);
   const userId = user?.id || null;
 
-
   const userReservations = reservations.filter(
     (reservation) => reservation.userId === sessionUser.id
   );
@@ -154,56 +153,59 @@ function ReservationIndex({ reservation }) {
               </button>
             </div>
             {selectedReservationId === reservation.id && (
-              <form onSubmit={handleUpdateReservation} className="res-edit-container">
+              <form
+                onSubmit={handleUpdateReservation}
+                className="res-edit-container"
+              >
                 <div className="adults-edit">
-                <div className="adults-text">Adults</div>
-                <div className="age-text">Age 13+</div>
-                <div className="ad-op-buttons">
-                <button
-                  className="adult-buttons"
-                  type="button"
-                  value={numAdults}
-                  disabled={numAdults === 1}
-                  onClick={() => setNumAdults(numAdults - 1)}
-                >
-                  -
-                </button>
-                <div className="edit-adult-num">{numAdults}</div>
-                <button
-                  className="adult-buttons"
-                  type="button"
-                  value={numAdults}
-                  disabled={numGuests === 4}
-                  onClick={() => setNumAdults(numAdults + 1)}
-                >
-                  +
-                </button>
-                </div>
+                  <div className="adults-text">Adults</div>
+                  <div className="age-text">Age 13+</div>
+                  <div className="ad-op-buttons">
+                    <button
+                      className="adult-buttons"
+                      type="button"
+                      value={numAdults}
+                      disabled={numAdults === 1}
+                      onClick={() => setNumAdults(numAdults - 1)}
+                    >
+                      -
+                    </button>
+                    <div className="edit-adult-num">{numAdults}</div>
+                    <button
+                      className="adult-buttons"
+                      type="button"
+                      value={numAdults}
+                      disabled={numGuests === 4}
+                      onClick={() => setNumAdults(numAdults + 1)}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
                 <div className="children-edit">
-                <div className="child-text-edit">Children</div>
-                <div className="text-2-12">2-12</div>
-                <div className="child-op-buttons">
-                <button
-                  className="children-edit-buttons"
-                  type="button"
-                  value={numChildren}
-                  disabled={numChildren === 0}
-                  onClick={() => setNumChildren(numChildren - 1)}
-                >
-                  -
-                </button>
-                <div className="edit-child-num">{numChildren}</div>
-                <button
-                  className="children-buttons"
-                  type="button"
-                  value={reservation.numChildren}
-                  disabled={numGuests === 4}
-                  onClick={() => setNumChildren(numChildren + 1)}
-                >
-                  +
-                </button>
-                </div>
+                  <div className="child-text-edit">Children</div>
+                  <div className="text-2-12">2-12</div>
+                  <div className="child-op-buttons">
+                    <button
+                      className="children-edit-buttons"
+                      type="button"
+                      value={numChildren}
+                      disabled={numChildren === 0}
+                      onClick={() => setNumChildren(numChildren - 1)}
+                    >
+                      -
+                    </button>
+                    <div className="edit-child-num">{numChildren}</div>
+                    <button
+                      className="children-buttons"
+                      type="button"
+                      value={reservation.numChildren}
+                      disabled={numGuests === 4}
+                      onClick={() => setNumChildren(numChildren + 1)}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
                 <button className="confirm-edit-button">Confirm</button>
               </form>

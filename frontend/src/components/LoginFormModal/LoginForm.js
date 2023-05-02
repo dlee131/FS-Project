@@ -85,7 +85,9 @@ function LoginFormPage() {
             onClick={demoLogin}
             style={{ textDecoration: "none" }}
           >
-            <div className="demo-login"><div className="demo-text">Demo Login</div></div>
+            <div className="demo-login">
+              <div className="demo-text">Demo Login</div>
+            </div>
           </a>
         </div>
       </div>

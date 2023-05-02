@@ -25,19 +25,20 @@ export const removeReview = (reviewId) => {
   };
 };
 
-export const getReviews = (state) => state.reviews ? Object.values(state.reviews) : [];
-export const getReview = (reviewId) => (state) => state.reviews ? state.reviews[reviewId] : null
+export const getReviews = (state) =>
+  state.reviews ? Object.values(state.reviews) : [];
+export const getReview = (reviewId) => (state) =>
+  state.reviews ? state.reviews[reviewId] : null;
 
-export const fetchReviews = (listingId) => async dispatch => {
+export const fetchReviews = (listingId) => async (dispatch) => {
+  const res = await csrfFetch(`/api/listings/${listingId}/reviews`);
+  if (res.ok) {
+    let data = await res.json();
+    dispatch(receiveReviews(data));
+  }
+};
 
-    const res = await csrfFetch(`/api/listings/${listingId}/reviews`);
-    if (res.ok) {
-      let data = await res.json();
-      dispatch(receiveReviews(data));
-    }
-  };
-
-export const fetchReview = (reviewId) => async dispatch => {
+export const fetchReview = (reviewId) => async (dispatch) => {
   const res = await csrfFetch(`api/reviews/${reviewId}`);
   if (res.ok) {
     let data = await res.json();
@@ -45,7 +46,7 @@ export const fetchReview = (reviewId) => async dispatch => {
   }
 };
 
-export const createReview = (reviewObj) => async dispatch => {
+export const createReview = (reviewObj) => async (dispatch) => {
   const res = await csrfFetch(`/api/reviews`, {
     method: "POST",
     headers: {
@@ -60,46 +61,45 @@ export const createReview = (reviewObj) => async dispatch => {
   }
 };
 
-export const updateReview = (reviewObj) => async dispatch => {
-    debugger
-    const res = await csrfFetch(`/api/reviews/${reviewObj.id}`, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(reviewObj)
-    })
-    debugger
-    if (res.ok) {
-        const review = await res.json();
-        dispatch(receiveReview(review))
-    }
-    return res
-}
+export const updateReview = (reviewObj) => async (dispatch) => {
+  debugger;
+  const res = await csrfFetch(`/api/reviews/${reviewObj.id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(reviewObj),
+  });
+  debugger;
+  if (res.ok) {
+    const review = await res.json();
+    dispatch(receiveReview(review));
+  }
+  return res;
+};
 
-export const deleteReview = (reviewId) => async dispatch => {
-    debugger
-    const res = await csrfFetch(`/api/reviews/${reviewId}`, {
-        method: 'DELETE'
-    })
-    debugger
-    if (res.ok)
-    dispatch(removeReview(reviewId))
-}
+export const deleteReview = (reviewId) => async (dispatch) => {
+  debugger;
+  const res = await csrfFetch(`/api/reviews/${reviewId}`, {
+    method: "DELETE",
+  });
+  debugger;
+  if (res.ok) dispatch(removeReview(reviewId));
+};
 
-function reviewsReducer (state = {}, action) {
-    const newState = { ...state }
-    switch (action.type) {
+function reviewsReducer(state = {}, action) {
+  const newState = { ...state };
+  switch (action.type) {
     case RECEIVE_REVIEW:
-        return newState[action.review.id] = action.review
+      return (newState[action.review.id] = action.review);
     case RECEIVE_ALL_REVIEWS:
-        return { ...action.reviews}
+      return { ...action.reviews };
     case REMOVE_REVIEW:
-        delete newState[action.reviewId]
-        return newState
+      delete newState[action.reviewId];
+      return newState;
     default:
-        return state
-    }
+      return state;
+  }
 }
 // function reviewsReducer (state = {}, action) {
 //     switch (action.type) {

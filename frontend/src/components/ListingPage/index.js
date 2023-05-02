@@ -12,13 +12,15 @@ import { calculateAverageRating } from "../Review";
 export const ListingPage = () => {
   const dispatch = useDispatch();
   const { listingId } = useParams();
-  const listing = useSelector((state) => state.listings ? state.listings[listingId] : {});
+  const listing = useSelector((state) =>
+    state.listings ? state.listings[listingId] : {}
+  );
   const listings = useSelector(getListings);
   const reviews = useSelector(getReviews);
 
   useEffect(() => {
     dispatch(fetchListings());
-    debugger
+    debugger;
   }, [listingId, dispatch]);
 
   if (!listing) {
@@ -65,7 +67,8 @@ export const ListingPage = () => {
         <div className="listing-info">
           <h1 className="residence-type">{`${listing.residenceType} hosted by ${listing.firstName}`}</h1>
           <h2 className="listing-bed">
-            {listing.numBedrooms} bedroom • {listing.numBeds} beds • {listing.numBathrooms} baths
+            {listing.numBedrooms} bedroom • {listing.numBeds} beds •{" "}
+            {listing.numBathrooms} baths
           </h2>
           <div className="borderline"></div>
           <div className="requirements-margin">

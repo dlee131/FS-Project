@@ -100,9 +100,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 200px 200px;
-    /* column-gap: 40px; */
     gap: 7px;
-    /* padding: 10px 50px 30px; */
     overflow: hidden;
     border-radius: 14px;
     margin-right: 10px; 

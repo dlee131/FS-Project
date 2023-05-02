@@ -15,14 +15,14 @@ const DropDownMenu = ({ user }) => {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
-    
+
     if (location.pathname === "/reservations") {
       // If the user is on the reservation index page, redirect to the listings index page
       history.push("/");
     }
     setIsOpen(false);
   };
-  
+
   const handleClose = () => {
     setIsOpen(false);
   };
@@ -39,8 +39,12 @@ const DropDownMenu = ({ user }) => {
       <div className="dropdown-borderbox">
         <div id="logout-button">
           <div>
-            <NavLink to="/reservations" style={{ textDecoration: "none" }} onClick={() => setIsOpen(false)}>
-            <div id="logout-text">Reservations</div>
+            <NavLink
+              to="/reservations"
+              style={{ textDecoration: "none" }}
+              onClick={() => setIsOpen(false)}
+            >
+              <div id="logout-text">Reservations</div>
             </NavLink>
             <NavLink to="/" onClick={logout} style={{ textDecoration: "none" }}>
               <div id="logout-text">Account</div>
@@ -55,10 +59,16 @@ const DropDownMenu = ({ user }) => {
     options = (
       <div className="dropdown-borderbox">
         <div>
-          <LoginFormModal onClose={handleClose} onClick={() => setIsOpen(false)}/>
+          <LoginFormModal
+            onClose={handleClose}
+            onClick={() => setIsOpen(false)}
+          />
         </div>
         <div>
-          <SignupFormModal onClose={handleClose} onClick={() => setIsOpen(false)}/>
+          <SignupFormModal
+            onClose={handleClose}
+            onClick={() => setIsOpen(false)}
+          />
         </div>
       </div>
     );
@@ -73,7 +83,7 @@ const DropDownMenu = ({ user }) => {
   }
 
   return (
-    <div className="dropdown" >
+    <div className="dropdown">
       <button
         className="clickable-button"
         type="button"

@@ -52,21 +52,24 @@ function ListingMap({
 
   useEffect(() => {
     if (map) {
-        listings.forEach((listing) => {
-            if (markers.current[listing.id]) return;
+      listings.forEach((listing) => {
+        if (markers.current[listing.id]) return;
 
-            let marker
-            if(listingId == null) {
-                marker = new window.google.maps.Marker({
-                    map,
-                })
-            } else {
-                marker = new window.google.maps.Marker({
-                    map,
-                    position: new window.google.maps.LatLng(listing.latitude, listing.longitude),
-                    icon: melobnbmap
-                })
-            }
+        let marker;
+        if (listingId == null) {
+          marker = new window.google.maps.Marker({
+            map,
+          });
+        } else {
+          marker = new window.google.maps.Marker({
+            map,
+            position: new window.google.maps.LatLng(
+              listing.latitude,
+              listing.longitude
+            ),
+            icon: melobnbmap,
+          });
+        }
 
         Object.entries(markerEventHandlers).forEach(([event, handler]) => {
           marker.addListener(event, () => handler(listing));
@@ -92,10 +95,9 @@ function ListingMap({
 }
 
 function ListingMapWrapper(props) {
-
   return (
     <Wrapper apiKey={process.env.REACT_APP_MAPS_API_KEY}>
-      <ListingMap {...props}/>
+      <ListingMap {...props} />
     </Wrapper>
   );
 }

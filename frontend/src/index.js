@@ -8,10 +8,9 @@ import App from "./App";
 import configureStore from "./store";
 import csrfFetch from "./store/csrf";
 import * as sessionActions from "./store/session";
-import * as listingsActions from './store/listings';
-import * as reservationsActions from './store/reservations';
-import * as reviewsActions from './store/reviews';
-
+import * as listingsActions from "./store/listings";
+import * as reservationsActions from "./store/reservations";
+import * as reviewsActions from "./store/reviews";
 
 const store = configureStore();
 
@@ -41,13 +40,13 @@ const renderApplication = () => {
     <React.StrictMode>
       <Root />
     </React.StrictMode>,
-    document.getElementById('root')
+    document.getElementById("root")
   );
-}
+};
 
 if (
   sessionStorage.getItem("currentUser") === null ||
-  sessionStorage.getItem("X-CSRF-Token") === null 
+  sessionStorage.getItem("X-CSRF-Token") === null
 ) {
   store.dispatch(sessionActions.restoreSession()).then(renderApplication);
 } else {

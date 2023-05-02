@@ -6,13 +6,12 @@ import { useHistory } from "react-router-dom";
 import { Filter } from "../Filters/filter";
 import ListingMapWrapper from "../ListingMap";
 
-function ListingsIndexPage({search}) {
+function ListingsIndexPage({ search }) {
   const dispatch = useDispatch();
   const listings = useSelector(getListings);
   const history = useHistory();
   const [mapToggle, setMapToggle] = useState(false);
 
-  
   useEffect(() => {
     dispatch(fetchListings(search));
   }, [search]);
@@ -33,7 +32,7 @@ function ListingsIndexPage({search}) {
   if (listings.length === 0) {
     return <div className="no-listings">No listings found!</div>;
   }
-  
+
   return (
     <div>
       <Filter />

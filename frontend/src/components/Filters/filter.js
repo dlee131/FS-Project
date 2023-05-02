@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./filter.css";
 
 export const Filter = () => {
-  
   const [selectedFilter, setSelectedFilter] = useState("");
 
   const handleFilterClick = (filter) => {

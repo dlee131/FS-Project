@@ -1,10 +1,8 @@
 import "./searchbar.css";
 
-function SearchBar({search, setSearch}) {
-
+function SearchBar({ search, setSearch }) {
   return (
-    
-    <div className="input-group"> 
+    <div className="input-group">
       <div className="form-outline">
         <input
           id="search-focus"

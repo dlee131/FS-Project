@@ -8,27 +8,26 @@ import ReviewForm from "./components/Review/ReviewForm";
 import ReviewUpdate from "./components/Review/ReviewUpdate";
 
 function App() {
-  
-  const [search, setSearch] = useState("")
+  const [search, setSearch] = useState("");
 
   return (
     <>
       <Navigation search={search} setSearch={setSearch} />
       <Switch>
-      <Route path={'/listings/:listingId/reviews/:reviewId/edit'}>
-        <ReviewUpdate/>
+        <Route path={"/listings/:listingId/reviews/:reviewId/edit"}>
+          <ReviewUpdate />
         </Route>
         <Route exact path="/">
-          <ListingIndex search={search}/>
+          <ListingIndex search={search} />
         </Route>
         <Route exact path="/listings/:listingId/reviews/new">
-          <ReviewForm/>
+          <ReviewForm />
         </Route>
         <Route path="/listings/:listingId">
-          <ListingPage/>
+          <ListingPage />
         </Route>
         <Route path="/reservations">
-          <ReservationIndex/>
+          <ReservationIndex />
         </Route>
       </Switch>
     </>

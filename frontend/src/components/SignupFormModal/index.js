@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Modal } from '../../context/modal';
-import SignupForm from './SignupForm';
+import React, { useState } from "react";
+import { Modal } from "../../context/modal";
+import SignupForm from "./SignupForm";
 
-function SignupFormModal({onClose}) {
+function SignupFormModal({ onClose }) {
   const [showModal, setShowModal] = useState(false);
 
   const closeModal = () => {
@@ -12,8 +12,13 @@ function SignupFormModal({onClose}) {
 
   return (
     <>
-      <a href="#signup" onClick={() => setShowModal(true)} style={{ textDecoration: "none" }}>
-        <div><div className="menu-button">Sign Up</div>
+      <a
+        href="#signup"
+        onClick={() => setShowModal(true)}
+        style={{ textDecoration: "none" }}
+      >
+        <div>
+          <div className="menu-button">Sign Up</div>
         </div>
       </a>
       {showModal && (
