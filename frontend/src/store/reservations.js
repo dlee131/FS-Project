@@ -90,7 +90,9 @@ function reservationsReducer(state = {}, action) {
   const newState = { ...state };
   switch (action.type) {
     case RECEIVE_RESERVATION:
-      return (newState[action.reservation.id] = action.reservation);
+        return {
+          [action.reservation.id]: action.reservation
+        };
     case RECEIVE_ALL_RESERVATIONS:
       return { ...action.reservations };
     case REMOVE_RESERVATION:
