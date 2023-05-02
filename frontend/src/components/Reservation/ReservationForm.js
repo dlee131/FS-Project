@@ -200,7 +200,7 @@ function ReservationForm() {
                 <div>{numAdults}</div>
                 <button
                   className="adult-buttons"
-                  disabled={numGuests === 4}
+                  disabled={numGuests === listing.numGuest}
                   onClick={(e) => handleNumAdultsChange(e, "increment")}
                 >
                   +
@@ -217,7 +217,7 @@ function ReservationForm() {
                 <div>{numChildren}</div>
                 <button
                   className="children-buttons"
-                  disabled={numGuests === 4}
+                  disabled={numGuests === listing.numGuest}
                   onClick={(e) => handleNumChildrenChange(e, "increment")}
                 >
                   +
