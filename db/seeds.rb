@@ -120,7 +120,8 @@ ApplicationRecord.transaction do
       num_bathrooms: 2,
       pets_allowed: true,
       residence_type: 'House',
-      ratings: 4.85
+      ratings: 4.85,
+      num_guest: 4
     )
 
     listing_1.photos.attach([
@@ -150,7 +151,8 @@ ApplicationRecord.transaction do
       num_bathrooms: 2,
       pets_allowed: false,
       residence_type: 'House',
-      ratings: 4.62
+      ratings: 4.62,
+      num_guest: 8
     )
 
     listing_2.photos.attach([
@@ -177,7 +179,8 @@ ApplicationRecord.transaction do
       num_bathrooms: 2,
       pets_allowed: true,
       residence_type: 'Cabin',
-      ratings: 3.74
+      ratings: 3.74,
+      num_guest: 5
     )
 
     listing_3.photos.attach([
@@ -206,7 +209,8 @@ ApplicationRecord.transaction do
       num_bathrooms: 1,
       pets_allowed: false,
       residence_type: 'House',
-      ratings: 4.92
+      ratings: 4.92,
+      num_guest: 2
     )
 
     listing_4.photos.attach([
@@ -234,7 +238,8 @@ ApplicationRecord.transaction do
       num_bathrooms: 5,
       pets_allowed: false,
       residence_type: 'House',
-      ratings: 4.24
+      ratings: 4.24,
+      num_guest: 10
     )
 
     listing_5.photos.attach([
@@ -261,7 +266,8 @@ ApplicationRecord.transaction do
       num_bathrooms: 2,
       pets_allowed: true,
       residence_type: 'Apartment',
-      ratings: 4.67
+      ratings: 4.67,
+      num_guest: 4
     )
 
     listing_6.photos.attach([
@@ -288,7 +294,8 @@ ApplicationRecord.transaction do
       num_bathrooms: 1,
       pets_allowed: true,
       residence_type: 'Apartment',
-      ratings: 4.86
+      ratings: 4.86,
+      num_guest: 2
     )
 
     listing_7.photos.attach([
@@ -315,7 +322,8 @@ ApplicationRecord.transaction do
       num_bathrooms: 1,
       pets_allowed: false,
       residence_type: 'House',
-      ratings: 3.74
+      ratings: 3.74,
+      num_guest: 4
     )
 
 
@@ -344,7 +352,8 @@ ApplicationRecord.transaction do
       num_bathrooms: 3,
       pets_allowed: false,
       residence_type: 'House',
-      ratings: 4.42
+      ratings: 4.42,
+      num_guest: 10
     )
 
     listing_9.photos.attach([
@@ -371,7 +380,8 @@ ApplicationRecord.transaction do
       num_bathrooms: 1,
       pets_allowed: false,
       residence_type: 'Apartment',
-      ratings: 3.91
+      ratings: 3.91,
+      num_guest: 4
     )
 
     listing_10.photos.attach([
@@ -399,7 +409,8 @@ ApplicationRecord.transaction do
       num_bathrooms: 4,
       pets_allowed: false,
       residence_type: 'House',
-      ratings: 4.12
+      ratings: 4.12,
+      num_guest: 12
     )
 
     listing_11.photos.attach([
@@ -426,7 +437,8 @@ ApplicationRecord.transaction do
     num_bathrooms: 2,
     pets_allowed: false,
     residence_type: 'Hotel',
-    ratings: 4.62
+    ratings: 4.62,
+    num_guest: 6
   )
 
   listing_12.photos.attach([
