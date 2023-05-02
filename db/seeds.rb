@@ -455,7 +455,7 @@ ApplicationRecord.transaction do
 
   Review.create!(
     user_id: 2,
-    listing_id: 2,
+    listing_id: 1,
     cleanliness: 4,
     accuracy: 4,
     communication: 2,
@@ -465,6 +465,20 @@ ApplicationRecord.transaction do
     comment: 'If you are planning a trip to Anchorage, I would recommend staying at The Denali. I felt as though this cozy and comfortable home was the perfect place to unwind after a day of exploring the beautiful Alaskan wilderness. 
     The views of the surrounding mountains were truly stunning. The stay provided plenty of room for my family and friends to relax and just chill. And with its close proximity to downtown Anchorage, we were able to easily explore all the city has to offer. 
     Although I really had a great time here, I would also like to add that the communication with the host was a bit difficult.. Other than that, this stay definitely exceeded my expectations and made my trip to Alaska truly unforgettable.'
+  )
+
+  Review.create!(
+    user_id: 3,
+    listing_id: 3,
+    cleanliness: 2,
+    accuracy: 4,
+    communication: 4,
+    location: 5,
+    check_in: 4,
+    value: 3,
+    comment: 'I recently stayed at the cozy cool cabin and had a decent experience overall. The natural surroundings were certainly charming and it provided a great escape from the hustle and bustle of everyday life. The living space was well-appointed, with comfortable bedrooms and modern bathrooms, and the fireplace was a nice touch that added to the cozy ambiance of the cabin.
+    However, there were a few minor issues that prevented me from giving a higher rating, to be honest.. The cleanliness of the cabin was not up to my expectations, as I found some dust and dirt in certain areas. I felt like the pictures did not do much justice.
+    If you are looking for a peaceful retreat in nature and dont really mind a few minor inconveniences, I would say this cabin is a decent stay for you.'
   )
 
     puts "Done!"
