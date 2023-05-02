@@ -8,5 +8,6 @@
     json.residenceType reservation.listing.residence_type
     json.userName reservation.listing.host.username
     json.nightlyPrice reservation.listing.nightly_price
+    json.numGuest reservation.listing.num_guest
     end
 end

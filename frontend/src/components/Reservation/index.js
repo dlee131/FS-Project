@@ -9,9 +9,8 @@ import {
 } from "../../store/reservations";
 import { useParams, NavLink, useHistory } from "react-router-dom";
 import "./Reservation.css";
-import { fetchListing } from "../../store/listings";
 
-function ReservationIndex({ reservation, numGuest }) {
+function ReservationIndex({ reservation }) {
   const sessionUser = useSelector((state) => state.session.user);
   const reservations = useSelector(getReservations);
   const { listingId } = useParams();
@@ -39,9 +38,8 @@ function ReservationIndex({ reservation, numGuest }) {
 
   useEffect(() => {
     dispatch(fetchReservations());
-    dispatch(fetchListing(listingId));
-  }, [listingId, dispatch]);
-  
+  }, [listingId]);
+
   useEffect(() => {
     setNumGuests(numAdults + numChildren);
   }, [numAdults, numChildren]);
@@ -99,6 +97,7 @@ function ReservationIndex({ reservation, numGuest }) {
 
   return (
     <div className="Trips-index">
+      
       <div className="trips-header">Trips</div>
       {userReservations.length === 0 && (
         <div className="no-trips">
@@ -179,7 +178,7 @@ function ReservationIndex({ reservation, numGuest }) {
                       className="adult-buttons"
                       type="button"
                       value={numAdults}
-                      disabled={numGuests === numGuest}
+                      disabled={numGuests === reservation.numGuest}
                       onClick={() => setNumAdults(numAdults + 1)}
                     >
                       +
@@ -204,7 +203,7 @@ function ReservationIndex({ reservation, numGuest }) {
                       className="children-buttons"
                       type="button"
                       value={reservation.numChildren}
-                      disabled={numGuests === numGuest}
+                      disabled={numGuests === reservation.numGuest}
                       onClick={() => setNumChildren(numChildren + 1)}
                     >
                       +
