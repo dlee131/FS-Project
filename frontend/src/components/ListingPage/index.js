@@ -29,12 +29,12 @@ export const ListingPage = () => {
     <div className="listing-indiv-page">
       <header>
         <div className="listing-indiv-header">
-          <div className="listing-title">{listing?.title}</div>
+          <div className="listing-title">{listing.title}</div>
           <div className="listing-location">
             <i className="fas fa-star"></i> {calculateAverageRating(reviews)}•{" "}
             <i className="fa-sharp fa-solid fa-medal"></i>
-            <span className="superhost">Superhost</span> • {listing?.city},{" "}
-            {listing?.state}, {listing?.country}
+            <span className="superhost">Superhost</span> • {listing.city},{" "}
+            {listing.state}, {listing.country}
             <i className="fa-sharp fa-solid fa-arrow-up-from-bracket"></i>
             <span className="share">Share</span>
             <i className="fa-sharp fa-regular fa-heart"></i>
@@ -44,28 +44,28 @@ export const ListingPage = () => {
         <div className="listing-images">
           <div className="listing-images-grid">
             <div className="col2 row2">
-              <img src={listing?.photo[0]} alt="" />
+              <img src={listing.photo[0]} alt="" />
             </div>
             <div className="image-container">
-              <img src={listing?.photo[1]} alt="" />
+              <img src={listing.photo[1]} alt="" />
             </div>
             <div className="image-container">
-              <img src={listing?.photo[2]} alt="" />
+              <img src={listing.photo[2]} alt="" />
             </div>
             <div className="image-container">
-              <img src={listing?.photo[3]} alt="" />
+              <img src={listing.photo[3]} alt="" />
             </div>
             <div className="image-container">
-              <img src={listing?.photo[4]} alt="" />
+              <img src={listing.photo[4]} alt="" />
             </div>
           </div>
         </div>
       </header>
       <div className="info-container">
         <div className="listing-info">
-          <h1 className="residence-type">{`${listing?.residenceType} hosted by ${listing?.firstName}`}</h1>
+          <h1 className="residence-type">{`${listing.residenceType} hosted by ${listing.firstName}`}</h1>
           <h2 className="listing-bed">
-            {listing?.numBedrooms} bedroom • {listing?.numBeds} beds • {listing?.numBathrooms} baths
+            {listing.numBedrooms} bedroom • {listing.numBeds} beds • {listing.numBathrooms} baths
           </h2>
           <div className="borderline"></div>
           <div className="requirements-margin">
@@ -77,7 +77,7 @@ export const ListingPage = () => {
             </div>
             <div className="requirements">
               <i className="fa-sharp fa-solid fa-medal"></i>
-              {listing?.firstName} is a Superhost.
+              {listing.firstName} is a Superhost.
             </div>
             <div className="requirement">
               Superhosts are highly rated hosts who are committed to providing
@@ -94,7 +94,7 @@ export const ListingPage = () => {
             listing inaccuracies, and other issues like trouble checking in.
           </div>
           <div className="borderline"></div>
-          <div className="description"> {listing?.description} </div>
+          <div className="description"> {listing.description} </div>
           <div className="borderline"></div>
           <div className="amenities-container">
             <h4 className="amenities-header">What this place offers</h4>
@@ -146,13 +146,13 @@ export const ListingPage = () => {
       </div>
       <div className="text-location">Where you'll be</div>
       <div className="map-info">
-        {listing?.city}, {listing?.state}, {listing?.country}
+        {listing.city}, {listing.state}, {listing.country}
       </div>
       <div className="listing-page-map">
         <ListingMapWrapper
           listings={[listing]}
           mapOptions={{
-            center: { lat: listing?.latitude, lng: listing?.longitude },
+            center: { lat: listing.latitude, lng: listing.longitude },
             zoom: 14,
           }}
         />

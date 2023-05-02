@@ -55,7 +55,7 @@ function ReservationForm() {
       const cleaningFee = calculateCleaningFee(subtotal);
       return subtotal + cleaningFee;
     } else {
-      return listing?.nightlyPrice;
+      return listing.nightlyPrice;
     }
   };
 
@@ -231,7 +231,7 @@ function ReservationForm() {
         <div className="availability">Reserve</div>
       </button>
       <div className="total-cost">
-        ${listing?.nightlyPrice} x{" "}
+        ${listing.nightlyPrice} x{" "}
         {startDate && endDate
           ? moment(endDate).diff(moment(startDate), "days")
           : "1"}{" "}
