@@ -59,7 +59,6 @@ function ReservationIndex({ reservation }) {
   };
 
   const handleUpdateReservation = (e) => {
-    debugger;
     e.preventDefault();
     setErrors([]);
     const reservationToUpdate = userReservations.find(
@@ -74,19 +73,8 @@ function ReservationIndex({ reservation }) {
         end_date: endDate,
         num_guests: numGuests,
       };
-      dispatch(updateReservation(updatedReservation)).catch(async (res) => {
-        let data;
-        try {
-          data = await res.clone().json();
-        } catch {
-          data = await res.text();
-        }
-        if (data?.errors) setErrors(data.errors);
-        else if (data) setErrors([data]);
-        else setErrors([res.statusText]);
-      });
+      dispatch(updateReservation(updatedReservation));
     }
-    debugger;
   };
 
   const handleClick = (listingId, reservationId) => {
@@ -120,7 +108,7 @@ function ReservationIndex({ reservation }) {
         <div key={reservation.id} className="reservations-index">
           <div className="reservation-photos">
             <img
-              src={reservation.photo[0]}
+              src={reservation?.photo[0]}
               alt=""
               className="reservation-photo"
               onClick={() => handleClick(reservation.listingId, reservation.id)}

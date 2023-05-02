@@ -46,8 +46,13 @@ const DropDownMenu = ({ user }) => {
             >
               <div id="logout-text">Reservations</div>
             </NavLink>
+            <NavLink
+              to="/profile"
+              style={{ textDecoration: "none" }}  
+            >
+            <div id="logout-text">Account</div>
+            </NavLink>
             <NavLink to="/" onClick={logout} style={{ textDecoration: "none" }}>
-              <div id="logout-text">Account</div>
               <div id="logout-text">Log Out</div>
               <div></div>
             </NavLink>
