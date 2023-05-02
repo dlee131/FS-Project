@@ -453,5 +453,20 @@ ApplicationRecord.transaction do
     I cant recommend this stay highly enough. Whether you are planning a family vacation or a romantic getaway, this house is the perfect home base for your Alaskan adventure. You really wont regret it if you book your stay here!'
   )
 
+  Review.create!(
+    user_id: 2,
+    listing_id: 2,
+    cleanliness: 4,
+    accuracy: 4,
+    communication: 2,
+    location: 5,
+    check_in: 4,
+    value: 4,
+    comment: 'If you are planning a trip to Anchorage, I would recommend staying at The Denali. I felt as though this cozy and comfortable home was the perfect place to unwind after a day of exploring the beautiful Alaskan wilderness. 
+    The views of the surrounding mountains were truly stunning. The stay provided plenty of room for my family and friends to relax and just chill. And with its close proximity to downtown Anchorage, we were able to easily explore all the city has to offer. 
+    Although I really had a great time here, I would also like to add that the communication with the host was a bit difficult.. Other than that, this stay definitely exceeded my expectations and made my trip to Alaska truly unforgettable.'
+  )
+
     puts "Done!"
+  
   end
