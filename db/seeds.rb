@@ -495,10 +495,10 @@ ApplicationRecord.transaction do
   )
 
   Review.create!(
-    user_id: 5,
-    listing_id: 6,
+    user_id: 6,
+    listing_id: 10,
     cleanliness: 5,
-    accuracy: 3,
+    accuracy: 4,
     communication: 5,
     location: 5,
     check_in: 4,
@@ -510,4 +510,17 @@ ApplicationRecord.transaction do
   )
     puts "Done!"
   
+  Review.create!(
+    user_id: 6,
+    listing_id: 10,
+    cleanliness: 5,
+    accuracy: 5,
+    communication: 5,
+    location: 5,
+    check_in: 4,
+    value: 5,
+    comment: 'I had an incredible four day stretch of staying at this melobnb! I would say the location is pretty  is just a short drive away from local restaurants and shops, making it the perfect home base for exploring all that this incredible state has to offer. 
+    After a day of adventure, there is literally nothing better than relaxing on the deck and taking in the stunning views. If anyone is trying to visit Alaska for whatever reason I would definitely recommend this place for sure.'
+  )
+
   end
