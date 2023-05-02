@@ -9,7 +9,7 @@ import {
 } from "../../store/reservations";
 import { useParams, NavLink, useHistory } from "react-router-dom";
 import "./Reservation.css";
-import { fetchListings } from "../../store/listings";
+import { fetchListing } from "../../store/listings";
 
 function ReservationIndex({ reservation, numGuest }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -39,12 +39,14 @@ function ReservationIndex({ reservation, numGuest }) {
 
   useEffect(() => {
     dispatch(fetchReservations());
-    dispatch(fetchListings());
+    dispatch(fetchListing(listingId));
   }, [listingId, dispatch]);
   
   useEffect(() => {
     setNumGuests(numAdults + numChildren);
   }, [numAdults, numChildren]);
+
+  // console.log(listing)
 
   const handleDeleteReservation = (reservationId) => {
     dispatch(deleteReservation(reservationId));
