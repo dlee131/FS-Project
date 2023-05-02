@@ -437,7 +437,21 @@ ApplicationRecord.transaction do
     {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing12/listing12.5.webp'), filename: 'l12.5.webp'}
   ])
 
+  puts "Creating reviews..."
 
+  Review.create!(
+    user_id: 2,
+    listing_id: 2,
+    cleanliness: 5,
+    accuracy: 5,
+    communication: 5,
+    location: 5,
+    check_in: 4,
+    value: 5,
+    comment: 'This stunning house is an absolute gem, located in the heart of one of the most beautiful regions of the state. I really loved the views of the Denali National Park as they were simply breathtaking, and you will feel truly at home in this spacious house.
+    I felt like with four bedrooms and two bathrooms, there was plenty of space for everyone in my group to spread out and relax comfortably haha.. The house is beautifully furnished, with all the amenities anyone could really ask for. The location was just a short walk away from some of the best local restaurants and shops in the area. 
+    I cant recommend this stay highly enough. Whether you are planning a family vacation or a romantic getaway, this house is the perfect home base for your Alaskan adventure. You really wont regret it if you book your stay here!'
+  )
 
     puts "Done!"
   end
