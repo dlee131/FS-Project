@@ -6,7 +6,7 @@ import ListingPage from "./components/ListingPage";
 import ReservationIndex from "./components/Reservation";
 import ReviewForm from "./components/Review/ReviewForm";
 import ReviewUpdate from "./components/Review/ReviewUpdate";
-import Profile from "./components/Profile";
+import Profile  from "./components/Profile/index.js";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -30,7 +30,7 @@ function App() {
         <Route path="/reservations">
           <ReservationIndex />
         </Route>
-        <Route path="profile">
+        <Route path='/profile'>
           <Profile />
         </Route>
       </Switch>
