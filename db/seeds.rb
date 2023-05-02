@@ -494,6 +494,20 @@ ApplicationRecord.transaction do
     I particularly enjoyed the comfortable beds and the peaceful atmosphere of the bedrooms.'
   )
 
+  Review.create!(
+    user_id: 5,
+    listing_id: 6,
+    cleanliness: 5,
+    accuracy: 3,
+    communication: 5,
+    location: 5,
+    check_in: 4,
+    value: 5,
+    comment: 'I absolutely loved my stay here! The apartment is situated in such a convenient location in Upper Manhattan, right in the heart of the East Side. 
+    The apartment itself is spacious, clean, and incredibly comfortable, I felt like I was right at home from the moment I arrived. The bedrooms are both well-appointed and cozy, with comfortable beds and plenty of space to unpack and relax.
+    The kitchen is fully-equipped with everything you need to cook your own meals, and there is even a lovely dining area where you can enjoy your meals with friends or family.
+    One of my favorite parts of the apartment was the living room, it is the perfect place to unwind after a long day of exploring the city. I would recommend this stay to a lot of my friends for sure.'
+  )
     puts "Done!"
   
   end
