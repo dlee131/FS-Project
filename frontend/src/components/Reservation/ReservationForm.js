@@ -45,13 +45,13 @@ function ReservationForm() {
   };
 
   const calculateCleaningFee = (subtotal) => {
-    return subtotal * 0.01;
+    return subtotal * 0.05;
   };
 
   const calculateEachCost = () => {
     if (startDate && endDate) {
       const nights = moment(endDate).diff(moment(startDate), "days");
-      const subtotal = nights * listing?.nightlyPrice;
+      const subtotal = nights * listing.nightlyPrice;
       const cleaningFee = calculateCleaningFee(subtotal);
       return subtotal + cleaningFee;
     } else {
