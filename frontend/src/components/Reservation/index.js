@@ -11,7 +11,7 @@ import { useParams, NavLink, useHistory } from "react-router-dom";
 import "./Reservation.css";
 import { fetchListings } from "../../store/listings";
 
-function ReservationIndex({ reservation }) {
+function ReservationIndex({ reservation, numGuest }) {
   const sessionUser = useSelector((state) => state.session.user);
   const reservations = useSelector(getReservations);
   const { listingId } = useParams();
@@ -138,7 +138,7 @@ function ReservationIndex({ reservation }) {
             <div className="reservation-guests">
               Number of Guests: {reservation.numGuests}
             </div>
-          </div>
+          </div> 
           <div className="reservation-buttons">
             <div>
               <button
@@ -177,7 +177,7 @@ function ReservationIndex({ reservation }) {
                       className="adult-buttons"
                       type="button"
                       value={numAdults}
-                      disabled={numGuests === listing.numGuest}
+                      disabled={numGuests === numGuest}
                       onClick={() => setNumAdults(numAdults + 1)}
                     >
                       +
@@ -202,7 +202,7 @@ function ReservationIndex({ reservation }) {
                       className="children-buttons"
                       type="button"
                       value={reservation.numChildren}
-                      disabled={numGuests === listing.numGuest}
+                      disabled={numGuests === numGuest}
                       onClick={() => setNumChildren(numChildren + 1)}
                     >
                       +
