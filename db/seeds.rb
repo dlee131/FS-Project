@@ -481,6 +481,19 @@ ApplicationRecord.transaction do
     If you are looking for a peaceful retreat in nature and dont really mind a few minor inconveniences, I would say this cabin is a decent stay for you.'
   )
 
+  Review.create!(
+    user_id: 5,
+    listing_id: 6,
+    cleanliness: 5,
+    accuracy: 3,
+    communication: 5,
+    location: 5,
+    check_in: 4,
+    value: 5,
+    comment: 'I had a great stay at The Sunnyside! The apartment was pretty spacious, clean, and well-appointed, with all the amenities I needed to feel right at home. The location was perfect, with plenty of great restaurants and attractions within easy walking distance. 
+    I particularly enjoyed the comfortable beds and the peaceful atmosphere of the bedrooms.'
+  )
+
     puts "Done!"
   
   end
