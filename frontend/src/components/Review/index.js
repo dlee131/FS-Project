@@ -5,6 +5,8 @@ import { useParams, NavLink, useHistory } from "react-router-dom";
 import { deleteReview } from "../../store/reviews";
 import "./Review.css";
 
+
+
 function ReviewsIndex() {
   const [cleanliness, setCleanliness] = useState(0);
   const [accuracy, setAccuracy] = useState(0);
@@ -71,14 +73,6 @@ function ReviewsIndex() {
   const handleEditReview = (reviewId) => {
     history.push(`/listings/${listingId}/reviews/${reviewId}/edit`);
     window.scrollTo(0, 0);
-  };
-
-  const formatDate = (stringTime) => {
-    const date = new Date(stringTime);
-    const month = date.toLocaleString("default", { month: "long" });
-    const year = date.getFullYear();
-
-    return `${month} ${year}`;
   };
 
   const reviewCategories = [
@@ -174,5 +168,13 @@ export function calculateAverageRating(reviews) {
   const overallAvgRating = (totalSum / reviews.length).toFixed(2);
   return overallAvgRating;
 }
+
+export const formatDate = (stringTime) => {
+  const date = new Date(stringTime);
+  const month = date.toLocaleString("default", { month: "long" });
+  const year = date.getFullYear();
+
+  return `${month} ${year}`;
+};
 
 export default ReviewsIndex;
