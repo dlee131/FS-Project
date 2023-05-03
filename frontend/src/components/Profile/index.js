@@ -9,8 +9,8 @@ function Profile() {
 
   return (
       <div className="profile-container">
-        <div className="user-first-name">Hello {user.first_name}!</div>
-        <div>Welcome to Melobnb!</div>
+        <div className="user-first-name">Hello {user.first_name}, welcome to MeloBnB!</div>
+        <div>Username: {user.username}</div>
         <div>Email: {user.email}</div>
         <div>Joined on {formatDate(user.created_at)}</div>
       </div>
