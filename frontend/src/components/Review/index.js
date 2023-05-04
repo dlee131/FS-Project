@@ -85,7 +85,7 @@ function ReviewsIndex() {
   const reviewList = reviews.map((review) => (
     <div key={review.id} className="comment-grid">
       <div className="comment-index">
-        <img src={review.profile} alt=""/>
+        <img className="reviewer-profile"src={review.profile} alt=""/>
         <p className="reviewer-name">{review.reviewerName}</p>
         <p className="review-date">{formatDate(review.reviewer)}</p>
         <p className="review-comment-text">{review.comment}</p>

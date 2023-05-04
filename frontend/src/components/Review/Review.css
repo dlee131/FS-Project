@@ -89,6 +89,12 @@ progress::-webkit-progress-value {
    line-height: 1.5;    
 }
 
+.reviewer-profile {
+    /* position: absolute; */
+    height: 110px;
+    width: 110px;
+    border-radius: 60px;
+}
 
 .reviewer-name {
     font-size: 14px;
