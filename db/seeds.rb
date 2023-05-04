@@ -35,8 +35,7 @@ ApplicationRecord.transaction do
       email: 'demo@user.io', 
       password: 'password'
     )  
-    user1.photo.attach(
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing1/listing1.1.webp'), filename: 'l1.1.webp'})
+
 
     user2 = User.create!(
       username: 'Melo', 
@@ -45,6 +44,9 @@ ApplicationRecord.transaction do
       email: 'dlee@gmail.com', 
       password: 'dlee4real'
     )
+
+    user1.photo.attach(
+      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/A8DBCA47-641E-44E5-834D-13937F2C8CCF.jpeg'), filename: 'dan-prof'})
 
     user3 = User.create!(
       username: 'Willy', 
