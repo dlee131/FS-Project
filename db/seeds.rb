@@ -46,7 +46,7 @@ ApplicationRecord.transaction do
     )
 
     user2.photo.attach(
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/A8DBCA47-641E-44E5-834D-13937F2C8CCF.jpeg'), filename: 'Dan.jpeg'})
+      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/IMG_5985.jpeg'), filename: 'Dan.jpeg'})
 
     user3 = User.create!(
       username: 'Willy', 
@@ -81,7 +81,7 @@ ApplicationRecord.transaction do
       password: 'password412'
     ) 
 
-    user7 =User.create!(
+    user7 = User.create!(
       username: 'King-James', 
       first_name: 'Lebron',
       last_name: 'James',
