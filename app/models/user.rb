@@ -46,6 +46,9 @@ foreign_key: :user_id,
 class_name: :Review,
 dependent: :destroy
 
+has_one_attached :photos,
+dependent: :destroy
+
 def self.find_by_credentials(credential, password) 
     match = URI::MailTo::EMAIL_REGEXP
    if match.match?(credential)
