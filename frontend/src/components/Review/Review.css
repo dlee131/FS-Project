@@ -90,18 +90,25 @@ progress::-webkit-progress-value {
 }
 
 .reviewer-profile {
-    /* position: absolute; */
-    height: 110px;
-    width: 110px;
-    border-radius: 60px;
+    position: relative;
+    top: 50px;
+    height: 100px;
+    width: 100px;
+    border-radius: 70px;
 }
 
 .reviewer-name {
+    position: relative;
+    bottom: 30px;
+    left: 120px;
     font-size: 14px;
     font-weight: 600;
 }
 
 .review-date {
+    position: relative;
+    bottom: 41px;
+    left: 120px;
     font-size: 13px;
     color: grey;
 }

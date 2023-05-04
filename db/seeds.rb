@@ -29,9 +29,9 @@ ApplicationRecord.transaction do
     # Create one user with an easy to remember username, email, and password:
     # USING THIS FOR DEMO LOGIN! 
     user1 = User.create!(
-      username: 'Demo-lition',
+      username: 'Demo',
       first_name: 'Demo',
-      last_name: 'lition',
+      last_name: 'Lition',
       email: 'demo@user.io', 
       password: 'password'
     )  
@@ -41,7 +41,7 @@ ApplicationRecord.transaction do
       username: 'Melo', 
       first_name: 'Dan',
       last_name: 'Lee',
-      email: 'dlee@gmail.com', 
+      email: 'Dlee@gmail.com', 
       password: 'dlee4real'
     )
 
@@ -52,7 +52,7 @@ ApplicationRecord.transaction do
       username: 'Willy', 
       first_name: 'Wilson',
       last_name: 'Wu',
-      email: 'willyswhilly@gmail.com', 
+      email: 'Willyswhilly@gmail.com', 
       password: 'passsss'
     ) 
 
@@ -61,23 +61,26 @@ ApplicationRecord.transaction do
       username: 'Stivenkang4fo4', 
       first_name: 'Stiven',
       last_name: 'Kang',
-      email: 'stiven@gmail.com', 
+      email: 'Stiven@gmail.com', 
       password: 'password123'
     ) 
 
     user5 = User.create!(
-      username: 'Himothydelaqueens', 
-      first_name: 'Timothy',
-      last_name: 'Chang',
-      email: 'timothydelaqueens@gmail.com', 
+      username: 'Hani', 
+      first_name: 'Sohee',
+      last_name: 'Han',
+      email: 'HanSohee@gmail.com', 
       password: 'password212'
     ) 
+
+    user5.photo.attach(
+      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/han.jpeg'), filename: 'HanSohee.jpeg'})
 
     user6 = User.create!(
       username: 'Jookyunglee', 
       first_name: 'Joy',
       last_name: 'Lee',
-      email: 'jookyung921@gmail.com', 
+      email: 'Jookyung921@gmail.com', 
       password: 'password412'
     ) 
 
@@ -85,17 +88,20 @@ ApplicationRecord.transaction do
       username: 'King-James', 
       first_name: 'Lebron',
       last_name: 'James',
-      email: 'kingjames@gmail.com', 
+      email: 'KingJames@gmail.com', 
       password: 'password415'
     ) 
 
     user8 = User.create!(
-      username: 'Lina312', 
-      first_name: 'Lina',
-      last_name: 'Park',
-      email: 'Lina312@gmail.com', 
+      username: 'Queen Sejeong', 
+      first_name: 'Sejeong',
+      last_name: 'Kim',
+      email: 'Sejeong@gmail.com', 
       password: 'password516'
     ) 
+
+    user8.photo.attach(
+      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/KimSej.jpeg'), filename: 'Sejeong.jpeg'})
 
 
     # More users
@@ -110,7 +116,7 @@ ApplicationRecord.transaction do
     puts "Creating listings..."
     
     listing_1 =  Listing.create!(
-      host_id: 4,
+      host_id: 5,
       title: "The Denali - Cozy Anchorage Home with Stunning Mountain Views",
       description: "Discover the rugged beauty of Alaska with a stay at The Denali, a cozy and comfortable home located in the heart of Anchorage. With stunning views of the surrounding mountains, you'll feel right at home in this spacious and well-appointed house. Perfect for families or groups of friends, The Denali features four bedrooms and two bathrooms, as well as a fully-equipped kitchen and a large living room with plenty of space to relax and unwind. Located just minutes from downtown Anchorage, this home offers easy access to some of the city's best shopping, dining, and entertainment options.",
       city: "Anchorage",
@@ -141,7 +147,7 @@ ApplicationRecord.transaction do
 
 
     listing_2 = Listing.create!(
-      host_id: 6,
+      host_id: 8,
       title: "Spacious Alaska House with Breathtaking Views of Denali National Park",
       description: "Experience the beauty of Alaska from the comfort of this beautiful house. This spacious house is nestled in the heart of Alaska and offers breathtaking views of the Denali National Park. With four bedrooms and two bathrooms, there's plenty of room for your family or friends to enjoy a comfortable stay. The Aurora is conveniently located near local restaurants and shops, making it the perfect home base for your Alaskan adventure. Book your stay today!",
       city: "Fairbanks",
@@ -527,7 +533,7 @@ ApplicationRecord.transaction do
   )
   
   Review.create!(
-    user_id: 8,
+    user_id: 5,
     listing_id: 2,
     cleanliness: 5,
     accuracy: 5,
