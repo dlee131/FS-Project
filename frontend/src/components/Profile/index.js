@@ -12,6 +12,7 @@ function Profile() {
         <div>Username: {user.username}</div>
         <div>Email: {user.email}</div>
         <div>Joined on {formatDate(user.created_at)}</div>
+        <div>{user.profPic}</div>
       </div>
   );
 }
