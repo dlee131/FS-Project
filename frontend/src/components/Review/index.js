@@ -5,8 +5,6 @@ import { useParams, NavLink, useHistory } from "react-router-dom";
 import { deleteReview } from "../../store/reviews";
 import "./Review.css";
 
-
-
 function ReviewsIndex() {
   const [cleanliness, setCleanliness] = useState(0);
   const [accuracy, setAccuracy] = useState(0);
@@ -87,6 +85,7 @@ function ReviewsIndex() {
   const reviewList = reviews.map((review) => (
     <div key={review.id} className="comment-grid">
       <div className="comment-index">
+        <p className="reviewer-name">{review.profile}</p>
         <p className="reviewer-name">{review.reviewerName}</p>
         <p className="review-date">{formatDate(review.reviewer)}</p>
         <p className="review-comment-text">{review.comment}</p>

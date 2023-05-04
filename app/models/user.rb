@@ -46,7 +46,7 @@ foreign_key: :user_id,
 class_name: :Review,
 dependent: :destroy
 
-has_one_attached :photos,
+has_one_attached :photo,
 dependent: :destroy
 
 def self.find_by_credentials(credential, password) 

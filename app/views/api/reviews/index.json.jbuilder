@@ -5,6 +5,5 @@
         json.reviewerName review.user.first_name
         json.reviewer review.user.created_at
         json.profile review.user.photo.url
-
     end
 end
