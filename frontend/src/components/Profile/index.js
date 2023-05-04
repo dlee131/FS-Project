@@ -8,7 +8,8 @@ function Profile() {
 
   return (
     <div className="profile-container">
-      <div>{user.profPic}</div>
+      <div> 
+        <img src={user.profPic} alt=""/></div>
       <div className="user-first-name">
         Hello {user.first_name}! Welcome to MeloBnB!
       </div>
