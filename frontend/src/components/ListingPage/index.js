@@ -25,7 +25,7 @@ export const ListingPage = () => {
   if (!listing) {
     return <div>Loading...</div>;
   }
-
+  
   return (
     <div className="listing-indiv-page">
       <header>
@@ -65,6 +65,9 @@ export const ListingPage = () => {
       <div className="info-container">
         <div className="listing-info">
           <h1 className="residence-type">{`${listing.residenceType} hosted by ${listing.firstName}`}</h1>
+          <div>
+            <img className="host-pic" src={listing.hostPic}/>
+          </div>
           <h2 className="listing-bed">
             {listing.numGuest} guests • {listing.numBedrooms} bedroom •{" "}
             {listing.numBeds} beds • {listing.numBathrooms} baths
