@@ -81,7 +81,7 @@ const DropDownMenu = ({ user }) => {
 
   let photo;
   if (user) {
-    photo = <img src={LoggedInUser} className="user-pic" alt="re" />;
+    photo = <img src={user.profPic} className="user-pic" alt="re" />;
     //   LoggedInUser picture to change icon here
   } else if (!user) {
     photo = <img src={LoggedOutUser} className="user-pic" alt="re" />;

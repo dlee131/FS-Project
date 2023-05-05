@@ -6,10 +6,11 @@ import "./Profile.css";
 function Profile() {
   const user = useSelector((state) => state.session.user);
 
+
   return (
     <div className="profile-container">
       <div> 
-        <img src={user.profPic} alt=""/></div>
+        <img src={user.profPic}/></div>
       <div className="user-first-name">
         Hello {user.first_name}! Welcome to MeloBnB!
       </div>
