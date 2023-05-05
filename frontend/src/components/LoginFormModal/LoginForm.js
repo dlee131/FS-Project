@@ -15,7 +15,7 @@ function LoginFormPage() {
   const demoLogin = (e) => {
     e.preventDefault();
     dispatch(
-      sessionActions.login({ credential: "Demo-lition", password: "password" })
+      sessionActions.login({ credential: "Demo", password: "password" })
     );
     setIsOpen(false);
   };

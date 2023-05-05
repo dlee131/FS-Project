@@ -1,4 +1,3 @@
 json.user do
-    json.extract! @user, :id, :email, :username, :first_name, :last_name, :created_at
-    json.profPic user.user.photo.url 
+    json.extract! @user, :id, :email, :username, :first_name, :last_name, :photo, :created_at
 end

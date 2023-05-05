@@ -60,7 +60,7 @@ export const signup = (user) => async (dispatch) => {
       first_name,
       last_name,
       email,
-      password,
+      password
     }),
   });
   const data = await response.json();
