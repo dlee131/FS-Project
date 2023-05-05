@@ -92,23 +92,23 @@ progress::-webkit-progress-value {
 .reviewer-profile {
     position: relative;
     top: 50px;
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     border-radius: 70px;
 }
 
 .reviewer-name {
     position: relative;
-    bottom: 30px;
-    left: 120px;
+    bottom: 20px;
+    left: 100px;
     font-size: 14px;
     font-weight: 600;
 }
 
 .review-date {
     position: relative;
-    bottom: 41px;
-    left: 120px;
+    bottom: 30px;
+    left: 100px;
     font-size: 13px;
     color: grey;
 }

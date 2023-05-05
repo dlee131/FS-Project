@@ -57,7 +57,7 @@ ApplicationRecord.transaction do
     ) 
 
     user3.photo.attach(
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/Screen+Shot+2023-05-05+at+3.53.17+PM.png'), filename: 'Dan.jpeg'})
+      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/Screen+Shot+2023-05-05+at+3.53.17+PM.png'), filename: 'Wilson.jpeg'})
   
     user4 = User.create!(
       username: 'Stivenkang4fo4', 
@@ -66,6 +66,9 @@ ApplicationRecord.transaction do
       email: 'Stiven@gmail.com', 
       password: 'password123'
     ) 
+
+    user4.photo.attach(
+      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-05+at+4.03.38+PM.png'), filename: 'Stiven.jpeg'})
 
     user5 = User.create!(
       username: 'Hani', 
