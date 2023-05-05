@@ -25,7 +25,7 @@ export const ListingPage = () => {
   if (!listing) {
     return <div>Loading...</div>;
   }
-  
+
   return (
     <div className="listing-indiv-page">
       <header>

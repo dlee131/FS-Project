@@ -36,6 +36,8 @@ ApplicationRecord.transaction do
       password: 'password'
     )  
 
+    user1.photo.attach(
+      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-05+at+5.08.16+PM.png'), filename: 'Demo.jpeg'})
 
     user2 = User.create!(
       username: 'Melo', 
@@ -486,7 +488,7 @@ ApplicationRecord.transaction do
   )
 
   Review.create!(
-    user_id: 3,
+    user_id: 4,
     listing_id: 3,
     cleanliness: 2,
     accuracy: 4,
