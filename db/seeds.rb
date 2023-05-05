@@ -108,16 +108,6 @@ ApplicationRecord.transaction do
     user8.photo.attach(
       {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/KimSej.jpeg'), filename: 'Sejeong.jpeg'})
 
-
-    # More users
-    # 11.times do 
-    #   User.create!({
-    #     username: Faker::Internet.unique.username(specifier: 3),
-    #     email: Faker::Internet.unique.email,
-    #     password: 'password'
-    #   }) 
-    # end
-
     puts "Creating listings..."
     
     listing_1 =  Listing.create!(
@@ -564,6 +554,19 @@ ApplicationRecord.transaction do
     The house itself was also a letdown. While the bedroom was spacious, the rest of the house felt cramped and outdated. The bathroom was not as modern as advertised, and there were several issues with the plumbing that made it difficult to shower and use the sink. 
     The amenities were pretty lackluster and the expected "high-speed" Wi-Fi was slow and spotty, and the cable TV had limited channels.
     The hosts were also not as welcoming as I would have liked. They were difficult to reach and did not provide much information or assistance during my stay.'
+  )
+
+  Review.create!(
+    user_id: 4,
+    listing_id: 8,
+    cleanliness: 5,
+    accuracy: 4,
+    communication: 4,
+    location: 5,
+    check_in: 5,
+    value: 5,
+    comment: 'I was really looking forward to renting a melobnb stay that the one and only Lebron James owns. I can definitely say that this was by far the greatest decision I have made in my lifetime.
+    I really enjoyed the apartment itself, definitely a perfect spot to stay at for four people! I would recommend this stay to my other friends and family who are willing to visit Denver!'
   )
 
   puts "Done!"
