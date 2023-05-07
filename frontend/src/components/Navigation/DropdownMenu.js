@@ -1,5 +1,5 @@
-import { useDispatch } from "react-redux";
-import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useState, useEffect } from "react";
 import { NavLink, useHistory, useLocation } from "react-router-dom";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
@@ -7,11 +7,12 @@ import * as sessionActions from "../../store/session";
 import LoggedOutUser from "../../img/loggedoutuser.png";
 import LoggedInUser from "../../img/loggedinuser.jpeg";
 
-const DropDownMenu = ({ user }) => {
+const DropDownMenu = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const history = useHistory();
   const [isOpen, setIsOpen] = useState(false);
+  const user = useSelector((state) => state.session.user);
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
