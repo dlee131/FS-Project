@@ -36,9 +36,6 @@ ApplicationRecord.transaction do
       password: 'password'
     )  
 
-    user1.photo.attach(
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-05+at+5.08.16+PM.png'), filename: 'Demo.jpeg'})
-
     user2 = User.create!(
       username: 'Melo', 
       first_name: 'Dan',
@@ -47,9 +44,6 @@ ApplicationRecord.transaction do
       password: 'dlee4real'
     )
 
-    user2.photo.attach(
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/IMG_5985.jpeg'), filename: 'Dan.jpeg'})
-
     user3 = User.create!(
       username: 'Willy', 
       first_name: 'Wilson',
@@ -57,9 +51,6 @@ ApplicationRecord.transaction do
       email: 'Willyswhilly@gmail.com', 
       password: 'passsss'
     ) 
-
-    user3.photo.attach(
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/Screen+Shot+2023-05-05+at+3.53.17+PM.png'), filename: 'Wilson.jpeg'})
   
     user4 = User.create!(
       username: 'Stivenkang4fo4', 
@@ -69,9 +60,6 @@ ApplicationRecord.transaction do
       password: 'password123'
     ) 
 
-    user4.photo.attach(
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-05+at+4.03.38+PM.png'), filename: 'Stiven.jpeg'})
-
     user5 = User.create!(
       username: 'Hani', 
       first_name: 'Sohee',
@@ -79,9 +67,6 @@ ApplicationRecord.transaction do
       email: 'HanSohee@gmail.com', 
       password: 'password212'
     ) 
-
-    user5.photo.attach(
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/han.jpeg'), filename: 'HanSohee.jpeg'})
 
     user6 = User.create!(
       username: 'Jookyunglee', 
@@ -107,9 +92,6 @@ ApplicationRecord.transaction do
       password: 'password516'
     ) 
 
-    user8.photo.attach(
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/KimSej.jpeg'), filename: 'Sejeong.jpeg'})
-
       user9 = User.create!(
         username: 'Jisoo', 
         first_name: 'Jisoo',
@@ -118,6 +100,17 @@ ApplicationRecord.transaction do
         password: 'Jisoo123'
       ) 
 
+    # Users profile photos!
+
+    user1.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-05+at+5.08.16+PM.png'), filename: 'Demo.jpeg'})
+    user2.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/IMG_5985.jpeg'), filename: 'Dan.jpeg'})
+    user3.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/Screen+Shot+2023-05-05+at+3.53.17+PM.png'), filename: 'Wilson.jpeg'})
+    user4.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-05+at+4.03.38+PM.png'), filename: 'Stiven.jpeg'})
+    user5.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/han.jpeg'), filename: 'HanSohee.jpeg'})
+
+
+
+    user8.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/KimSej.jpeg'), filename: 'Sejeong.jpeg'})
     user9.photo.attach(
       {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-08+at+3.38.39+PM.png'), filename: 'Jisoo.jpeg'})
 
