@@ -110,6 +110,15 @@ ApplicationRecord.transaction do
     user8.photo.attach(
       {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/KimSej.jpeg'), filename: 'Sejeong.jpeg'})
 
+      user9 = User.create!(
+        username: 'Jisoo', 
+        first_name: 'Jisoo',
+        last_name: 'Kim',
+        email: 'Jisoo@binghamton.edu', 
+        password: 'Jisoo'
+      ) 
+
+
     puts "Creating listings..."
     
     listing_1 =  Listing.create!(
