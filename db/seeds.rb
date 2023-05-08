@@ -28,7 +28,7 @@ ApplicationRecord.transaction do
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
     # USING THIS FOR DEMO LOGIN! 
-    user1 = User.create!(
+    demo = User.create!(
       username: 'Demo',
       first_name: 'Demo',
       last_name: 'Lition',
@@ -36,7 +36,7 @@ ApplicationRecord.transaction do
       password: 'password'
     )  
 
-    user2 = User.create!(
+    dan = User.create!(
       username: 'Melo', 
       first_name: 'Dan',
       last_name: 'Lee',
@@ -44,7 +44,7 @@ ApplicationRecord.transaction do
       password: 'dlee4real'
     )
 
-    user3 = User.create!(
+    wilson = User.create!(
       username: 'Willy', 
       first_name: 'Wilson',
       last_name: 'Wu',
@@ -52,7 +52,7 @@ ApplicationRecord.transaction do
       password: 'passsss'
     ) 
   
-    user4 = User.create!(
+    stiven = User.create!(
       username: 'Stivenkang4fo4', 
       first_name: 'Stiven',
       last_name: 'Kang',
@@ -60,7 +60,7 @@ ApplicationRecord.transaction do
       password: 'password123'
     ) 
 
-    user5 = User.create!(
+    sohee = User.create!(
       username: 'Hani', 
       first_name: 'Sohee',
       last_name: 'Han',
@@ -68,7 +68,7 @@ ApplicationRecord.transaction do
       password: 'password212'
     ) 
 
-    user6 = User.create!(
+    joy = User.create!(
       username: 'Jookyunglee', 
       first_name: 'Joy',
       last_name: 'Lee',
@@ -76,7 +76,7 @@ ApplicationRecord.transaction do
       password: 'password412'
     ) 
 
-    user7 = User.create!(
+    lebron = User.create!(
       username: 'King-James', 
       first_name: 'Lebron',
       last_name: 'James',
@@ -84,7 +84,7 @@ ApplicationRecord.transaction do
       password: 'password415'
     ) 
 
-    user8 = User.create!(
+    sejeong = User.create!(
       username: 'Queen Sejeong', 
       first_name: 'Sejeong',
       last_name: 'Kim',
@@ -92,26 +92,26 @@ ApplicationRecord.transaction do
       password: 'password516'
     ) 
 
-      user9 = User.create!(
+    jisoo = User.create!(
         username: 'Jisoo', 
         first_name: 'Jisoo',
         last_name: 'Kim',
-        email: 'Jisoo@binghamton.edu', 
+        email: 'Jisoo@binghamton.edu',
         password: 'Jisoo123'
-      ) 
+    ) 
 
-    # Users profile photos!
+    # Seeding for Useres profile photos!
 
-    user1.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-05+at+5.08.16+PM.png'), filename: 'Demo.jpeg'})
-    user2.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/IMG_5985.jpeg'), filename: 'Dan.jpeg'})
-    user3.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/Screen+Shot+2023-05-05+at+3.53.17+PM.png'), filename: 'Wilson.jpeg'})
-    user4.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-05+at+4.03.38+PM.png'), filename: 'Stiven.jpeg'})
-    user5.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/han.jpeg'), filename: 'HanSohee.jpeg'})
-    user6.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-08+at+4.34.15+PM.png'), filename: 'Joy.jpeg'})
-    user7.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-08+at+4.34.15+PM.png'), filename: 'Joy.jpeg'})
-    user8.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/KimSej.jpeg'), filename: 'Sejeong.jpeg'})
-    user9.photo.attach(
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-08+at+3.38.39+PM.png'), filename: 'Jisoo.jpeg'})
+    demo.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-05+at+5.08.16+PM.png'), filename: 'Demo.jpeg'})
+    dan.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/IMG_5985.jpeg'), filename: 'Dan.jpeg'})
+    wilson.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/Screen+Shot+2023-05-05+at+3.53.17+PM.png'), filename: 'Wilson.jpeg'})
+    stiven.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-05+at+4.03.38+PM.png'), filename: 'Stiven.jpeg'})
+    sohee.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/han.jpeg'), filename: 'HanSohee.jpeg'})
+    joy.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-08+at+4.34.15+PM.png'), filename: 'Joy.jpeg'})
+    lebron.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-08+at+4.48.20+PM.png'), filename: 'Lebron.jpeg'})
+    sejeong.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/KimSej.jpeg'), filename: 'Sejeong.jpeg'})
+    jisoo.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-08+at+3.38.39+PM.png'), filename: 'Jisoo.jpeg'})
+
 
     puts "Creating listings..."
     
@@ -325,7 +325,7 @@ ApplicationRecord.transaction do
       country: "United States",
       zip_code: 11249,
       latitude: 41.036191,
-      longitude:  -71.961215,
+      longitude: -71.961215,
       nightly_price: 1270,
       num_bedrooms: 6,
       num_beds: 6,
@@ -337,7 +337,7 @@ ApplicationRecord.transaction do
     )
 
   listing_12 = Listing.create!(
-    host_id: 2,
+    host_id: 7,
     title: "Beachfront Paradise - Spacious Condo with Stunning Ocean Views in Miami",
     description: "Escape to this luxurious beachfront paradise, where you can bask in the sun and soak up the sea breeze in style. With stunning ocean views from every window, this spacious condo is the perfect place to relax and unwind. Enjoy long walks on the beach, swimming in the crystal clear waters, or simply lounging on the balcony with a good book. With all the amenities you could need, including a fully equipped kitchen and high-speed internet, this is the perfect place to escape from the hustle and bustle of everyday life.",
     city: "Miami",
@@ -455,7 +455,6 @@ ApplicationRecord.transaction do
   ])
 
 
-
   puts "Creating reviews..."
 
   Review.create!(
@@ -559,7 +558,7 @@ ApplicationRecord.transaction do
 
   Review.create!(
     user_id: 4,
-    listing_id: 8,
+    listing_id: 12,
     cleanliness: 5,
     accuracy: 4,
     communication: 4,
@@ -594,7 +593,6 @@ ApplicationRecord.transaction do
     comment: 'At first glance, I thought the exterior of the melobnb was a bit odd but when I took a look inside it felt like an experience I have never felt before! This apartment was very accurate in its description in the fact that it is perfect
     if you are looking for a week stay in California. The location was really the only thing that was the only downside of it as it was a bit far from the city. Other than that, I would definitely recommend this stay to any of the melobnb members!'
   )
-
 
   puts "Done!"
 
