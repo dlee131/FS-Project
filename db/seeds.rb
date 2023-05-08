@@ -118,6 +118,8 @@ ApplicationRecord.transaction do
         password: 'Jisoo'
       ) 
 
+    user9.photo.attach(
+      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-08+at+3.31.19+PM.png'), filename: 'Jisoo.jpeg'})
 
     puts "Creating listings..."
     
