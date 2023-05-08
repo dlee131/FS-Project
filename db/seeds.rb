@@ -115,11 +115,11 @@ ApplicationRecord.transaction do
         first_name: 'Jisoo',
         last_name: 'Kim',
         email: 'Jisoo@binghamton.edu', 
-        password: 'Jisoo'
+        password: 'Jisoo123'
       ) 
 
     user9.photo.attach(
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-08+at+3.31.19+PM.png'), filename: 'Jisoo.jpeg'})
+      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-08+at+3.38.39+PM.png'), filename: 'Jisoo.jpeg'})
 
     puts "Creating listings..."
     
@@ -413,7 +413,7 @@ ApplicationRecord.transaction do
 
 
     listing_11 = Listing.create!(
-      host_id: 2,
+      host_id: 9,
       title: "Montauk Abode - Luxurious Oceanfront Retreat in New York",
       description: "Experience the ultimate oceanfront retreat at the Montauk Abode. Situated on a secluded stretch of beach in the heart of New York's picturesque Montauk region, this stunning six-bedroom house offers unparalleled views of the Atlantic Ocean and a lush garden landscape. With its spacious, open-concept living area and large windows that let in plenty of natural light, this home is the perfect space for family gatherings or for entertaining friends. Take in the breathtaking views from the balcony, soak up the sun on the beach, or enjoy a cozy night in by the fireplace. This luxurious beachfront home is the perfect place to relax and unwind in style, with all the amenities you could need including a fully equipped kitchen, high-speed internet, and more.",
       city: "New York",
