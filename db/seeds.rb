@@ -108,9 +108,7 @@ ApplicationRecord.transaction do
     user4.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-05+at+4.03.38+PM.png'), filename: 'Stiven.jpeg'})
     user5.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/han.jpeg'), filename: 'HanSohee.jpeg'})
     user6.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-08+at+4.34.15+PM.png'), filename: 'Joy.jpeg'})
-  
-
-
+    user7.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-08+at+4.34.15+PM.png'), filename: 'Joy.jpeg'})
     user8.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/KimSej.jpeg'), filename: 'Sejeong.jpeg'})
     user9.photo.attach(
       {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-08+at+3.38.39+PM.png'), filename: 'Jisoo.jpeg'})
@@ -137,17 +135,6 @@ ApplicationRecord.transaction do
       num_guest: 4
     )
 
-    listing_1.photos.attach([
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing1/listing1.1.webp'), filename: 'l1.1.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing1/listing1.2.webp'), filename: 'l1.2.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing1/listing1.3.webp'), filename: 'l1.3.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing1/listing1.4.webp'), filename: 'l1.4.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing1/listing1.5.webp'), filename: 'l1.5.webp'}
-    ])
-# DONT WRAP SEED CODE IN APPLICATIONRECORD.TRANSACTION 
-
-
-
     listing_2 = Listing.create!(
       host_id: 8,
       title: "Spacious Alaska House with Breathtaking Views of Denali National Park",
@@ -167,14 +154,6 @@ ApplicationRecord.transaction do
       ratings: 4.62,
       num_guest: 8
     )
-
-    listing_2.photos.attach([
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing2/listing_2.png'), filename: 'l2.1.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing2/listing2.2.webp'), filename: 'l2.2.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing2/listing2.3.webp'), filename: 'l2.3.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing2/listing2.4.webp'), filename: 'l2.4.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing2/listing2.5.webp'), filename: 'l2.5.webp'}
-    ])
 
     listing_3 = Listing.create!(
       host_id: 3,
@@ -196,16 +175,6 @@ ApplicationRecord.transaction do
       num_guest: 5
     )
 
-    listing_3.photos.attach([
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing3/listing3.1.webp'), filename: 'l3.1.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing3/listing3.2.webp'), filename: 'l3.2.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing3/listing3.3.webp'), filename: 'l3.3.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing3/listing3.4.webp'), filename: 'l3.4.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing3/listing3.5.webp'), filename: 'l3.5.webp'}
-    ])
-
-
-
     listing_4 = Listing.create!(
       host_id: 3,
       title: "Cozy Private Retreat in Flushing for Solo Travelers",
@@ -225,14 +194,6 @@ ApplicationRecord.transaction do
       ratings: 4.92,
       num_guest: 2
     )
-
-    listing_4.photos.attach([
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing4/listing4.1.webp'), filename: 'l4.1.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing4/listing4.2.webp'), filename: 'l4.2.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing4/listing4.3.webp'), filename: 'l4.3.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing4/listing4.4.webp'), filename: 'l4.4.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing4/listing4.5.webp'), filename: 'l4.5.webp'}
-    ])
 
     listing_5 = Listing.create!(
       host_id: 5,
@@ -255,14 +216,6 @@ ApplicationRecord.transaction do
       num_guest: 10
     )
 
-    listing_5.photos.attach([
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing5/listing5.1.webp'), filename: 'l5.1.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing5/listing5.2.webp'), filename: 'l5.2.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing5/listing5.3.webp'), filename: 'l5.3.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing5/listing5.4.webp'), filename: 'l5.4.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing5/listing5.5.webp'), filename: 'l5.5.webp'}
-    ])
-
     listing_6 = Listing.create!(
       host_id: 8,
       title: "The Sunnyside: Spacious and Sunny 2-Bedroom Apartment in East Village, NYC",
@@ -282,14 +235,6 @@ ApplicationRecord.transaction do
       ratings: 4.67,
       num_guest: 4
     )
-
-    listing_6.photos.attach([
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing6/listing6.1.webp'), filename: 'l6.1.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing6/listing6.2.webp'), filename: 'l6.2.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing6/listing6.3.webp'), filename: 'l6.3.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing6/listing6.4.webp'), filename: 'l6.4.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing6/listing6.5.webp'), filename: 'l6.5.webp'}
-    ])
 
     listing_7 = Listing.create!(
       host_id: 8,
@@ -311,14 +256,6 @@ ApplicationRecord.transaction do
       num_guest: 2
     )
 
-    listing_7.photos.attach([
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing.7/listing7.1.webp'), filename: 'l7.1.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing.7/listing7.2.webp'), filename: 'l7.2.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing.7/listing7.3.webp'), filename: 'l7.3.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing.7/listing7.4.webp'), filename: 'l7.4.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing.7/listing7.5.webp'), filename: 'l7.5.webp'}
-    ])
-
     listing_8 = Listing.create!(
       host_id: 9,
       title: "Charming Colonial Home in Vibrant Denver Neighborhood",
@@ -338,16 +275,6 @@ ApplicationRecord.transaction do
       ratings: 3.74,
       num_guest: 4
     )
-
-
-    listing_8.photos.attach([
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing8/listing8.1.webp'), filename: 'l8.1.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing8/listing8.2.webp'), filename: 'l8.2.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing8/listing8.3.webp'), filename: 'l8.3.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing8/listing8.4.webp'), filename: 'l8.4.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing8/listing8.5.webp'), filename: 'l8.5.webp'}
-    ])
-
 
     listing_9 = Listing.create!(
       host_id: 6,
@@ -369,14 +296,6 @@ ApplicationRecord.transaction do
       num_guest: 10
     )
 
-    listing_9.photos.attach([
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing9/listing9.1.webp'), filename: 'l9.1.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing9/listing9.2.webp'), filename: 'l9.2.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing9/listing9.3.webp'), filename: 'l9.3.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing9/listing9.4.webp'), filename: 'l9.4.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing9/listing9.5.webp'), filename: 'l9.5.webp'}
-    ])
-
     listing_10 = Listing.create!(
       host_id: 4,
       title: "Cozy Upper East Side Apartment in the Heart of Manhattan",
@@ -396,15 +315,6 @@ ApplicationRecord.transaction do
       ratings: 3.91,
       num_guest: 4
     )
-
-    listing_10.photos.attach([
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing10/listing10.1.webp'), filename: 'l10.1.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing10/listing10.2.webp'), filename: 'l10.2.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing10/listing10.3.webp'), filename: 'l10.3.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing10/listing10.4.webp'), filename: 'l10.4.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing10/listing10.5.webp'), filename: 'l10.5.webp'}
-    ])
-
 
     listing_11 = Listing.create!(
       host_id: 9,
@@ -426,14 +336,6 @@ ApplicationRecord.transaction do
       num_guest: 12
     )
 
-    listing_11.photos.attach([
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing11/listing11.1.webp'), filename: 'l11.1.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing11/listing11.2.webp'), filename: 'l11.2.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing11/listing11.3.webp'), filename: 'l11.3.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing11/listing11.4.webp'), filename: 'l11.4.webp'},
-      {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing11/listing11.5.webp'), filename: 'l11.5.webp'}
-    ])
-
   listing_12 = Listing.create!(
     host_id: 2,
     title: "Beachfront Paradise - Spacious Condo with Stunning Ocean Views in Miami",
@@ -454,6 +356,96 @@ ApplicationRecord.transaction do
     num_guest: 6
   )
 
+  #Seeding photos for listings
+
+  listing_1.photos.attach([
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing1/listing1.1.webp'), filename: 'l1.1.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing1/listing1.2.webp'), filename: 'l1.2.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing1/listing1.3.webp'), filename: 'l1.3.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing1/listing1.4.webp'), filename: 'l1.4.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing1/listing1.5.webp'), filename: 'l1.5.webp'}
+  ])
+
+  listing_2.photos.attach([
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing2/listing_2.png'), filename: 'l2.1.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing2/listing2.2.webp'), filename: 'l2.2.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing2/listing2.3.webp'), filename: 'l2.3.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing2/listing2.4.webp'), filename: 'l2.4.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing2/listing2.5.webp'), filename: 'l2.5.webp'}
+  ])
+
+  listing_3.photos.attach([
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing3/listing3.1.webp'), filename: 'l3.1.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing3/listing3.2.webp'), filename: 'l3.2.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing3/listing3.3.webp'), filename: 'l3.3.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing3/listing3.4.webp'), filename: 'l3.4.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing3/listing3.5.webp'), filename: 'l3.5.webp'}
+  ])
+
+  listing_4.photos.attach([
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing4/listing4.1.webp'), filename: 'l4.1.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing4/listing4.2.webp'), filename: 'l4.2.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing4/listing4.3.webp'), filename: 'l4.3.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing4/listing4.4.webp'), filename: 'l4.4.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing4/listing4.5.webp'), filename: 'l4.5.webp'}
+  ])
+
+  listing_5.photos.attach([
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing5/listing5.1.webp'), filename: 'l5.1.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing5/listing5.2.webp'), filename: 'l5.2.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing5/listing5.3.webp'), filename: 'l5.3.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing5/listing5.4.webp'), filename: 'l5.4.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing5/listing5.5.webp'), filename: 'l5.5.webp'}
+  ])
+
+  listing_6.photos.attach([
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing6/listing6.1.webp'), filename: 'l6.1.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing6/listing6.2.webp'), filename: 'l6.2.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing6/listing6.3.webp'), filename: 'l6.3.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing6/listing6.4.webp'), filename: 'l6.4.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing6/listing6.5.webp'), filename: 'l6.5.webp'}
+  ])
+
+  listing_7.photos.attach([
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing.7/listing7.1.webp'), filename: 'l7.1.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing.7/listing7.2.webp'), filename: 'l7.2.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing.7/listing7.3.webp'), filename: 'l7.3.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing.7/listing7.4.webp'), filename: 'l7.4.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing.7/listing7.5.webp'), filename: 'l7.5.webp'}
+  ])
+
+  listing_8.photos.attach([
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing8/listing8.1.webp'), filename: 'l8.1.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing8/listing8.2.webp'), filename: 'l8.2.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing8/listing8.3.webp'), filename: 'l8.3.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing8/listing8.4.webp'), filename: 'l8.4.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing8/listing8.5.webp'), filename: 'l8.5.webp'}
+  ])
+
+  listing_9.photos.attach([
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing9/listing9.1.webp'), filename: 'l9.1.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing9/listing9.2.webp'), filename: 'l9.2.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing9/listing9.3.webp'), filename: 'l9.3.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing9/listing9.4.webp'), filename: 'l9.4.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing9/listing9.5.webp'), filename: 'l9.5.webp'}
+  ])
+
+  listing_10.photos.attach([
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing10/listing10.1.webp'), filename: 'l10.1.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing10/listing10.2.webp'), filename: 'l10.2.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing10/listing10.3.webp'), filename: 'l10.3.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing10/listing10.4.webp'), filename: 'l10.4.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing10/listing10.5.webp'), filename: 'l10.5.webp'}
+  ])
+
+  listing_11.photos.attach([
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing11/listing11.1.webp'), filename: 'l11.1.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing11/listing11.2.webp'), filename: 'l11.2.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing11/listing11.3.webp'), filename: 'l11.3.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing11/listing11.4.webp'), filename: 'l11.4.webp'},
+    {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing11/listing11.5.webp'), filename: 'l11.5.webp'}
+  ])
+
   listing_12.photos.attach([
     {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing12/listing12.1.webp'), filename: 'l12.1.webp'},
     {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing12/listing12.2.webp'), filename: 'l12.2.webp'},
@@ -461,6 +453,8 @@ ApplicationRecord.transaction do
     {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing12/listing12.4.webp'), filename: 'l12.4.webp'},
     {io:URI.open('https://melobnb-seeds.s3.amazonaws.com/listings/listing12/listing12.5.webp'), filename: 'l12.5.webp'}
   ])
+
+
 
   puts "Creating reviews..."
 
