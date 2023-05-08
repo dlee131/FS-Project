@@ -118,7 +118,7 @@ function ReservationIndex({ reservation }) {
             <div className="reservation-city">{reservation.state}</div>
             <div className="reservation-residence">
               Entire {reservation.residenceType} hosted by{" "}
-              {reservation.userName}
+              {reservation.firstName}
             </div>
             <div className="reservation-dates">
               {moment(reservation.startDate).format("MM/DD/YYYY")} -{" "}

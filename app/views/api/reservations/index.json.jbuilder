@@ -6,7 +6,7 @@
     json.city reservation.listing.city
     json.state reservation.listing.state
     json.residenceType reservation.listing.residence_type
-    json.userName reservation.listing.host.username
+    json.firstName reservation.listing.host.first_name
     json.nightlyPrice reservation.listing.nightly_price
     json.numGuest reservation.listing.num_guest
     end

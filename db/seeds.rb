@@ -326,7 +326,7 @@ ApplicationRecord.transaction do
     ])
 
     listing_8 = Listing.create!(
-      host_id: 7,
+      host_id: 9,
       title: "Charming Colonial Home in Vibrant Denver Neighborhood",
       description: "This charming and comfortable house is located in a vibrant and safe neighborhood, providing easy access to the city's many attractions. As a guest, you will have access to a private bedroom that is both spacious and cozy, perfect for relaxing after a long day of exploring the city. The bedroom is one of two in the house, ensuring ample space and comfort for up to four guests. The bathroom is shared, but always clean and well-maintained for your convenience.",
       city: "Denver",
@@ -593,6 +593,20 @@ ApplicationRecord.transaction do
     value: 5,
     comment: 'If you are ever trying to visit Alaska and is looking for a melobnb stay, look no further than this one right here. I believe that this is probably one of the best melobnb stays I have experienced in my lifetime'
   )
+
+  Review.create!(
+    user_id: 9,
+    listing_id: 7,
+    cleanliness: 5,
+    accuracy: 4,
+    communication: 5,
+    location: 5,
+    check_in: 4,
+    value: 5,
+    comment: 'At first glance, I thought the exterior of the melobnb was a bit odd but when I took a look inside it felt like an experience I have never felt before! This apartment was very accurate in its description in the fact that it is perfect
+    if you are looking for a week stay in California. The location was really the only thing that was the only downside of it as it was a bit far from the city. Other than that, I would definitely recommend this stay to any of the melobnb members!'
+  )
+
 
   puts "Done!"
 
