@@ -107,7 +107,8 @@ ApplicationRecord.transaction do
     user3.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/Screen+Shot+2023-05-05+at+3.53.17+PM.png'), filename: 'Wilson.jpeg'})
     user4.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-05+at+4.03.38+PM.png'), filename: 'Stiven.jpeg'})
     user5.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/han.jpeg'), filename: 'HanSohee.jpeg'})
-
+    user6.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-08+at+4.34.15+PM.png'), filename: 'Joy.jpeg'})
+  
 
 
     user8.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/KimSej.jpeg'), filename: 'Sejeong.jpeg'})
