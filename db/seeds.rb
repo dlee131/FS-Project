@@ -571,6 +571,18 @@ ApplicationRecord.transaction do
     I really enjoyed the apartment itself, definitely a perfect spot to stay at for four people! I would recommend this stay to my other friends and family who are willing to visit Denver!'
   )
 
+  Review.create!(
+    user_id: 4,
+    listing_id: 2,
+    cleanliness: 5,
+    accuracy: 5,
+    communication: 5,
+    location: 5,
+    check_in: 5,
+    value: 5,
+    comment: 'If you are ever trying to visit Alaska and is looking for a melobnb stay, look no further than this one right here. I believe that this is probably one of the best melobnb stays I have experienced in my lifetime'
+  )
+
   puts "Done!"
 
   end

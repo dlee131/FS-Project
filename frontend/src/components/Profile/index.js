@@ -10,7 +10,7 @@ function Profile() {
   return (
     <div className="profile-container">
       <div>
-        <img className="profile-picture" src={user.profPic} />
+        <img className="profile-picture" src={user.profPic}/>
       </div>
       <div className="user-first-name">
         Hello {user.first_name}! Welcome to MeloBnB!
