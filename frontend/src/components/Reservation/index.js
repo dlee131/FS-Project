@@ -85,7 +85,6 @@ function ReservationIndex({ reservation }) {
 
   return (
     <div className="Trips-index">
-      
       <div className="trips-header">Trips</div>
       {userReservations.length === 0 && (
         <div className="no-trips">
@@ -127,7 +126,7 @@ function ReservationIndex({ reservation }) {
             <div className="reservation-guests">
               Number of Guests: {reservation.numGuests}
             </div>
-          </div> 
+          </div>
           <div className="reservation-buttons">
             <div>
               <button
