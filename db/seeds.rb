@@ -19,7 +19,6 @@ ApplicationRecord.transaction do
     Listing.destroy_all  
     User.destroy_all 
 
-
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('reservations')
@@ -28,6 +27,7 @@ ApplicationRecord.transaction do
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
     # USING THIS FOR DEMO LOGIN! 
+
     demo = User.create!(
       username: 'Demo',
       first_name: 'Demo',
@@ -111,7 +111,6 @@ ApplicationRecord.transaction do
     lebron.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-08+at+4.48.20+PM.png'), filename: 'Lebron.jpeg'})
     sejeong.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/KimSej.jpeg'), filename: 'Sejeong.jpeg'})
     jisoo.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-08+at+3.38.39+PM.png'), filename: 'Jisoo.jpeg'})
-
 
     puts "Creating listings..."
     
