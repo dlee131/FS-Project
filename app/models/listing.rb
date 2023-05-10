@@ -31,7 +31,6 @@ class Listing < ApplicationRecord
     validates :num_beds, :num_bathrooms, :num_bedrooms, numericality: {in: 0..6}
     validates :pets_allowed, inclusion: { in: [true,false] }
     
-
     belongs_to :host,
     foreign_key: :host_id,
     class_name: :User,
@@ -53,7 +52,6 @@ class Listing < ApplicationRecord
         avg = rating.reduce(0) { |sum, rate| sum + reviews.average(rate) } / rating.length
         return avg.round(2)
       end
-
 
     def self.in_bounds(bounds)
         lower_lat, lower_long, upper_lat, upper_long = bounds
