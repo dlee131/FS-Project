@@ -44,6 +44,14 @@ function ReservationIndex({ reservation }) {
     setNumGuests(numAdults + numChildren);
   }, [numAdults, numChildren]);
 
+  useEffect(() => {
+    if (reservation) {
+      setStartDate(reservation.startDate);
+      setEndDate(reservation.endDate);
+      setNumAdults(reservation.numAdults);
+      setNumChildren(reservation.numChildren);
+    }
+  }, [reservation]);
   // console.log(listing)
 
   const handleDeleteReservation = (reservationId) => {
@@ -107,7 +115,7 @@ function ReservationIndex({ reservation }) {
         <div key={reservation.id} className="reservations-index">
           <div className="reservation-photos">
             <img
-              src={reservation?.photo[0]}
+              src={reservation.photo[0]}
               alt=""
               className="reservation-photo"
               onClick={() => handleClick(reservation.listingId, reservation.id)}
