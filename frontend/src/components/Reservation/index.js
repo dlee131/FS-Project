@@ -20,6 +20,7 @@ function ReservationIndex({ reservation }) {
   const [numAdults, setNumAdults] = useState(1);
   const [numChildren, setNumChildren] = useState(0);
   const [numGuests, setNumGuests] = useState();
+  const [state, setState] = useState();
   const [errors, setErrors] = useState();
   const [selectedReservationId, setSelectedReservationId] = useState(false);
   const dispatch = useDispatch();
@@ -61,19 +62,29 @@ function ReservationIndex({ reservation }) {
   const handleUpdateReservation = (e) => {
     e.preventDefault();
     setErrors([]);
+  
     const reservationToUpdate = userReservations.find(
       (reservation) => reservation.id === selectedReservationId
     );
+  
     if (reservationToUpdate) {
       const updatedReservation = {
-        listing_id: reservationToUpdate.listingId,
-        id: reservationToUpdate.id,
+        listing_id: reservationToUpdate.listing_id,
+        id: selectedReservationId,
         user_id: userId,
         start_date: startDate,
         end_date: endDate,
         num_guests: numGuests,
+        state: state,
       };
-      dispatch(updateReservation(updatedReservation));
+      dispatch(updateReservation(updatedReservation))
+        .then(() => {
+          // Refresh the list of user reservations after the update is successful
+          dispatch(fetchReservations(userId));
+        })
+        .catch((error) => {
+          setErrors([error.message]);
+        });
     }
   };
 
@@ -118,7 +129,7 @@ function ReservationIndex({ reservation }) {
             )}
           </div>
           <div className="reservation-description">
-            <div className="reservation-city">{reservation.state}</div>
+            <div className="reservation-state">{reservation.state}</div>
             <div className="reservation-residence">
               Entire {reservation.residenceType} hosted by{" "}
               {reservation.firstName}
