@@ -61,7 +61,6 @@ export const createReservation = (reservationObj) => async (dispatch) => {
 };
 
 export const updateReservation = (reservationObj) => async (dispatch) => {
-  debugger;
   const res = await csrfFetch(`/api/reservations/${reservationObj.id}`, {
     method: "PATCH",
     headers: {
@@ -69,7 +68,6 @@ export const updateReservation = (reservationObj) => async (dispatch) => {
     },
     body: JSON.stringify(reservationObj),
   });
-  debugger;
   if (res.ok) {
     const reservation = await res.json();
     dispatch(receiveReservation(reservation));
@@ -81,9 +79,7 @@ export const deleteReservation = (reservationId) => async (dispatch) => {
   const res = await csrfFetch(`/api/reservations/${reservationId}`, {
     method: "DELETE",
   });
-  // debugger
   if (res.ok) dispatch(removeReservation(reservationId));
-  // debugger
 };
 
 function reservationsReducer(state = {}, action) {

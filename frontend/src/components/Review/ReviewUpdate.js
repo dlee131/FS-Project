@@ -22,8 +22,7 @@ function ReviewUpdate() {
   const dispatch = useDispatch();
   const history = useHistory();
   const reviews = useSelector(getReviews);
-  // const totalReviews = reviews.length;
-  // const user = useSelector((state) => state.session.user);
+
 
   const userReviews = reviews.filter((review) => review.userId === userId);
 

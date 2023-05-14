@@ -35,7 +35,6 @@ export const fetchListings =
         ) {
           filtered[key] = listings[key];
         }
-
         return filtered;
       }, {});
       dispatch(receiveListings(filteredListings));
@@ -63,7 +62,7 @@ function listingsReducer(state = {}, action) {
     case RECEIVE_LISTINGS:
       return { ...action.listings };
     case RECEIVE_LISTING:
-      debugger;
+    //   debugger;
       return (newState[action.listing.id] = action.listing);
     default:
       return state;

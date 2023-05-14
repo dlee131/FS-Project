@@ -62,7 +62,6 @@ export const createReview = (reviewObj) => async (dispatch) => {
 };
 
 export const updateReview = (reviewObj) => async (dispatch) => {
-  debugger;
   const res = await csrfFetch(`/api/reviews/${reviewObj.id}`, {
     method: "PATCH",
     headers: {
@@ -70,7 +69,6 @@ export const updateReview = (reviewObj) => async (dispatch) => {
     },
     body: JSON.stringify(reviewObj),
   });
-  debugger;
   if (res.ok) {
     const review = await res.json();
     dispatch(receiveReview(review));
@@ -79,11 +77,9 @@ export const updateReview = (reviewObj) => async (dispatch) => {
 };
 
 export const deleteReview = (reviewId) => async (dispatch) => {
-  debugger;
   const res = await csrfFetch(`/api/reviews/${reviewId}`, {
     method: "DELETE",
   });
-  debugger;
   if (res.ok) dispatch(removeReview(reviewId));
 };
 
@@ -101,22 +97,5 @@ function reviewsReducer(state = {}, action) {
       return state;
   }
 }
-// function reviewsReducer (state = {}, action) {
-//     switch (action.type) {
-//       case RECEIVE_REVIEW:
-//         return {
-//           ...state,
-//           [action.review.id]: action.review
-//         };
-//       case RECEIVE_ALL_REVIEWS:
-//         return { ...action.reviews };
-//       case REMOVE_REVIEW:
-//         const newState = { ...state };
-//         delete newState[action.reviewId];
-//         return newState;
-//       default:
-//         return state;
-//     }
-//   }
 
 export default reviewsReducer;
