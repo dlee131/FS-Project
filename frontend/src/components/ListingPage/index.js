@@ -66,7 +66,7 @@ export const ListingPage = () => {
         <div className="listing-info">
           <h1 className="residence-type">{`${listing.residenceType} hosted by ${listing.firstName}`}</h1>
           <div>
-            <img className="host-pic" src={listing.hostPic}/>
+            <img className="host-pic" src={listing.hostPic} />
           </div>
           <h2 className="listing-bed">
             {listing.numGuest} guests • {listing.numBedrooms} bedroom •{" "}
