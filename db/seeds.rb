@@ -593,6 +593,19 @@ ApplicationRecord.transaction do
     if you are looking for a week stay in California. The location was really the only thing that was the only downside of it as it was a bit far from the city. Other than that, I would definitely recommend this stay to any of the melobnb members!'
   )
 
+  Review.create!(
+    user_id: 2,
+    listing_id: 5,
+    cleanliness: 5,
+    accuracy: 4,
+    communication: 5,
+    location: 5,
+    check_in: 4,
+    value: 5,
+    comment: 'If you are ever thinking of spending the night at Birmingham, you would not be disappointed in at this beautiful stay. I especially loved the design of the windows and it allowed the sun
+    to beam onto my face while lying down on the sofa. I honestly did not want to get up from the couch, but the interior of the house was exceptionally beautiful.'
+  )
+
   puts "Done!"
 
   end
