@@ -62,11 +62,11 @@ function ReservationIndex({ reservation }) {
   const handleUpdateReservation = (e) => {
     e.preventDefault();
     setErrors([]);
-  
+
     const reservationToUpdate = userReservations.find(
       (reservation) => reservation.id === selectedReservationId
     );
-  
+
     if (reservationToUpdate) {
       const updatedReservation = {
         listing_id: reservationToUpdate.listing_id,
