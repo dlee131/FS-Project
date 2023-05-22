@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 function ListingItem({ listing, handleClick }) {
   const reviews = useSelector(getReviews);
   const { reviewId } = useParams();
-
+  debugger
   return (
     <div className="listings">
       <ul>
