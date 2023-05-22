@@ -12,7 +12,7 @@
 ApplicationRecord.transaction do 
 
   require "open-uri"
-  
+    puts Rails.env
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
     Reservation.destroy_all  
