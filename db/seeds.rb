@@ -9,7 +9,7 @@
 
 
 
-ApplicationRecord.transaction do 
+# ApplicationRecord.transaction do 
 
   require "open-uri"
     puts Rails.env
@@ -100,7 +100,7 @@ ApplicationRecord.transaction do
         password: 'Jisoo123'
     ) 
 
-    # Seeding for Useres profile photos!
+    # Seeding for Users'profile photos!
 
     demo.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/User/Screen+Shot+2023-05-05+at+5.08.16+PM.png'), filename: 'Demo.jpeg'})
     dan.photo.attach({io:URI.open('https://melobnb-seeds.s3.amazonaws.com/IMG_5985.jpeg'), filename: 'Dan.jpeg'})
@@ -608,4 +608,4 @@ ApplicationRecord.transaction do
 
   puts "Done!"
 
-  end
+  # end
